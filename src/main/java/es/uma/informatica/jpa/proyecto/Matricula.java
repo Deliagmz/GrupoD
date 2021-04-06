@@ -19,9 +19,11 @@ public class Matricula implements Serializable {
 	   
 	@Id
 	private String Curso_academico;
+	@Column( nullable = false, length = 20)
 	private String Estado;
 	private Integer Num_Archivo;
 	private String Turno_Preferente;
+	@Column( nullable = false)
 	private Date Fecha_de_matricula;
 	private Boolean Nuevo_ingreso;
 	private List Listado_Asignaturas;
@@ -78,6 +80,71 @@ public class Matricula implements Serializable {
 
 	public void setListado_Asignaturas(List Listado_Asignaturas) {
 		this.Listado_Asignaturas = Listado_Asignaturas;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((Curso_academico == null) ? 0 : Curso_academico.hashCode());
+		result = prime * result + ((Estado == null) ? 0 : Estado.hashCode());
+		result = prime * result + ((Fecha_de_matricula == null) ? 0 : Fecha_de_matricula.hashCode());
+		result = prime * result + ((Listado_Asignaturas == null) ? 0 : Listado_Asignaturas.hashCode());
+		result = prime * result + ((Nuevo_ingreso == null) ? 0 : Nuevo_ingreso.hashCode());
+		result = prime * result + ((Num_Archivo == null) ? 0 : Num_Archivo.hashCode());
+		result = prime * result + ((Turno_Preferente == null) ? 0 : Turno_Preferente.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Matricula other = (Matricula) obj;
+		if (Curso_academico == null) {
+			if (other.Curso_academico != null)
+				return false;
+		} else if (!Curso_academico.equals(other.Curso_academico))
+			return false;
+		if (Estado == null) {
+			if (other.Estado != null)
+				return false;
+		} else if (!Estado.equals(other.Estado))
+			return false;
+		if (Fecha_de_matricula == null) {
+			if (other.Fecha_de_matricula != null)
+				return false;
+		} else if (!Fecha_de_matricula.equals(other.Fecha_de_matricula))
+			return false;
+		if (Listado_Asignaturas == null) {
+			if (other.Listado_Asignaturas != null)
+				return false;
+		} else if (!Listado_Asignaturas.equals(other.Listado_Asignaturas))
+			return false;
+		if (Nuevo_ingreso == null) {
+			if (other.Nuevo_ingreso != null)
+				return false;
+		} else if (!Nuevo_ingreso.equals(other.Nuevo_ingreso))
+			return false;
+		if (Num_Archivo == null) {
+			if (other.Num_Archivo != null)
+				return false;
+		} else if (!Num_Archivo.equals(other.Num_Archivo))
+			return false;
+		if (Turno_Preferente == null) {
+			if (other.Turno_Preferente != null)
+				return false;
+		} else if (!Turno_Preferente.equals(other.Turno_Preferente))
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "Matricula [Curso_academico=" + Curso_academico + ", Estado=" + Estado + ", Num_Archivo=" + Num_Archivo
+				+ ", Turno_Preferente=" + Turno_Preferente + ", Fecha_de_matricula=" + Fecha_de_matricula
+				+ ", Nuevo_ingreso=" + Nuevo_ingreso + ", Listado_Asignaturas=" + Listado_Asignaturas + "]";
 	}
    
 }
