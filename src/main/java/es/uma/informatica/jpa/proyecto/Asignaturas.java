@@ -16,9 +16,14 @@ public class Asignaturas implements Serializable {
 	   
 	@Id
 	private Integer Referencia;
+	@Column( nullable = false)
 	private Integer Codigo;
+	@Column( nullable = false)
 	private Integer Creditos;
+	@Column( nullable = false)
 	private boolean Ofertada;
+	@Column( nullable = false)
+	private String Nombre;
 	private String Curso;
 	private String Caracter;
 	private String Duracion;
@@ -57,6 +62,13 @@ public class Asignaturas implements Serializable {
 	public void setOfertada(boolean Ofertada) {
 		this.Ofertada = Ofertada;
 	}   
+	
+	public String getNombre() {
+		return Nombre;
+	}
+	public void setNombre(String nombre) {
+		Nombre = nombre;
+	}
 	public String getCurso() {
 		return this.Curso;
 	}
