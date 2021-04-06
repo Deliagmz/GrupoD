@@ -21,6 +21,10 @@ public class Clase implements Serializable {
 	private String Hora_fin;
 	private static final long serialVersionUID = 1L;
 
+//Relacion con Asignaturas
+	@ManyToOne
+	private Asignaturas asignatura;
+	
 	public Clase() {
 		super();
 	}   

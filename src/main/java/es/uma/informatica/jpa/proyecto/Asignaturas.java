@@ -1,12 +1,14 @@
 package es.uma.informatica.jpa.proyecto;
 
-import java.awt.List;
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: Asignaturas
@@ -32,7 +34,14 @@ public class Asignaturas implements Serializable {
 	private String Duracion;
 	private String Unidad_Temporal;
 	private String Idiomas_Imparticion;
-
+//Relacion con Titulacion
+	@ManyToOne(mappedBy="")
+	private Titulacion titulaciones;
+	
+//Relacion con Clase
+	@OneToMany(mappedBy="asignatura")
+	private List<Clase> clases;
+	
 //Relacion con Asignaturas_Matricula
 	@ManyToMany(mappedBy="Listado_Asignaturas")
 	private List<Matricula> lista_matriculas;
@@ -40,7 +49,8 @@ public class Asignaturas implements Serializable {
 
 	public Asignaturas() {
 		super();
-	}   
+	}  
+	
 	public Integer getReferencia() {
 		return this.Referencia;
 	}
