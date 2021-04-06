@@ -1,10 +1,11 @@
 package es.uma.informatica.jpa.proyecto;
 
 import java.io.Serializable;
-import java.lang.Boolean;
-import java.lang.Double;
-import java.lang.Long;
-import javax.persistence.*;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: Expedientes
@@ -19,6 +20,9 @@ public class Expedientes implements Serializable {
 	private Long Num_Expediente;
 	private Boolean Activo;
 	private Double Nota_Media_Provisional;
+	@OneToMany(mappedBy = "expedientes")
+	private List<Matricula>matriculas;
+	
 	private static final long serialVersionUID = 1L;
 
 	public Expedientes() {

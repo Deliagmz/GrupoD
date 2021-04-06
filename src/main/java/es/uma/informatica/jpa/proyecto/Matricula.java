@@ -1,25 +1,29 @@
 package es.uma.informatica.jpa.proyecto;
 
 import java.io.Serializable;
-import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import java.util.List;
 
 /**
  * Entity implementation class for Entity: Matricula
  *
  */
 @Entity
-
+@IdClass(Matricula.MatriculaId.class)
 public class Matricula implements Serializable {
-
+	
+	public static class MatriculaId implements Serializable{
+		private String Curso_academico;
+		private Long expedientes;
+	}
 	   
 	@Id
 	private String Curso_academico;
@@ -32,7 +36,15 @@ public class Matricula implements Serializable {
 	private Timestamp Fecha_de_matricula;
 	private Boolean Nuevo_ingreso;
 	private List Listado_Asignaturas;
+	
+	
+	@Id
+	@ManyToOne
+	private Expedientes expedientes;
+	
 	private static final long serialVersionUID = 1L;
+	
+	
 
 	public Matricula() {
 		super();
