@@ -12,7 +12,7 @@ import javax.persistence.*;
  */
 @Entity
 
-public class GRUPO implements Serializable {
+public class Grupo implements Serializable {
 
 	   
 	@Id
@@ -36,7 +36,7 @@ public class GRUPO implements Serializable {
 	private String Grupo_preferente;
 	private static final long serialVersionUID = 1L;
 
-	public GRUPO() {
+	public Grupo() {
 		super();
 	}   
 	public String getID() {
@@ -141,7 +141,7 @@ public class GRUPO implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		GRUPO other = (GRUPO) obj;
+		Grupo other = (Grupo) obj;
 		if (Asignable == null) {
 			if (other.Asignable != null)
 				return false;
