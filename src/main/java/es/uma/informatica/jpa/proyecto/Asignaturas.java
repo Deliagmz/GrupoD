@@ -35,8 +35,8 @@ public class Asignaturas implements Serializable {
 	private String Unidad_Temporal;
 	private String Idiomas_Imparticion;
 //Relacion con Titulacion
-	@ManyToOne(mappedBy="")
-	private Titulacion titulaciones;
+	@ManyToOne
+	private Titulacion titulacion;
 	
 //Relacion con Clase
 	@OneToMany(mappedBy="asignatura")
