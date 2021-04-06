@@ -3,6 +3,8 @@ package es.uma.informatica.jpa.proyecto;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -19,7 +21,24 @@ public class Titulacion implements Serializable {
 	private Integer Creditos;
 	private String Nombre;
 	private static final long serialVersionUID = 1L;
+	
+	//Relacion titulacion y expediente
+	@OneToMany (mappedBy="titulacion")
+	private List<Expedientes> expedientes;
 
+	//Relacion titulacion y asignaturas
+	@OneToMany (mappedBy="titulacion")
+	private List<Asignatura> asignaturas;
+
+	//Relacion titulacion y grupo
+	@OneToMany (mappedBy="titulacion")
+	private List<Grupo> grupos;
+	
+	//Relacion titulacion y centro
+	@ManyToMany
+	private List<Centro> titulacion;
+	
+	
 	public Titulacion() {
 		super();
 	}   

@@ -3,6 +3,8 @@ package es.uma.informatica.jpa.proyecto;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -25,7 +27,11 @@ public class Alumno implements Serializable {
 	private Integer Telefono;
 	private Integer Movil;
 	private static final long serialVersionUID = 1L;
-
+	
+	//Relacion alumno y expediente
+	@OneToMany (mappedBy="alumno")
+	private List<Expedientes> expedientes;
+	
 	public Alumno() {
 		super();
 	}   
