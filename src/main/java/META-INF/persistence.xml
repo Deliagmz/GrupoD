@@ -12,7 +12,7 @@
 
 		<class>es.uma.informatica.jpa.proyecto.Titulacion</class>
 		<class>es.uma.informatica.jpa.proyecto.Grupo</class>
-		<class>es.uma.informatica.jpa.proyecto.Gupos_Por_Asignatura</class>
+		<class>es.uma.informatica.jpa.proyecto.Grupos_Por_Asignatura</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sii"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sii"/>

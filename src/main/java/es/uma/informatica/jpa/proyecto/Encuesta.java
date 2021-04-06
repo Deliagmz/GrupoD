@@ -28,7 +28,7 @@ public class Encuesta implements Serializable {
 	private Expedientes expediente;
 	
 	//Lista para la relación con grupos por asignatura
-	private List<Grupos_por_asignatura> asignaturas;
+	private List<Grupos_Por_Asignatura> asignaturas;
 	
 	public Encuesta() {
 		super();
