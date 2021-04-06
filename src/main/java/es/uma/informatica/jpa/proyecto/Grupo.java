@@ -74,13 +74,14 @@ public class Grupo implements Serializable {
 	public void setPlazas(Number Plazas) {
 		this.Plazas = Plazas;
 	}   
-	public Boolean getInglés() {
-		return this.Ingles;
-	}
 
-	public void setInglés(Boolean Inglés) {
-		this.Ingles = Ingles;
-	}   
+	  
+	public Boolean getIngles() {
+		return Ingles;
+	}
+	public void setIngles(Boolean ingles) {
+		Ingles = ingles;
+	}
 	public Boolean getVisible() {
 		return this.Visible;
 	}
@@ -189,6 +190,7 @@ public class Grupo implements Serializable {
 			return false;
 		return true;
 	}
+	
 	@Override
 	public String toString() {
 		return "GRUPO [ID=" + ID + ", Curso=" + Curso + ", Letra=" + Letra + ", Turno_Mañana_Tarde="
