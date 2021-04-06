@@ -16,16 +16,25 @@ import javax.persistence.*;
 public class Alumno implements Serializable {
 
 	   
-	@Id
-	private Integer ID;
+	@Id @GeneratedValue 
+	private Long ID;
+	@Column( nullable = false, length = 20)
 	private String DNI;
+	@Column( unique=true, nullable = false, length = 52)
 	private String Nombre;
+	@Column( nullable = false, length = 52)
 	private String Apellido1;
+	@Column(length = 52)
 	private String Apellido2;
+	@Column( nullable = false, length = 52)
 	private String Email_institucional;
+	@Column(length = 52)
 	private String Email_personal;
 	private Integer Telefono;
+	@Column( nullable = false)
 	private Integer Movil;
+	@Column(length = 255)
+	private String Direccion;
 	private static final long serialVersionUID = 1L;
 	
 	//Relacion alumno y expediente
@@ -35,11 +44,11 @@ public class Alumno implements Serializable {
 	public Alumno() {
 		super();
 	}   
-	public Integer getID() {
+	public Long getID() {
 		return this.ID;
 	}
 
-	public void setID(Integer ID) {
+	public void setID(Long ID) {
 		this.ID = ID;
 	}   
 	public String getDNI() {
@@ -105,6 +114,7 @@ public class Alumno implements Serializable {
 		result = prime * result + ((Apellido1 == null) ? 0 : Apellido1.hashCode());
 		result = prime * result + ((Apellido2 == null) ? 0 : Apellido2.hashCode());
 		result = prime * result + ((DNI == null) ? 0 : DNI.hashCode());
+		result = prime * result + ((Direccion == null) ? 0 : Direccion.hashCode());
 		result = prime * result + ((Email_institucional == null) ? 0 : Email_institucional.hashCode());
 		result = prime * result + ((Email_personal == null) ? 0 : Email_personal.hashCode());
 		result = prime * result + ((ID == null) ? 0 : ID.hashCode());
@@ -136,6 +146,11 @@ public class Alumno implements Serializable {
 			if (other.DNI != null)
 				return false;
 		} else if (!DNI.equals(other.DNI))
+			return false;
+		if (Direccion == null) {
+			if (other.Direccion != null)
+				return false;
+		} else if (!Direccion.equals(other.Direccion))
 			return false;
 		if (Email_institucional == null) {
 			if (other.Email_institucional != null)
@@ -173,7 +188,8 @@ public class Alumno implements Serializable {
 	public String toString() {
 		return "Alumno [ID=" + ID + ", DNI=" + DNI + ", Nombre=" + Nombre + ", Apellido1=" + Apellido1 + ", Apellido2="
 				+ Apellido2 + ", Email_institucional=" + Email_institucional + ", Email_personal=" + Email_personal
-				+ ", Telefono=" + Telefono + ", Movil=" + Movil + "]";
+				+ ", Telefono=" + Telefono + ", Movil=" + Movil + ", Direccion=" + Direccion + "]";
 	}
+	
    
 }

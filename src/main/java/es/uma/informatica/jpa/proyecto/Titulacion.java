@@ -18,10 +18,12 @@ public class Titulacion implements Serializable {
 	   
 	@Id
 	private Integer Codigo;
+	@Column( nullable = false)
 	private Integer Creditos;
+	@Column( nullable = false, length = 52)
 	private String Nombre;
 	private static final long serialVersionUID = 1L;
-	
+
 	//Relacion titulacion y expediente
 	@OneToMany (mappedBy="titulacion")
 	private List<Expedientes> expedientes;
