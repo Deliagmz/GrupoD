@@ -46,6 +46,10 @@ public class Asignaturas implements Serializable {
 	@ManyToMany(mappedBy="Listado_Asignaturas")
 	private List<Matricula> lista_matriculas;
 	
+//Relacion con Grupos_Por_Asignatura
+	@OneToMany(mappedBy="grupos_por_asignatura")
+	private Asignaturas asignats;
+	
 	private static final long serialVersionUID = 1L;
 
 	public Asignaturas() {
