@@ -19,7 +19,7 @@ public class Centro implements Serializable {
 	@Column(nullable = false, length = 52, unique = true)
 	private String Nombre;
 	@Column(nullable = false, length = 52)
-	private String Dirección;
+	private String Direccion;
 	private Integer TLF_Conserjería;
 	private static final long serialVersionUID = 1L;
 
