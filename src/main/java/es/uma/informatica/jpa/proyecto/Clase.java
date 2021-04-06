@@ -2,6 +2,8 @@ package es.uma.informatica.jpa.proyecto;
 
 import java.io.Serializable;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -12,7 +14,7 @@ import javax.persistence.*;
 
 @IdClass(ClasePK.class)
 public class Clase implements Serializable {
-
+	
 	   
 	@Id
 	private String Dia;   
@@ -20,7 +22,10 @@ public class Clase implements Serializable {
 	private String Hora_inicio;
 	private String Hora_fin;
 	private static final long serialVersionUID = 1L;
+	
 
+	
+	
 //Relacion con Asignaturas
 	@ManyToOne
 	private Asignaturas asignatura;

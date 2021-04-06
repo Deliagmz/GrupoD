@@ -15,7 +15,6 @@ import javax.persistence.OneToMany;
  *
  */
 @Entity
-
 public class Asignaturas implements Serializable {
 
 	   
@@ -34,6 +33,7 @@ public class Asignaturas implements Serializable {
 	private String Duracion;
 	private String Unidad_Temporal;
 	private String Idiomas_Imparticion;
+	
 //Relacion con Titulacion
 	@ManyToOne
 	private Titulacion titulacion;
@@ -45,6 +45,7 @@ public class Asignaturas implements Serializable {
 //Relacion con Asignaturas_Matricula
 	@ManyToMany(mappedBy="Listado_Asignaturas")
 	private List<Matricula> lista_matriculas;
+	
 	private static final long serialVersionUID = 1L;
 
 	public Asignaturas() {

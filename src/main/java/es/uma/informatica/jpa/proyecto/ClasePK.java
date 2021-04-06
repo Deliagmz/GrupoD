@@ -2,6 +2,10 @@ package es.uma.informatica.jpa.proyecto;
 
 import java.io.Serializable;
 import java.lang.String;
+import java.util.List;
+
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  * ID class for entity: Clase
@@ -16,7 +20,14 @@ public class ClasePK  implements Serializable {
 
 	public ClasePK() {}
 
-	
+	public static class ClaseId implements Serializable{
+		private int ID;
+		private Grupo grupos;
+	}
+	//Relacion con Grupo
+		@Id
+		@ManyToOne
+		private List<Grupo> grupos;
 
 	public String getDia() {
 		return this.Dia;
