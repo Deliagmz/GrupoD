@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="jpa.proyecto" transaction-type="RESOURCE_LOCAL">
+
+		<class>es.uma.informatica.jpa.proyecto.Titulacion</class>
+
+		<class>es.uma.informatica.jpa.proyecto.Clase</class>
+		<class>es.uma.informatica.jpa.proyecto.Asignaturas</class>
+		<class>es.uma.informatica.jpa.proyecto.Optativa</class>
+
+		<class>es.uma.informatica.jpa.proyecto.Grupo</class>
+		<class>es.uma.informatica.jpa.proyecto.Gupos_Por_Asignatura</class>
+
 		<class>es.uma.informatica.jpa.proyecto.Expedientes</class>
 		<class>es.uma.informatica.jpa.proyecto.Matricula</class>
 		<properties>
@@ -10,5 +20,6 @@
 			<property name="javax.persistence.jdbc.password" value="siipassword"/>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 		</properties>
+		
 	</persistence-unit>
 </persistence>
