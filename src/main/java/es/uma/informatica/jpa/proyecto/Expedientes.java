@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 /**
@@ -20,8 +21,22 @@ public class Expedientes implements Serializable {
 	private Long Num_Expediente;
 	private Boolean Activo;
 	private Double Nota_Media_Provisional;
+	
+//Relacion con Matricula
 	@OneToMany(mappedBy = "expedientes")
 	private List<Matricula>matriculas;
+	
+//Relacion con Encuesta
+	@OneToMany(mappedBy = "expediente")
+	private List<Encuesta>encuestas;
+
+//Relacion con Alumno
+	@ManyToOne
+	private Alumno alumno;
+	
+//Relacion con Titulacion
+	@ManyToOne
+	private Titulacion titulacion;
 	
 	private static final long serialVersionUID = 1L;
 

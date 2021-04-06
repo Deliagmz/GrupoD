@@ -4,13 +4,6 @@
 
 		<class>es.uma.informatica.jpa.proyecto.Titulacion</class>
 
-		<class>es.uma.informatica.jpa.proyecto.Clase</class>
-		<class>es.uma.informatica.jpa.proyecto.Asignaturas</class>
-		<class>es.uma.informatica.jpa.proyecto.Optativa</class>
-
-		<class>es.uma.informatica.jpa.proyecto.Grupo</class>
-		<class>es.uma.informatica.jpa.proyecto.Gupos_Por_Asignatura</class>
-
 		<class>es.uma.informatica.jpa.proyecto.Expedientes</class>
 		<class>es.uma.informatica.jpa.proyecto.Matricula</class>
 		<properties>
