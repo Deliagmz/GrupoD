@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.sun.tools.javac.util.List;
+import java.util.List;
 
 /**
  * Entity implementation class for Entity: Matricula
