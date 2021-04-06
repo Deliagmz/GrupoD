@@ -27,7 +27,7 @@ public class Grupo implements Serializable {
 	@Column( nullable = false)
 	private Number Plazas;
 	@Column( nullable = false)
-	private Boolean Inglés;
+	private Boolean Ingles;
 	private Boolean Visible;
 	private Boolean Asignable;
 	//private Number Codigo;
@@ -74,12 +74,12 @@ public class Grupo implements Serializable {
 	public void setPlazas(Number Plazas) {
 		this.Plazas = Plazas;
 	}   
-	public Boolean getInglés() {
-		return this.Inglés;
+	public Boolean getIngles() {
+		return this.Ingles;
 	}
 
-	public void setInglés(Boolean Inglés) {
-		this.Inglés = Inglés;
+	public void setInglés(Boolean Ingles) {
+		this.Ingles = Ingles;
 	}   
 	public Boolean getVisible() {
 		return this.Visible;
@@ -126,7 +126,7 @@ public class Grupo implements Serializable {
 		result = prime * result + ((Curso == null) ? 0 : Curso.hashCode());
 		result = prime * result + ((Grupo_preferente == null) ? 0 : Grupo_preferente.hashCode());
 		result = prime * result + ((ID == null) ? 0 : ID.hashCode());
-		result = prime * result + ((Inglés == null) ? 0 : Inglés.hashCode());
+		result = prime * result + ((Ingles == null) ? 0 : Ingles.hashCode());
 		result = prime * result + ((Letra == null) ? 0 : Letra.hashCode());
 		result = prime * result + ((Plazas == null) ? 0 : Plazas.hashCode());
 		result = prime * result + ((Turno_Mañana_Tarde == null) ? 0 : Turno_Mañana_Tarde.hashCode());
@@ -162,10 +162,10 @@ public class Grupo implements Serializable {
 				return false;
 		} else if (!ID.equals(other.ID))
 			return false;
-		if (Inglés == null) {
-			if (other.Inglés != null)
+		if (Ingles == null) {
+			if (other.Ingles != null)
 				return false;
-		} else if (!Inglés.equals(other.Inglés))
+		} else if (!Ingles.equals(other.Ingles))
 			return false;
 		if (Letra == null) {
 			if (other.Letra != null)
@@ -192,7 +192,7 @@ public class Grupo implements Serializable {
 	@Override
 	public String toString() {
 		return "GRUPO [ID=" + ID + ", Curso=" + Curso + ", Letra=" + Letra + ", Turno_Mañana_Tarde="
-				+ Turno_Mañana_Tarde + ", Plazas=" + Plazas + ", Inglés=" + Inglés + ", Visible=" + Visible
+				+ Turno_Mañana_Tarde + ", Plazas=" + Plazas + ", Inglés=" + Ingles + ", Visible=" + Visible
 				+ ", Asignable=" + Asignable + ", Grupo_preferente=" + Grupo_preferente + "]";
 	}
    
