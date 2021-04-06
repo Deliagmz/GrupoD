@@ -10,41 +10,51 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@IdClass(Encuesta.EncuestaId.class)
 public class Encuesta implements Serializable {
-
-	@EmbeddedId
-	private EncuestaPK clave_encuestaPK;
 	
-	@JoinColumn(name="NUM_EXPEDIENTE",referencedColumnName="NUM_EXPEDIENTE")
-	@ManyToOne
-	private Expedientes expedientes;
+	public static class EncuestaId implements Serializable{
+		private Timestamp fecha_de_envio;
+		private Long expediente;
+	}
 
+	@Id
+	private Timestamp fecha_de_envio;
+	
+	//relacion para hacer entidad debil
+	@Id
+	@ManyToOne
+	private Expedientes expediente;
+	
+	//Lista para la relación con grupos por asignatura
+	private List<Grupos_por_asignatura> asignaturas;
+	
 	public Encuesta() {
 		super();
 	}
 
-	public EncuestaPK getClave_encuestaPK() {
-		return clave_encuestaPK;
+	public Timestamp getFecha_de_envio() {
+		return fecha_de_envio;
 	}
 
-	public void setClave_encuestaPK(EncuestaPK clave_encuestaPK) {
-		this.clave_encuestaPK = clave_encuestaPK;
+	public void setFecha_de_envio(Timestamp fecha_de_envio) {
+		this.fecha_de_envio = fecha_de_envio;
 	}
 
-	public Expedientes getExpedientes() {
-		return expedientes;
+	public Expedientes getExpediente() {
+		return expediente;
 	}
 
-	public void setExpedientes(Expedientes expedientes) {
-		this.expedientes = expedientes;
+	public void setExpediente(Expedientes expediente) {
+		this.expediente = expediente;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((clave_encuestaPK == null) ? 0 : clave_encuestaPK.hashCode());
+		result = prime * result + ((expediente == null) ? 0 : expediente.hashCode());
+		result = prime * result + ((fecha_de_envio == null) ? 0 : fecha_de_envio.hashCode());
 		return result;
 	}
 
@@ -57,18 +67,24 @@ public class Encuesta implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Encuesta other = (Encuesta) obj;
-		if (clave_encuestaPK == null) {
-			if (other.clave_encuestaPK != null)
+		if (expediente == null) {
+			if (other.expediente != null)
 				return false;
-		} else if (!clave_encuestaPK.equals(other.clave_encuestaPK))
+		} else if (!expediente.equals(other.expediente))
+			return false;
+		if (fecha_de_envio == null) {
+			if (other.fecha_de_envio != null)
+				return false;
+		} else if (!fecha_de_envio.equals(other.fecha_de_envio))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Encuesta [clave_encuestaPK=" + clave_encuestaPK + "]";
-	}   
+		return "Encuesta [fecha_de_envio=" + fecha_de_envio + ", expediente=" + expediente + "]";
+	}
+
 	
    
 }

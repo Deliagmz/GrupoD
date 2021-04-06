@@ -23,6 +23,9 @@ public class Centro implements Serializable {
 	private Integer TLF_ConserjerÃ­a;
 	private static final long serialVersionUID = 1L;
 
+	//Lista para la relación con Titulación
+	private List<Titulacion> titulacion;	
+	
 	public Centro() {
 		super();
 	}   
