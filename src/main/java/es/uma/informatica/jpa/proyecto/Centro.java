@@ -22,7 +22,7 @@ public class Centro implements Serializable {
 	private String Nombre;
 	@Column(nullable = false, length = 52)
 	private String Direccion;
-	private Integer TLF_Conserjería;
+	private Integer TLF_Conserjeria;
 	private static final long serialVersionUID = 1L;
 
 	//Lista para la relaci�n con Titulaci�n
@@ -53,11 +53,11 @@ public class Centro implements Serializable {
 		this.Direccion = Direccion;
 	}   
 	public Integer getTLF_Conserjería() {
-		return this.TLF_Conserjería;
+		return this.TLF_Conserjeria;
 	}
 
 	public void setTLF_Conserjería(Integer TLF_Conserjería) {
-		this.TLF_Conserjería = TLF_Conserjería;
+		this.TLF_Conserjeria = TLF_Conserjería;
 	}
 	@Override
 	public int hashCode() {
@@ -66,7 +66,7 @@ public class Centro implements Serializable {
 		result = prime * result + ((Direccion == null) ? 0 : Direccion.hashCode());
 		result = prime * result + ((ID == null) ? 0 : ID.hashCode());
 		result = prime * result + ((Nombre == null) ? 0 : Nombre.hashCode());
-		result = prime * result + ((TLF_Conserjería == null) ? 0 : TLF_Conserjería.hashCode());
+		result = prime * result + ((TLF_Conserjeria == null) ? 0 : TLF_Conserjeria.hashCode());
 		return result;
 	}
 	@Override
@@ -93,17 +93,17 @@ public class Centro implements Serializable {
 				return false;
 		} else if (!Nombre.equals(other.Nombre))
 			return false;
-		if (TLF_Conserjería == null) {
-			if (other.TLF_Conserjería != null)
+		if (TLF_Conserjeria == null) {
+			if (other.TLF_Conserjeria != null)
 				return false;
-		} else if (!TLF_Conserjería.equals(other.TLF_Conserjería))
+		} else if (!TLF_Conserjeria.equals(other.TLF_Conserjeria))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Centro [ID=" + ID + ", Nombre=" + Nombre + ", Dirección=" + Direccion + ", TLF_Conserjería="
-				+ TLF_Conserjería + "]";
+		return "Centro [ID=" + ID + ", Nombre=" + Nombre + ", Direccion=" + Direccion + ", TLF_Conserjeria="
+				+ TLF_Conserjeria + "]";
 	}
 	
 	
