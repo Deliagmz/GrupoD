@@ -1,12 +1,16 @@
 package es.uma.informatica.jpa.proyecto;
 
-import com.sun.tools.javac.util.List;
 import java.io.Serializable;
-import java.lang.Boolean;
-import java.lang.Integer;
-import java.lang.String;
 import java.sql.Date;
-import javax.persistence.*;
+import java.sql.Timestamp;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.sun.tools.javac.util.List;
 
 /**
  * Entity implementation class for Entity: Matricula
@@ -24,7 +28,8 @@ public class Matricula implements Serializable {
 	private Integer Num_Archivo;
 	private String Turno_Preferente;
 	@Column( nullable = false)
-	private Date Fecha_de_matricula;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Timestamp Fecha_de_matricula;
 	private Boolean Nuevo_ingreso;
 	private List Listado_Asignaturas;
 	private static final long serialVersionUID = 1L;
@@ -60,11 +65,11 @@ public class Matricula implements Serializable {
 	public void setTurno_Preferente(String Turno_Preferente) {
 		this.Turno_Preferente = Turno_Preferente;
 	}   
-	public Date getFecha_de_matricula() {
+	public Timestamp getFecha_de_matricula() {
 		return this.Fecha_de_matricula;
 	}
 
-	public void setFecha_de_matricula(Date Fecha_de_matricula) {
+	public void setFecha_de_matricula(Timestamp Fecha_de_matricula) {
 		this.Fecha_de_matricula = Fecha_de_matricula;
 	}   
 	public Boolean getNuevo_ingreso() {
