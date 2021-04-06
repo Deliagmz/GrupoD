@@ -18,7 +18,7 @@ public class Encuesta implements Serializable {
 	
 	@JoinColumn(name="NUM_EXPEDIENTE",referencedColumnName="NUM_EXPEDIENTE")
 	@ManyToOne
-	private Expedientes expedientes
+	private Expedientes expedientes;
 
 	public Encuesta() {
 		super();
