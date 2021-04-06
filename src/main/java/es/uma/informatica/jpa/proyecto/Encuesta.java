@@ -2,6 +2,7 @@ package es.uma.informatica.jpa.proyecto;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.persistence.*;
 

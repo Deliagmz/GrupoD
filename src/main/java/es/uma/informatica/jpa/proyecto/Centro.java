@@ -3,6 +3,8 @@ package es.uma.informatica.jpa.proyecto;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**

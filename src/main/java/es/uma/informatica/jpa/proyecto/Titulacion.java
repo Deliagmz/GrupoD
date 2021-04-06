@@ -30,7 +30,7 @@ public class Titulacion implements Serializable {
 
 	//Relacion titulacion y asignaturas
 	@OneToMany (mappedBy="titulacion")
-	private List<Asignatura> asignaturas;
+	private List<Asignaturas> asignaturas;
 
 	//Relacion titulacion y grupo
 	@OneToMany (mappedBy="titulacion")
