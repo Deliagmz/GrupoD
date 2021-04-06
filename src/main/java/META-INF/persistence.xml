@@ -6,6 +6,8 @@
 		<class>es.uma.informatica.jpa.proyecto.Clase</class>
 		<class>es.uma.informatica.jpa.proyecto.Asignaturas</class>
 		<class>es.uma.informatica.jpa.proyecto.Optativa</class>
+		<class>es.uma.informatica.jpa.proyecto.Centro</class>
+		<class>es.uma.informatica.jpa.proyecto.Encuesta</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sii"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sii"/>
