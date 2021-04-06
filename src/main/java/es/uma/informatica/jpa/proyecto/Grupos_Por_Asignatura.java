@@ -11,7 +11,7 @@ import javax.persistence.*;
  */
 @Entity
 
-public class Gupos_Por_Asignatura implements Serializable {
+public class Grupos_Por_Asignatura implements Serializable {
 
 	   
 	@Id
@@ -20,7 +20,7 @@ public class Gupos_Por_Asignatura implements Serializable {
 	private Boolean Oferta;
 	private static final long serialVersionUID = 1L;
 
-	public Gupos_Por_Asignatura() {
+	public Grupos_Por_Asignatura() {
 		super();
 	}   
 	public String getCurso_Academico() {
@@ -53,7 +53,7 @@ public class Gupos_Por_Asignatura implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Gupos_Por_Asignatura other = (Gupos_Por_Asignatura) obj;
+		Grupos_Por_Asignatura other = (Grupos_Por_Asignatura) obj;
 		if (Curso_Academico == null) {
 			if (other.Curso_Academico != null)
 				return false;
