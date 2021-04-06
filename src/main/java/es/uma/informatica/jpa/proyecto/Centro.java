@@ -41,11 +41,11 @@ public class Centro implements Serializable {
 		this.Nombre = Nombre;
 	}   
 	public String getDirección() {
-		return this.Dirección;
+		return this.Direccion;
 	}
 
 	public void setDirección(String Dirección) {
-		this.Dirección = Dirección;
+		this.Direccion = Dirección;
 	}   
 	public Integer getTLF_Conserjería() {
 		return this.TLF_Conserjería;
@@ -58,7 +58,7 @@ public class Centro implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Dirección == null) ? 0 : Dirección.hashCode());
+		result = prime * result + ((Direccion == null) ? 0 : Direccion.hashCode());
 		result = prime * result + ((ID == null) ? 0 : ID.hashCode());
 		result = prime * result + ((Nombre == null) ? 0 : Nombre.hashCode());
 		result = prime * result + ((TLF_Conserjería == null) ? 0 : TLF_Conserjería.hashCode());
@@ -73,10 +73,10 @@ public class Centro implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Centro other = (Centro) obj;
-		if (Dirección == null) {
-			if (other.Dirección != null)
+		if (Direccion == null) {
+			if (other.Direccion != null)
 				return false;
-		} else if (!Dirección.equals(other.Dirección))
+		} else if (!Direccion.equals(other.Direccion))
 			return false;
 		if (ID == null) {
 			if (other.ID != null)
@@ -97,7 +97,7 @@ public class Centro implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Centro [ID=" + ID + ", Nombre=" + Nombre + ", Dirección=" + Dirección + ", TLF_Conserjería="
+		return "Centro [ID=" + ID + ", Nombre=" + Nombre + ", Dirección=" + Direccion + ", TLF_Conserjería="
 				+ TLF_Conserjería + "]";
 	}
 	
