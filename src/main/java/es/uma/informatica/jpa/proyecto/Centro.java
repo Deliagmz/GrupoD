@@ -40,12 +40,12 @@ public class Centro implements Serializable {
 	public void setNombre(String Nombre) {
 		this.Nombre = Nombre;
 	}   
-	public String getDirección() {
+	public String getDireccion() {
 		return this.Direccion;
 	}
 
-	public void setDirección(String Dirección) {
-		this.Direccion = Dirección;
+	public void setDireccion(String Direccion) {
+		this.Direccion = Direccion;
 	}   
 	public Integer getTLF_Conserjería() {
 		return this.TLF_Conserjería;
