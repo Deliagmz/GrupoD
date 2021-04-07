@@ -27,7 +27,7 @@ public class Centro implements Serializable {
 
 	//Lista para la relación con Titulación
 	@ManyToMany
-	@JoinTable(name = "jn_tit_cntr", joinCOlumns = @JoinColumn(name = "centro_fk"), 
+	@JoinTable(name = "jn_tit_cntr", joinColumns = @JoinColumn(name = "centro_fk"), 
 				inverseJoinColumns = @JoinColumn(name = "tit_fk"))
 	private List<Titulacion> titulacion;	
 	
