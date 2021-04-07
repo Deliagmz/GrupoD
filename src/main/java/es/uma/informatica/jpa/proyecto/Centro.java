@@ -24,6 +24,9 @@ public class Centro implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	//Lista para la relación con Titulación
+	@ManyToMany
+	@JoinTable(name = "jn_tit_cntr", joinCOlumns = @JoinColumn(name = "centro_fk"), 
+				inverseJoinColumns = @JoinColumn(name = "tit_fk"))
 	private List<Titulacion> titulacion;	
 	
 	public Centro() {
