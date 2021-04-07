@@ -11,7 +11,7 @@ import javax.persistence.*;
  *
  */
 @Entity
-@DiscriminatorValue("O")
+
 public class Optativa extends Asignaturas implements Serializable {
 
 	@Column( nullable = false)

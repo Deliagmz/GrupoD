@@ -19,9 +19,8 @@ import javax.persistence.OneToMany;
  *
  */
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="disc", discriminatorType = DiscriminatorType.CHAR)
-@DiscriminatorValue("A")
+@Inheritance(strategy = InheritanceType.JOINED)
+
 public class Asignaturas implements Serializable {
 
 	   
