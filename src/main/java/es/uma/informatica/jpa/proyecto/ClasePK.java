@@ -21,8 +21,10 @@ public class ClasePK  implements Serializable {
 	public ClasePK() {}
 
 	public static class ClaseId implements Serializable{
-		private int ID;
+		private String ID;
 		private Grupo grupos;
+		private String Dia;         
+		private String Hora_inicio;
 	}
 	//Relacion con Grupo
 		@Id

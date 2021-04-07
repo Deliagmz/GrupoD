@@ -27,8 +27,10 @@ public class Encuesta implements Serializable {
 	@ManyToOne
 	private Expedientes expediente;
 	
-	//Lista para la relación con grupos por asignatura
-
+	//relacion con grpXasig
+	@ManyToMany
+	@JoinTable(name = "jn_enc_grpXasi", joinColumns = @JoinColumn(name = "encuesta_fk"), 
+					inverseJoinColumns = @JoinColumn(name = "grpXasig_fk"))
 	private List<Grupos_Por_Asignatura> asignaturas;
    
 	
