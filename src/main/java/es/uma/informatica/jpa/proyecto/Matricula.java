@@ -39,6 +39,7 @@ public class Matricula implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date Fecha_de_matricula;
 	private Boolean Nuevo_ingreso;
+	private List<String> Listado_Asignaturas;
 
 ////Relacion muchos a muchos con Asignaturas
 //	@JoinTable(name = "Asignaturas_Matricula",
