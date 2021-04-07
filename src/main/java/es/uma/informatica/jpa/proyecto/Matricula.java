@@ -2,6 +2,7 @@ package es.uma.informatica.jpa.proyecto;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -9,7 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -36,14 +36,14 @@ public class Matricula implements Serializable {
 	private String Turno_Preferente;
 	@Column( nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Timestamp Fecha_de_matricula;
+	private Date Fecha_de_matricula;
 	private Boolean Nuevo_ingreso;
 
-//Relacion muchos a muchos con Asignaturas
-	@JoinTable(name = "Asignaturas_Matricula",
-			joinColumns = @JoinColumn(name= "matricula_fk"),
-			inverseJoinColumns = @JoinColumn(name="asignatura_fk"))
-	private List<Asignaturas> Listado_Asignaturas;
+////Relacion muchos a muchos con Asignaturas
+//	@JoinTable(name = "Asignaturas_Matricula",
+//			joinColumns = @JoinColumn(name= "matricula_fk"),
+//			inverseJoinColumns = @JoinColumn(name="asignatura_fk"))
+//	private List<Asignaturas> Listado_Asignaturas;
 	
 	
 	@Id
@@ -85,11 +85,11 @@ public class Matricula implements Serializable {
 	public void setTurno_Preferente(String Turno_Preferente) {
 		this.Turno_Preferente = Turno_Preferente;
 	}   
-	public Timestamp getFecha_de_matricula() {
+	public Date getFecha_de_matricula() {
 		return this.Fecha_de_matricula;
 	}
 
-	public void setFecha_de_matricula(Timestamp Fecha_de_matricula) {
+	public void setFecha_de_matricula(Date Fecha_de_matricula) {
 		this.Fecha_de_matricula = Fecha_de_matricula;
 	}   
 	public Boolean getNuevo_ingreso() {
@@ -99,13 +99,13 @@ public class Matricula implements Serializable {
 	public void setNuevo_ingreso(Boolean Nuevo_ingreso) {
 		this.Nuevo_ingreso = Nuevo_ingreso;
 	}   
-	public List getListado_Asignaturas() {
-		return this.Listado_Asignaturas;
-	}
+//	public List getListado_Asignaturas() {
+//		return this.Listado_Asignaturas;
+//	}
 
-	public void setListado_Asignaturas(List Listado_Asignaturas) {
-		this.Listado_Asignaturas = Listado_Asignaturas;
-	}
+//	public void setListado_Asignaturas(List Listado_Asignaturas) {
+//		this.Listado_Asignaturas = Listado_Asignaturas;
+//	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -113,7 +113,7 @@ public class Matricula implements Serializable {
 		result = prime * result + ((Curso_academico == null) ? 0 : Curso_academico.hashCode());
 		result = prime * result + ((Estado == null) ? 0 : Estado.hashCode());
 		result = prime * result + ((Fecha_de_matricula == null) ? 0 : Fecha_de_matricula.hashCode());
-		result = prime * result + ((Listado_Asignaturas == null) ? 0 : Listado_Asignaturas.hashCode());
+//		result = prime * result + ((Listado_Asignaturas == null) ? 0 : Listado_Asignaturas.hashCode());
 		result = prime * result + ((Nuevo_ingreso == null) ? 0 : Nuevo_ingreso.hashCode());
 		result = prime * result + ((Num_Archivo == null) ? 0 : Num_Archivo.hashCode());
 		result = prime * result + ((Turno_Preferente == null) ? 0 : Turno_Preferente.hashCode());
@@ -143,11 +143,11 @@ public class Matricula implements Serializable {
 				return false;
 		} else if (!Fecha_de_matricula.equals(other.Fecha_de_matricula))
 			return false;
-		if (Listado_Asignaturas == null) {
-			if (other.Listado_Asignaturas != null)
-				return false;
-		} else if (!Listado_Asignaturas.equals(other.Listado_Asignaturas))
-			return false;
+//		if (Listado_Asignaturas == null) {
+//			if (other.Listado_Asignaturas != null)
+//				return false;
+//		} else if (!Listado_Asignaturas.equals(other.Listado_Asignaturas))
+//			return false;
 		if (Nuevo_ingreso == null) {
 			if (other.Nuevo_ingreso != null)
 				return false;
@@ -169,7 +169,7 @@ public class Matricula implements Serializable {
 	public String toString() {
 		return "Matricula [Curso_academico=" + Curso_academico + ", Estado=" + Estado + ", Num_Archivo=" + Num_Archivo
 				+ ", Turno_Preferente=" + Turno_Preferente + ", Fecha_de_matricula=" + Fecha_de_matricula
-				+ ", Nuevo_ingreso=" + Nuevo_ingreso + ", Listado_Asignaturas=" + Listado_Asignaturas + "]";
+				+ ", Nuevo_ingreso=" + Nuevo_ingreso +  "]";
 	}
    
 }

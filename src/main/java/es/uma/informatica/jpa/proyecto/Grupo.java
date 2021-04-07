@@ -53,8 +53,8 @@ public class Grupo implements Serializable {
 	private List<Grupos_Por_Asignatura> grupoasig;
 	
 	// relacion con clase
-	@OneToMany(mappedBy = "ID")
-	private ClasePK clase;
+	@OneToMany(mappedBy = "grupos")
+	private List<Clase> clase;
 	
 	// relacion con grupo
 	

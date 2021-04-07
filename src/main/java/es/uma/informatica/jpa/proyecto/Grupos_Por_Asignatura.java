@@ -19,7 +19,7 @@ import javax.persistence.ManyToOne;
 public class Grupos_Por_Asignatura implements Serializable {
 	
 	public static class Grupos_Por_AsignaturaID implements Serializable{
-		private Integer grupos_por_asignatura;
+		private Integer referencia;
 		private String Curso_Academico;
 		private String Id;
 	}
@@ -33,7 +33,7 @@ public class Grupos_Por_Asignatura implements Serializable {
 	
 	// relacion con encuesta
 	
-	@ManyToMany(mappedBy = "asignaturas")
+	@ManyToMany(mappedBy="gr_asignaturas")
 	private List<Encuesta> lista; 
 	
 	// relacion con Asignaturas

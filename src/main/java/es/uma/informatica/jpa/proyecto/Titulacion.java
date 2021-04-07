@@ -37,8 +37,8 @@ public class Titulacion implements Serializable {
 	private List<Grupo> grupos;
 	
 	//Relacion titulacion y centro
-	@ManyToMany
-	private List<Centro> titulacion;
+	@ManyToMany(mappedBy="titulacion")
+	private List<Centro> centros;
 	
 	
 	public Titulacion() {
