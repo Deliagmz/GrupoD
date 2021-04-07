@@ -18,9 +18,9 @@ public class Alumno implements Serializable {
 	   
 	@Id @GeneratedValue 
 	private Long ID;
-	@Column( nullable = false, length = 20)
+	@Column( unique= true, nullable = false, length = 20)
 	private String DNI;
-	@Column( unique= true, nullable = false, length = 52)
+	@Column(nullable = false, length = 52)
 	private String Nombre;
 	@Column( nullable = false, length = 52)
 	private String Apellido1;
