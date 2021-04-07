@@ -17,7 +17,7 @@ public class Clase implements Serializable {
 	
 	
 	public static class ClaseId implements Serializable{
-		//private String ID;
+		private String grupos;
 		private String Dia;         
 		private String Hora_inicio;
 	}
