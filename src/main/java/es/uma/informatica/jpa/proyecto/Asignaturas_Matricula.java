@@ -8,18 +8,35 @@ import javax.persistence.*;
  *
  */
 @Entity
+@IdClass(Asignaturas_Matricula.Asignaturas_MatriculaId.class)
 
 public class Asignaturas_Matricula implements Serializable {
 	
+	public static class Asignaturas_MatriculaId implements Serializable{
+		private Integer asignatura;
+		private Matricula.MatriculaId matricula;
+	}
 	@Id
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="Curso",nullable=false, referencedColumnName="Curso")
-	private Matricula matricula;
+	@ManyToOne
+	private Asignaturas asignatura;
 	
 	@Id
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="ref",nullable = false, referencedColumnName = "ref")
-	private Asignaturas asignatura;
+	@ManyToOne
+	private Matricula matricula;
+	
+	@ManyToOne
+	private Grupo grupo;
+	
+	
+//	@Id
+//	@OneToOne(fetch = FetchType.LAZY)
+//	@JoinColumn(name="Curso",nullable=false, referencedColumnName="Curso")
+//	private Matricula matricula;
+	
+//	@Id
+//	@OneToOne(fetch = FetchType.LAZY)
+//	@JoinColumn(name="ref",nullable = false, referencedColumnName = "ref")
+//	private Asignaturas asignatura;
 	
 	private static final long serialVersionUID = 1L;
 
