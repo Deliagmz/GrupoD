@@ -1,17 +1,28 @@
 package es.uma.informatica.jpa.proyecto;
 
 import java.io.Serializable;
-import java.lang.Boolean;
-import java.lang.String;
-import javax.persistence.*;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 /**
  * Entity implementation class for Entity: GRUPOS_POR_ASIGNATURA
  *
  */
 @Entity
-
+@IdClass(Grupos_Por_Asignatura.Grupos_Por_AsignaturaID.class)
 public class Grupos_Por_Asignatura implements Serializable {
+	
+	public static class Grupos_Por_AsignaturaID implements Serializable{
+		private Integer grupos_por_asignatura;
+		private String Curso_Academico;
+		private String Id;
+	}
 
 	   
 	@Id
@@ -19,6 +30,23 @@ public class Grupos_Por_Asignatura implements Serializable {
 	private String Curso_Academico;
 	private Boolean Oferta;
 	private static final long serialVersionUID = 1L;
+	
+	// relacion con encuesta
+	
+	@ManyToMany(mappedBy = "asignaturas")
+	private List<Encuesta> lista; 
+	
+	// relacion con Asignaturas
+	
+	@Id
+	@ManyToOne
+	private Asignaturas referencia;
+	
+	// relacion con Grupo
+	
+	@Id
+	@ManyToOne
+	private Grupo Id;
 
 	public Grupos_Por_Asignatura() {
 		super();

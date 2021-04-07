@@ -30,6 +30,8 @@ public class Clase implements Serializable {
 	@ManyToOne
 	private Asignaturas asignatura;
 	
+	
+	
 	public Clase() {
 		super();
 	}   

@@ -1,10 +1,16 @@
 package es.uma.informatica.jpa.proyecto;
 
 import java.io.Serializable;
-import java.lang.Boolean;
-import java.lang.Number;
-import java.lang.String;
-import javax.persistence.*;
+import java.util.HashSet;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: GRUPO
@@ -35,6 +41,31 @@ public class Grupo implements Serializable {
 	@Column(length = 1)
 	private String Grupo_preferente;
 	private static final long serialVersionUID = 1L;
+	
+	// relacion con Titulacion
+	
+	@ManyToOne
+	private Titulacion titulacion;
+	
+	// relacion con Grupos_Por_Asignatura
+	
+	@OneToMany(mappedBy = "Id")
+	private List<Grupos_Por_Asignatura> grupoasig;
+	
+	// relacion con clase
+	@OneToMany(mappedBy = "ID")
+	private ClasePK clase;
+	
+	// relacion con grupo
+	
+	@ManyToOne
+	@JoinColumn(name = "grupoID")
+	private Grupo grupoid;
+	
+	@OneToMany(mappedBy = "grupoid",cascade = CascadeType.ALL)
+	private List<Grupo> grupoid2;
+
+	
 
 	public Grupo() {
 		super();
