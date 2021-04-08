@@ -31,7 +31,7 @@ public class Asignaturas implements Serializable {
 	@Column( nullable = false)
 	private Integer Creditos;
 	@Column( nullable = false)
-	private boolean Ofertada;
+	private Boolean Ofertada;
 	@Column( nullable = false)
 	private String Nombre;
 	private String Curso;
