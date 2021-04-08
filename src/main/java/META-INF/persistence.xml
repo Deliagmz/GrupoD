@@ -8,17 +8,27 @@
 		<class>es.uma.informatica.jpa.proyecto.Optativa</class>
 		<class>es.uma.informatica.jpa.proyecto.Centro</class>
 		<class>es.uma.informatica.jpa.proyecto.Encuesta</class>
-
-
+		<class>es.uma.informatica.jpa.proyecto.Expedientes</class>
+		<class>es.uma.informatica.jpa.proyecto.Matricula</class>
 		<class>es.uma.informatica.jpa.proyecto.Titulacion</class>
 		<class>es.uma.informatica.jpa.proyecto.Grupo</class>
 		<class>es.uma.informatica.jpa.proyecto.Grupos_Por_Asignatura</class>
+		<class>es.uma.informatica.jpa.proyecto.Asignaturas_Matricula</class>
+		<class>es.uma.informatica.jpa.proyecto.Optativa</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sii"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sii"/>
 			<property name="javax.persistence.jdbc.user" value="siiuser"/>
 			<property name="javax.persistence.jdbc.password" value="siipassword"/>
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+	
+			
+			<property name="com.mysql.cj.jdbc.Driver" value="com.mysql.cj.jdbc.Driver"/>
+			
+			<property name="javax.persistence.schema-generation.database.action" value="create"/>
+			<property name="javax.persistence.schema-generation.scripts.action" value="drop-and-create"/>
+            <property name="javax.persistence.schema-generation.scripts.create-target" value="proyectoCreate.sql"/>
+            <property name="javax.persistence.schema-generation.scripts.drop-target" value="proyectoDrop.sql"/>
+			
 		</properties>
 		
 	</persistence-unit>

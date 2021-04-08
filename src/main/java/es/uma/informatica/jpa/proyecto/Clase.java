@@ -12,8 +12,16 @@ import javax.persistence.*;
  */
 @Entity
 
-@IdClass(ClasePK.class)
+@IdClass(Clase.ClaseId.class)
 public class Clase implements Serializable {
+	
+	
+	public static class ClaseId implements Serializable{
+		private String grupos;
+		private String Dia;         
+		private String Hora_inicio;
+	}
+	
 	
 	   
 	@Id
@@ -30,7 +38,10 @@ public class Clase implements Serializable {
 	@ManyToOne
 	private Asignaturas asignatura;
 	
-	
+//Relacion con Grupo
+		@Id
+		@ManyToOne
+		private Grupo grupos;
 	
 	public Clase() {
 		super();

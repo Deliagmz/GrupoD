@@ -29,9 +29,8 @@ public class Encuesta implements Serializable {
 	
 	//relacion con grpXasig
 	@ManyToMany
-	@JoinTable(name = "jn_enc_grpXasi", joinColumns = @JoinColumn(name = "encuesta_fk"), 
-					inverseJoinColumns = @JoinColumn(name = "grpXasig_fk"))
-	private List<Grupos_Por_Asignatura> asignaturas;
+	@JoinTable(name = "jn_enc_grpXasi")
+	private List<Grupos_Por_Asignatura> gr_asignaturas;
    
 	
 	public Encuesta() {

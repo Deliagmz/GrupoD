@@ -4,9 +4,13 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -15,6 +19,8 @@ import javax.persistence.OneToMany;
  *
  */
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+
 public class Asignaturas implements Serializable {
 
 	   
@@ -25,7 +31,7 @@ public class Asignaturas implements Serializable {
 	@Column( nullable = false)
 	private Integer Creditos;
 	@Column( nullable = false)
-	private boolean Ofertada;
+	private Boolean Ofertada;
 	@Column( nullable = false)
 	private String Nombre;
 	private String Curso;
@@ -42,13 +48,13 @@ public class Asignaturas implements Serializable {
 	@OneToMany(mappedBy="asignatura")
 	private List<Clase> clases;
 	
-//Relacion con Asignaturas_Matricula
-	@ManyToMany(mappedBy="Listado_Asignaturas")
-	private List<Matricula> lista_matriculas;
+////Relacion con Asignaturas_Matricula
+	@OneToMany(mappedBy="asignatura")
+	private List<Asignaturas_Matricula> asignaturas_matricula;
 	
 //Relacion con Grupos_Por_Asignatura
-	@OneToMany(mappedBy="grupos_por_asignatura")
-	private Asignaturas asignats;
+	@OneToMany(mappedBy="referencia")
+	private List<Grupos_Por_Asignatura> grupos_asignats;
 	
 	private static final long serialVersionUID = 1L;
 

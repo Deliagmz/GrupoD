@@ -53,8 +53,8 @@ public class Grupo implements Serializable {
 	private List<Grupos_Por_Asignatura> grupoasig;
 	
 	// relacion con clase
-	@OneToMany(mappedBy = "ID")
-	private ClasePK clase;
+	@OneToMany(mappedBy = "grupos")
+	private List<Clase> clase;
 	
 	// relacion con grupo
 	
@@ -65,7 +65,10 @@ public class Grupo implements Serializable {
 	@OneToMany(mappedBy = "grupoid",cascade = CascadeType.ALL)
 	private List<Grupo> grupoid2;
 
+	//relacion con Asignaturas_matricula
 	
+	@OneToMany(mappedBy="grupo")
+	private List<Asignaturas_Matricula> asignaturas_matricula; 
 
 	public Grupo() {
 		super();
