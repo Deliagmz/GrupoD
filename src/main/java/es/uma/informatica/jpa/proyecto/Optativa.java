@@ -21,10 +21,10 @@ public class Optativa extends Asignaturas implements Serializable {
 	private String Mencion;
 	private static final long serialVersionUID = 1L;
 
-	//Relacion con asignaturas
+	//Relacion con Optativa
 	@ManyToMany
-	@JoinTable(name = "jn_asi_opt")
-	private List<Asignaturas> asigs;
+	@JoinTable(name = "jn_tit_opt")
+	private List<Titulacion> titulaciones;
 	
 	public Optativa() {
 		super();
