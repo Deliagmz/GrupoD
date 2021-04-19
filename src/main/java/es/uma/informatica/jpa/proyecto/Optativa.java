@@ -1,10 +1,12 @@
 package es.uma.informatica.jpa.proyecto;
 
-import es.uma.informatica.jpa.proyecto.Asignaturas;
 import java.io.Serializable;
-import java.lang.Integer;
-import java.lang.String;
-import javax.persistence.*;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 /**
  * Entity implementation class for Entity: Optativa
@@ -19,6 +21,11 @@ public class Optativa extends Asignaturas implements Serializable {
 	private String Mencion;
 	private static final long serialVersionUID = 1L;
 
+	//Relacion con asignaturas
+	@ManyToMany
+	@JoinTable(name = "jn_asi_opt")
+	private List<Asignaturas> asigs;
+	
 	public Optativa() {
 		super();
 	}   

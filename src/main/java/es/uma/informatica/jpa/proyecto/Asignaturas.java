@@ -40,6 +40,10 @@ public class Asignaturas implements Serializable {
 	private String Unidad_Temporal;
 	private String Idiomas_Imparticion;
 	
+//Relacion con Optativa
+	@ManyToOne
+	private List<Optativa> optativas;
+	
 //Relacion con Titulacion
 	@ManyToOne
 	private Titulacion titulacion;
