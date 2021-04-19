@@ -1,18 +1,23 @@
 package es.uma.informatica.jpa.proyecto;
 
 import java.io.Serializable;
-import java.lang.Integer;
-import java.lang.String;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: Titulacion
  *
  */
 @Entity
-
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Titulacion implements Serializable {
 
 	   
@@ -24,6 +29,10 @@ public class Titulacion implements Serializable {
 	private String Nombre;
 	private static final long serialVersionUID = 1L;
 
+	//Relacion con Optativa
+		@ManyToMany (mappedBy="titulaciones")
+		private List<Optativa> optativa;
+		
 	//Relacion titulacion y expediente
 	@OneToMany (mappedBy="titulacion")
 	private List<Expedientes> expedientes;
