@@ -36,9 +36,9 @@ public class Alumno implements Serializable {
 	private String Direccion;
 	private Integer Codigo_postal;
 	@Column(length = 255)
-	private String localidad;
+	private String Localidad;
 	@Column(length = 55)
-	private String provincia;
+	private String Provincia;
 	private static final long serialVersionUID = 1L;
 	
 	//Relacion alumno y expediente
@@ -75,25 +75,25 @@ public class Alumno implements Serializable {
 
 
 	public String getLocalidad() {
-		return localidad;
+		return Localidad;
 	}
 
 
 
 	public void setLocalidad(String localidad) {
-		this.localidad = localidad;
+		this.Localidad = localidad;
 	}
 
 
 
 	public String getProvincia() {
-		return provincia;
+		return Provincia;
 	}
 
 
 
 	public void setProvincia(String provincia) {
-		this.provincia = provincia;
+		this.Provincia = provincia;
 	}
 
 
@@ -197,8 +197,8 @@ public class Alumno implements Serializable {
 		result = prime * result + ((Nombre == null) ? 0 : Nombre.hashCode());
 		result = prime * result + ((Telefono == null) ? 0 : Telefono.hashCode());
 		result = prime * result + ((expedientes == null) ? 0 : expedientes.hashCode());
-		result = prime * result + ((localidad == null) ? 0 : localidad.hashCode());
-		result = prime * result + ((provincia == null) ? 0 : provincia.hashCode());
+		result = prime * result + ((Localidad == null) ? 0 : Localidad.hashCode());
+		result = prime * result + ((Provincia == null) ? 0 : Provincia.hashCode());
 		return result;
 	}
 
@@ -272,15 +272,15 @@ public class Alumno implements Serializable {
 				return false;
 		} else if (!expedientes.equals(other.expedientes))
 			return false;
-		if (localidad == null) {
-			if (other.localidad != null)
+		if (Localidad == null) {
+			if (other.Localidad != null)
 				return false;
-		} else if (!localidad.equals(other.localidad))
+		} else if (!Localidad.equals(other.Localidad))
 			return false;
-		if (provincia == null) {
-			if (other.provincia != null)
+		if (Provincia == null) {
+			if (other.Provincia != null)
 				return false;
-		} else if (!provincia.equals(other.provincia))
+		} else if (!Provincia.equals(other.Provincia))
 			return false;
 		return true;
 	}
@@ -291,7 +291,7 @@ public class Alumno implements Serializable {
 		return "Alumno [ID=" + ID + ", DNI=" + DNI + ", Nombre=" + Nombre + ", Apellido1=" + Apellido1 + ", Apellido2="
 				+ Apellido2 + ", Email_institucional=" + Email_institucional + ", Email_personal=" + Email_personal
 				+ ", Telefono=" + Telefono + ", Movil=" + Movil + ", Direccion=" + Direccion + ", Codigo_postal="
-				+ Codigo_postal + ", localidad=" + localidad + ", provincia=" + provincia + ", expedientes="
+				+ Codigo_postal + ", localidad=" + Localidad + ", provincia=" + Provincia + ", expedientes="
 				+ expedientes + "]";
 	}
 	
