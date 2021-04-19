@@ -5,6 +5,8 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import es.uma.informatica.ejb.proyecto.excepciones.AsignaturaNoEncontradaException;
+import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.jpa.proyecto.Asignaturas;
 
 @Stateless
@@ -15,7 +17,7 @@ public class AsignaturasEJB implements GestionAsignaturas{
 	private EntityManager em;
 	
 	@Override
-	public Asignaturas obtenerAsignatura (Integer referencia) throws AsignaturaNoEcontradaException{
+	public Asignaturas obtenerAsignatura (Integer referencia) throws SecretariaException{
 		Asignaturas asignaturaEntity = em.find(Asignaturas.class, referencia);
 		if(asignaturaEntity==null) {
 			throw new AsignaturaNoEncontradaException();
@@ -24,7 +26,7 @@ public class AsignaturasEJB implements GestionAsignaturas{
 	}
 	
 	@Override
-	public void actualizarAsignatura (Integer referencia, Asignaturas asig) throws AsignaturaNoEncontradaException{
+	public void actualizarAsignatura (Integer referencia, Asignaturas asig) throws SecretariaException{
 		Asignaturas asignaturaEntity = em.find(Asignaturas.class, referencia);
 		if(asignaturaEntity==null) {
 			throw new AsignaturaNoEncontradaException();

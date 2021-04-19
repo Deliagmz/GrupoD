@@ -1,5 +1,7 @@
 package es.uma.informatica.ejb.proyecto;
 
+import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
+import es.uma.informatica.jpa.proyecto.Alumno;
 
 public interface GestionAlumnos {
 	
