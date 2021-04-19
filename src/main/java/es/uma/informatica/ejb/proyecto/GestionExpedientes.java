@@ -2,6 +2,8 @@ package es.uma.informatica.ejb.proyecto;
 
 import javax.ejb.Local;
 
+import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
+
 @Local
 public interface GestionExpedientes {
 	

@@ -3,6 +3,7 @@ package es.uma.informatica.ejb.proyecto;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import es.uma.informatica.ejb.proyecto.excepciones.TitulacionNoEncontradaException;
 import es.uma.informatica.jpa.proyecto.Titulacion;
 
 public class TitulacionEJB implements GestionTitulacion{
