@@ -36,6 +36,11 @@ public class Encuesta implements Serializable {
 	public Encuesta() {
 		super();
 	}
+	
+	public Encuesta(Timestamp f_d_e, Expedientes e) {
+		fecha_de_envio = f_d_e;
+		expediente = e;
+	}
 
 	public Timestamp getFecha_de_envio() {
 		return fecha_de_envio;
