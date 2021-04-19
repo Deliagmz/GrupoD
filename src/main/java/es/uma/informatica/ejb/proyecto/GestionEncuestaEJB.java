@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 
 import javax.ejb.Local;
 
+import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.jpa.proyecto.Encuesta;
 import es.uma.informatica.jpa.proyecto.Expedientes;
 import es.uma.informatica.jpa.proyecto.Encuesta.EncuestaId;

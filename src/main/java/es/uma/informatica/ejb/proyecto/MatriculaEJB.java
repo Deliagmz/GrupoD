@@ -1,10 +1,9 @@
 package es.uma.informatica.ejb.proyecto;
 
-import java.util.ArrayList;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import es.uma.informatica.ejb.proyecto.excepciones.MatriculaNoEncontradaException;
 import es.uma.informatica.jpa.proyecto.Matricula;
 import es.uma.informatica.jpa.proyecto.Matricula.MatriculaId;
 

@@ -7,6 +7,8 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import es.uma.informatica.ejb.proyecto.excepciones.EncuestaNoEncontradaException;
+import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.jpa.proyecto.Encuesta;
 import es.uma.informatica.jpa.proyecto.Expedientes;
 import es.uma.informatica.jpa.proyecto.Encuesta.EncuestaId;
@@ -20,7 +22,7 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 	private EntityManager em;
 
 	@Override
-	public String leerEncuesta(EncuestaId encuestaID) throws EncuestaNoEncontradaException {
+	public String leerEncuesta(EncuestaId encuestaID) throws SecretariaException {
 		// TODO Auto-generated method stub
 		Encuesta encuestaEntity = em.find(Encuesta.class, encuestaID);
 		
@@ -40,7 +42,7 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 			throw new EncuestaIdNoValidoException();
 		}
 		
-		Encuesta encuesta;
+		Encuesta encuesta = new Encuesta();
 		
 		encuesta.setFecha_de_envio(f_d_e);
 		encuesta.setExpediente(e);
