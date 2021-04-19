@@ -78,7 +78,11 @@ public class Alumno implements Serializable {
 
 
 	public void setLocalidad(String localidad) {
+
 		Localidad = localidad;
+
+		this.Localidad = localidad;
+
 	}
 
 
@@ -89,6 +93,7 @@ public class Alumno implements Serializable {
 
 	public void setProvincia(String provincia) {
 		Provincia = provincia;
+		this.Provincia = provincia;
 	}
 
 
@@ -192,7 +197,10 @@ public class Alumno implements Serializable {
 		result = prime * result + ((Nombre == null) ? 0 : Nombre.hashCode());
 		result = prime * result + ((Provincia == null) ? 0 : Provincia.hashCode());
 		result = prime * result + ((Telefono == null) ? 0 : Telefono.hashCode());
-		return result;
+		result = prime * result + ((expedientes == null) ? 0 : expedientes.hashCode());
+		result = prime * result + ((Localidad == null) ? 0 : Localidad.hashCode());
+		result = prime * result + ((Provincia == null) ? 0 : Provincia.hashCode());
+	return result;
 	}
 
 
@@ -270,6 +278,22 @@ public class Alumno implements Serializable {
 				return false;
 		} else if (!Telefono.equals(other.Telefono))
 			return false;
+
+		if (expedientes == null) {
+			if (other.expedientes != null)
+				return false;
+		} else if (!expedientes.equals(other.expedientes))
+			return false;
+		if (Localidad == null) {
+			if (other.Localidad != null)
+				return false;
+		} else if (!Localidad.equals(other.Localidad))
+			return false;
+		if (Provincia == null) {
+			if (other.Provincia != null)
+				return false;
+		} else if (!Provincia.equals(other.Provincia))
+			return false;
 		return true;
 	}
 
@@ -279,7 +303,11 @@ public class Alumno implements Serializable {
 		return "Alumno [ID=" + ID + ", DNI=" + DNI + ", Nombre=" + Nombre + ", Apellido1=" + Apellido1 + ", Apellido2="
 				+ Apellido2 + ", Email_institucional=" + Email_institucional + ", Email_personal=" + Email_personal
 				+ ", Telefono=" + Telefono + ", Movil=" + Movil + ", Direccion=" + Direccion + ", Codigo_postal="
-				+ Codigo_postal + ", Localidad=" + Localidad + ", Provincia=" + Provincia + "]";
+
+				+ Codigo_postal + ", Localidad=" + Localidad + ", Provincia=" + Provincia + "]"
+		+ Codigo_postal + ", localidad=" + Localidad + ", provincia=" + Provincia + ", expedientes="
+				+ expedientes + "]";
+
 	}
 	
 	
