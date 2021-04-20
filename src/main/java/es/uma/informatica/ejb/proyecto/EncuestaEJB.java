@@ -45,7 +45,7 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 		
 		Encuesta encuesta = new Encuesta(f_d_e,e);
 		
-		em.merge(encuesta);
+		em.persist(encuesta);
 	}
 
 	@Override

@@ -53,8 +53,8 @@ public class EncuestaTest {
 	@Test
 	public void testCrearEncuesta() {
 		
-		Timestamp t = java.sql.Timestamp.valueOf("2021-09-23 10:10:10.0");
-		Long nExp = 123456789L;
+		Timestamp t = java.sql.Timestamp.valueOf("2021-10-23 10:10:10.0");
+		Long nExp = 123456889L;
 		Expedientes exp = new Expedientes();
 		exp.setNum_Expediente(nExp);
 		
