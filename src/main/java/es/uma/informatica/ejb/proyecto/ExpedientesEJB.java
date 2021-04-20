@@ -1,5 +1,7 @@
 package es.uma.informatica.ejb.proyecto;
 
+import java.util.logging.Logger;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -10,6 +12,8 @@ import es.uma.informatica.jpa.proyecto.Expedientes;
 
 @Stateless
 public class ExpedientesEJB implements GestionExpedientes{
+	
+	private static final Logger LOG = Logger.getLogger(ExpedientesEJB.class.getCanonicalName());
 	
 	@PersistenceContext(name="Secretaria")
 	private EntityManager em;
