@@ -115,10 +115,9 @@ public class ExpedientesTest {
 	@Test
 	public void testCambiarNotaMediaExpedienteNoEncontradoException() {
 		final long exp = 000000000L;
-		final double notaM = 7.7;
 		
 		try {
-			double notaMedia = gestionExpedientes.leerNotaMedia(exp);
+			gestionExpedientes.borrarNotaMedia(exp);
 		}catch(ExpedienteNoEncontradoException e) {
 			//ok
 		}catch(SecretariaException e) {
