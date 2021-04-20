@@ -19,7 +19,7 @@ import es.uma.informatica.ejb.proyecto.GestionAsignaturas;
 import es.uma.informatica.ejb.proyecto.excepciones.AsignaturaNoEncontradaException;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.jpa.proyecto.Asignaturas;
-import es.uma.informatica.sii.ejb.practica.BaseDatos;
+
 
 
 

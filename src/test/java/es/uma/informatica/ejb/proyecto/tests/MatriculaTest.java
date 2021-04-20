@@ -1,7 +1,8 @@
 package es.uma.informatica.ejb.proyecto.tests;
 
 import static org.junit.Assert.fail;
-
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import java.util.List;
 import java.util.Properties;
 import java.util.logging.Logger;

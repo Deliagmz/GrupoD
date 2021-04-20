@@ -1,9 +1,8 @@
 package es.uma.informatica.ejb.proyecto.tests;
 
 import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
-
+import static org.junit.Assert.fail;
+import static org.junit.Assert.assertEquals;
 import java.util.Properties;
 import java.util.logging.Logger;
 

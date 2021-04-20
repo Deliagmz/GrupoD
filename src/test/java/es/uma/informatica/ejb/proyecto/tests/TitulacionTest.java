@@ -2,6 +2,7 @@ package es.uma.informatica.ejb.proyecto.tests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 import java.util.Properties;
@@ -57,7 +58,8 @@ private static final Logger LOG = Logger.getLogger(TitulacionEJB.class.getCanoni
 	public void testObtenerTitulacion() {
 		try {
 			Titulacion titulacion =gestionTitulacion.obtenerTitulacion(1234);
-			assertEquals(titulacion.getCreditos(),245);
+			Integer codigo=1234;
+			assertEquals(titulacion.getCodigo(),codigo);
 		}catch(SecretariaException e) {
 			fail("No deberia lanzar excepcion");
 		}
@@ -90,7 +92,7 @@ private static final Logger LOG = Logger.getLogger(TitulacionEJB.class.getCanoni
 		
 		try {
 			Titulacion titulacionActualizada =gestionTitulacion.obtenerTitulacion(1234);
-			assertEquals(titulacionActualizada.getCreditos(),145);
+			assertEquals(titulacionActualizada.getCreditos(),(Integer)145);
 			assertEquals(titulacionActualizada.getNombre(),"Computadores");
 		} catch (SecretariaException e) {
 			fail("No deberia lanzar excepcion");
