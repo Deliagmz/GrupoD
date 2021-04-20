@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa.proyecto");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Secretaria");
         EntityManager em = emf.createEntityManager();
         em.close();
         emf.close();

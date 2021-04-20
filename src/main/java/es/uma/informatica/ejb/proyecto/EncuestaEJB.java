@@ -23,7 +23,7 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 	private EntityManager em;
 
 	@Override
-	public String leerEncuesta(EncuestaId encuestaID) throws EncuestaNoEncontradaException {
+	public Encuesta leerEncuesta(EncuestaId encuestaID) throws EncuestaNoEncontradaException {
 		// TODO Auto-generated method stub
 		Encuesta encuestaEntity = em.find(Encuesta.class, encuestaID);
 		
@@ -31,25 +31,26 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 			throw new EncuestaNoEncontradaException();
 		}
 		
-		String encuesta = encuestaEntity.getFecha_de_envio().toString() + encuestaEntity.getExpediente();
+
 		
-		return encuesta;
+		return encuestaEntity;
 	}
 
 	@Override
-	public void crearEncuesta(Timestamp f_d_e, Expedientes e) throws EncuestaIdNoValidoException {
+	public void crearEncuesta(Timestamp f_d_e, Long e) throws EncuestaIdNoValidoException {
 		// TODO Auto-generated method stub
 		if(f_d_e == null || e == null) {
 			throw new EncuestaIdNoValidoException();
 		}
 		
-		Encuesta encuesta = new Encuesta(f_d_e,e);
+		Encuesta encuesta = new Encuesta();
+		encuesta.setFecha_de_envio(f_d_e);
 		
 		em.persist(encuesta);
 	}
 
 	@Override
-	public void actualizarEncuesta(EncuestaId encuestaID,Timestamp f_d_e, Expedientes e) throws EncuestaNoEncontradaException {
+	public void actualizarEncuesta(EncuestaId encuestaID,Timestamp f_d_e, Long e) throws EncuestaNoEncontradaException {
 		// TODO Auto-generated method stub
 		Encuesta encuestaEntity = em.find(Encuesta.class, encuestaID);
 		
@@ -58,7 +59,7 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 		}
 		
 		encuestaEntity.setFecha_de_envio(f_d_e);
-		encuestaEntity.setExpediente(e);
+		
 		em.persist(encuestaEntity);
 	}
 

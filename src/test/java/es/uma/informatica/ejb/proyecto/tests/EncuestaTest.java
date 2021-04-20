@@ -55,13 +55,11 @@ public class EncuestaTest {
 		
 		Timestamp t = java.sql.Timestamp.valueOf("2021-10-23 10:10:10.0");
 		Long nExp = 123456889L;
-		Expedientes exp = new Expedientes();
-		exp.setNum_Expediente(nExp);
 		
-		EncuestaId encuestaID = new EncuestaId(t,exp);
+		EncuestaId encuestaID = new EncuestaId(t,nExp);
 		
 		try {
-			gestionEncuesta.crearEncuesta(t, exp);
+			gestionEncuesta.crearEncuesta(t, nExp);
 			String encuesta = gestionEncuesta.leerEncuesta(encuestaID);
 			
 		}catch(EncuestaIdNoValidoException e) {
