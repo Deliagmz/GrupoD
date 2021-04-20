@@ -23,7 +23,7 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 	private EntityManager em;
 
 	@Override
-	public String leerEncuesta(EncuestaId encuestaID) throws SecretariaException {
+	public String leerEncuesta(EncuestaId encuestaID) throws EncuestaNoEncontradaException {
 		// TODO Auto-generated method stub
 		Encuesta encuestaEntity = em.find(Encuesta.class, encuestaID);
 		
@@ -43,10 +43,7 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 			throw new EncuestaIdNoValidoException();
 		}
 		
-		Encuesta encuesta = new Encuesta();
-		
-		encuesta.setFecha_de_envio(f_d_e);
-		encuesta.setExpediente(e);
+		Encuesta encuesta = new Encuesta(f_d_e,e);
 		
 		em.merge(encuesta);
 	}

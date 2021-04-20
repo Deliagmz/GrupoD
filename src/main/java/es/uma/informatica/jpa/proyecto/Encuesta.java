@@ -15,8 +15,14 @@ import javax.persistence.*;
 public class Encuesta implements Serializable {
 	
 	public static class EncuestaId implements Serializable{
+		
 		private Timestamp fecha_de_envio;
-		private Long expediente;
+		private Expedientes expediente;
+		public EncuestaId(Timestamp t, Expedientes nExp) {
+			// TODO Auto-generated constructor stub
+			fecha_de_envio = t;
+			expediente = nExp;
+		}
 	}
 
 	@Id
