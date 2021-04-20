@@ -16,14 +16,18 @@ public class Encuesta implements Serializable {
 	
 	public static class EncuestaId implements Serializable{
 		
-		private Timestamp fecha_de_envio;
-		private Long expediente;
+		private Timestamp fecha;
+		private Long expedientes;
 		public EncuestaId(Timestamp t, Long nExp) {
 			// TODO Auto-generated constructor stub
-			fecha_de_envio = t;
-			expediente = nExp;
+			fecha = t;
+			expedientes = nExp;
 		}
 	}
+	
+	
+	private Long ex;
+
 
 	@Id
 	private Timestamp fecha_de_envio;
@@ -41,6 +45,12 @@ public class Encuesta implements Serializable {
 	
 	public Encuesta() {
 		super();
+	}
+	
+	public Encuesta(EncuestaId enc) {
+		this.fecha_de_envio = enc.fecha;
+		this.ex = enc.expedientes;
+		
 	}
 	
 

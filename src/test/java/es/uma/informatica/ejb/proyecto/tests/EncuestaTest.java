@@ -60,7 +60,7 @@ public class EncuestaTest {
 		
 		try {
 			gestionEncuesta.crearEncuesta(t, nExp);
-			String encuesta = gestionEncuesta.leerEncuesta(encuestaID);
+			Encuesta encuesta = gestionEncuesta.leerEncuesta(encuestaID);
 			
 		}catch(EncuestaIdNoValidoException e) {
 			fail("Los valores para encuestaID no son validos");
@@ -74,14 +74,13 @@ public class EncuestaTest {
 		try {
 			Timestamp t = java.sql.Timestamp.valueOf("2021-09-23 10:10:10.0");
 			Long nExp = 123456789L;
-			Expedientes exp = new Expedientes();
-			exp.setNum_Expediente(nExp);
 			
-			EncuestaId encuestaID = new EncuestaId(t,exp);
-			String encuesta = gestionEncuesta.leerEncuesta(encuestaID);
+			
+			EncuestaId encuestaID = new EncuestaId(t,nExp);
+			Encuesta encuesta = gestionEncuesta.leerEncuesta(encuestaID);
 			
 			assertEquals(
-					 "Encuesta [fecha_de_envio=" + t + ", expediente=" + exp + "]", encuesta);
+					 "Encuesta [fecha_de_envio=" + t + ", expediente=" + nExp + "]", encuesta);
 			
 		}catch(SecretariaException e) {
 			fail("no deberia lanzar excepcion");
@@ -93,12 +92,11 @@ public class EncuestaTest {
 		try {
 			Timestamp t = java.sql.Timestamp.valueOf("2009-09-23 10:10:10.0");
 			Long nExp = 123456789L;
-			Expedientes exp = new Expedientes();
-			exp.setNum_Expediente(nExp);
 			
-			EncuestaId encuestaID = new EncuestaId(t,exp);
 			
-			String encuesta = gestionEncuesta.leerEncuesta(encuestaID);
+			EncuestaId encuestaID = new EncuestaId(t,nExp);
+			
+			Encuesta encuesta = gestionEncuesta.leerEncuesta(encuestaID);
 			
 			fail("debe lanzar excepcion de no encontrar la encuesta");
 			
@@ -114,25 +112,22 @@ public class EncuestaTest {
 		
 		Timestamp t = java.sql.Timestamp.valueOf("2021-09-23 10:10:10.0");
 		Long nExp = 123456789L;
-		Expedientes exp = new Expedientes();
-		exp.setNum_Expediente(nExp);
 		
-		EncuestaId encuestaID = new EncuestaId(t,exp);
+		
+		EncuestaId encuestaID = new EncuestaId(t,nExp);
 		
 		Timestamp t1 = java.sql.Timestamp.valueOf("2021-09-23 10:10:10.0");
 		Long nExp1 = 113456789L;
-		Expedientes exp1 = new Expedientes();
-		exp1.setNum_Expediente(nExp1);
 		
-		EncuestaId encuestaID1 = new EncuestaId(t1,exp1);
+		EncuestaId encuestaID1 = new EncuestaId(t1,nExp1);
 		
 		try {
-			gestionEncuesta.actualizarEncuesta(encuestaID, t1, exp1);
+			gestionEncuesta.actualizarEncuesta(encuestaID, t1, nExp1);
 			
-			String encuesta = gestionEncuesta.leerEncuesta(encuestaID1);
+			Encuesta encuesta = gestionEncuesta.leerEncuesta(encuestaID1);
 			
 			assertEquals(
-					 "Encuesta [fecha_de_envio=" + t1 + ", expediente=" + exp1 + "]", encuesta);
+					 "Encuesta [fecha_de_envio=" + t1 + ", expediente=" + nExp1 + "]", encuesta);
 			
 		}catch(SecretariaException e) {
 			fail("no deberia lanzar excepcion");
@@ -145,21 +140,19 @@ public class EncuestaTest {
 		
 		Timestamp t = java.sql.Timestamp.valueOf("2021-09-23 10:10:10.0");
 		Long nExp = 123457789L;
-		Expedientes exp = new Expedientes();
-		exp.setNum_Expediente(nExp);
 		
-		EncuestaId encuestaID = new EncuestaId(t,exp);
+		
+		EncuestaId encuestaID = new EncuestaId(t,nExp);
 		
 		Timestamp t1 = java.sql.Timestamp.valueOf("2021-09-23 10:10:10.0");
 		Long nExp1 = 113456789L;
-		Expedientes exp1 = new Expedientes();
-		exp1.setNum_Expediente(nExp1);
+		
 		
 		try {
-			gestionEncuesta.actualizarEncuesta(encuestaID, t1, exp1);
+			gestionEncuesta.actualizarEncuesta(encuestaID, t1, nExp1);
 			
 		}catch(EncuestaNoEncontradaException e) {
-			//ok
+			//OK
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			fail("deberia lanzar excepcion encuesta no encontrada");
@@ -172,19 +165,18 @@ public class EncuestaTest {
 
 		Timestamp t = java.sql.Timestamp.valueOf("2021-09-23 10:10:10.0");
 		Long nExp = 123457789L;
-		Expedientes exp = new Expedientes();
-		exp.setNum_Expediente(nExp);
 		
-		EncuestaId encuestaID = new EncuestaId(t,exp);
+		
+		EncuestaId encuestaID = new EncuestaId(t,nExp);
 		
         try {
             
         	gestionEncuesta.borrarEncuesta(encuestaID);
         	
-        	String encuesta = gestionEncuesta.leerEncuesta(encuestaID);
+        	Encuesta encuesta = gestionEncuesta.leerEncuesta(encuestaID);
         	
         }catch(EncuestaNoEncontradaException e){
-            //ok
+            //OK
         }catch(SecretariaException e){
             fail("Deberia lanzar encuesta no encontrada exception");
         }
