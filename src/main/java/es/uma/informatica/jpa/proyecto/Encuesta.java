@@ -23,6 +23,12 @@ public class Encuesta implements Serializable {
 			fecha_de_envio = t;
 			expediente = nExp;
 		}
+		public void setFecha_de_envio(Timestamp fecha_de_envio) {
+			this.fecha_de_envio = fecha_de_envio;
+		}
+		public void setExpediente(Long expediente) {
+			this.expediente=expediente;
+		}
 	}
 
 	@Id

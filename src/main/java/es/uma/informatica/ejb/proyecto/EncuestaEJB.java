@@ -42,6 +42,9 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 		}
 		
 		Encuesta encuesta = new Encuesta();
+		encuesta.setFecha_de_envio(f_d_e);
+		
+		
 		
 		em.persist(encuesta);
 	}
