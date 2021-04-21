@@ -25,26 +25,26 @@ public class AlumnoTest {
 	private static final Logger LOG = Logger.getLogger(AlumnoTest.class.getCanonicalName());
 	
 	private static final String ALUMNOS_EJB = "java:global/classes/AlumnosEJB";
-	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
-	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
+//	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
+//	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "SecretariaTest";
 	
-	private static EJBContainer ejbContainer;
-	private static Context ctx;
+//	public static EJBContainer ejbContainer;
+//	public static Context ctx;
 	
 	private GestionAlumnos gestionAlumnos;
 	
-	@BeforeClass
-	public static void setUpClass() {
-		Properties properties = new Properties();
-		properties.setProperty(GLASSFISH_CONFIGI_FILE_PROPERTY, CONFIG_FILE);
-		ejbContainer = EJBContainer.createEJBContainer(properties);
-		ctx = ejbContainer.getContext();
-	}
+//	@BeforeClass
+//	public static void setUpClass() {
+//		Properties properties = new Properties();
+//		properties.setProperty(GLASSFISH_CONFIGI_FILE_PROPERTY, CONFIG_FILE);
+//		ejbContainer = EJBContainer.createEJBContainer(properties);
+//		ctx = ejbContainer.getContext();
+//	}
 	
 	@Before
 	public void setup() throws NamingException  {
-		gestionAlumnos = (GestionAlumnos) ctx.lookup(ALUMNOS_EJB);
+		gestionAlumnos = (GestionAlumnos) SuiteTest.ctx.lookup(ALUMNOS_EJB);
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 	
@@ -167,12 +167,12 @@ public class AlumnoTest {
 	}
 	
 	
-	@AfterClass
-	public static void tearDownClass() {
-		if (ejbContainer != null) {
-			ejbContainer.close();
-		}
-	}
+//	@AfterClass
+//	public static void tearDownClass() {
+//		if (ejbContainer != null) {
+//			ejbContainer.close();
+//		}
+//	}
 	
 	
 

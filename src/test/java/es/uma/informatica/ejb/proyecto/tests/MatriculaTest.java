@@ -28,26 +28,26 @@ public class MatriculaTest {
 	
 
 	private static final String MATRICULA_EJB = "java:global/classes/MatriculaEJB";
-	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
-	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
+//	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
+//	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "SecretariaTest";
 	
-	private static EJBContainer ejbContainer;
-	private static Context ctx;
+//	private static EJBContainer ejbContainer;
+//	private static Context ctx;
 	
 	private GestionMatricula gestionMatricula;
 	
-	@BeforeClass
-	public static void setUpClass() {
-		Properties properties = new Properties();
-		properties.setProperty(GLASSFISH_CONFIGI_FILE_PROPERTY, CONFIG_FILE);
-		ejbContainer = EJBContainer.createEJBContainer(properties);
-		ctx = ejbContainer.getContext();
-	}
-	
+//	@BeforeClass
+//	public static void setUpClass() {
+//		Properties properties = new Properties();
+//		properties.setProperty(GLASSFISH_CONFIGI_FILE_PROPERTY, CONFIG_FILE);
+//		ejbContainer = EJBContainer.createEJBContainer(properties);
+//		ctx = ejbContainer.getContext();
+//	}
+//	
 	@Before
 	public void setup() throws NamingException  {
-		gestionMatricula = (GestionMatricula) ctx.lookup(MATRICULA_EJB);
+		gestionMatricula = (GestionMatricula) SuiteTest.ctx.lookup(MATRICULA_EJB);
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 	
@@ -75,11 +75,11 @@ public class MatriculaTest {
 		}
 	}
 	
-	@AfterClass
-	public static void tearDownClass() {
-		if (ejbContainer != null) {
-			ejbContainer.close();
-		}
-	}
+//	@AfterClass
+//	public static void tearDownClass() {
+//		if (ejbContainer != null) {
+//			ejbContainer.close();
+//		}
+//	}
 
 }

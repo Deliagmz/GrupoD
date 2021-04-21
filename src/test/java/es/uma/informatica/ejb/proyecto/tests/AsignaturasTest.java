@@ -27,26 +27,26 @@ public class AsignaturasTest {
 	private static final Logger LOG = Logger.getLogger(AsignaturasTest.class.getCanonicalName());
 	
 	private static final String ASIGNATURAS_EJB = "java:global/classes/AsignaturasEJB";
-	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
-	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
+//	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
+//	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "SecretariaTest";
 	
-	private static EJBContainer ejbContainer;
-	private static Context ctx;
-	
+//	private static EJBContainer ejbContainer;
+//	private static Context ctx;
+//	
 	private GestionAsignaturas gestionAsignaturas;
 	
-	@BeforeClass
-	public static void setUpClass() {
-		Properties properties = new Properties();
-		properties.setProperty(GLASSFISH_CONFIGI_FILE_PROPERTY, CONFIG_FILE);
-		ejbContainer = EJBContainer.createEJBContainer(properties);
-		ctx = ejbContainer.getContext();
-	}
+//	@BeforeClass
+//	public static void setUpClass() {
+//		Properties properties = new Properties();
+//		properties.setProperty(GLASSFISH_CONFIGI_FILE_PROPERTY, CONFIG_FILE);
+//		ejbContainer = EJBContainer.createEJBContainer(properties);
+//		ctx = ejbContainer.getContext();
+//	}
 	
 	@Before
 	public void setup() throws NamingException  {
-		gestionAsignaturas = (GestionAsignaturas) ctx.lookup(ASIGNATURAS_EJB);
+		gestionAsignaturas = (GestionAsignaturas) SuiteTest.ctx.lookup(ASIGNATURAS_EJB);
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 	

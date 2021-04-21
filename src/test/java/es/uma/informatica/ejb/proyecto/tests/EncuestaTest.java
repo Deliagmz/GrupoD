@@ -27,26 +27,26 @@ import es.uma.informatica.jpa.proyecto.Expedientes;
 public class EncuestaTest {
 	
 	private static final String ENCUESTA_EJB = "java:global/classes/EncuestaEJB";
-	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
-	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
+//	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
+//	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "SecretariaTest";
 	
-	private static EJBContainer ejbContainer;
-	private static Context ctx;
+//	private static EJBContainer ejbContainer;
+//	private static Context ctx;
 	
 	private GestionEncuestaEJB gestionEncuesta;
 	
-	@BeforeClass
-	public static void setUpClass() {
-		Properties properties = new Properties();
-		properties.setProperty(GLASSFISH_CONFIGI_FILE_PROPERTY, CONFIG_FILE);
-		ejbContainer = EJBContainer.createEJBContainer(properties);
-		ctx = ejbContainer.getContext();
-	}
+//	@BeforeClass
+//	public static void setUpClass() {
+//		Properties properties = new Properties();
+//		properties.setProperty(GLASSFISH_CONFIGI_FILE_PROPERTY, CONFIG_FILE);
+//		ejbContainer = EJBContainer.createEJBContainer(properties);
+//		ctx = ejbContainer.getContext();
+//	}
 	
 	@Before
 	public void setup() throws NamingException  {
-		gestionEncuesta = (GestionEncuestaEJB) ctx.lookup(ENCUESTA_EJB);
+		gestionEncuesta = (GestionEncuestaEJB) SuiteTest.ctx.lookup(ENCUESTA_EJB);
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 	
