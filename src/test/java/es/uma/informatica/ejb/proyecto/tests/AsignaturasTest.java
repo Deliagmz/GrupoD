@@ -19,6 +19,7 @@ import es.uma.informatica.ejb.proyecto.GestionAsignaturas;
 import es.uma.informatica.ejb.proyecto.excepciones.AsignaturaNoEncontradaException;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.jpa.proyecto.Asignaturas;
+import es.uma.informatica.sii.anotaciones.Requisitos;
 
 
 
@@ -50,7 +51,7 @@ public class AsignaturasTest {
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
 	
-	
+	@Requisitos({"RF5"})
 	@Test
 	public void testObtenerAsignaturas() {
 		try {
@@ -72,7 +73,7 @@ public class AsignaturasTest {
 			fail("Deberia lanzar excepcion de asignatura no encontrada");
 		}
 	}
-	
+	@Requisitos({"RF5"})
 	@Test
 	public void testActualizarAsignatura() {
 			
@@ -148,7 +149,7 @@ public class AsignaturasTest {
 			fail("Deberia lanzar excepcion de asignatura no encontrada");
 		}
 	}
-	
+	@Requisitos({"RF5"})
 	@Test
     public void testBorrarAsignatura() {
         try {

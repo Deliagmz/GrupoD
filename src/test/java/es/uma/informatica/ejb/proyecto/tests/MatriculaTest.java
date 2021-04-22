@@ -22,6 +22,7 @@ import es.uma.informatica.ejb.proyecto.excepciones.MatriculaNoEncontradaExceptio
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.jpa.proyecto.Matricula;
 import es.uma.informatica.jpa.proyecto.Matricula.MatriculaId;
+import es.uma.informatica.sii.anotaciones.Requisitos;
 
 public class MatriculaTest {
 	private static final Logger LOG = Logger.getLogger(MatriculaEJB.class.getCanonicalName());
@@ -50,7 +51,7 @@ public class MatriculaTest {
 		gestionMatricula = (GestionMatricula) SuiteTest.ctx.lookup(MATRICULA_EJB);
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
-	
+	@Requisitos({"RF9"})
 	@Test
 	public void testObtenerMatricula() {
 		try {

@@ -19,6 +19,7 @@ import es.uma.informatica.ejb.proyecto.GestionExpedientes;
 import es.uma.informatica.ejb.proyecto.excepciones.ExpedienteNoEncontradoException;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.jpa.proyecto.Expedientes;
+import es.uma.informatica.sii.anotaciones.Requisitos;
 
 
 
@@ -50,7 +51,7 @@ public class ExpedientesTest {
 		gestionExpedientes = (GestionExpedientes) SuiteTest.ctx.lookup(EXPEDIENTES_EJB);
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
-	
+	@Requisitos({"RF8"})
 	@Test
 	public void testLeerNotaMedia() {
 		try {
@@ -72,7 +73,7 @@ public class ExpedientesTest {
 			fail("Deberia lanzar excepcion de expediente no encontrado");
 		}
 	}
-	
+	@Requisitos({"RF8"})
 	@Test
 	public void testBorrarNotaMedia() {
 		try {
@@ -96,7 +97,7 @@ public class ExpedientesTest {
 			fail("Deberia lanzar excepcion de expediente no encontrado");
 		}
 	}
-	
+	@Requisitos({"RF8"})
 	@Test
 	public void testCambiarNotaMedia() {
 		final long exp = 123456789L;

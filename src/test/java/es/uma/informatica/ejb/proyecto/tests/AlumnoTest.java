@@ -4,22 +4,18 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import java.util.Properties;
 import java.util.logging.Logger;
 
-import javax.ejb.embeddable.EJBContainer;
-import javax.naming.Context;
 import javax.naming.NamingException;
 
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import es.uma.informatica.ejb.proyecto.GestionAlumnos;
 import es.uma.informatica.ejb.proyecto.excepciones.AlumnoNoEncontradoException;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.jpa.proyecto.Alumno;
+import es.uma.informatica.sii.anotaciones.Requisitos;
 
 public class AlumnoTest {
 	private static final Logger LOG = Logger.getLogger(AlumnoTest.class.getCanonicalName());
@@ -47,7 +43,7 @@ public class AlumnoTest {
 		gestionAlumnos = (GestionAlumnos) SuiteTest.ctx.lookup(ALUMNOS_EJB);
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
-	
+	@Requisitos({"RF4"})
 	@Test
 	public void testLecturaAlumno() {
 		try {
@@ -72,8 +68,8 @@ public class AlumnoTest {
 			fail("debera lanzar excepcion alumno no encontrado");
 		}
 	}
-	
-	
+	@Requisitos({"RF4"})
+	@Test
 	public void testActualizarAlumno() {
 		final Long ID = 213456789L;
 		
@@ -130,7 +126,7 @@ public class AlumnoTest {
 		}
 	}
 	
-	
+	@Requisitos({"RF4"})
 	@Test
 	public void testEliminarAlumno() {
 		try {

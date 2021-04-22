@@ -24,6 +24,7 @@ import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.ejb.proyecto.excepciones.TitulacionNoEncontradaException;
 import es.uma.informatica.jpa.proyecto.Matricula;
 import es.uma.informatica.jpa.proyecto.Matricula.MatriculaId;
+import es.uma.informatica.sii.anotaciones.Requisitos;
 import es.uma.informatica.jpa.proyecto.Titulacion;
 
 public class TitulacionTest {
@@ -53,7 +54,7 @@ private static final Logger LOG = Logger.getLogger(TitulacionEJB.class.getCanoni
 		gestionTitulacion= (GestionTitulacion) SuiteTest.ctx.lookup(TITULACION_EJB);
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
-	
+	@Requisitos({"RF6"})
 	@Test
 	public void testObtenerTitulacion() {
 		try {
@@ -76,7 +77,7 @@ private static final Logger LOG = Logger.getLogger(TitulacionEJB.class.getCanoni
 			fail("Deberia lanzar excepcion de titulacion no encontrada");
 		}
 	}
-	
+	@Requisitos({"RF6"})
 	@Test
 	public void testActualizarTitulacion() {
 		
@@ -116,7 +117,7 @@ private static final Logger LOG = Logger.getLogger(TitulacionEJB.class.getCanoni
 		}
 		
 	}
-	
+	@Requisitos({"RF6"})
 	@Test
 	public void testEliminarTitulacion() {
 		try {

@@ -21,6 +21,7 @@ import es.uma.informatica.ejb.proyecto.excepciones.EncuestaNoEncontradaException
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.jpa.proyecto.Encuesta;
 import es.uma.informatica.jpa.proyecto.Encuesta.EncuestaId;
+import es.uma.informatica.sii.anotaciones.Requisitos;
 import es.uma.informatica.jpa.proyecto.Expedientes;
 
 
@@ -49,7 +50,7 @@ public class EncuestaTest {
 		gestionEncuesta = (GestionEncuestaEJB) SuiteTest.ctx.lookup(ENCUESTA_EJB);
 		BaseDatos.inicializaBaseDatos(UNIDAD_PERSITENCIA_PRUEBAS);
 	}
-	
+	@Requisitos({"RF11"})
 	@Test
 	public void testCrearEncuesta() {
 		
@@ -68,7 +69,7 @@ public class EncuestaTest {
 			fail("no deberia dar error");
 		}
 	}
-	
+	@Requisitos({"RF11"})
 	@Test
 	public void testLeerEncuesta() {
 		try {
@@ -106,7 +107,7 @@ public class EncuestaTest {
 			fail("deberia lanzar encuesta no encontrada");
 		}
 	}
-	
+	@Requisitos({"RF11"})
 	@Test
 	public void testActualizarEncuesta() {
 		
@@ -159,7 +160,7 @@ public class EncuestaTest {
 		}
 		
 	}
-	
+	@Requisitos({"RF11"})
 	@Test
     public void testBorrarEncuesta() {
 
