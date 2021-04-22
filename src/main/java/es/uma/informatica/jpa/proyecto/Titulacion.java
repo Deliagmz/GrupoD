@@ -17,7 +17,7 @@ import javax.persistence.OneToMany;
  *
  */
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+
 public class Titulacion implements Serializable {
 
 	   

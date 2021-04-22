@@ -23,12 +23,7 @@ public class Encuesta implements Serializable {
 			fecha_de_envio = t;
 			expediente = nExp;
 		}
-		public void setFecha_de_envio(Timestamp fecha_de_envio) {
-			this.fecha_de_envio = fecha_de_envio;
-		}
-		public void setExpediente(Long expediente) {
-			this.expediente=expediente;
-		}
+		
 	}
 
 	@Id
@@ -49,10 +44,7 @@ public class Encuesta implements Serializable {
 		super();
 	}
 	
-//	public Encuesta(Timestamp f_d_e, Expedientes e) {
-//		fecha_de_envio = f_d_e;
-//		expediente = e;
-//	}
+
 
 	public Timestamp getFecha_de_envio() {
 		return fecha_de_envio;
@@ -69,7 +61,9 @@ public class Encuesta implements Serializable {
 	public void setExpediente(Expedientes expediente) {
 		this.expediente = expediente;
 	}
-
+	
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

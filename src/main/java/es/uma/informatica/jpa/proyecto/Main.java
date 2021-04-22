@@ -36,12 +36,12 @@ public class Main {
 		
 		em.persist(asignatura);
 		
-//		Titulacion titulacion = new Titulacion();
-//		titulacion.setCodigo(1234);
-//		titulacion.setCreditos(240);
-//		titulacion.setNombre("Informatica");
-//		
-//		em.persist(titulacion);
+		Titulacion titulacion = new Titulacion();
+		titulacion.setCodigo(1234);
+		titulacion.setCreditos(240);
+		titulacion.setNombre("Informatica");
+		
+		em.persist(titulacion);
 		
 		Expedientes expedientes = new Expedientes();
 		expedientes.setNum_Expediente(123456789L);
@@ -49,22 +49,23 @@ public class Main {
 		
 		em.persist(expedientes);
 		
-//		Encuesta encuesta = new Encuesta();
-//		
-//		Timestamp t = java.sql.Timestamp.valueOf("2021-09-23 10:10:10.0");
-//		encuesta.setFecha_de_envio(t);
-//		
-//		em.persist(encuesta);
+		Encuesta encuesta = new Encuesta();
 		
-//		Matricula matricula = new Matricula();
-//		matricula.setCurso_academico("1");
-//		matricula.setEstado("activo");
-//		Date fecha = java.sql.Date.valueOf("2021-09-23");
-//		matricula.setFecha_de_matricula(fecha);
-//
-//		
-//		
-//		em.persist(matricula);
+		Timestamp t = java.sql.Timestamp.valueOf("2021-09-23 10:10:10.0");
+		encuesta.setFecha_de_envio(t);
+		encuesta.setExpediente(expedientes);
+
+		em.persist(encuesta);
+		
+		Matricula matricula = new Matricula();
+		matricula.setCurso_academico("1");
+		matricula.setEstado("activo");
+		Date fecha = java.sql.Date.valueOf("2021-09-23");
+		matricula.setFecha_de_matricula(fecha);
+		matricula.setExpedientes(expedientes);
+		
+	
+		em.persist(matricula);
 		
 		
 		

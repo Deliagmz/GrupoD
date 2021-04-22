@@ -117,6 +117,15 @@ public class Matricula implements Serializable {
 	public void setListado_Asignaturas(List<Asignaturas> Listado_Asignaturas) {
 		this.Listado_Asignaturas = Listado_Asignaturas;
 	}
+	
+	
+	
+	public Expedientes getExpedientes() {
+		return expedientes;
+	}
+	public void setExpedientes(Expedientes expedientes) {
+		this.expedientes = expedientes;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;

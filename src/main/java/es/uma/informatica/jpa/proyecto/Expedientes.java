@@ -73,6 +73,12 @@ public class Expedientes implements Serializable {
 		this.Nota_Media_Provisional = Nota_Media_Provisional;
 	}
 	
+	public List<Encuesta> getEncuestas() {
+		return encuestas;
+	}
+	public void setEncuestas(List<Encuesta> encuestas) {
+		this.encuestas = encuestas;
+	}
 	public Double getCreditos_superados() {
 		return Creditos_superados;
 	}
