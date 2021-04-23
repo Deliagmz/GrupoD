@@ -1,18 +1,15 @@
 package es.uma.informatica.ejb.proyecto.tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import java.util.Properties;
 import java.util.logging.Logger;
 
-import javax.ejb.embeddable.EJBContainer;
-import javax.naming.Context;
 import javax.naming.NamingException;
 
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import es.uma.informatica.ejb.proyecto.GestionAsignaturas;
@@ -152,13 +149,15 @@ public class AsignaturasT {
 	@Requisitos({"RF5"})
 	@Test
     public void testBorrarAsignatura() {
-        try {
-            final Integer ref = 12345;
+		 final Integer ref = 12345;
+		 
+		try {
+			Asignaturas asig = gestionAsignaturas.obtenerAsignatura(ref);
             gestionAsignaturas.eliminarAsignatura(ref);
 
-            Asignaturas asig = gestionAsignaturas.obtenerAsignatura(ref);
+           
             
-            assertEquals(null, asig);
+            assertNull(asig);
         }catch(SecretariaException e){
             fail("No deberia lanzar la excepcion");
         }

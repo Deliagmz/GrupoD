@@ -46,11 +46,12 @@ public class AsignaturasEJB implements GestionAsignaturas{
 	
 	@Override
 	public void eliminarAsignatura(Integer referencia) throws AsignaturaNoEncontradaException{
-		Asignaturas asignaturaEntity = em.find(Asignaturas.class, referencia);
+		Asignaturas asignaturaEntity = em.find(Asignaturas.class,referencia);
 		if(asignaturaEntity==null) {
 			throw new AsignaturaNoEncontradaException();
 		}
 		em.remove(asignaturaEntity);
+		
 	}
 	
 	
