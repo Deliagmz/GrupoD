@@ -12,12 +12,12 @@ import es.uma.informatica.jpa.proyecto.Encuesta.EncuestaId;
 @Local
 public interface GestionEncuestaEJB {
 	
-	public Encuesta leerEncuesta(EncuestaId encuestaID) throws SecretariaException;
+	public Encuesta leerEncuesta(Encuesta encuesta) throws SecretariaException;
 	
-	public void crearEncuesta(Timestamp f_d_e, Long e) throws SecretariaException;
+	public void crearEncuesta(Timestamp f_d_e, Expedientes e) throws SecretariaException;
 	
-	public void actualizarEncuesta(EncuestaId encuestaID,Timestamp f_d_e, Long e) throws SecretariaException;
+	public void actualizarEncuesta(Encuesta encuesta,Timestamp f_d_e, Expedientes e) throws SecretariaException;
 	
-	public void borrarEncuesta(EncuestaId encuestaID) throws SecretariaException;
+	public void borrarEncuesta(Encuesta encuesta) throws SecretariaException;
 
 }

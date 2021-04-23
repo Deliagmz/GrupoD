@@ -7,12 +7,11 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import es.uma.informatica.ejb.proyecto.excepciones.EncuestaIdNoValidoException;
 import es.uma.informatica.ejb.proyecto.excepciones.EncuestaNoEncontradaException;
-import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
+import es.uma.informatica.ejb.proyecto.excepciones.EncuestaNoValidoException;
 import es.uma.informatica.jpa.proyecto.Encuesta;
-import es.uma.informatica.jpa.proyecto.Expedientes;
 import es.uma.informatica.jpa.proyecto.Encuesta.EncuestaId;
+import es.uma.informatica.jpa.proyecto.Expedientes;
 
 @Stateless
 public class EncuestaEJB implements GestionEncuestaEJB{
@@ -23,9 +22,9 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 	private EntityManager em;
 
 	@Override
-	public Encuesta leerEncuesta(EncuestaId encuestaID) throws EncuestaNoEncontradaException {
+	public Encuesta leerEncuesta(Encuesta encuesta) throws EncuestaNoEncontradaException {
 		// TODO Auto-generated method stub
-		Encuesta encuestaEntity = em.find(Encuesta.class, encuestaID);
+		Encuesta encuestaEntity = em.find(Encuesta.class, encuesta);
 		
 		if(encuestaEntity == null) {
 			throw new EncuestaNoEncontradaException();
@@ -35,38 +34,38 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 	}
 
 	@Override
-	public void crearEncuesta(Timestamp f_d_e, Long e) throws EncuestaIdNoValidoException {
+	public void crearEncuesta(Timestamp f_d_e, Expedientes e) throws EncuestaNoValidoException {
 		// TODO Auto-generated method stub
 		if(f_d_e == null || e == null) {
-			throw new EncuestaIdNoValidoException();
+			throw new EncuestaNoValidoException();
 		}
 		
 		Encuesta encuesta = new Encuesta();
 		encuesta.setFecha_de_envio(f_d_e);
-		
+		encuesta.setExpediente(e);
 		
 		
 		em.persist(encuesta);
 	}
 
 	@Override
-	public void actualizarEncuesta(EncuestaId encuestaID,Timestamp f_d_e, Long e) throws EncuestaNoEncontradaException {
+	public void actualizarEncuesta(Encuesta encuesta,Timestamp f_d_e, Expedientes e) throws EncuestaNoEncontradaException {
 		// TODO Auto-generated method stub
-		Encuesta encuestaEntity = em.find(Encuesta.class, encuestaID);
+		Encuesta encuestaEntity = em.find(Encuesta.class, encuesta);
 		
 		if(encuestaEntity == null) {
 			throw new EncuestaNoEncontradaException();
 		}
 		
 		encuestaEntity.setFecha_de_envio(f_d_e);
-		
+		encuestaEntity.setExpediente(e);
 		em.persist(encuestaEntity);
 	}
 
 	@Override
-	public void borrarEncuesta(EncuestaId encuestaID) throws EncuestaNoEncontradaException {
+	public void borrarEncuesta(Encuesta encuesta) throws EncuestaNoEncontradaException {
 		// TODO Auto-generated method stub
-		Encuesta encuestaEntity = em.find(Encuesta.class, encuestaID);
+		Encuesta encuestaEntity = em.find(Encuesta.class, encuesta);
 		
 		if(encuestaEntity == null) {
 			throw new EncuestaNoEncontradaException();

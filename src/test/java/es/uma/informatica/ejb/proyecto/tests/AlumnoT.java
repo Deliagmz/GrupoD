@@ -76,12 +76,14 @@ public class AlumnoT {
 		final String nombreAlumno = "Pepe";
 		final String apellido1 = "Garcia";
 		final String apellido2 = "Palotes";
+		final String email_inst = "pepe@uma.es";
 		
 		try {
 			Alumno alumno = gestionAlumnos.LecturaAlumno(ID);
 			alumno.setApellido1(apellido1);
 			alumno.setApellido2(apellido1);
 			alumno.setNombre(nombreAlumno);
+			alumno.setEmail_institucional(email_inst);
 			
 			gestionAlumnos.ActualizarAlumno(ID, alumno);
 			
@@ -96,6 +98,7 @@ public class AlumnoT {
 			assertTrue(nombreAlumno.compareTo(alumnoActualizado.getNombre())==0);
 			assertTrue(apellido1.compareTo(alumnoActualizado.getApellido1())==0);
 			assertTrue(apellido2.compareTo(alumnoActualizado.getApellido2())==0);
+			assertTrue(email_inst.compareTo(alumnoActualizado.getEmail_institucional())==0);
 		}catch(SecretariaException e) {
 			fail("No deberia lanzar excepcion");
 		}

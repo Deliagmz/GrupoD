@@ -55,7 +55,7 @@ public class ExpedientesT {
 	@Test
 	public void testLeerNotaMedia() {
 		try {
-			double NotaMedia = gestionExpedientes.leerNotaMedia(104101303L);
+			double NotaMedia = gestionExpedientes.leerNotaMedia(123456789L);
 			assertEquals(5,NotaMedia);
 		}catch(SecretariaException e){
 			fail("No deberia lanzar excepcion");

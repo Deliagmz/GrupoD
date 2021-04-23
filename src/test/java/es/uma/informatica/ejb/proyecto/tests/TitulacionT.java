@@ -31,7 +31,7 @@ public class TitulacionT {
 private static final Logger LOG = Logger.getLogger(TitulacionEJB.class.getCanonicalName());
 	
 
-	private static final String TITULACION_EJB = "java:global/classes/TitulacionJB";
+	private static final String TITULACION_EJB = "java:global/classes/TitulacionEJB";
 //	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
 //	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "SecretariaTest";

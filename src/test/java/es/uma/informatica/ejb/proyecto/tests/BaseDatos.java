@@ -30,6 +30,7 @@ public class BaseDatos {
 		alumno.setApellido1("luna");
 		alumno.setApellido2("sol");
 		alumno.setDNI("789456123X");
+		alumno.setEmail_institucional("paco@uma.es");
 		
 		em.persist(alumno);
 		
@@ -59,12 +60,14 @@ public class BaseDatos {
 		
 		Timestamp t = java.sql.Timestamp.valueOf("2021-09-23 10:10:10.0");
 		encuesta.setFecha_de_envio(t);
+		encuesta.setExpediente(expedientes);
 		
 		em.persist(encuesta);
 		
 		Matricula matricula = new Matricula();
 		matricula.setCurso_academico("1");
 		matricula.setEstado("activo");
+		matricula.setExpedientes(expedientes);
 		Date fecha = java.sql.Date.valueOf("2021-09-23");
 		matricula.setFecha_de_matricula(fecha);
 
