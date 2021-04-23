@@ -1,18 +1,14 @@
 package es.uma.informatica.ejb.proyecto.tests;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 import static org.junit.Assert.assertEquals;
-import java.util.Properties;
+import static org.junit.Assert.fail;
+
+import java.util.List;
 import java.util.logging.Logger;
 
-import javax.ejb.embeddable.EJBContainer;
-import javax.naming.Context;
 import javax.naming.NamingException;
 
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import es.uma.informatica.ejb.proyecto.GestionExpedientes;
@@ -56,7 +52,7 @@ public class ExpedientesT {
 	public void testLeerNotaMedia() {
 		try {
 			double NotaMedia = gestionExpedientes.leerNotaMedia(123456789L);
-			assertEquals(5,NotaMedia);
+			assertEquals(5.0,NotaMedia,0);
 		}catch(SecretariaException e){
 			fail("No deberia lanzar excepcion");
 		}
@@ -106,7 +102,7 @@ public class ExpedientesT {
 		try {
 			double NotaMedia = gestionExpedientes.leerNotaMedia(exp);
 			gestionExpedientes.cambiarNotaMedia(exp, notaM);
-			assertEquals(notaM, gestionExpedientes.leerNotaMedia(exp));
+			assertEquals(notaM, gestionExpedientes.leerNotaMedia(exp),0);
 		}catch(SecretariaException e) {
 			fail("Se lanza excepcion al actualizar");
 		}

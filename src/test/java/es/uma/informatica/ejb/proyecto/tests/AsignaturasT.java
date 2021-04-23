@@ -156,7 +156,9 @@ public class AsignaturasT {
             final Integer ref = 12345;
             gestionAsignaturas.eliminarAsignatura(ref);
 
-            assertEquals(null, gestionAsignaturas.obtenerAsignatura(ref));
+            Asignaturas asig = gestionAsignaturas.obtenerAsignatura(ref);
+            
+            assertEquals(null, asig);
         }catch(SecretariaException e){
             fail("No deberia lanzar la excepcion");
         }
