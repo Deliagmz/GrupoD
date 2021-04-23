@@ -27,7 +27,7 @@ import es.uma.informatica.jpa.proyecto.Matricula.MatriculaId;
 import es.uma.informatica.sii.anotaciones.Requisitos;
 import es.uma.informatica.jpa.proyecto.Titulacion;
 
-public class TitulacionTest {
+public class TitulacionT {
 private static final Logger LOG = Logger.getLogger(TitulacionEJB.class.getCanonicalName());
 	
 

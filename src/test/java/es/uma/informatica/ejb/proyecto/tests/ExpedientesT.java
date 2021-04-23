@@ -24,9 +24,9 @@ import es.uma.informatica.sii.anotaciones.Requisitos;
 
 
 
-public class ExpedientesTest {
+public class ExpedientesT {
 	
-	private static final Logger LOG = Logger.getLogger(ExpedientesTest.class.getCanonicalName());
+	private static final Logger LOG = Logger.getLogger(ExpedientesT.class.getCanonicalName());
 	
 	private static final String EXPEDIENTES_EJB = "java:global/classes/ExpedientesEJB";
 //	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";

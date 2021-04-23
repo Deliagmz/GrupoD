@@ -12,7 +12,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({AlumnoTest.class,AsignaturasTest.class,EncuestaTest.class,ExpedientesTest.class, MatriculaTest.class, TitulacionTest.class})
+@SuiteClasses({AlumnoT.class,AsignaturasT.class,EncuestaT.class,ExpedientesT.class, MatriculaT.class, TitulacionT.class})
 public class SuiteTest {
 	
 	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";

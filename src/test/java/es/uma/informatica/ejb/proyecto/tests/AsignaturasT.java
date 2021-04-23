@@ -24,8 +24,8 @@ import es.uma.informatica.sii.anotaciones.Requisitos;
 
 
 
-public class AsignaturasTest {
-	private static final Logger LOG = Logger.getLogger(AsignaturasTest.class.getCanonicalName());
+public class AsignaturasT {
+	private static final Logger LOG = Logger.getLogger(AsignaturasT.class.getCanonicalName());
 	
 	private static final String ASIGNATURAS_EJB = "java:global/classes/AsignaturasEJB";
 //	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";

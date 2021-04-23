@@ -24,7 +24,7 @@ import es.uma.informatica.jpa.proyecto.Matricula;
 import es.uma.informatica.jpa.proyecto.Matricula.MatriculaId;
 import es.uma.informatica.sii.anotaciones.Requisitos;
 
-public class MatriculaTest {
+public class MatriculaT {
 	private static final Logger LOG = Logger.getLogger(MatriculaEJB.class.getCanonicalName());
 	
 

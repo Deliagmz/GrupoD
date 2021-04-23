@@ -17,8 +17,8 @@ import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.jpa.proyecto.Alumno;
 import es.uma.informatica.sii.anotaciones.Requisitos;
 
-public class AlumnoTest {
-	private static final Logger LOG = Logger.getLogger(AlumnoTest.class.getCanonicalName());
+public class AlumnoT {
+	private static final Logger LOG = Logger.getLogger(AlumnoT.class.getCanonicalName());
 	
 	private static final String ALUMNOS_EJB = "java:global/classes/AlumnosEJB";
 //	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
