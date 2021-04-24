@@ -23,7 +23,6 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 
 	@Override
 	public Encuesta leerEncuesta(Encuesta encuesta) throws EncuestaNoEncontradaException {
-		// TODO Auto-generated method stub
 		Encuesta encuestaEntity = em.find(Encuesta.class, encuesta);
 		
 		if(encuestaEntity == null) {
@@ -35,7 +34,6 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 
 	@Override
 	public void crearEncuesta(Timestamp f_d_e, Expedientes e) throws EncuestaNoValidoException {
-		// TODO Auto-generated method stub
 		if(f_d_e == null || e == null) {
 			throw new EncuestaNoValidoException();
 		}
@@ -50,7 +48,6 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 
 	@Override
 	public void actualizarEncuesta(Encuesta encuesta,Timestamp f_d_e, Expedientes e) throws EncuestaNoEncontradaException {
-		// TODO Auto-generated method stub
 		Encuesta encuestaEntity = em.find(Encuesta.class, encuesta);
 		
 		if(encuestaEntity == null) {
@@ -64,7 +61,6 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 
 	@Override
 	public void borrarEncuesta(Encuesta encuesta) throws EncuestaNoEncontradaException {
-		// TODO Auto-generated method stub
 		Encuesta encuestaEntity = em.find(Encuesta.class, encuesta);
 		
 		if(encuestaEntity == null) {

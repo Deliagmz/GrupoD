@@ -22,22 +22,11 @@ public class AlumnoT {
 	private static final Logger LOG = Logger.getLogger(AlumnoT.class.getCanonicalName());
 	
 	private static final String ALUMNOS_EJB = "java:global/classes/AlumnosEJB";
-//	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
-//	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "SecretariaTest";
 	
-//	public static EJBContainer ejbContainer;
-//	public static Context ctx;
 	
 	private GestionAlumnos gestionAlumnos;
 	
-//	@BeforeClass
-//	public static void setUpClass() {
-//		Properties properties = new Properties();
-//		properties.setProperty(GLASSFISH_CONFIGI_FILE_PROPERTY, CONFIG_FILE);
-//		ejbContainer = EJBContainer.createEJBContainer(properties);
-//		ctx = ejbContainer.getContext();
-//	}
 	
 	@Before
 	public void setup() throws NamingException  {
@@ -146,7 +135,6 @@ public class AlumnoT {
 	public void testEliminarAlumnoNoEncontrado() {
 		try {
 			final Long ID = 111456789L;
-//			Alumno alumno = gestionAlumnos.LecturaAlumno(ID);
 			gestionAlumnos.EliminarAlumno(ID);
 			
 			Alumno alumno2 = gestionAlumnos.LecturaAlumno(ID);
@@ -161,13 +149,6 @@ public class AlumnoT {
 		}
 	}
 	
-	
-//	@AfterClass
-//	public static void tearDownClass() {
-//		if (ejbContainer != null) {
-//			ejbContainer.close();
-//		}
-//	}
 	
 	
 

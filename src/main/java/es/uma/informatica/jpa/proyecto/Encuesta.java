@@ -19,7 +19,6 @@ public class Encuesta implements Serializable {
 		private Timestamp fecha_de_envio;
 		private Long expediente;
 		public EncuestaId(Timestamp t, Long nExp) {
-			// TODO Auto-generated constructor stub
 			fecha_de_envio = t;
 			expediente = nExp;
 		}

@@ -27,22 +27,10 @@ public class ExpedientesT {
 	private static final Logger LOG = Logger.getLogger(ExpedientesT.class.getCanonicalName());
 	
 	private static final String EXPEDIENTES_EJB = "java:global/classes/ExpedientesEJB";
-//	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
-//	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "SecretariaTest";
 	
-//	private static EJBContainer ejbContainer;
-//	private static Context ctx;
 	
 	private GestionExpedientes gestionExpedientes;
-	
-//	@BeforeClass
-//	public static void setUpClass() {
-//		Properties properties = new Properties();
-//		properties.setProperty(GLASSFISH_CONFIGI_FILE_PROPERTY, CONFIG_FILE);
-//		ejbContainer = EJBContainer.createEJBContainer(properties);
-//		ctx = ejbContainer.getContext();
-//	}
 	
 	@Before
 	public void setup() throws NamingException  {
@@ -76,15 +64,9 @@ public class ExpedientesT {
 	public void testBorrarNotaMedia() throws SecretariaException {
 		final long exp = 123456789L;
 		
-//		gestionEncuesta.borrarEncuesta(encuesta1);
-//    	assertThrows(EncuestaNoEncontradaException.class,()->gestionEncuesta.leerEncuesta(encuesta1));
-//		try {
 		
 			gestionExpedientes.borrarNotaMedia(exp);
 			assertThrows(ExpedienteNoEncontradoException.class, ()->gestionExpedientes.leerNotaMedia(exp));
-//		}catch(SecretariaException e){
-//			fail("No deberia lanzar la excepcion");
-//		}
 	}
 	
 	@Test
@@ -126,11 +108,5 @@ public class ExpedientesT {
 		}
 	}
 	
-//	@AfterClass
-//	public static void tearDownClass() {
-//		if (ejbContainer != null) {
-//			ejbContainer.close();
-//		}
-//	}
 }
 

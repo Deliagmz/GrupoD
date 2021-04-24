@@ -34,22 +34,11 @@ private static final Logger LOG = Logger.getLogger(TitulacionEJB.class.getCanoni
 	
 
 	private static final String TITULACION_EJB = "java:global/classes/TitulacionEJB";
-//	private static final String GLASSFISH_CONFIGI_FILE_PROPERTY = "org.glassfish.ejb.embedded.glassfish.configuration.file";
-//	private static final String CONFIG_FILE = "target/test-classes/META-INF/domain.xml";
 	private static final String UNIDAD_PERSITENCIA_PRUEBAS = "SecretariaTest";
 	
-//	private static EJBContainer ejbContainer;
-//	private static Context ctx;
 	
 	private GestionTitulacion gestionTitulacion;
 	
-//	@BeforeClass
-//	public static void setUpClass() {
-//		Properties properties = new Properties();
-//		properties.setProperty(GLASSFISH_CONFIGI_FILE_PROPERTY, CONFIG_FILE);
-//		ejbContainer = EJBContainer.createEJBContainer(properties);
-//		ctx = ejbContainer.getContext();
-//	}
 	
 	@Before
 	public void setup() throws NamingException  {
@@ -138,15 +127,5 @@ private static final Logger LOG = Logger.getLogger(TitulacionEJB.class.getCanoni
 			fail("Deberia lanzar excepcion de titulacion no encontrada");
 		}
 	}
-	
-	
-	
-//	@AfterClass
-//	public static void tearDownClass() {
-//		if (ejbContainer != null) {
-//			ejbContainer.close();
-//		}
-//	}
-
-	
+		
 }
