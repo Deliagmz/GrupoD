@@ -2,6 +2,7 @@ package es.uma.informatica.ejb.proyecto.tests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -13,8 +14,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 import es.uma.informatica.ejb.proyecto.GestionAsignaturas;
+import es.uma.informatica.ejb.proyecto.excepciones.AlumnoNoEncontradoException;
 import es.uma.informatica.ejb.proyecto.excepciones.AsignaturaNoEncontradaException;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
+import es.uma.informatica.jpa.proyecto.Alumno;
 import es.uma.informatica.jpa.proyecto.Asignaturas;
 import es.uma.informatica.sii.anotaciones.Requisitos;
 
@@ -148,20 +151,17 @@ public class AsignaturasT {
 	}
 	@Requisitos({"RF5"})
 	@Test
-    public void testBorrarAsignatura() {
+    public void testBorrarAsignatura() throws SecretariaException {
 		 final Integer ref = 12345;
 		 
-		try {
-			Asignaturas asig = gestionAsignaturas.obtenerAsignatura(ref);
-            gestionAsignaturas.eliminarAsignatura(ref);
-
-           
-            
-            assertNull(asig);
-        }catch(SecretariaException e){
-            fail("No deberia lanzar la excepcion");
-        }
-    }
+		 gestionAsignaturas.eliminarAsignatura(ref);
+		 assertThrows(AsignaturaNoEncontradaException.class, ()->gestionAsignaturas.obtenerAsignatura(ref));
+		 
+//	Alumno alumno = gestionAlumnos.LecturaAlumno(ID);
+//			
+//			gestionAlumnos.EliminarAlumno(ID);
+//			assertThrows(AlumnoNoEncontradoException.class, ()->gestionAlumnos.LecturaAlumno(ID));
+	}
 	
 	@Test
 	public void testEliminarAsignaturaNoEncontrada() {

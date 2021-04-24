@@ -1,6 +1,7 @@
 package es.uma.informatica.ejb.proyecto.tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -95,10 +96,12 @@ public class AlumnoT {
 		try {
 			final Long IDActualizado = 213456789L;
 			Alumno alumnoActualizado = gestionAlumnos.LecturaAlumno(IDActualizado);
+			
 			assertTrue(nombreAlumno.compareTo(alumnoActualizado.getNombre())==0);
 			assertTrue(apellido1.compareTo(alumnoActualizado.getApellido1())==0);
 			assertTrue(apellido2.compareTo(alumnoActualizado.getApellido2())==0);
 			assertTrue(email_inst.compareTo(alumnoActualizado.getEmail_institucional())==0);
+			
 		}catch(SecretariaException e) {
 			fail("No deberia lanzar excepcion");
 		}
@@ -131,27 +134,20 @@ public class AlumnoT {
 	
 	@Requisitos({"RF4"})
 	@Test
-	public void testEliminarAlumno() {
-		try {
-			final Long ID = 213456789L;
-			Alumno alumno = gestionAlumnos.LecturaAlumno(ID);
-			gestionAlumnos.EliminarAlumno(ID, alumno);
+	public void testEliminarAlumno() throws SecretariaException {
+		final Long ID = 213456789L;
 			
-			Alumno alumno2 = gestionAlumnos.LecturaAlumno(ID);
-			
-			assertEquals(null,alumno2.getID());
-
-		}catch(SecretariaException e) {
-			fail("No debera lanzar excepcion");
-		}
+			gestionAlumnos.EliminarAlumno(ID);
+			assertThrows(AlumnoNoEncontradoException.class, ()->gestionAlumnos.LecturaAlumno(ID));
+		
 	}
 	
 	@Test
 	public void testEliminarAlumnoNoEncontrado() {
 		try {
 			final Long ID = 111456789L;
-			Alumno alumno = gestionAlumnos.LecturaAlumno(ID);
-			gestionAlumnos.EliminarAlumno(ID, alumno);
+//			Alumno alumno = gestionAlumnos.LecturaAlumno(ID);
+			gestionAlumnos.EliminarAlumno(ID);
 			
 			Alumno alumno2 = gestionAlumnos.LecturaAlumno(ID);
 			

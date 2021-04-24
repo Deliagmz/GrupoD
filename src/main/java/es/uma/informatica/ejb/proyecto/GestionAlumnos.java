@@ -10,5 +10,5 @@ public interface GestionAlumnos {
 
 	public void ActualizarAlumno(Long Id, Alumno alumno)throws SecretariaException;
 	
-	public void EliminarAlumno(Long Id,Alumno alumno)throws SecretariaException;
+	public void EliminarAlumno(Long id)throws SecretariaException;
 }

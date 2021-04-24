@@ -1,6 +1,7 @@
 package es.uma.informatica.ejb.proyecto.tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.fail;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import es.uma.informatica.ejb.proyecto.GestionExpedientes;
+import es.uma.informatica.ejb.proyecto.excepciones.EncuestaNoEncontradaException;
 import es.uma.informatica.ejb.proyecto.excepciones.ExpedienteNoEncontradoException;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.jpa.proyecto.Expedientes;
@@ -71,15 +73,18 @@ public class ExpedientesT {
 	}
 	@Requisitos({"RF8"})
 	@Test
-	public void testBorrarNotaMedia() {
-		try {
-			final long exp = 123456789L;
+	public void testBorrarNotaMedia() throws SecretariaException {
+		final long exp = 123456789L;
+		
+//		gestionEncuesta.borrarEncuesta(encuesta1);
+//    	assertThrows(EncuestaNoEncontradaException.class,()->gestionEncuesta.leerEncuesta(encuesta1));
+//		try {
+		
 			gestionExpedientes.borrarNotaMedia(exp);
-			
-			assertEquals(null, gestionExpedientes.leerNotaMedia(exp));
-		}catch(SecretariaException e){
-			fail("No deberia lanzar la excepcion");
-		}
+			assertThrows(ExpedienteNoEncontradoException.class, ()->gestionExpedientes.leerNotaMedia(exp));
+//		}catch(SecretariaException e){
+//			fail("No deberia lanzar la excepcion");
+//		}
 	}
 	
 	@Test

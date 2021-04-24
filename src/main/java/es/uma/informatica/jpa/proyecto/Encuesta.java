@@ -24,6 +24,7 @@ public class Encuesta implements Serializable {
 			expediente = nExp;
 		}
 		
+		
 	}
 
 	@Id

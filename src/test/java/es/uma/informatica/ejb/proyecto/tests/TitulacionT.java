@@ -1,6 +1,7 @@
 package es.uma.informatica.ejb.proyecto.tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.fail;
 import static org.junit.Assert.assertTrue;
 
@@ -19,6 +20,7 @@ import org.junit.Test;
 
 import es.uma.informatica.ejb.proyecto.GestionTitulacion;
 import es.uma.informatica.ejb.proyecto.TitulacionEJB;
+import es.uma.informatica.ejb.proyecto.excepciones.AlumnoNoEncontradoException;
 import es.uma.informatica.ejb.proyecto.excepciones.MatriculaNoEncontradaException;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.ejb.proyecto.excepciones.TitulacionNoEncontradaException;
@@ -119,21 +121,11 @@ private static final Logger LOG = Logger.getLogger(TitulacionEJB.class.getCanoni
 	}
 	@Requisitos({"RF6"})
 	@Test
-	public void testEliminarTitulacion() {
-		try {
-			Titulacion titulacion =gestionTitulacion.obtenerTitulacion(1234);
-			
-			gestionTitulacion.eliminarTitulacion(1234);
-			
-			assertEquals(null,titulacion.getCodigo());
-			assertEquals(null,titulacion.getNombre());
-			assertEquals(null,titulacion.getCreditos());
-			
-			
-			
-		} catch (SecretariaException e) {
-			fail("No deberia lanzarse excepcion");
-		}
+	public void testEliminarTitulacion() throws SecretariaException {
+		Integer codigo = 1234;
+		gestionTitulacion.eliminarTitulacion(codigo);
+		assertThrows(TitulacionNoEncontradaException.class, ()->gestionTitulacion.obtenerTitulacion(codigo));
+
 	}
 	
 	@Test

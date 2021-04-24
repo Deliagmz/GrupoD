@@ -2,12 +2,14 @@ package es.uma.informatica.ejb.proyecto;
 
 import java.util.logging.Logger;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import es.uma.informatica.ejb.proyecto.excepciones.AlumnoNoEncontradoException;
 import es.uma.informatica.jpa.proyecto.Alumno;
 
+@Stateless
 public class AlumnosEJB implements GestionAlumnos{
 	
 	private static final Logger LOG = Logger.getLogger(AlumnosEJB.class.getCanonicalName());
@@ -47,12 +49,13 @@ public class AlumnosEJB implements GestionAlumnos{
 		
 	}
 	
-	public void EliminarAlumno(Long Id, Alumno alumno)throws AlumnoNoEncontradoException {
-		Alumno alumnoExistente = em.find(Alumno.class, Id);
+	public void EliminarAlumno(Long id)throws AlumnoNoEncontradoException {
+		Alumno alumnoExistente = em.find(Alumno.class, id);
 		if(alumnoExistente == null) {
 			throw new AlumnoNoEncontradoException();
 		}
 		em.remove(alumnoExistente);
+	
 	}
 	
 }

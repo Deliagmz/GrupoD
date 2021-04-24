@@ -1,6 +1,7 @@
 package es.uma.informatica.ejb.proyecto.tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -83,8 +84,7 @@ public class EncuestaT {
 			
 			Encuesta enc = gestionEncuesta.leerEncuesta(encuesta);
 			
-			assertEquals(
-					 "Encuesta [fecha_de_envio=" + t + ", expediente=" + nExp + "]", enc);
+			assertEquals(encuesta, enc);
 			
 		}catch(SecretariaException e) {
 			fail("no deberia lanzar excepcion");
@@ -96,15 +96,14 @@ public class EncuestaT {
 		try {
 			Timestamp t = java.sql.Timestamp.valueOf("2021-10-23 10:10:10.0");
 			Expedientes nExp = new Expedientes();
-			nExp.setNum_Expediente(123456769L);
+			nExp.setNum_Expediente(123478874L);
 			
 			Encuesta encuesta = new Encuesta();
 			encuesta.setFecha_de_envio(t);
 			encuesta.setExpediente(nExp);
 			
 			Encuesta enc = gestionEncuesta.leerEncuesta(encuesta);
-			
-			
+				
 			
 			fail("debe lanzar excepcion de no encontrar la encuesta");
 			
@@ -142,8 +141,7 @@ public class EncuestaT {
 			
 			Encuesta encuesta = gestionEncuesta.leerEncuesta(encuesta1);
 			
-			assertEquals(
-					 "Encuesta [fecha_de_envio=" + t1 + ", expediente=" + exp1 + "]", encuesta);
+			assertEquals(encuesta1, encuesta);
 			
 		}catch(SecretariaException e) {
 			fail("no deberia lanzar excepcion");
@@ -196,13 +194,10 @@ public class EncuestaT {
 		Encuesta encuesta1 = new Encuesta();
 		encuesta1.setFecha_de_envio(t);
 		encuesta1.setExpediente(exp);
-		
+
         try {
-            
         	gestionEncuesta.borrarEncuesta(encuesta1);
-        	
-        	Encuesta encuesta = gestionEncuesta.leerEncuesta(encuesta1);
-        	assertEquals(null,encuesta);
+        	assertThrows(EncuestaNoEncontradaException.class,()->gestionEncuesta.leerEncuesta(encuesta1));
         	
         }catch(EncuestaNoEncontradaException e){
             //OK
