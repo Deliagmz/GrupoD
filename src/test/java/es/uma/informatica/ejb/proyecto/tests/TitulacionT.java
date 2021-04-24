@@ -58,27 +58,26 @@ private static final Logger LOG = Logger.getLogger(TitulacionEJB.class.getCanoni
 	}
 	@Requisitos({"RF6"})
 	@Test
-	public void testObtenerTitulacion() {
-		try {
-			Titulacion titulacion =gestionTitulacion.obtenerTitulacion(1234);
-			Integer codigo=1234;
-			assertEquals(titulacion.getCodigo(),codigo);
-		}catch(SecretariaException e) {
-			fail("No deberia lanzar excepcion");
-		}
-	}
+	  public void testObtenerTitulacion() {
+        try {
+            Titulacion titulacion =gestionTitulacion.obtenerTitulacion(1234);
+            assertEquals(titulacion.getNombre(),"Informatica");
+        }catch(SecretariaException e) {
+            fail("No deberia lanzar excepcion");
+        }
+    }
 	
 	@Test
-	public void testObtenerTitulacionNoEncontrada() {
-		try {
-			Titulacion titulacion =gestionTitulacion.obtenerTitulacion(1245);
-			fail("Deberia lanzar excepcion de titulacion no encontrada");
-		} catch (TitulacionNoEncontradaException e) {
-			// OK
-		} catch (SecretariaException e) {
-			fail("Deberia lanzar excepcion de titulacion no encontrada");
-		}
-	}
+	 public void testObtenerTitulacionNoEncontrada() {
+        try {
+            Titulacion titulacion =gestionTitulacion.obtenerTitulacion(1245);
+            fail("Deberia lanzar excepcion de titulacion no encontrada");
+        } catch (TitulacionNoEncontradaException e) {
+            // OK
+        } catch (SecretariaException e) {
+            fail("Deberia lanzar excepcion de titulacion no encontrada");
+        }
+    }
 	@Requisitos({"RF6"})
 	@Test
 	public void testActualizarTitulacion() {
