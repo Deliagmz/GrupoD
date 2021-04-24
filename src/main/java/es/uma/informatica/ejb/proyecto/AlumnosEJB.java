@@ -2,12 +2,13 @@ package es.uma.informatica.ejb.proyecto;
 
 import java.util.logging.Logger;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import es.uma.informatica.ejb.proyecto.excepciones.AlumnoNoEncontradoException;
 import es.uma.informatica.jpa.proyecto.Alumno;
-
+@Stateless
 public class AlumnosEJB implements GestionAlumnos{
 	
 	private static final Logger LOG = Logger.getLogger(AlumnosEJB.class.getCanonicalName());

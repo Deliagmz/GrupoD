@@ -2,13 +2,14 @@ package es.uma.informatica.ejb.proyecto;
 
 import java.util.logging.Logger;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import es.uma.informatica.ejb.proyecto.excepciones.TitulacionNoEncontradaException;
 import es.uma.informatica.jpa.proyecto.Titulacion;
 
-
+@Stateless
 public class TitulacionEJB implements GestionTitulacion{
 	
 	private static final Logger LOG = Logger.getLogger(TitulacionEJB.class.getCanonicalName());
