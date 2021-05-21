@@ -10,6 +10,7 @@
 	<module>proyecto-ejb</module>
 	<module>proyecto-war</module>
 	<module>proyecto-ear</module>
+	<module>proyecto-test</module>
   </modules>
   
 </project>
