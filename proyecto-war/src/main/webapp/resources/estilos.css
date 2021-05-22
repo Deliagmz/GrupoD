@@ -118,6 +118,7 @@ p {
 }
 
 #navegador {
+	list-style-type: none;
     padding-left: 0px;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -128,6 +129,7 @@ p {
 }
 
 #navegador a {
+	list-style-type: none;
     float: left;
     color: crimson;
     text-align: center;
@@ -158,4 +160,8 @@ p {
 img {
     width:auto ;
     height:auto;
+}
+ul {
+	list-style-type: none;
+
 }
