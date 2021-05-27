@@ -25,7 +25,7 @@ public class Centro implements Serializable {
 	private Integer TLF_Conserjeria;
 	private static final long serialVersionUID = 1L;
 
-	//Lista para la relaci�n con Titulaci�n
+	//Lista para la relación con Titulación
 	@ManyToMany
 	@JoinTable(name = "jn_tit_cntr", joinColumns = @JoinColumn(name = "centro_fk"), 
 				inverseJoinColumns = @JoinColumn(name = "tit_fk"))
@@ -55,12 +55,12 @@ public class Centro implements Serializable {
 	public void setDireccion(String Direccion) {
 		this.Direccion = Direccion;
 	}   
-	public Integer getTLF_Conserjería() {
+	public Integer getTLF_Conserjeria() {
 		return this.TLF_Conserjeria;
 	}
 
-	public void setTLF_Conserjería(Integer TLF_Conserjería) {
-		this.TLF_Conserjeria = TLF_Conserjería;
+	public void setTLF_Conserjeria(Integer TLF_Conserjeria) {
+		this.TLF_Conserjeria = TLF_Conserjeria;
 	}
 	@Override
 	public int hashCode() {
