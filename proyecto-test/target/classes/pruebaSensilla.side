@@ -1,0 +1,44 @@
+{
+  "id": "f14a07e6-4743-4c82-8aff-3a3577ff8fe6",
+  "version": "2.0",
+  "name": "proyecto",
+  "url": "http://localhost:8080/proyecto-war/",
+  "tests": [{
+    "id": "450e6011-0246-4604-8ca3-726023a0164c",
+    "name": "pruebaSensillinite",
+    "commands": [{
+      "id": "34ab7c0c-43fa-48a5-a112-b8f96d31df14",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/proyecto-war/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f21a19c7-81f4-4f59-826f-b9bb759947f6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cebabf5b-6ee2-4713-80f8-c094579dbe4c",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"]
+      ],
+      "value": "Bienvenido al Sistema Tutor de la asignatura 330"
+    }]
+  }],
+  "suites": [{
+    "id": "646bd87e-55bf-4376-953b-448251e5b619",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["450e6011-0246-4604-8ca3-726023a0164c"]
+  }],
+  "urls": ["http://localhost:8080/proyecto-war/"],
+  "plugins": []
+}
