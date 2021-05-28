@@ -13,7 +13,7 @@ import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.UriBuilder;
 
-import es.uma.informatica.ejb.proyecto.UsuarioEJB;
+import es.uma.informatica.ejb.proyecto.GestionUsuario;
 import es.uma.informatica.ejb.proyecto.excepciones.CuentaRepetidaException;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.jpa.proyecto.Usuario;
@@ -26,9 +26,9 @@ public class Registro {
 	private static final String PARAM_VALIDACION="codigoValidacion";
 	private static final String PARAM_CUENTA = "cuenta";
 
-    //@Inject
     @EJB
-    private UsuarioEJB usuarioEJB;
+    private GestionUsuario usuarioEJB;
+    
     private Usuario usuario;
     private String repass;
 

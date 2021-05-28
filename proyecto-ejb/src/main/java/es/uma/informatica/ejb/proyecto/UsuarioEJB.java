@@ -28,7 +28,7 @@ public class UsuarioEJB implements GestionUsuario {
     private static final int TAM_CADENA_VALIDACION = 20;
     private static final Logger LOGGER = Logger.getLogger(UsuarioEJB.class.getCanonicalName());
 
-    @PersistenceContext(unitName = "AgendaEE-EntidadesPU")
+    @PersistenceContext(unitName = "Secretaria")
     private EntityManager em;
 
     @Override
