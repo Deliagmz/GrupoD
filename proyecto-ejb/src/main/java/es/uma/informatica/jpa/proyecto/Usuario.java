@@ -8,13 +8,9 @@ import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
-<<<<<<< HEAD
 
 import org.eclipse.persistence.jaxb.xmlmodel.XmlAccessType;
-=======
-import javax.xml.bind.annotation.XmlAccessType;
 
->>>>>>> d1037e95d2dd0650b9d201483cb19bbed0ee7db6
 
 
 @XmlRootElement
