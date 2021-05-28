@@ -10,13 +10,19 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+<<<<<<< HEAD
 import javax.ejb.EJB;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.jpa.proyecto.Usuario;
+=======
+
+import es.uma.informatica.ejb.proyecto.GestionUsuario;
+>>>>>>> d1037e95d2dd0650b9d201483cb19bbed0ee7db6
 import es.uma.informatica.ejb.proyecto.excepciones.ContraseniaInvalidaException;
 import es.uma.informatica.ejb.proyecto.excepciones.CuentaInactivaException;
 import es.uma.informatica.ejb.proyecto.excepciones.CuentaInexistenteException;
-import es.uma.informatica.ejb.proyecto.GestionUsuario;
+import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
+import es.uma.informatica.jpa.proyecto.Usuario;
 
 
 @Named(value = "login")

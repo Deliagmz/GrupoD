@@ -1,5 +1,10 @@
 package es.uma.informatica.sii.proyecto.backing;
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> d1037e95d2dd0650b9d201483cb19bbed0ee7db6
 import es.uma.informatica.jpa.proyecto.Usuario;
 
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
@@ -43,6 +48,7 @@ public class InfoSesion implements Serializable {
         return "login.xhtml";
     }
     
+<<<<<<< HEAD
     public synchronized void refrescarUsuario()
     {
         try {
@@ -56,5 +62,20 @@ public class InfoSesion implements Serializable {
             // TODO
         }
     }
+=======
+//    public synchronized void refrescarUsuario()
+//    {
+//        try {
+//        if (usuario != null)
+//        {
+//            usuario = negocio.refrescarUsuario(usuario);
+//            System.out.println(usuario.getContactos().size());
+//        } 
+//        }
+//        catch (SecretariaException e) {
+//            // TODO
+//        }
+//    }
+>>>>>>> d1037e95d2dd0650b9d201483cb19bbed0ee7db6
     
 }
