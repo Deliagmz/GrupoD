@@ -13,8 +13,10 @@ import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.UriBuilder;
 
+import es.uma.informatica.ejb.proyecto.UsuarioEJB;
 import es.uma.informatica.ejb.proyecto.excepciones.CuentaRepetidaException;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
+import es.uma.informatica.jpa.proyecto.Usuario;
 
 
 @Named(value = "registro")

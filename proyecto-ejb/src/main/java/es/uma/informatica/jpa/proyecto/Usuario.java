@@ -8,7 +8,8 @@ import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
-import org.eclipse.persistence.jaxb.xmlmodel.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessType;
+
 
 
 @XmlRootElement

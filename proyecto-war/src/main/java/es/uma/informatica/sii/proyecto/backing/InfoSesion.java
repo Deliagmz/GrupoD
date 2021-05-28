@@ -1,6 +1,6 @@
 package es.uma.informatica.sii.proyecto.backing;
 
-package es.uma.informatica.sii.agendaee.vista;
+
 
 import es.uma.informatica.jpa.proyecto.Usuario;
 
@@ -58,18 +58,18 @@ public class InfoSesion implements Serializable {
         return "login.xhtml";
     }
     
-    public synchronized void refrescarUsuario()
-    {
-        try {
-        if (usuario != null)
-        {
-            usuario = negocio.refrescarUsuario(usuario);
-            System.out.println(usuario.getContactos().size());
-        } 
-        }
-        catch (SecretariaException e) {
-            // TODO
-        }
-    }
+//    public synchronized void refrescarUsuario()
+//    {
+//        try {
+//        if (usuario != null)
+//        {
+//            usuario = negocio.refrescarUsuario(usuario);
+//            System.out.println(usuario.getContactos().size());
+//        } 
+//        }
+//        catch (SecretariaException e) {
+//            // TODO
+//        }
+//    }
     
 }

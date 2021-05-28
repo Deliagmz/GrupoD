@@ -5,8 +5,7 @@ import javax.ejb.Local;
 import javax.ws.rs.core.UriBuilder;
 
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
-import es.uma.informatica.sii.agendaee.entidades.Contacto;
-import es.uma.informatica.sii.agendaee.entidades.Usuario;
+import es.uma.informatica.jpa.proyecto.Usuario;
 
 @Local
 public interface GestionUsuario {
