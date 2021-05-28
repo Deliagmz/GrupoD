@@ -13,8 +13,10 @@ import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.UriBuilder;
 
+import es.uma.informatica.ejb.proyecto.UsuarioEJB;
 import es.uma.informatica.ejb.proyecto.excepciones.CuentaRepetidaException;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
+import es.uma.informatica.jpa.proyecto.Usuario;
 
 
 @Named(value = "registro")
@@ -80,7 +82,7 @@ public class Registro {
 
     public String registrarUsuario() {
         try {
-            if (!usuario.getContrasenia().equals(repass)) {
+            if (!usuario.getContrasena().equals(repass)) {
                 FacesMessage fm = new FacesMessage("Las contraseñas deben coincidir");
                 FacesContext.getCurrentInstance().addMessage("registro:repass", fm);
                 return null;
@@ -103,7 +105,7 @@ public class Registro {
             		.path("validarCuenta.xhtml")
             		.queryParam(PARAM_CUENTA, "{cuenta}")
             		.queryParam(PARAM_VALIDACION, "{validacion}");
-            UsuarioEJB.registrarUsuario(usuario, uriBuilder);
+            usuarioEJB.registrarUsuario(usuario, uriBuilder);
             registroOK = true;
             return "exitoRegistro.xhtml";
             
@@ -119,7 +121,7 @@ public class Registro {
     public String validarCuenta() {
         try {
             if (cuenta != null && codigoValidacion != null) {
-            	UsuarioEJB.validarCuenta(cuenta, codigoValidacion);
+            	usuarioEJB.validarCuenta(cuenta, codigoValidacion);
             }
             mensajeValidacion = "La validación ha sido correcta, ahora puede acceder con este usuario.";
             validacionOK = true;

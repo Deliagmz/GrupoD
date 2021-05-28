@@ -1,7 +1,5 @@
 package es.uma.informatica.sii.proyecto.backing;
 
-package es.uma.informatica.sii.agendaee.vista;
-
 import es.uma.informatica.jpa.proyecto.Usuario;
 
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
@@ -13,10 +11,6 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-/**
- *
- * @author francis
- */
 @Named(value = "infoSesion")
 @SessionScoped
 public class InfoSesion implements Serializable {
@@ -38,16 +32,7 @@ public class InfoSesion implements Serializable {
     public synchronized Usuario getUsuario() {
         return usuario;
     }
-    
-//    public synchronized List<Contacto> getContactos()
-//    {
-//        if (usuario != null)
-//        {
-//            return usuario.getContactos();
-//        }
-//        return null;
-//    }
-    
+
     public synchronized String invalidarSesion()
     {
         if (usuario != null)
@@ -63,8 +48,8 @@ public class InfoSesion implements Serializable {
         try {
         if (usuario != null)
         {
-            usuario = negocio.refrescarUsuario(usuario);
-            System.out.println(usuario.getContactos().size());
+            usuario = gestionUsuario.refrescarUsuario(usuario);
+            System.out.println(usuario.getEncuestas().size());
         } 
         }
         catch (SecretariaException e) {

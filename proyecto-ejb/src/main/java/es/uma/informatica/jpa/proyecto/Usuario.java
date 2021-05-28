@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+
 import org.eclipse.persistence.jaxb.xmlmodel.XmlAccessType;
 
 
@@ -167,6 +168,10 @@ public class Usuario implements Serializable {
 		return "Usuario [Nombre=" + Nombre + ", Apellido=" + Apellido + ", Contrasena=" + Contrasena
 				+ ", RepiteContrasena=" + RepiteContrasena + ", DNI=" + DNI + ", Email=" + Email + ", telefono="
 				+ telefono + ", Direccion=" + Direccion + "]";
+	}
+	public Object getCuenta() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

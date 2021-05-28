@@ -12,7 +12,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.ejb.EJB;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
-import es.uma.informatica.ejb.proyecto.excepciones.UsuarioException;
+import es.uma.informatica.jpa.proyecto.Usuario;
 import es.uma.informatica.ejb.proyecto.excepciones.ContraseniaInvalidaException;
 import es.uma.informatica.ejb.proyecto.excepciones.CuentaInactivaException;
 import es.uma.informatica.ejb.proyecto.excepciones.CuentaInexistenteException;

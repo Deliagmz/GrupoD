@@ -20,8 +20,7 @@ import es.uma.informatica.ejb.proyecto.excepciones.CuentaInexistenteException;
 import es.uma.informatica.ejb.proyecto.excepciones.CuentaRepetidaException;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.ejb.proyecto.excepciones.ValidacionIncorrectaException;
-import es.uma.informatica.sii.agendaee.entidades.Contacto;
-import es.uma.informatica.sii.agendaee.entidades.Usuario;
+import es.uma.informatica.jpa.proyecto.Usuario;
 
 @Stateless
 public class UsuarioEJB implements GestionUsuario {
@@ -110,7 +109,7 @@ public class UsuarioEJB implements GestionUsuario {
             throw new CuentaInactivaException();
         }
 
-        if (!user.getContrasenia().equals(u.getContrasenia())) {
+        if (!user.getContrasena().equals(u.getContrasena())) {
             throw new ContraseniaInvalidaException();
         }
 
