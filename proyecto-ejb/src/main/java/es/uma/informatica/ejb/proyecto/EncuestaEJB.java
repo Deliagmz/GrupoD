@@ -36,7 +36,7 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 	public void crearEncuesta(Timestamp f_d_e, Expedientes e) throws EncuestaNoValidoException {
 		if(f_d_e == null || e == null) {
 			throw new EncuestaNoValidoException();
-		}
+		}	
 		
 		Encuesta encuesta = new Encuesta();
 		encuesta.setFecha_de_envio(f_d_e);
