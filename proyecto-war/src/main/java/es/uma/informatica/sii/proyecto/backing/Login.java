@@ -49,7 +49,7 @@ public class Login {
         try {
             gestionUsuario.compruebaLogin(usuario);
             sesion.setUsuario(gestionUsuario.refrescarUsuario(usuario));
-            return "contactos.xhtml";
+            return "Encuesta.xhtml";
 
         } catch (CuentaInexistenteException e) {
             FacesMessage fm = new FacesMessage("La cuenta no existe");

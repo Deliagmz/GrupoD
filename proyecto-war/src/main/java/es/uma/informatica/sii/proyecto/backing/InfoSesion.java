@@ -44,18 +44,18 @@ public class InfoSesion implements Serializable {
         return "login.xhtml";
     }
     
-//   public synchronized void refrescarUsuario()
-//    {
-//        try {
-//        if (usuario != null)
-//        {
-//            usuario = gestionUsuario.refrescarUsuario(usuario);
-//            System.out.println(usuario.getEncuestas().size());
-//        } 
-//        }
-//        catch (SecretariaException e) {
-//            // TODO
-//        }
-//    }
+   public synchronized void refrescarUsuario()
+    {
+        try {
+        if (usuario != null)
+        {
+            usuario = gestionUsuario.refrescarUsuario(usuario);
+            //System.out.println(usuario.getEncuestas().size());
+        } 
+        }
+        catch (SecretariaException e) {
+            // TODO
+        }
+    }
     
 }
