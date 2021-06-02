@@ -9,51 +9,51 @@
 	  xmlns:h="http://xmlns.jcp.org/jsf/html"
 	  xmlns:f="http://xmlns.jcp.org/jsf/core"
 	  lang="es">
-  <head>
+  <h:head>
 	    <title>Login</title>
-	    <meta content="" />
 	    <link href="resources/estilos.css" rel="stylesheet" />
-  </head>
-  <body>
+  </h:head>
+  <h:body>
     <div id="content">
       <div id="banner">
         <h1>
           Inicia Sesi&oacute;n
         </h1>
       </div>
-      <form method="post" action="Servlets.Proceso.Login">
-        <table align="center">
-          <tr>
-            <th align="right" width="50%">
-              Usuario
-            </th>
-            <td>
-              <input type="text" name="loginName" value="" size="16"
-              maxlength="16" />
-            </td>
-          </tr>
-          <tr>
-            <th align="right" width="50%">
-              Contraseña
-            </th>
-            <td align="left">
-              <input type="password" name="password" value="" size="16"
-              maxlength="16" />
-            </td>
-          </tr>
-          <tr>
-            <td width="50%"></td>
-            <td align="left" width="50%">
-              <input type="submit" value="Login" />
-            </td>
-          </tr>
-        </table>
-      </form>
-      <div id="navegador">
-        <p>
-          <br></br><a href="index.xhtml">Volver al Inicio</a>
-        </p>
-      </div>
+	      <h:form id="login">
+		        <h:table align="center">
+		          <tr>
+		            <th align="right" width="50%">
+		             <h:outputText value="Usuario:"/>
+		            </th>
+		            <td>
+		              <h:inputText id="user" required="true" value="#{login.usuario.cuenta}"/>
+		              <h:message for="user"/>
+		            </td>
+		          </tr>
+		          <tr>
+		            <th align="right" width="50%">
+		              <h:outputText value="Contraseña"/>
+		            </th>
+		            <td align="left">
+						<h:inputSecret id="pass" required="true" value="#{login.usuario.contrasenia}"/>
+		            </td>
+		          </tr>
+		          <tr>
+		            <td width="50%"></td>
+		            <td align="left" width="50%">
+		              <h:commandButton value="Entrar" action="#{login.entrar}"/>
+		            </td>
+		          </tr>
+		        </h:table>
+      </h:form>
+      
+	      <div id="navegador">
+	        <p>
+	          <a href="index.xhtml">Volver al Inicio</a>
+	        </p>
+	      </div>
+      
     </div>
-  </body>
+  </h:body>
 </html>
