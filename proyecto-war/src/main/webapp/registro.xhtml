@@ -9,93 +9,93 @@
 	  xmlns:h="http://xmlns.jcp.org/jsf/html"
 	  xmlns:f="http://xmlns.jcp.org/jsf/core"
 	  lang="es">
-  <head>
-    <title>
-      Registro
-    </title>
+ <h:head>
+        <title>Registro de usuario</title>
     <meta content="" />
-    <link href="resources/estilos.css" rel="stylesheet" />
-  </head>
-  <body>
+    <h:link href="resources/estilos.css" rel="stylesheet"> </h:link>
+    
+ </h:head>
+ 
+ <h:body>
     <div id="content">
       <div id="banner">
         <h1>
-          Registro
+          <h:outputText value="Registro"/> <!--???--> 
         </h1>
       </div>
-      <form method="post" action="Servlets.Proceso.Registro">
-        <table width="100%" border="0" align="center" cellspacing="12">
+      <h:form method="post" action="Servlets.Proceso.Registro">
+        <h:table width="100%" border="0" align="center" cellspacing="12">
           <tr>
             <th align="right" width="50%">
-              Usuario
+               <h:outputText value="Usuario"/> <!--???--> 
             </th>
             <td align="left">
-              <input type="text" name="loginName" value="" size="16"
+              <h:input type="text" name="loginName" value="" size="16"
               maxlength="16" />
             </td>
           </tr>
           <tr>
             <th align="right" width="50%">
-              Contraseña
+              <h:outputText value="Contraseña"/> <!--???--> 
             </th>
             <td align="left">
-              <input type="password" name="password" value="" size="16"
+              <h:input type="password" name="password" value="" size="16"
               maxlength="16" />
             </td>
           </tr>
           <tr>
             <th align="right" width="50%">
-              Repite contraseña
+             <h:outputText value="Repite contraseña"/> <!--???-->  
             </th>
             <td align="left">
-              <input type="password" name="password2" />
+              <h:input type="password" name="password2" />
             </td>
           </tr>
           <tr>
             <th align="right" width="50%">
-              DNI
+             <h:outputText value="DNI"/> <!--???-->  
             </th>
             <td align="left">
-              <input type="text" name="dni" />
+              <h:input type="text" name="dni" />
             </td>
           </tr>
           <tr>
             <th align="right" width="50%">
-              Correo electr&oacute;nico
+             <h:outputText value="Correo electr&oacute;nico"/> <!--???-->  
             </th>
             <td align="left">
-              <input type="text" name="email" />
+              <h:input type="text" name="email" />
             </td>
           </tr>
           <tr>
             <th align="right" width="50%">
-              Tel&eacute;fono
+             <h:outputText value="Tel&eacute;fono"/> <!--???--> 
             </th>
             <td align="left">
-              <input type="text" name="telefono" />
+              <h:input type="text" name="telefono" />
             </td>
           </tr>
           <tr>
             <th align="right" width="50%">
-              Direcci&oacute;n
+             <h:outputText value="Direcci&oacute;n"/> <!--???--> 
             </th>
             <td align="left">
-              <input type="text" name="direccion" />
+              <h:input type="text" name="direccion" />
             </td>
           </tr>
           <tr>
             <td width="50%"></td>
             <td align="left" width="50%">
-              <input type="submit" value="Registrarse y acceder" />
+              <h:input type="submit" value="Registrarse y acceder" />
             </td>
           </tr>
-        </table>
-      </form>
+        </h:table>
+      </h:form>
       <div id="navegador">
         <p>
-          <br></br><a href="index.xhtml">Volver al Inicio</a>
+          <br></br><h:a href="index.xhtml">Volver al Inicio</h:a>
         </p>
       </div>
     </div>
-  </body>
+  </h:body>
 </html>
