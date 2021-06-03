@@ -51,7 +51,7 @@ public class ServicioREST {
 	}
 	
 	
-	@Path("/contactos")
+	/*@Path("/contactos")
 	@POST
 	@Consumes ({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	public Response aniadirContacto(Contacto contacto) {
@@ -73,8 +73,8 @@ uriInfo.getBaseUriBuilder().path(contacto.getId().toString()).build();
 	 	 }
 		
 	}
-	
-	@Path("/contacto/{id}")
+	*/
+	/*@Path("/contacto/{id}")
 	@GET
 	@Produces ({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	public Response getContacto(@PathParam("id") Long id) {
@@ -135,7 +135,7 @@ uriInfo.getBaseUriBuilder().path(contacto.getId().toString()).build();
 		 	 }
 	}
 		 
-
+*/
 	
 	
 	
