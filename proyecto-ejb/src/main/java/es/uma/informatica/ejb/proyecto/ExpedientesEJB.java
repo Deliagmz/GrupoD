@@ -19,6 +19,17 @@ public class ExpedientesEJB implements GestionExpedientes{
 	private EntityManager em;
 	
 	@Override
+	public Expedientes obtenerExpediente(Long Num_Expediente) throws SecretariaException {
+		
+		Expedientes expedienteEntity = em.find(Expedientes.class, Num_Expediente);
+		if(expedienteEntity==null) {
+			throw new ExpedienteNoEncontradoException();
+		}
+		return expedienteEntity;
+	}
+
+
+	@Override
 	public double leerNotaMedia(Long Num_Expediente) throws SecretariaException {
 		
 		Expedientes expedienteEntity = em.find(Expedientes.class, Num_Expediente);
