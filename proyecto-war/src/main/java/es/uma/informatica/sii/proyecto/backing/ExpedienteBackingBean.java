@@ -25,7 +25,7 @@ public class ExpedienteBackingBean {
 	private Expedientes expediente;
     private Matricula matricula;
     
-	private double notaMedia;//????
+	private double notaMedia;
 	
 	public ExpedienteBackingBean(){
 		
@@ -64,9 +64,7 @@ public class ExpedienteBackingBean {
 	public void cambiarNotaMedia(Long Num_Expediente, Double Nota_media) {
 		
 		try {
-			expediente = gestionE.obtenerExpediente(Num_Expediente);
-            expediente.setNota_Media_Provisional(Nota_media);
-			
+			gestionE.cambiarNotaMedia(Num_Expediente,Nota_media);
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
