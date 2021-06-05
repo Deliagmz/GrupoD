@@ -10,31 +10,49 @@
 	  xmlns:f="http://xmlns.jcp.org/jsf/core"
 	  lang="es">
   <h:head>
-	    <title>Consultar titulacion</title>
+	    <title>Actualizar usuario</title>
 	    <link href="resources/estilos.css" rel="stylesheet" />
   </h:head>
   <h:body>
     <div id="content">
       <div id="banner">
         <h1>
-          Gestor de titulaciones
+          Gestor de usuarios
         </h1>   
       </div>
 
 	      <form>
             <table align="center">
                 <tr>
-                    <th align="right" width="50%">Titulación a leer: </th>
+                    <th align="right" width="50%">Usuario a actualizar: </th>
                     <td>
-                        <input type="text" name="titulacion" value="" size="16" maxlength="4"/>
+                        <input type="text" name="usuario" value="" size="16" maxlength="9"/>
                     </td>
                 </tr>
-           
+           		<tr>
+                    <th align="right" width="50%">Nuevo email del usuario: </th>
+                    <td>
+                        <input type="text" name="usuario" value="" size="16" maxlength="30"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th align="right" width="50%">Nuevo teléfono del usuario: </th>
+                    <td>
+                        <input type="text" name="usuario" value="" size="16" maxlength="9"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th align="right" width="50%">Nueva dirección del usuario: </th>
+                    <td>
+                        <input type="text" name="usuario" value="" size="16"  maxlength="30"/>
+                    </td>
+                </tr>
+                
                 <tr>
                     <td width="50%"></td>
 
                     <td align="left" width="50%">
-                        <input type="submit" name="Leer" value="Leer"/>
+                        <input type="submit" name="Actualizar" value="Actualizar"/>
                     </td>
                 </tr>
             </table>
