@@ -59,9 +59,10 @@ public class TitulacionBackingBean {
 		this.titulacion = titulacion;
 	}
 	
-	public Titulacion leerTitulacion() {
+	public String leerTitulacion() {
 		try {
-			return gestionT.obtenerTitulacion(codigo);
+			titulacion = gestionT.obtenerTitulacion(codigo);
+			return titulacion.toString();
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

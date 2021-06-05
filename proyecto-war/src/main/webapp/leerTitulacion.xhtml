@@ -30,7 +30,7 @@
                 
                  	<td>
 		              <h:inputText id="codigo" required="true" value="#{titulacion.titulacion.codigo}"/>
-		              <h:message for="codigo"/>
+		              
 		            </td>
 		        </tr>
            
@@ -38,8 +38,8 @@
                     <td width="50%"></td>
 
                     <td>
-		              <h:inputText id="titulacion" required="true" value="#{titulacion.titulacion.leerTitulacion}"/>
-		              <h:message for="titulacion"/>
+		              <h:commandButton id="titulacion" value="Leer" action="#{titulacion.leerTitulacion()}"/>
+		              
 		            </td>
                 </tr>
             </table>
