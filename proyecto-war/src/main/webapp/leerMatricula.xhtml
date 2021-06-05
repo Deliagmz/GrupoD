@@ -24,37 +24,20 @@
         </h4>   
       </div>
 
-	      <form>
-            <table align="center">
-                <tr>
-                    <th align="right" width="50%">N&uacute;mero de expediente: </th>
-                    <td>
-                        <input type="text" name="expediente" value="" size="16" maxlength="15"/>
-                    </td>
-                </tr>
-                <tr>
-                    <th align="right" width="50%">Curso: </th>
-                    <td>
-                        <input type="text" name="Curso" value="" size="16" maxlength="15"/>
-                    </td>
-                </tr>
-           
-                <tr>
-                    <td width="50%"></td>
+      <h:form id="expediente">
+        <h:panelGrid columns="3">
+                      <h:outputText value="N&uacute;mero de expediente: "  for= "Num_Expediente"/>
+                      <h:inputText id ="Num_Expediente" value="#{expediente.numExpediente}" required="true"/>
+                      <h:message for="Num_Expediente"/>
 
-                    <td align="left" width="50%">
-                        <input type="submit" name="Leer" value="Leer"/>
-                    </td>
-                </tr>
-            </table>
-        </form>
-      
-        <div id="navegador">
-	        <p>
-	          <a href="expediente.xhtml">Volver</a>
-			   
-	        </p>
-			
+                      <h:outputText value="Curso: "  for= "curso"/>
+                      <h:inputText id ="curso" value="#{expediente.cursoAcademico}" required="true"/>
+                      <h:message for="curso"/>
+
+                      <h:commandButton value="Leer" action="#{expediente.obtenerMatricula()}"/>
+                      <h:commandButton value="Cancelar" action="indexSecretaria.xhtml"/>
+        </h:panelGrid>
+      </h:form>
 			<div class="footer">
             	<p id="top" class="ftp" style="">
            	 	<strong><u>Grupo D</u></strong>
