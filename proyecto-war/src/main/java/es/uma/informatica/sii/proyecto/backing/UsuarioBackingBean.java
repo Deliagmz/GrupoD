@@ -44,7 +44,7 @@ public class UsuarioBackingBean {
 		return usuario;
 	}
 	
-	public Usuario actualizarUsuario (String email, String telefono, String direccion, String dni) {
+	public String actualizarUsuario (String email, String telefono, String direccion, String dni) {
 		
 		try {
 			usuario = gestionU.obtenerUsuario(dni);
@@ -58,17 +58,54 @@ public class UsuarioBackingBean {
 			e.printStackTrace();
 		}
 		
-		return usuario;
+		return "indexSecretaria.xhtml";
 		
 	}
 	
-	public void borrarUsuario (String dni) {
+	public String borrarUsuario (String dni) {
 		try {
 			gestionU.eliminarUsuario(dni);
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return "indexSecretaria.xhtml";
+	}
+
+	public String getDni() {
+		return dni;
+	}
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 }

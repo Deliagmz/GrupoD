@@ -21,7 +21,7 @@
         </h1>   
       </div>
 
-	      <form>
+	      <h:form>
             <table align="center">
                 <tr>
                     <th align="right" width="50%">Usuario a actualizar: </th>
@@ -52,11 +52,11 @@
                     <td width="50%"></td>
 
                     <td align="left" width="50%">
-                        <input type="submit" name="Actualizar" value="#{usuario.actualizarUsuario()}"/>
+                        <h:commandButton value="Actualizar " action="#{usuario.actualizarUsuario()}" styleClass = "submit"></h:commandButton>
                     </td>
                 </tr>
             </table>
-        </form>
+        </h:form>
       
         <div id="navegador">
 	        <p>

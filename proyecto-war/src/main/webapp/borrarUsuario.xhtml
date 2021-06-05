@@ -21,7 +21,7 @@
         </h1>   
       </div>
 
-	      <form>
+	      <h:form>
             <table align="center">
                 <tr>
                     <th align="right" width="50%">Usuario a borrar: </th>
@@ -34,11 +34,11 @@
                     <td width="50%"></td>
 
                     <td align="left" width="50%">
-                        <input type="submit" name="Borrar" value="#{usuario.borrarUsuario}"/>
+                       <h:commandButton value="Borrar " action="#{usuario.borrarUsuario()}" styleClass = "submit"></h:commandButton>
                     </td>
                 </tr>
             </table>
-        </form>
+        </h:form>
       
         <div id="navegador">
 	        <p>
