@@ -25,6 +25,11 @@ public class Encuesta implements Serializable {
 		
 		
 	}
+	
+	
+	
+	
+
 
 	@Id
 	private Timestamp fecha_de_envio;
@@ -40,10 +45,39 @@ public class Encuesta implements Serializable {
 	private List<Grupos_Por_Asignatura> gr_asignaturas;
    
 	
+	// esto es nuevo 
+	private List<String> curso;
+	private List <String> grupo;
+	
+	
 	public Encuesta() {
 		super();
 	}
 	
+
+
+	public List<String> getCurso() {
+		return curso;
+	}
+
+
+
+	public void setCurso(List<String> curso) {
+		this.curso = curso;
+	}
+
+
+
+	public List<String> getGrupo() {
+		return grupo;
+	}
+
+
+
+	public void setGrupo(List<String> grupo) {
+		this.grupo = grupo;
+	}
+
 
 
 	public Timestamp getFecha_de_envio() {

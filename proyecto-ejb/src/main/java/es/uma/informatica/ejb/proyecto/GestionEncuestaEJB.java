@@ -16,7 +16,7 @@ public interface GestionEncuestaEJB {
 	
 	public void crearEncuesta(Timestamp f_d_e, Expedientes e) throws SecretariaException;
 	
-	public void actualizarEncuesta(Encuesta encuesta,Timestamp f_d_e, Expedientes e) throws SecretariaException;
+	public void actualizarEncuesta(Encuesta encuesta,Timestamp f_d_e, Expedientes e,String grupo, String curso) throws SecretariaException;
 	
 	public void borrarEncuesta(Encuesta encuesta) throws SecretariaException;
 

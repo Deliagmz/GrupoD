@@ -17,115 +17,94 @@
     <link href="resources/estilos.css" rel="stylesheet" />
   </h:head>
   <h:body>
-    <div id="content">
-      <div id="banner">
-        <h:h1>
-          Encuesta
-        </h:h1>
-      </div>
-      <h:form id="encuesta">
-        <table width="100%" border="0" align="center" cellspacing="12">
-          <tr>
-            <th align="right" width="50%">
-              ¿Asignaturas de Primero?
-            </th>
-            <td align="left">
-              
-              <input type="radio" id="primeroSi" name="primero" value="Si" />Si
-              
-              <input type="radio" id="primeroNo" name="primero" value="No" />No
-             
-            </td>
-          </tr>
-          <tr>
-            <th align="right" width="50%">
-              Grupo Preferente
-            </th>
-            <td align="left">
-              <input type="radio" name="primeroL" value="A" />A
-              <input type="radio" name="primeroL" value="B" />B
-              <input type="radio" name="primeroL" value="C" />C
-              <input type="radio" name="primeroL" value="D" />D
-              <input type="radio" name="primeroL" value="E" />E
-            </td>
-          </tr>
-          <tr>
-            <th align="right" width="50%">
-              ¿Asignaturas de Segundo?
-            </th>
-            <td align="left">
-              <input type="radio" name="segundo" value="Si" />Si
-              <input type="radio" name="segundo" value="No" />No
-            </td>
-          </tr>
-          <tr>
-            <th align="right" width="50%">
-              Grupo Preferente
-            </th>
-            <td align="left">
-              <input type="radio" name="Segundo" value="A" />A
-              <input type="radio" name="Segundo" value="B" />B
-              <input type="radio" name="Segundo" value="C" />C
-              <input type="radio" name="Segundo" value="D" />D
-              <input type="radio" name="Segundo" value="E" />E
-            </td>
-          </tr>
-          <tr>
-            <th align="right" width="50%">
-              ¿Asignaturas de Tercero?
-            </th>
-            <td align="left">
-              <input type="radio" name="tercero" value="Si" />Si
-              <input type="radio" name="tercero" value="No" />No
-            </td>
-          </tr>
-          <tr>
-            <th align="right" width="50%">
-              Grupo Preferente
-            </th>
-            <td align="left">
-              <input type="radio" name="Tercero" value="A" />A
-              <input type="radio" name="Tercero" value="B" />B
-              <input type="radio" name="Tercero" value="C" />C
-              <input type="radio" name="Tercero" value="D" />D
-              <input type="radio" name="Tercero" value="E" />E
-            </td>
-          </tr>
-          <tr>
-            <th align="right" width="50%">
-              ¿Asignaturas de Cuarto?
-            </th>
-            <td align="left">
-              <input type="radio" name="cuarto" value="Si" />Si
-              <input type="radio" name="cuarto" value="No" />No
-            </td>
-          </tr>
-          <tr>
-            <th align="right" width="50%">
-              Grupo Preferente
-            </th>
-            <td align="left">
-              <input type="radio" name="Cuarto" value="A" />A
-              <input type="radio" name="Cuarto" value="B" />B
-              <input type="radio" name="Cuarto" value="C" />C
-              <input type="radio" name="Cuarto" value="D" />D
-              <input type="radio" name="Cuarto" value="E" />E
-            </td>
-          </tr>
-          
-          <tr>
-            <td width="50%"></td>
-            <td align="left" width="50%">
-              <input type="submit" value="Enviar Encuesta" />
-            </td>
-          </tr>
-        </table>
-      </h:form>
-      <div id="navegador">
-        <p>
-          <br></br><a href="index.xhtml">Volver al Inicio</a>
-        </p>
-      </div>
-    </div>
+  	<h:form>
+  	<h1>Encuesta a realizar</h1>
+  	¿Cursa asignaturas de primero?<br/>
+
+  	<h:selectOneMenu value = "#{EncuestaBackingBean.curso}">
+  		<f:selectItem itemValue = "1" itemLabel = "Si"/>
+  		<f:selectItem itemValue = "0" itemLabel = "NO"/>
+  		
+  	</h:selectOneMenu>>
+  	<h:commandButton action = #{EncuestaBackingBean.curso} value = enviar/>
+  	
+  	Elegir grupo<br/>
+
+  	<h:selectOneMenu value = "#{EncuestaBackingBean.grupo}">
+  		<f:selectItem itemValue = "A" itemLabel = "A"/>
+  		<f:selectItem itemValue = "B" itemLabel = "B"/>
+  		<f:selectItem itemValue = "C" itemLabel = "C"/>
+  		<f:selectItem itemValue = "D" itemLabel = "D"/>
+  		<f:selectItem itemValue = "E" itemLabel = "E"/>
+  		
+  	</h:selectOneMenu>>
+  	<h:commandButton action = #{EncuestaBackingBean.grupo} value = enviar/>
+  	
+  	¿Cursa asignaturas de segundo?<br/>
+
+  	<h:selectOneMenu value = "#{EncuestaBackingBean.curso}">
+  		<f:selectItem itemValue = "2" itemLabel = "Si"/>
+  		<f:selectItem itemValue = "0" itemLabel = "NO"/>
+  		
+  	</h:selectOneMenu>>
+  	<h:commandButton action = #{EncuestaBackingBean.curso} value = enviar/>
+  	
+  	Elegir grupo<br/>
+
+  	<h:selectOneMenu value = "#{EncuestaBackingBean.grupo}">
+  		<f:selectItem itemValue = "A" itemLabel = "A"/>
+  		<f:selectItem itemValue = "B" itemLabel = "B"/>
+  		<f:selectItem itemValue = "C" itemLabel = "C"/>
+  		<f:selectItem itemValue = "D" itemLabel = "D"/>
+  		<f:selectItem itemValue = "E" itemLabel = "E"/>
+  		
+  	</h:selectOneMenu>
+  	<h:commandButton action = #{EncuestaBackingBean.grupo} value = enviar/>
+  	
+  	¿Cursa asignaturas de tercero?<br/>
+
+  	<h:selectOneMenu value = "#{EncuestaBackingBean.curso}">
+  		<f:selectItem itemValue = "3" itemLabel = "Si"/>
+  		<f:selectItem itemValue = "0" itemLabel = "NO"/>
+  		
+  	</h:selectOneMenu>>
+  	<h:commandButton action = #{EncuestaBackingBean.curso} value = enviar/>
+  	Elegir grupo<br/>
+
+  	<h:selectOneMenu value = "#{EncuestaBackingBean.grupo}">
+  		<f:selectItem itemValue = "A" itemLabel = "A"/>
+  		<f:selectItem itemValue = "B" itemLabel = "B"/>
+  		<f:selectItem itemValue = "C" itemLabel = "C"/>
+  		<f:selectItem itemValue = "D" itemLabel = "D"/>
+  		<f:selectItem itemValue = "E" itemLabel = "E"/>
+  		
+  	</h:selectOneMenu>>
+  	<h:commandButton action = #{EncuestaBackingBean.grupo} value = enviar/>
+  	
+  	¿Cursa asignaturas de cuarto?<br/>
+
+  	<h:selectOneMenu value = "#{EncuestaBackingBean.curso}">
+  		<f:selectItem itemValue = "4" itemLabel = "Si"/>
+  		<f:selectItem itemValue = "0" itemLabel = "NO"/>
+  		
+  	</h:selectOneMenu>>
+  	<h:commandButton action = #{EncuestaBackingBean.curso} value = enviar/>
+  	
+  	Elegir grupo<br/>
+
+  	<h:selectOneMenu value = "#{EncuestaBackingBean.grupo}">
+  		<f:selectItem itemValue = "A" itemLabel = "A"/>
+  		<f:selectItem itemValue = "B" itemLabel = "B"/>
+  		<f:selectItem itemValue = "C" itemLabel = "C"/>
+  		<f:selectItem itemValue = "D" itemLabel = "D"/>
+  		<f:selectItem itemValue = "E" itemLabel = "E"/>
+  		
+  	</h:selectOneMenu>>
+  	<h:commandButton action = #{EncuestaBackingBean.grupo} value = enviar/>
+  	
+  	</h:form>
+  	
+  
+    
   </h:body>
 </html>
