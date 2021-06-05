@@ -9,6 +9,8 @@ import es.uma.informatica.ejb.proyecto.GestionMatricula;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.jpa.proyecto.Expedientes;
 import es.uma.informatica.jpa.proyecto.Matricula;
+import es.uma.informatica.jpa.proyecto.Matricula.MatriculaId;
+import es.uma.informatica.jpa.proyecto.Matricula.MatriculaId;
 
 @Named(value="expediente")
 @RequestScoped

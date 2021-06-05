@@ -63,9 +63,5 @@ public class TitulacionBackingBean {
 			e.printStackTrace();
 		}
 	}
-	
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> abde
