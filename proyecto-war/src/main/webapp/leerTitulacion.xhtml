@@ -21,28 +21,33 @@
         </h1>   
       </div>
 
-	      <form>
+	      <h:form>
             <table align="center">
-                <tr>
-                    <th align="right" width="50%">Titulaci&oacute;n a leer: </th>
-                    <td>
-                        <input type="text" name="titulacion" value="" size="16" maxlength="4"/>
-                    </td>
-                </tr>
+            	<tr>
+		            <th align="right" width="50%">
+		             <h:outputText value="Titulación a leer: "/>
+		            </th>
+                
+                 	<td>
+		              <h:inputText id="codigo" required="true" value="#{titulacion.titulacion.codigo}"/>
+		              <h:message for="codigo"/>
+		            </td>
+		        </tr>
            
                 <tr>
                     <td width="50%"></td>
 
-                    <td align="left" width="50%">
-                        <input type="submit" name="Leer" value="Leer"/>
-                    </td>
+                    <td>
+		              <h:inputText id="titulacion" required="true" value="#{titulacion.titulacion.leerTitulacion}"/>
+		              <h:message for="titulacion"/>
+		            </td>
                 </tr>
             </table>
-        </form>
+        </h:form>
       
         <div id="navegador">
 	        <p>
-	          <a href="titulacion.xhtml">Volver</a>
+	          <a href="indexSecretaria.xhtml">Volver</a>
 			   
 	        </p>
 			

@@ -21,28 +21,31 @@
         </h1>   
       </div>
 
-	      <form>
+	      <h:form>
             <table align="center">
                 <tr>
-                    <th align="right" width="50%">Titulaci&oacute;n a borrar: </th>
-                    <td>
-                        <input type="text" name="titulacion" value="" size="16" maxlength="4"/>
-                    </td>
-                </tr>
-           
+		            <th align="right" width="50%">
+		             <h:outputText value="Titulación a borrar: "/>
+		            </th>
+               
+           			<td>
+		              <h:inputText id="codigo" required="true" value="#{titulacion.titulacion.codigo}"/>
+		              <h:message for="codigo"/>
+		            </td>
+		       	</tr>
                 <tr>
                     <td width="50%"></td>
 
                     <td align="left" width="50%">
-                        <input type="submit" name="Borrar" value="Borrar"/>
+                        <h:commandButton value="Borrar titulación" action="#{titulacion.titulacion.borrarTitulacion()}" styleClass = "submit"></h:commandButton>
                     </td>
                 </tr>
             </table>
-        </form>
+        </h:form>
       
         <div id="navegador">
 	        <p>
-	          <a href="titulacion.xhtml">Volver</a>
+	          <a href="indexSecretaria.xhtml">Volver</a>
 			   
 	        </p>
 			

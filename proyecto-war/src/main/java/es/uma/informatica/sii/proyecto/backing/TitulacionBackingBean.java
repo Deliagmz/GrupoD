@@ -58,5 +58,35 @@ public class TitulacionBackingBean {
 	public void setTitulacion(Titulacion titulacion) {
 		this.titulacion = titulacion;
 	}
-
+	
+	public Titulacion leerTitulacion() {
+		try {
+			return gestionT.obtenerTitulacion(codigo);
+		} catch (SecretariaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
+	
+	public String borrarTitulacion() {
+		try {
+			gestionT.eliminarTitulacion(codigo);
+		} catch (SecretariaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "indexSecretaria.xhtml";
+	}
+	
+	public void actualizarTitulacion() {
+		try {
+			gestionT.actualizarTitulacion(codigo, titulacion);
+		} catch (SecretariaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		};
+			
+	}
 }
