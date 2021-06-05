@@ -18,10 +18,52 @@ public class Encuesta implements Serializable {
 		
 		private Timestamp fecha_de_envio;
 		private Long expediente;
-		public EncuestaId(Timestamp t, Long nExp) {
-			fecha_de_envio = t;
-			expediente = nExp;
+//		public EncuestaId(Timestamp t, Long nExp) {
+//			fecha_de_envio = t;
+//			expediente = nExp;
+//		}
+		public Timestamp getFecha_de_envio() {
+			return fecha_de_envio;
 		}
+		public void setFecha_de_envio(Timestamp fecha_de_envio) {
+			this.fecha_de_envio = fecha_de_envio;
+		}
+		public Long getExpediente() {
+			return expediente;
+		}
+		public void setExpediente(Long expediente) {
+			this.expediente = expediente;
+		}
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + ((expediente == null) ? 0 : expediente.hashCode());
+			result = prime * result + ((fecha_de_envio == null) ? 0 : fecha_de_envio.hashCode());
+			return result;
+		}
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			EncuestaId other = (EncuestaId) obj;
+			if (expediente == null) {
+				if (other.expediente != null)
+					return false;
+			} else if (!expediente.equals(other.expediente))
+				return false;
+			if (fecha_de_envio == null) {
+				if (other.fecha_de_envio != null)
+					return false;
+			} else if (!fecha_de_envio.equals(other.fecha_de_envio))
+				return false;
+			return true;
+		}
+		
 		
 		
 	}

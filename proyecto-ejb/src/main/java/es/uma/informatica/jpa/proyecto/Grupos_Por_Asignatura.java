@@ -22,6 +22,61 @@ public class Grupos_Por_Asignatura implements Serializable {
 		private Integer referencia;
 		private String Curso_Academico;
 		private String Id;
+		public Integer getReferencia() {
+			return referencia;
+		}
+		public void setReferencia(Integer referencia) {
+			this.referencia = referencia;
+		}
+		public String getCurso_Academico() {
+			return Curso_Academico;
+		}
+		public void setCurso_Academico(String curso_Academico) {
+			Curso_Academico = curso_Academico;
+		}
+		public String getId() {
+			return Id;
+		}
+		public void setId(String id) {
+			Id = id;
+		}
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + ((Curso_Academico == null) ? 0 : Curso_Academico.hashCode());
+			result = prime * result + ((Id == null) ? 0 : Id.hashCode());
+			result = prime * result + ((referencia == null) ? 0 : referencia.hashCode());
+			return result;
+		}
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Grupos_Por_AsignaturaID other = (Grupos_Por_AsignaturaID) obj;
+			if (Curso_Academico == null) {
+				if (other.Curso_Academico != null)
+					return false;
+			} else if (!Curso_Academico.equals(other.Curso_Academico))
+				return false;
+			if (Id == null) {
+				if (other.Id != null)
+					return false;
+			} else if (!Id.equals(other.Id))
+				return false;
+			if (referencia == null) {
+				if (other.referencia != null)
+					return false;
+			} else if (!referencia.equals(other.referencia))
+				return false;
+			return true;
+		}
+		
+		
 	}
 
 	   
