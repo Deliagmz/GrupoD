@@ -20,6 +20,63 @@ public class Clase implements Serializable {
 		private String grupos;
 		private String Dia;         
 		private String Hora_inicio;
+		
+		public String getGrupos() {
+			return grupos;
+		}
+		public void setGrupos(String grupos) {
+			this.grupos = grupos;
+		}
+		public String getDia() {
+			return Dia;
+		}
+		public void setDia(String dia) {
+			Dia = dia;
+		}
+		public String getHora_inicio() {
+			return Hora_inicio;
+		}
+		public void setHora_inicio(String hora_inicio) {
+			Hora_inicio = hora_inicio;
+		}
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + ((Dia == null) ? 0 : Dia.hashCode());
+			result = prime * result + ((Hora_inicio == null) ? 0 : Hora_inicio.hashCode());
+			result = prime * result + ((grupos == null) ? 0 : grupos.hashCode());
+			return result;
+		}
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			ClaseId other = (ClaseId) obj;
+			if (Dia == null) {
+				if (other.Dia != null)
+					return false;
+			} else if (!Dia.equals(other.Dia))
+				return false;
+			if (Hora_inicio == null) {
+				if (other.Hora_inicio != null)
+					return false;
+			} else if (!Hora_inicio.equals(other.Hora_inicio))
+				return false;
+			if (grupos == null) {
+				if (other.grupos != null)
+					return false;
+			} else if (!grupos.equals(other.grupos))
+				return false;
+			return true;
+		}
+		
+		
+		
 	}
 	
 	
