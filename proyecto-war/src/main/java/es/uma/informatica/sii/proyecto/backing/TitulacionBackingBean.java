@@ -64,8 +64,5 @@ public class TitulacionBackingBean {
 		}
 	}
 	
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> abde
+

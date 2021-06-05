@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 
 <!DOCTYPE html
    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -24,32 +24,17 @@
       </h4>    
       </div>
 
-	      <form>
-            <table align="center">
-                <tr>
-                    <th align="right" width="50%">Expediente a modificar: </th>
-                    <td>
-                        <input type="text" name="Expediente" value="" size="16" maxlength="4"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td width="50%"></td>
-                    <td align="left" width="50%">
-                        <input type="submit" name="BORRAR NOTA MEDIA" value="Borrar"/>
-                    </td>
+      <h:form id="expediente">
+        <h:panelGrid columns="3">
+                      <h:outputText value="N&uacute;mero de expediente: "  for= "Num_Expediente"/>
+                      <h:inputText id ="Num_Expediente" value="#{expediente.numExpediente}" required="true"/>
+                      <h:message for="Num_Expediente"/>
 
-                </tr>
-                
-        
-            </table>
-        </form>
+                      <h:commandButton value="Borrar" action="#{expediente.borrarNotaMedia()}"/>
+                      <h:commandButton value="Cancelar" action="indexSecretaria.xhtml"/>
+        </h:panelGrid>
+      </h:form>
       
-        <div id="navegador">
-	        <p>
-	          <a href="indexSecretaria.xhtml">Volver</a>
-			   
-	        </p>
-			
 			<div class="footer">
             	<p id="top" class="ftp" style="">
            	 	<strong><u>Grupo D</u></strong>

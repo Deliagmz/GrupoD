@@ -9,32 +9,58 @@ import es.uma.informatica.ejb.proyecto.GestionMatricula;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.jpa.proyecto.Expedientes;
 import es.uma.informatica.jpa.proyecto.Matricula;
+import es.uma.informatica.jpa.proyecto.Matricula.MatriculaId;
 
 @Named(value="expediente")
 @RequestScoped
 public class ExpedienteBackingBean {
+
+
 	@Inject
 	private InfoSesion infosesion;
 	
 	@Inject
-	GestionExpedientes gestionE;
+	private GestionExpedientes gestionE;
 
     @Inject
-	GestionMatricula gestionM;
+	private GestionMatricula gestionM;
 	
+	
+
 	private Expedientes expediente;
     private Matricula matricula;
-    
-	private double notaMedia;
+
+	private Double notaMedia;
+	private Long numExpediente;
 	
 	public ExpedienteBackingBean(){
-		
+		expediente=new Expedientes();
 	}
-	
+
+
 	public Expedientes getExpediente() {
+		
 		return expediente;
 	}
 	
+	//CONSULTAR ????//
+		public Double getNotaMedia() {
+				return notaMedia;
+			}
+			public void setNotaMedia(Double notaMedia) {
+				this.notaMedia = notaMedia;
+			}
+		
+		
+			public Long getNumExpediente() {
+				return numExpediente;
+			}
+		
+		
+			public void setNumExpediente(Long numExpediente) {
+				this.numExpediente = numExpediente;
+			}
+
     public Matricula getMatricula(){
         return matricula;
     }
@@ -49,37 +75,41 @@ public class ExpedienteBackingBean {
 		
 		return matricula;
     }
-
-
-	public Double leerNotaMedia(Long Num_Expediente)  {
+    
+	public String modificar() {
 		try {
-		 notaMedia = gestionE.leerNotaMedia(Num_Expediente);
+			gestionE.cambiarNotaMedia(getNumExpediente(),getNotaMedia());
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return notaMedia;
+		
+        return "indexSecretaria.xhtml";
+    }
+
+	public String leerNotaMedia()  {
+		try {
+		 notaMedia = gestionE.leerNotaMedia(getNumExpediente());
+		} catch (SecretariaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "indexSecretaria.xhtml";
 	}
 	
-	public void cambiarNotaMedia(Long Num_Expediente, Double Nota_media) {
-		
-		try {
-			gestionE.cambiarNotaMedia(Num_Expediente,Nota_media);
-		} catch (SecretariaException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-	}
 	
-	public void borrarNotaMedia(Long Num_Expediente) {
+	public String borrarNotaMedia() {
 		try {
-			gestionE.borrarNotaMedia(Num_Expediente);
+			gestionE.borrarNotaMedia(getNumExpediente());
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return "indexSecretaria.xhtml";
 	}
+
+
+
+
 	
 }
