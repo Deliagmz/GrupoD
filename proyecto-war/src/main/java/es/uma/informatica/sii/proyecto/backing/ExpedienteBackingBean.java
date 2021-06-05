@@ -32,42 +32,45 @@ public class ExpedienteBackingBean {
 
 	private Double notaMedia;
 	private Long numExpediente;
+	private String cursoAcademico;
+	
 	
 	public ExpedienteBackingBean(){
 		expediente=new Expedientes();
 	}
 
 
-	public Expedientes getExpediente() {
-		
-		return expediente;
-	}
-	
-	//CONSULTAR ????//
+		public Expedientes getExpediente() {
+			
+			return expediente;
+		}
+
+//CONSULTAR ????//
 		public Double getNotaMedia() {
 				return notaMedia;
-			}
-			public void setNotaMedia(Double notaMedia) {
-				this.notaMedia = notaMedia;
-			}
-		
-		
-			public Long getNumExpediente() {
-				return numExpediente;
-			}
-		
-		
-			public void setNumExpediente(Long numExpediente) {
-				this.numExpediente = numExpediente;
-			}
-
-    public Matricula getMatricula(){
-        return matricula;
-    }
+		}
+		public void setNotaMedia(Double notaMedia) {
+			this.notaMedia = notaMedia;
+		}
+		public Long getNumExpediente() {
+			return numExpediente;
+		}
+		public void setNumExpediente(Long numExpediente) {
+			this.numExpediente = numExpediente;
+		}
+		public String getCursoAcademico() {
+				return cursoAcademico;
+		}
+		public void setCursoAcademico(String cursoAcademico) {
+			this.cursoAcademico = cursoAcademico;
+		}
+		public Matricula getMatricula(){
+		    return matricula;
+		}
 //?????????????????????????????????????????????????????????????????????//
     public Matricula obtenerMatricula(MatriculaId matriculaId){
         try {
-			matricula = gestionM.obtenerMatricula(matriculaId);
+        	matricula = gestionM.obtenerMatricula(matriculaId);
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -75,7 +78,7 @@ public class ExpedienteBackingBean {
 		
 		return matricula;
     }
-    
+
 	public String modificar() {
 		try {
 			gestionE.cambiarNotaMedia(getNumExpediente(),getNotaMedia());
@@ -94,10 +97,12 @@ public class ExpedienteBackingBean {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return "indexSecretaria.xhtml";
+		return notaMedia.toString();
 	}
 	
-	
+	public String notaMediaToString() {
+		return leerNotaMedia();
+	}
 	public String borrarNotaMedia() {
 		try {
 			gestionE.borrarNotaMedia(getNumExpediente());

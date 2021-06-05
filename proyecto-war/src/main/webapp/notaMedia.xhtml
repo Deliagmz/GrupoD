@@ -10,34 +10,33 @@
 	  xmlns:f="http://xmlns.jcp.org/jsf/core"
 	  lang="es">
   <h:head>
-	    <title>Consultar matr&iacute;culas</title>
+	    <title>Consultar nota media</title>
 	    <link href="resources/estilos.css" rel="stylesheet" />
   </h:head>
   <h:body>
     <div id="content">
       <div id="banner">
         <h1>
-          Gestor de matr&iacute;culas
-        </h1>   
+          Gestor de expedientes
+        </h1>
         <h4>
-            Consultar matr&iacute;cula
+            Consultar nota media
         </h4>   
       </div>
 
-      <h:form id="expediente">
+	     <h:form id="expediente">
         <h:panelGrid columns="3">
-                      <h:outputText value="N&uacute;mero de expediente: "  for= "Num_Expediente"/>
-                      <h:inputText id ="Num_Expediente" value="#{expediente.numExpediente}" required="true"/>
-                      <h:message for="Num_Expediente"/>
-
-                      <h:outputText value="Curso: "  for= "curso"/>
-                      <h:inputText id ="curso" value="#{expediente.cursoAcademico}" required="true"/>
-                      <h:message for="curso"/>
-
-                      <h:commandButton value="Leer" action="#{expediente.obtenerMatricula()}"/>
-                      <h:commandButton value="Cancelar" action="indexSecretaria.xhtml"/>
+                      <h:outputLabel value="N&uacute;mero de expediente: " />
+                      <h:outputLabel value="#{expediente.numExpediente}"/> 
+ 						
+					<h:outputLabel value="Nota media: "  for= "notaMedia"/>
+					<h:outputLabel value="#{expediente.notaMedia}"/> 
+				
+                    
+                      <h:commandButton value="Volver" action="indexSecretaria.xhtml"/>
         </h:panelGrid>
       </h:form>
+			
 			<div class="footer">
             	<p id="top" class="ftp" style="">
            	 	<strong><u>Grupo D</u></strong>
