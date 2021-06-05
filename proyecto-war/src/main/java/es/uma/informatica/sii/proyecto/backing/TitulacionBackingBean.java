@@ -17,51 +17,46 @@ public class TitulacionBackingBean {
 	@Inject
 	GestionTitulacion gestionT;
 	
-	private Titulacion titulacion;
+	private Titulacion titulacion = new Titulacion();
+	
+	private Integer codigo;
+	private String nombre;
+	private Integer creditos;
 	
 	public TitulacionBackingBean(){
-		
+	
 	}
 	
 	public Titulacion getTitulacion() {
 		return titulacion;
 	}
 	
-	public Titulacion leerTitulacion(Integer codigo)  {
-		
-		try {
-			titulacion = gestionT.obtenerTitulacion(codigo);
-		} catch (SecretariaException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return titulacion;
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
 	}
 	
-	public Titulacion actualizarTitulacion (Integer codigo, Integer ncodigo, String nnombre, Integer ncreditos) {
-		
-		try {
-			titulacion = gestionT.obtenerTitulacion(codigo);
-			titulacion.setCodigo(ncodigo);
-			titulacion.setNombre(nnombre);
-			titulacion.setCreditos(ncreditos);
-		} catch (SecretariaException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return titulacion;
-		
+	public Integer getCodigo() {
+		return codigo;
 	}
-	
-	public void borrarTitulacion (Integer codigo) {
-		try {
-			gestionT.eliminarTitulacion(codigo);
-		} catch (SecretariaException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Integer getCreditos() {
+		return creditos;
+	}
+
+	public void setCreditos(Integer creditos) {
+		this.creditos = creditos;
+	}
+
+	public void setTitulacion(Titulacion titulacion) {
+		this.titulacion = titulacion;
 	}
 
 }
