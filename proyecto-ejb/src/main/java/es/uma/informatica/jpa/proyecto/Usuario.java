@@ -38,7 +38,7 @@ public class Usuario implements Serializable {
 //	@OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
 //    @OrderBy ("nombre ASC")
 //    private List<Contacto> contactos;
-	
+	private String cuenta;
 	@XmlTransient
 	@JsonbTransient
     private String cadenaValidacion;
@@ -171,6 +171,9 @@ public class Usuario implements Serializable {
 	public Object getCuenta() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	public void setCuenta(String cuenta) {
+		this.cuenta = cuenta;
 	}
 	
 	
