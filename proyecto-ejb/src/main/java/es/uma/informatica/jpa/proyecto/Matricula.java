@@ -28,10 +28,10 @@ public class Matricula implements Serializable {
 		private String Curso_academico;
 		private Long expedientes;
 		
-//		public MatriculaId (String Cursoacademico,Long expedientes) {
-//			this.Curso_academico = Cursoacademico;
-//			this.expedientes=expedientes;
-//		}
+		public MatriculaId (String Cursoacademico,Long expedientes) {
+			this.Curso_academico = Cursoacademico;
+			this.expedientes=expedientes;
+		}
 
 		public String getCurso_academico() {
 			return Curso_academico;

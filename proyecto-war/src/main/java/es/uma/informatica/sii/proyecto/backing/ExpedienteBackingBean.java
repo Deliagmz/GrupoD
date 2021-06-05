@@ -3,13 +3,12 @@ package es.uma.informatica.sii.proyecto.backing;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-
+import es.uma.informatica.sii.proyecto.backing.InfoSesion;
 import es.uma.informatica.ejb.proyecto.GestionExpedientes;
 import es.uma.informatica.ejb.proyecto.GestionMatricula;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.jpa.proyecto.Expedientes;
 import es.uma.informatica.jpa.proyecto.Matricula;
-import es.uma.informatica.jpa.proyecto.Matricula.MatriculaId;
 import es.uma.informatica.jpa.proyecto.Matricula.MatriculaId;
 
 @Named(value="expediente")
