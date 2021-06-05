@@ -6,7 +6,6 @@ import javax.inject.Named;
 
 import es.uma.informatica.ejb.proyecto.GestionUsuario;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
-import es.uma.informatica.jpa.proyecto.Titulacion;
 import es.uma.informatica.jpa.proyecto.Usuario;
 
 @Named(value="usuario")
