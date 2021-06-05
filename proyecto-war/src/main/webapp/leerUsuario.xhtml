@@ -10,33 +10,41 @@
 	  xmlns:f="http://xmlns.jcp.org/jsf/core"
 	  lang="es">
   <h:head>
-	    <title>Consultar nota media</title>
+	    <title>Consultar usuario</title>
 	    <link href="resources/estilos.css" rel="stylesheet" />
   </h:head>
   <h:body>
     <div id="content">
       <div id="banner">
         <h1>
-          Gestor de expedientes
-        </h1>
-        <h4>
-            Consultar nota media
-        </h4>   
+          Gestor de usuarios
+        </h1>   
       </div>
 
-	     <h:form id="expediente">
-        <h:panelGrid columns="3">
-                      <h:outputText value="N&uacute;mero de expediente: "  for= "Num_Expediente"/>
-                      <h:inputText id ="Num_Expediente" value="#{expediente.numExpediente}" required="true"/>
-                      <h:message for="Num_Expediente"/>
+	      <h:form>
+            <table align="center">
+                <tr>
+                    <th align="right" width="50%">Usuario a leer: </th>
+                    <td>
+                        <h:inputText name="usuario" value="#{usuario.dni}" size="16" maxlength="9"/>
+                    </td>
+                </tr>
+           
+                <tr>
+                    <td width="50%"></td>
 
-                     
-                      <h:commandButton value="Leer" action="#{expediente.leerNotaMedia()}">
-   									   <f:actionListener binding="notaMedia.xhtml" />
-					  </h:commandButton>
-                      <h:commandButton value="Cancelar" action="indexSecretaria.xhtml"/>
-        </h:panelGrid>
-      </h:form>
+                    <td align="left" width="50%">
+                        <h:commandButton value="Leer" action="#{usuario.leerUsuario()}"/>
+                    </td>
+                </tr>
+            </table>
+        </h:form>
+      
+        <div id="navegador">
+	        <p>
+	          <a href="usuarios.xhtml">Volver</a>
+			   
+	        </p>
 			
 			<div class="footer">
             	<p id="top" class="ftp" style="">
@@ -50,6 +58,7 @@
              
 	    </div>
 		</div>
-
+      
+    </div>
   </h:body>
 </html>

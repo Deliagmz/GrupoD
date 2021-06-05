@@ -1,26 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE html
-   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" 
-	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	  xmlns:h="http://xmlns.jcp.org/jsf/html"
 	  xmlns:f="http://xmlns.jcp.org/jsf/core"
 	  lang="es">
   <h:head>
-	    <title>Login Secretaria</title>
+	    <title>Login</title>
 	    <link href="resources/estilos.css" rel="stylesheet" />
   </h:head>
   <h:body>
     <div id="content">
       <div id="banner">
         <h1>
-          Inicio Sesi&oacute;n para personal de Secretaria
+          Inicia Sesi&oacute;n
         </h1>
       </div>
-	      <h:form id="login">
+	      <h:form >
 		        <table align="center">
 		          <tr>
 		            <th align="right" width="50%">
@@ -42,7 +38,7 @@
 		          <tr>
 		            <td width="50%"></td>
 		            <td align="left" width="50%">
-		              <h:commandButton value="Entrar" action="#{login.entrar}"/>
+		              <h:commandButton value="Entrar" action="#{login.entrar()}"/>
 		            </td>
 		          </tr>
 		        </table>
@@ -51,7 +47,10 @@
 	      <div id="navegador">
 	        <p>
 	          <a href="index.xhtml">Volver al Inicio</a>
+			   
 	        </p>
+
+			<p><a href="loginSecretaria.xhtml">Soy personal de secretaria</a></p>
 	      </div>
       
     </div>

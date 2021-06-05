@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  lang="es">
+  <h:head>
+	    <title>Actualizar usuario</title>
+	    <link href="resources/estilos.css" rel="stylesheet" />
+  </h:head>
+  <h:body>
+    <div id="content">
+      <div id="banner">
+        <h1>
+          Gestor de usuarios
+        </h1>   
+      </div>
+
+	      <h:form>
+            <table align="center">
+                <tr>
+                    <th align="right" width="50%">Usuario a actualizar: </th>
+                    <td>
+                        <h:inputText name="usuario" value="#{usuario.dni}" size="16" maxlength="9"/>
+                    </td>
+                </tr>
+           		<tr>
+                    <th align="right" width="50%">Nuevo email del usuario: </th>
+                    <td>
+                        <h:inputText name="usuario" value="#{usuario.email}" size="16" maxlength="30"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th align="right" width="50%">Nuevo tel&eacute;fono del usuario: </th>
+                    <td>
+                        <h:inputText name="usuario" value="#{usuario.telefono}" size="16" maxlength="9"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th align="right" width="50%">Nueva direcci&uacute;n del usuario: </th>
+                    <td>
+                        <h:inputText name="usuario" value="#{usuario.direccion}" size="16"  maxlength="30"/>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td width="50%"></td>
+
+                    <td align="left" width="50%">
+                        <h:commandButton value="Actualizar " action="#{usuario.actualizarUsuario()}" styleClass = "submit"></h:commandButton>
+                    </td>
+                </tr>
+            </table>
+        </h:form>
+      
+        <div id="navegador">
+	        <p>
+	          <a href="usuarios.xhtml">Volver</a>
+			   
+	        </p>
+			
+			<div class="footer">
+            	<p id="top" class="ftp" style="">
+           	 	<strong><u>Grupo D</u></strong>
+            </p>
+
+            <p class="ftp" style="font-style: oblique">
+            Sistemas de Informaci&oacute;n para Internet
+            </p>
+
+             
+	    </div>
+		</div>
+      
+    </div>
+  </h:body>
+</html>

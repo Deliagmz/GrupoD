@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-
+<?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html
    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
@@ -13,6 +12,7 @@
 	    <title>Modificar nota media</title>
 	    <link href="resources/estilos.css" rel="stylesheet" />
   </h:head>
+
   <h:body>
     <div id="content">
       <div id="banner">
@@ -23,31 +23,24 @@
             Modificar nota media
         </h4>   
       </div>
+	      <h:form id="expediente">
+          <h:panelGrid columns="3">
+                        <h:outputText value="N&uacute;mero de expediente: "  for= "Num_Expediente"/>
+                        <h:inputText id ="Num_Expediente" value="#{expediente.numExpediente}" required="true"/>
+                        <h:message for="Num_Expediente"/>
 
-	      <form>
-            <table align="center">
-                <tr>
-                    <th align="right" width="50%">N&uacute;mero de expediente: </th>
-                    <td>
-                        <input type="text" name="expediente" value="" size="16" maxlength="15"/>
-                    </td>
-                </tr>
+                        <h:outputText value="Nota media nueva: "  for= "notaMedia"/>
+                        <h:inputText id ="notaMedia" value="#{expediente.notaMedia}" required="true"/>
+                        <h:message for="notaMedia"/>
+
+                        <h:commandButton value="Actualizar" action="#{expediente.modificar()}"/>
+                        <h:commandButton value="Cancelar" action="indexSecretaria.xhtml"/>
+
+                       
+
+          </h:panelGrid>
            
-                <tr>
-                    <td width="50%"></td>
-                    <td align="left" width="50%">
-                        <input type="submit" name="Leer" value="Leer"/>
-                    </td>
-                </tr>
-            </table>
-        </form>
-      
-        <div id="navegador">
-	        <p>
-	          <a href="indexSecretaria.xhtml">Volver</a>
-			   
-	        </p>
-			
+        </h:form>
 			<div class="footer">
             	<p id="top" class="ftp" style="">
            	 	<strong><u>Grupo D</u></strong>
@@ -56,11 +49,8 @@
             <p class="ftp" style="font-style: oblique">
             Sistemas de Informaci&oacute;n para Internet
             </p>
-
-             
 	    </div>
 		</div>
       
-    </div>
   </h:body>
 </html>

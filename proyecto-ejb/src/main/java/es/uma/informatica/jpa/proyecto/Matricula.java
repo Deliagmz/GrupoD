@@ -32,6 +32,55 @@ public class Matricula implements Serializable {
 			this.Curso_academico = Cursoacademico;
 			this.expedientes=expedientes;
 		}
+
+		public String getCurso_academico() {
+			return Curso_academico;
+		}
+
+		public void setCurso_academico(String curso_academico) {
+			Curso_academico = curso_academico;
+		}
+
+		public Long getExpedientes() {
+			return expedientes;
+		}
+
+		public void setExpedientes(Long expedientes) {
+			this.expedientes = expedientes;
+		}
+
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + ((Curso_academico == null) ? 0 : Curso_academico.hashCode());
+			result = prime * result + ((expedientes == null) ? 0 : expedientes.hashCode());
+			return result;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			MatriculaId other = (MatriculaId) obj;
+			if (Curso_academico == null) {
+				if (other.Curso_academico != null)
+					return false;
+			} else if (!Curso_academico.equals(other.Curso_academico))
+				return false;
+			if (expedientes == null) {
+				if (other.expedientes != null)
+					return false;
+			} else if (!expedientes.equals(other.expedientes))
+				return false;
+			return true;
+		}
+		
+		
 	}
 	   
 	@Id

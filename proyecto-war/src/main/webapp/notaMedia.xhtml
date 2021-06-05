@@ -26,15 +26,14 @@
 
 	     <h:form id="expediente">
         <h:panelGrid columns="3">
-                      <h:outputText value="N&uacute;mero de expediente: "  for= "Num_Expediente"/>
-                      <h:inputText id ="Num_Expediente" value="#{expediente.numExpediente}" required="true"/>
-                      <h:message for="Num_Expediente"/>
-
-                     
-                      <h:commandButton value="Leer" action="#{expediente.leerNotaMedia()}">
-   									   <f:actionListener binding="notaMedia.xhtml" />
-					  </h:commandButton>
-                      <h:commandButton value="Cancelar" action="indexSecretaria.xhtml"/>
+                      <h:outputLabel value="N&uacute;mero de expediente: " />
+                      <h:outputLabel value="#{expediente.numExpediente}"/> 
+ 						
+					<h:outputLabel value="Nota media: "  for= "notaMedia"/>
+					<h:outputLabel value="#{expediente.notaMedia}"/> 
+				
+                    
+                      <h:commandButton value="Volver" action="indexSecretaria.xhtml"/>
         </h:panelGrid>
       </h:form>
 			

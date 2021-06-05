@@ -14,12 +14,15 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.ws.rs.core.UriBuilder;
 
+import es.uma.informatica.ejb.proyecto.excepciones.AlumnoNoEncontradoException;
 import es.uma.informatica.ejb.proyecto.excepciones.ContraseniaInvalidaException;
 import es.uma.informatica.ejb.proyecto.excepciones.CuentaInactivaException;
 import es.uma.informatica.ejb.proyecto.excepciones.CuentaInexistenteException;
 import es.uma.informatica.ejb.proyecto.excepciones.CuentaRepetidaException;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
+import es.uma.informatica.ejb.proyecto.excepciones.TitulacionNoEncontradaException;
 import es.uma.informatica.ejb.proyecto.excepciones.ValidacionIncorrectaException;
+import es.uma.informatica.jpa.proyecto.Alumno;
 import es.uma.informatica.jpa.proyecto.Usuario;
 
 @Stateless
@@ -30,6 +33,40 @@ public class UsuarioEJB implements GestionUsuario {
 
     @PersistenceContext(unitName = "Secretaria")
     private EntityManager em;
+    
+    
+	@Override
+	public Usuario obtenerUsuario(String dni) throws CuentaInexistenteException {
+		Usuario usuarioEntity = em.find(Usuario.class, dni);
+		if(usuarioEntity==null) {
+			throw new CuentaInexistenteException();
+		}
+		return usuarioEntity;
+	}
+	
+	public void actualizarUsuario(String email, String telefono, String direccion, String dni)throws CuentaInexistenteException{
+		Usuario usuarioExistente = em.find(Usuario.class, dni);
+		if(usuarioExistente == null) {
+			throw new CuentaInexistenteException();
+		}
+		
+		usuarioExistente.setEmail(email);
+		usuarioExistente.setTelefono(telefono);
+		usuarioExistente.setDireccion(direccion);
+		
+		
+		em.persist(usuarioExistente);
+		
+	}
+	
+	public void eliminarUsuario(String dni)throws CuentaInexistenteException {
+		Usuario usuarioExistente = em.find(Usuario.class, dni);
+		if(usuarioExistente == null) {
+			throw new CuentaInexistenteException();
+		}
+		em.remove(usuarioExistente);
+	
+	}
 
     @Override
     public void registrarUsuario(Usuario u, UriBuilder uriBuilder) throws SecretariaException {

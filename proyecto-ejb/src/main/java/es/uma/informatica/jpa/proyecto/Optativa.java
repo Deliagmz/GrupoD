@@ -29,6 +29,12 @@ public class Optativa extends Asignaturas implements Serializable {
 	public Optativa() {
 		super();
 	}   
+	public List<Titulacion> getTitulaciones() {
+		return titulaciones;
+	}
+	public void setTitulaciones(List<Titulacion> titulaciones) {
+		this.titulaciones = titulaciones;
+	}
 	public Integer getPlazas() {
 		return this.Plazas;
 	}
@@ -43,5 +49,45 @@ public class Optativa extends Asignaturas implements Serializable {
 	public void setMencion(String Mencion) {
 		this.Mencion = Mencion;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((Mencion == null) ? 0 : Mencion.hashCode());
+		result = prime * result + ((Plazas == null) ? 0 : Plazas.hashCode());
+		result = prime * result + ((titulaciones == null) ? 0 : titulaciones.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Optativa other = (Optativa) obj;
+		if (Mencion == null) {
+			if (other.Mencion != null)
+				return false;
+		} else if (!Mencion.equals(other.Mencion))
+			return false;
+		if (Plazas == null) {
+			if (other.Plazas != null)
+				return false;
+		} else if (!Plazas.equals(other.Plazas))
+			return false;
+		if (titulaciones == null) {
+			if (other.titulaciones != null)
+				return false;
+		} else if (!titulaciones.equals(other.titulaciones))
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "Optativa [Plazas=" + Plazas + ", Mencion=" + Mencion + ", titulaciones=" + titulaciones + "]";
+	}
+	
    
 }

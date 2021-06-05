@@ -10,40 +10,67 @@ import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.jpa.proyecto.Expedientes;
 import es.uma.informatica.jpa.proyecto.Matricula;
 import es.uma.informatica.jpa.proyecto.Matricula.MatriculaId;
-import es.uma.informatica.jpa.proyecto.Matricula.MatriculaId;
 
 @Named(value="expediente")
 @RequestScoped
 public class ExpedienteBackingBean {
+
+
 	@Inject
 	private InfoSesion infosesion;
 	
 	@Inject
-	GestionExpedientes gestionE;
+	private GestionExpedientes gestionE;
 
     @Inject
-	GestionMatricula gestionM;
+	private GestionMatricula gestionM;
 	
+	
+
 	private Expedientes expediente;
     private Matricula matricula;
-    
-	private double notaMedia;
+
+	private Double notaMedia;
+	private Long numExpediente;
+	private String cursoAcademico;
+	
 	
 	public ExpedienteBackingBean(){
-		
+		expediente=new Expedientes();
 	}
-	
-	public Expedientes getExpediente() {
-		return expediente;
-	}
-	
-    public Matricula getMatricula(){
-        return matricula;
-    }
+
+
+		public Expedientes getExpediente() {
+			
+			return expediente;
+		}
+
+//CONSULTAR ????//
+		public Double getNotaMedia() {
+				return notaMedia;
+		}
+		public void setNotaMedia(Double notaMedia) {
+			this.notaMedia = notaMedia;
+		}
+		public Long getNumExpediente() {
+			return numExpediente;
+		}
+		public void setNumExpediente(Long numExpediente) {
+			this.numExpediente = numExpediente;
+		}
+		public String getCursoAcademico() {
+				return cursoAcademico;
+		}
+		public void setCursoAcademico(String cursoAcademico) {
+			this.cursoAcademico = cursoAcademico;
+		}
+		public Matricula getMatricula(){
+		    return matricula;
+		}
 //?????????????????????????????????????????????????????????????????????//
     public Matricula obtenerMatricula(MatriculaId matriculaId){
         try {
-			matricula = gestionM.obtenerMatricula(matriculaId);
+        	matricula = gestionM.obtenerMatricula(matriculaId);
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -52,36 +79,42 @@ public class ExpedienteBackingBean {
 		return matricula;
     }
 
+	public String modificar() {
+		try {
+			gestionE.cambiarNotaMedia(getNumExpediente(),getNotaMedia());
+		} catch (SecretariaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+        return "indexSecretaria.xhtml";
+    }
 
-	public Double leerNotaMedia(Long Num_Expediente)  {
+	public String leerNotaMedia()  {
 		try {
-		 notaMedia = gestionE.leerNotaMedia(Num_Expediente);
+		 notaMedia = gestionE.leerNotaMedia(getNumExpediente());
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return notaMedia;
+		return notaMedia.toString();
 	}
 	
-	public void cambiarNotaMedia(Long Num_Expediente, Double Nota_media) {
-		
+	public String notaMediaToString() {
+		return leerNotaMedia();
+	}
+	public String borrarNotaMedia() {
 		try {
-			gestionE.cambiarNotaMedia(Num_Expediente,Nota_media);
+			gestionE.borrarNotaMedia(getNumExpediente());
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+		return "indexSecretaria.xhtml";
 	}
-	
-	public void borrarNotaMedia(Long Num_Expediente) {
-		try {
-			gestionE.borrarNotaMedia(Num_Expediente);
-		} catch (SecretariaException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+
+
+
+
 	
 }
