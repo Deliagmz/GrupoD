@@ -3,9 +3,11 @@ package es.uma.informatica.ejb.proyecto;
 import javax.ejb.Local;
 
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
+import es.uma.informatica.jpa.proyecto.Expedientes;
 
 @Local
 public interface GestionExpedientes {
+	
 	
 	//Lee la nota media de un expediente
 	public double leerNotaMedia(Long Num_Expediente) throws SecretariaException;

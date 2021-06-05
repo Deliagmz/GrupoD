@@ -68,7 +68,7 @@ public class AsignaturasT {
 			
 			final String nuevoCurso = "2";
 			final String nuevoCaracter = "Optativa";
-			final String nuevaDuracion = "2บ Semestre";
+			final String nuevaDuracion = "2ยบ Semestre";
 			final String nuevoIdiomas_imparticion = "ingles";
 			
 			Integer referenciaAsignatura = null;
@@ -113,7 +113,7 @@ public class AsignaturasT {
 		
 		final String nuevoCurso = "2";
 		final String nuevoCaracter = "Optativa";
-		final String nuevaDuracion = "2บ Semestre";
+		final String nuevaDuracion = "2ยบ Semestre";
 		final String nuevoIdiomas_imparticion = "ingles";
 		
 		

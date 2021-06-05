@@ -17,7 +17,9 @@ public class ExpedientesEJB implements GestionExpedientes{
 	
 	@PersistenceContext(name="Secretaria")
 	private EntityManager em;
-	
+
+
+
 	@Override
 	public double leerNotaMedia(Long Num_Expediente) throws SecretariaException {
 		
