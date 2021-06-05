@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-
 <!DOCTYPE html
    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
@@ -21,46 +19,66 @@
         </h1>   
       </div>
 
-	      <form>
+	      <h:form>
             <table align="center">
-                <tr>
-                    <th align="right" width="50%">Titulaci&oacute;n a actualizar: </th>
-                    <td>
-                        <input type="text" name="titulacion" value="" size="16" maxlength="4"/>
-                    </td>
-                </tr>
+            
+            	<tr>
+		            <th align="right" width="50%">
+		             <h:outputText value="Titulación a actualizar: "/>
+		            </th>
+                
+                 	<td>
+		              <h:inputText id="codigo" required="true" value="#{titulacion.titulacion.codigo}"/>
+		              <h:message for="codigo"/>
+		            </td>
+		        </tr>
+		        
            		<tr>
-                    <th align="right" width="50%">Nuevo c&oacute;digo de la titulaci&oacute;n: </th>
+                    <th align="right" width="50%"> 
+                    	<h:outputText value="Nuevo código de la titulación:"/>
+                    </th>
+                    
                     <td>
-                        <input type="text" name="titulacion" value="" size="16" maxlength="4"/>
-                    </td>
+		              <h:inputText id="ncodigo" required="true" value="#{titulacion.titulacion.codigo}"/>
+		              <h:message for="ncodigo"/>
+		            </td>
+		            
+                </tr>
+                   
+                <tr>
+                	<th align="right" width="50%">
+		             	<h:outputText value="Nuevo nombre de la titulación: "/>
+		            </th>
+		            
+                    <td>
+		              <h:inputText id="nombre" required="true" value="#{titulacion.titulacion.nombre}"/>
+		              <h:message for="nombre"/>
+		            </td>
                 </tr>
                 <tr>
-                    <th align="right" width="50%">Nuevo nombre de la titulaci&oacute;n: </th>
+                    <th align="right" width="50%">
+		             	<h:outputText value="Nueva cantidad de créditos de la titulación: "/>
+		            </th>
+                   
                     <td>
-                        <input type="text" name="titulacion" value="" size="16" />
-                    </td>
-                </tr>
-                <tr>
-                    <th align="right" width="50%">Nuevo cantidad de cr&eacute;ditos de la titulaci&oacute;n: </th>
-                    <td>
-                        <input type="text" name="titulacion" value="" size="16" />
-                    </td>
+		              <h:inputText id="creditos" required="true" value="#{titulacion.titulacion.creditos}"/>
+		              <h:message for="creditos"/>
+		            </td>
                 </tr>
                 
                 <tr>
                     <td width="50%"></td>
 
                     <td align="left" width="50%">
-                        <input type="submit" name="Actualizar" value="Actualizar"/>
+                        <h:commandButton value="Actualizar titulación" action="#{gestionT.actualizarTitulacion}" styleClass = "submit"></h:commandButton>
                     </td>
                 </tr>
             </table>
-        </form>
+        </h:form>
       
         <div id="navegador">
 	        <p>
-	          <a href="titulacion.xhtml">Volver</a>
+	          <a href="indexSecretaria.xhtml">Volver</a>
 			   
 	        </p>
 			
