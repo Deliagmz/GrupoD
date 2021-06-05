@@ -83,7 +83,7 @@ public class TitulacionBackingBean {
 	
 	public void actualizarTitulacion() {
 		try {
-			gestionT.actualizarTitulacion(codigo, titulacion);
+			gestionT.actualizarTitulacion(this.getCodigo(), this.getNombre(), this.getCreditos());
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

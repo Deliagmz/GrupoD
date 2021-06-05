@@ -13,6 +13,6 @@ public interface GestionTitulacion {
 	
 	public void eliminarTitulacion(Integer codigo) throws SecretariaException;
 	
-	public void actualizarTitulacion(Integer codigo,Titulacion titulacion) throws SecretariaException;
+	public void actualizarTitulacion(Integer codigo,String nombre, Integer creditos) throws SecretariaException;
 	
 }
