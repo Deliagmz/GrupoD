@@ -26,25 +26,25 @@
                 <tr>
                     <th align="right" width="50%">Usuario a actualizar: </th>
                     <td>
-                        <input type="text" name="usuario" value="" size="16" maxlength="9"/>
+                        <input type="text" name="usuario" value="#{usuario.dni}" size="16" maxlength="9"/>
                     </td>
                 </tr>
            		<tr>
                     <th align="right" width="50%">Nuevo email del usuario: </th>
                     <td>
-                        <input type="text" name="usuario" value="" size="16" maxlength="30"/>
+                        <input type="text" name="usuario" value="#{usuario.email}" size="16" maxlength="30"/>
                     </td>
                 </tr>
                 <tr>
                     <th align="right" width="50%">Nuevo teléfono del usuario: </th>
                     <td>
-                        <input type="text" name="usuario" value="" size="16" maxlength="9"/>
+                        <input type="text" name="usuario" value="#{usuario.telefono}" size="16" maxlength="9"/>
                     </td>
                 </tr>
                 <tr>
                     <th align="right" width="50%">Nueva dirección del usuario: </th>
                     <td>
-                        <input type="text" name="usuario" value="" size="16"  maxlength="30"/>
+                        <input type="text" name="usuario" value="#{usuario.direccion}" size="16"  maxlength="30"/>
                     </td>
                 </tr>
                 
@@ -52,7 +52,7 @@
                     <td width="50%"></td>
 
                     <td align="left" width="50%">
-                        <input type="submit" name="Actualizar" value="Actualizar"/>
+                        <input type="submit" name="Actualizar" value="#{usuario.actualizarUsuario()}"/>
                     </td>
                 </tr>
             </table>
