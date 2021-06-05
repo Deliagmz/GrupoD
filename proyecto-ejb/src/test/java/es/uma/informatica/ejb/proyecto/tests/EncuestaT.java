@@ -119,13 +119,14 @@ public class EncuestaT {
 		Expedientes exp1 = new Expedientes();
 		exp1.setNum_Expediente(123789456L);
 		
+		
 		Encuesta encuesta2 = new Encuesta();
 		encuesta2.setExpediente(exp1);
 		encuesta2.setFecha_de_envio(t1);
 		
 		
 		try {
-			gestionEncuesta.actualizarEncuesta(encuesta1, encuesta2.getFecha_de_envio(), encuesta2.getExpediente());
+			gestionEncuesta.actualizarEncuesta(encuesta1, encuesta2.getFecha_de_envio(), encuesta2.getExpediente(),"1","A");
 			
 			Encuesta encuesta = gestionEncuesta.leerEncuesta(encuesta1);
 			
@@ -160,7 +161,7 @@ public class EncuestaT {
 		
 		
 		try {
-			gestionEncuesta.actualizarEncuesta(encuesta1, t1, exp1);
+			gestionEncuesta.actualizarEncuesta(encuesta1, t1, exp1,"1","A");
 			
 		}catch(EncuestaNoEncontradaException e) {
 			//OK
