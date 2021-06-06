@@ -38,7 +38,7 @@ public class BaseDatos {
 		asignatura.setReferencia(12345);
 		asignatura.setCodigo(1111111);
 		asignatura.setCreditos(6);
-		asignatura.setOfertada(true);
+//		asignatura.setOfertada(true);
 		asignatura.setNombre("Matematica discreta");
 		
 		em.persist(asignatura);

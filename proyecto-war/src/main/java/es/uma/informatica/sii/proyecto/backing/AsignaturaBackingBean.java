@@ -22,7 +22,7 @@ public class AsignaturaBackingBean {
 	private Integer referencia;
 	private Integer codigo;
 	private Integer creditos;	
-	private Boolean ofertada;
+	private String ofertada;
 	private String nombre;
 	private String curso;
 	private String caracter;
@@ -66,11 +66,11 @@ public class AsignaturaBackingBean {
 		this.creditos = creditos;
 	}
 
-	public Boolean getOfertada() {
+	public String getOfertada() {
 		return ofertada;
 	}
 
-	public void setOfertada(Boolean ofertada) {
+	public void setOfertada(String ofertada) {
 		this.ofertada = ofertada;
 	}
 
@@ -124,7 +124,7 @@ public class AsignaturaBackingBean {
 	
 	public String leerAsignatura() {
 		try {
-			asignatura = gestionA.obtenerAsignatura(this.asignatura.getCodigo());
+			asignatura = gestionA.obtenerAsignatura(this.asignatura.getReferencia());
 			return asignatura.toString();
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
@@ -146,11 +146,12 @@ public class AsignaturaBackingBean {
 	
 	public void actualizarAsignatura() {
 		try {
-			gestionA.actualizarAsignatura(asignatura.getCodigo(),this.asignatura);
+			gestionA.actualizarAsignatura(asignatura.getReferencia(),this.asignatura);
+			
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		};
+		}
 			
 	}
 	

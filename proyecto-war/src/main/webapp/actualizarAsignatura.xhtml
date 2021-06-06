@@ -41,8 +41,9 @@
                         <h:inputText id ="creditos" value="#{asignatura.asignatura.creditos}" required="true"/>
                         <h:message for="creditos"/>
 
-                        <h:outputText value="Ofertada: "  for= "ofertada"/>
-                        <h:inputText id ="ofertada" value="#{asignatura.ofertada}" required="true"/>
+
+                        <h:outputText value="Marca si está ofertada: "  for= "ofertada"/>
+                        <h:selectBooleanCheckbox id="ofertada" value="#{asignatura.ofertada}" />
                         <h:message for="ofertada"/>
 
                         <h:outputText value="Curso: "  for= "curso"/>
