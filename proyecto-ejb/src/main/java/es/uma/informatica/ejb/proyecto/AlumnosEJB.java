@@ -33,11 +33,10 @@ public class AlumnosEJB implements GestionAlumnos{
 			throw new AlumnoNoEncontradoException();
 		}
 		
-		alumnoExistente.setApellido1(alumno.getApellido1());
-		alumnoExistente.setApellido2(alumno.getApellido2());
+		
 		alumnoExistente.setCodigo_postal(alumno.getCodigo_postal());
 		alumnoExistente.setDireccion(alumno.getDireccion());
-		alumnoExistente.setDNI(alumno.getDNI());
+		
 		alumnoExistente.setEmail_institucional(alumno.getEmail_institucional());
 		alumnoExistente.setEmail_personal(alumno.getEmail_personal());
 		alumnoExistente.setLocalidad(alumno.getLocalidad());

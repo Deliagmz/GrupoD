@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  lang="es">
+  <h:head>
+	    <title>Eliminar alumno</title>
+	    <link href="resources/estilos.css" rel="stylesheet" />
+  </h:head>
+  <h:body>
+    <div id="content">
+      <div id="banner">
+        <h1>
+          Gestor de alumnos
+        </h1>   
+      </div>
+
+	      <h:form>
+            <table align="center">
+                <tr>
+                    <th align="right" width="50%">Alumno a borrar: </th>
+                    <td>
+                        <h:inputText name="alumno" value="#{alumno.dni}" size="16" maxlength="9"/>
+                    </td>
+                </tr>
+           
+                <tr>
+                    <td width="50%"></td>
+
+                    <td align="left" width="50%">
+                       <h:commandButton value="Borrar " action="#{alumno.borrarAlumno()}" styleClass = "submit"></h:commandButton>
+                    </td>
+                </tr>
+            </table>
+        </h:form>
+      
+        <div id="navegador">
+	        <p>
+	          <a href="alumnos.xhtml">Volver</a>
+			   
+	        </p>
+			
+			<div class="footer">
+            	<p id="top" class="ftp" style="">
+           	 	<strong><u>Grupo D</u></strong>
+            </p>
+
+            <p class="ftp" style="font-style: oblique">
+            Sistemas de Informaci&oacute;n para Internet
+            </p>
+
+             
+	    </div>
+		</div>
+      
+    </div>
+  </h:body>
+</html>
