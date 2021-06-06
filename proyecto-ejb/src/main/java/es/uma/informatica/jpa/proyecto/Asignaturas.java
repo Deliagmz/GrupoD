@@ -31,7 +31,7 @@ public class Asignaturas implements Serializable {
 	@Column( nullable = false)
 	private Integer Creditos;
 	@Column( nullable = false)
-	private Boolean Ofertada;
+	private String Ofertada;
 	@Column( nullable = false)
 	private String Nombre;
 	private String Curso;
@@ -85,11 +85,11 @@ public class Asignaturas implements Serializable {
 		this.Creditos = Creditos;
 	}   
 	
-	public boolean getOfertada() {
+	public String getOfertada() {
 		return this.Ofertada;
 	}
 
-	public void setOfertada(boolean Ofertada) {
+	public void setOfertada(String Ofertada) {
 		this.Ofertada = Ofertada;
 	}   
 	
@@ -137,9 +137,9 @@ public class Asignaturas implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "Asignaturas [Referencia=" + Referencia + ", Codigo=" + Codigo + ", Creditos=" + Creditos + ", Ofertada="
-				+ Ofertada + ", Curso=" + Curso + ", Caracter=" + Caracter + ", Duracion=" + Duracion
-				+ ", Unidad_Temporal=" + Unidad_Temporal + ", Idiomas_Imparticion=" + Idiomas_Imparticion + "]";
+		return "Asignaturas con Referencia= " + Referencia + ", Codigo= " + Codigo + ", Nombre= " + Nombre + ", Creditos= " + Creditos + ", Ofertada= "
+				+ Ofertada + ", Curso= " + Curso + ", Caracter= " + Caracter + ", Duracion= " + Duracion
+				+ ", Unidad_Temporal= " + Unidad_Temporal + ", Idiomas_Imparticion= " + Idiomas_Imparticion ;
 	}
 	@Override
 	public int hashCode() {
@@ -151,7 +151,7 @@ public class Asignaturas implements Serializable {
 		result = prime * result + ((Curso == null) ? 0 : Curso.hashCode());
 		result = prime * result + ((Duracion == null) ? 0 : Duracion.hashCode());
 		result = prime * result + ((Idiomas_Imparticion == null) ? 0 : Idiomas_Imparticion.hashCode());
-		result = prime * result + (Ofertada ? 1231 : 1237);
+		result = prime * result + (Ofertada != null ? 1231 : 1237);
 		result = prime * result + ((Referencia == null) ? 0 : Referencia.hashCode());
 		result = prime * result + ((Unidad_Temporal == null) ? 0 : Unidad_Temporal.hashCode());
 		return result;

@@ -23,30 +23,59 @@
          Leer asignatura
       </h4>    
       </div>
+      	       
+		<h:form>
+            <table align="center">
 
-      <h:form id="asignatura">
-        <h:panelGrid columns="3">
-                      <h:outputText value="Referencia: "  for= "referencia"/>
+                <tr>
+                    <td align="right" width="50%">
+                     <h:outputText value="Referencia: "/>
+                    </td>
+
+                     <td>
                       <h:inputText id ="referencia" value="#{asignatura.asignatura.referencia}" required="true"/>
-                      <h:message for="referencia"/>
+                        <h:message for="referencia"/>
 
-                      <h:commandButton value="Leer" action="#{asignatura.leerAsignatura()}"/>
-                      <h:commandButton value="Cancelar" action="indexSecretaria.xhtml"/>
-        </h:panelGrid>
-      </h:form>
+                    </td>
+                    
+                    
+                </tr>
+              
+				<tr>
+					<td width="50%"></td>
+                    <td align="center" >
+                           <h:commandButton value="Leer" action="#{asignatura.leerAsignatura()}" styleClass = "submit"/>
+                    </td>
+                    <td width="50%"></td>
+               </tr>
+               
+                 <tr align="center">
+                 	<td ></td>
+		             	<td>
+		             		<h:outputText value="#{asignatura.toString()}"/>
+		             	</td>
+		             <td width="50%"></td>
+		       		</tr>
+                
+            
+            </table>
+        </h:form>
       
-			<div class="footer">
-            	<p id="top" class="ftp" style="">
-           	 	<strong><u>Grupo D</u></strong>
+			<div id="navegador">
+            <p>
+              <a href="asignatura.xhtml">Volver</a>
+
+            </p>
+            <div class="footer">
+                <p id="top" class="ftp" style="">
+                    <strong><u>Grupo D</u></strong>
             </p>
 
             <p class="ftp" style="font-style: oblique">
             Sistemas de Informaci&oacute;n para Internet
             </p>
-
-             
-	    </div>
-		</div>
-      
+        </div>
+        </div>
+      </div>
   </h:body>
 </html>

@@ -122,14 +122,14 @@ public class AsignaturaBackingBean {
 		this.idiomasImparticion = idiomasImparticion;
 	}
 	
-	public String leerAsignatura() {
+	public void leerAsignatura() {
 		try {
-			asignatura = gestionA.obtenerAsignatura(this.asignatura.getCodigo());
-			return asignatura.toString();
+			asignatura = gestionA.obtenerAsignatura(this.asignatura.getReferencia());
+			
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return null;
+			
 		}
 		
 	}
@@ -152,6 +152,11 @@ public class AsignaturaBackingBean {
 			e.printStackTrace();
 		};
 			
+	}
+	
+	public String toString() {
+		return asignatura.toString();
+		
 	}
 	
 }
