@@ -23,20 +23,38 @@
             Consultar nota media
         </h4>   
       </div>
+	<h:form>
+            <table align="center">
+            
+            	<tr>
+		            <th align="right" width="50%">
+		             <h:outputText value="N&uacute;mero de expediente: "/>
+		            </th>
+                
+                 	<td>
+		             <h:inputText id ="Num_Expediente" value="#{expediente.expediente.num_Expediente}" required="true"/>
+                     <h:message for="Num_Expediente"/>
 
-	   <h:form id="expediente">
-       <h:panelGrid columns="3">
-                      <h:outputText value="N&uacute;mero de expediente: "  for= "Num_Expediente"/>
-                      <h:inputText id ="Num_Expediente" value="#{expediente.numExpediente}" required="true"/>
-                      <h:message for="Num_Expediente"/>
+		            </td>
+		        </tr>
+                
+                <tr>
+                    <td width="50%"></td>
 
-                     
-                      <h:commandButton value="Leer" action="#{expediente.leerNotaMedia()}">
-   									   <f:actionListener binding="notaMedia.xhtml" />
-					  </h:commandButton>
-                      <h:commandButton value="Cancelar" action="indexSecretaria.xhtml"/>
-        </h:panelGrid>
-      </h:form>
+                    <td align="left" width="50%">
+                     <h:commandButton value="Leer" action="#{expediente.leerNotaMedia()}" styleClass = "submit"></h:commandButton>
+                    </td>
+                </tr>
+            </table>
+        </h:form>
+	   
+			
+			 <div id="navegador">
+	        <p>
+	          <a href="expediente.xhtml">Volver</a>
+			   
+	        </p>
+      
 			
 			<div class="footer">
             	<p id="top" class="ftp" style="">
@@ -50,6 +68,6 @@
              
 	    </div>
 		</div>
-
+</div>
   </h:body>
 </html>
