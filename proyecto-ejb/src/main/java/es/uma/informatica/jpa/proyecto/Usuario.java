@@ -4,13 +4,14 @@ import java.io.Serializable;
 
 import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-
+@Entity
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Usuario implements Serializable {
@@ -26,7 +27,7 @@ public class Usuario implements Serializable {
 	@XmlTransient
     @JsonbTransient
 	private String RepiteContrasena;
-	@Id @Column(nullable = false, length = 52)
+	@Column(nullable = false, length = 52)
 	private String DNI;
 	@Column(nullable = false, length = 52)
 	private String Email;
@@ -38,6 +39,7 @@ public class Usuario implements Serializable {
 //	@OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
 //    @OrderBy ("nombre ASC")
 //    private List<Contacto> contactos;
+	@Id
 	private String cuenta;
 	@XmlTransient
 	@JsonbTransient
@@ -168,9 +170,8 @@ public class Usuario implements Serializable {
 				+ ", RepiteContrasena=" + RepiteContrasena + ", DNI=" + DNI + ", Email=" + Email + ", telefono="
 				+ telefono + ", Direccion=" + Direccion + "]";
 	}
-	public Object getCuenta() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getCuenta() {
+		return cuenta;
 	}
 	public void setCuenta(String cuenta) {
 		this.cuenta = cuenta;
