@@ -17,6 +17,6 @@ public interface GestionTitulacion {
 	
 	public void actualizarTitulacion(Integer codigo,Titulacion t) throws SecretariaException;
 	
-	public List<Titulacion> listaTitulacion()throws SecretariaException;
+
 	
 }

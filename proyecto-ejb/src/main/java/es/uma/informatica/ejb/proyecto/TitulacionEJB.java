@@ -25,7 +25,7 @@ public class TitulacionEJB implements GestionTitulacion{
 		if(titulacionEntity==null) {
 			throw new TitulacionNoEncontradaException();
 		}
-		return  em.createNamedQuery("Titulacion.general",Titulacion.class).getSingleResult();
+		return  titulacionEntity;
 	}
 
 	@Override
@@ -48,8 +48,5 @@ public class TitulacionEJB implements GestionTitulacion{
 		titulacionEntity.setCreditos(t.getCreditos());
 		
 	}
-	@Override 
-	public List<Titulacion> listaTitulacion() throws TitulacionNoEncontradaException{
-		return em.createNamedQuery("Titulacion.general",Titulacion.class).getResultList();
-	}
+	
 }

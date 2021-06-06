@@ -16,7 +16,7 @@ import javax.persistence.OneToMany;
  */
 
 
-@NamedQuery(name = "Titulacion.general",query = "select t from Titulacion t")
+//@NamedQuery(name = "Titulacion.general",query = "select t from Titulacion t")
 @Entity
 
 public class Titulacion implements Serializable {
@@ -112,7 +112,7 @@ public class Titulacion implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Titulacion [Codigo=" + Codigo + ", Creditos=" + Creditos + ", Nombre=" + Nombre + "]";
+		return "Titulacion: Codigo=" + Codigo + ", Creditos=" + Creditos + ", Nombre=" + Nombre + "";
 	}
 	
    

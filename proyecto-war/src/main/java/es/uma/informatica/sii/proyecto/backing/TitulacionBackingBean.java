@@ -24,6 +24,7 @@ public class TitulacionBackingBean {
 	private Integer codigo;
 	private String nombre;
 	private Integer creditos;
+
 	
 	public TitulacionBackingBean(){
 	
@@ -61,14 +62,14 @@ public class TitulacionBackingBean {
 		this.titulacion = titulacion;
 	}
 	
-	public Titulacion leerTitulacion() {
+	public void leerTitulacion() {
 		try {
-			titulacion = gestionT.obtenerTitulacion(this.getCodigo());
-			return titulacion;
+			titulacion = gestionT.obtenerTitulacion(this.titulacion.getCodigo());
+		
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return null;
+			
 		}
 		
 	}
@@ -92,6 +93,13 @@ public class TitulacionBackingBean {
 		};
 			
 	}
+	
+	public String getTit() {
+		return this.getTitulacion().toString();
+	}
+	
+
+	
 	
 
 }

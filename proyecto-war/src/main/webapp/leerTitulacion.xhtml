@@ -35,12 +35,23 @@
 		        </tr>
            
                 <tr>
-                    <td width="50%"></td>
-
+                    
                     <td>
+                    <th align="center" width="50%">
 		              <h:commandButton id="titulacion" value="Leer" action="#{titulacion.leerTitulacion()}"/>
+		              </th>
 		              
 		            </td>
+		            
+		            
+                </tr>
+                
+                <tr>
+                <td>
+                <th align="center" width="50%">
+		              <h:outputText value="#{titulacion.getTit()}"/>
+		        </th>
+		        </td>
                 </tr>
             </table>
         </h:form>
