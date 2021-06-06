@@ -23,24 +23,48 @@
             Modificar nota media
         </h4>   
       </div>
-	      <h:form id="expediente">
-          <h:panelGrid columns="3">
-                        <h:outputText value="N&uacute;mero de expediente: "  for= "Num_Expediente"/>
-                        <h:inputText id ="Num_Expediente" value="#{expediente.numExpediente}" required="true"/>
-                        <h:message for="Num_Expediente"/>
+       <h:form>
+            <table align="center">
+            
+            	<tr>
+		            <th align="right" width="50%">
+		             <h:outputText value="Expediente a actualizar: "/>
+		            </th>
+                
+                 	<td>
+		             <h:inputText id ="Num_Expediente" value="#{expediente.expediente.num_Expediente}" required="true"/>
+                     <h:message for="Num_Expediente"/>
 
-                        <h:outputText value="Nota media nueva: "  for= "notaMedia"/>
-                        <h:inputText id ="notaMedia" value="#{expediente.notaMedia}" required="true"/>
-                        <h:message for="notaMedia"/>
+		            </td>
+		        </tr>
+                <tr>
+                	<th align="right" width="50%">
+		             	<h:outputText value="Nueva nota media: "/>
+		            </th>
+		            
+                    <td>
+		             <h:inputText id ="notaMedia" value="#{expediente.notaMedia}" required="true"/>
+                     <h:message for="notaMedia"/>
+		            </td>
+                </tr>
+               
+                
+                <tr>
+                    <td width="50%"></td>
 
-                        <h:commandButton value="Actualizar" action="#{expediente.modificar()}"/>
-                        <h:commandButton value="Cancelar" action="indexSecretaria.xhtml"/>
-
-                       
-
-          </h:panelGrid>
-           
+                    <td align="left" width="50%">
+                       <h:commandButton value="Actualizar" action="#{expediente.modificar()}" styleClass = "submit"></h:commandButton>
+                    </td>
+                </tr>
+            </table>
         </h:form>
+      
+	     
+         <div id="navegador">
+	        <p>
+	          <a href="expediente.xhtml">Volver</a>
+			   
+	        </p>
 			<div class="footer">
             	<p id="top" class="ftp" style="">
            	 	<strong><u>Grupo D</u></strong>
@@ -51,6 +75,6 @@
             </p>
 	    </div>
 		</div>
-      
+         </div>
   </h:body>
 </html>

@@ -24,20 +24,49 @@
         </h4>   
       </div>
 
-      <h:form id="expediente">
-        <h:panelGrid columns="3">
-                      <h:outputText value="N&uacute;mero de expediente: "  for= "Num_Expediente"/>
-                      <h:inputText id ="Num_Expediente" value="#{expediente.numExpediente}" required="true"/>
-                      <h:message for="Num_Expediente"/>
+ 		<h:form>
+            <table align="center">
+            
+            	<tr>
+		            <th align="right" width="50%">
+		             <h:outputText value="N&uacute;mero de expediente: "/>
+		            </th>
+                
+                 	<td>
+		             <h:inputText id ="Num_Expediente" value="#{expediente.matricula.expedientes}" required="true"/>
+                     <h:message for="Num_Expediente"/>
 
-                      <h:outputText value="Curso: "  for= "curso"/>
-                      <h:inputText id ="curso" value="#{expediente.cursoAcademico}" required="true"/>
+		            </td>
+		        </tr>
+                <tr>
+                	<th align="right" width="50%">
+		             	<h:outputText value="Curso academico: "/>
+		            </th>
+		            
+                    <td>
+		             <h:inputText id ="curso" value="#{expediente.matricula.curso_academico}" required="true"/>
                       <h:message for="curso"/>
+		            </td>
+                </tr>
+               
+                
+                <tr>
+                    <td width="50%"></td>
 
-                      <h:commandButton value="Leer" action="#{expediente.obtenerMatricula()}"/>
-                      <h:commandButton value="Cancelar" action="indexSecretaria.xhtml"/>
-        </h:panelGrid>
-      </h:form>
+                    <td align="left" width="50%">
+                       <h:commandButton value="Leer" action="#{expediente.obtenerMatricula()}" styleClass = "submit"></h:commandButton>
+                    </td>
+                </tr>
+            </table>
+        </h:form>
+      
+
+      	 <div id="navegador">
+	        <p>
+	          <a href="expediente.xhtml">Volver</a>
+			   
+	        </p>
+      
 			<div class="footer">
             	<p id="top" class="ftp" style="">
            	 	<strong><u>Grupo D</u></strong>
@@ -50,6 +79,6 @@
              
 	    </div>
 		</div>
-
+	</div>
   </h:body>
 </html>
