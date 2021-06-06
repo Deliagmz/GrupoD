@@ -67,16 +67,20 @@ public class ExpedienteBackingBean {
 
 
 	//?????????????????????????????????????????????????????????????????????//
-    public String obtenerMatricula(MatriculaId matriculaId){
+    public void obtenerMatricula(MatriculaId matriculaId){
         try {
+        	
         	matricula = gestionM.obtenerMatricula(matriculaId);
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		return matricula.toString();
+		
     }
+	public String matriculaString() {
+		return matricula.toString();
+	}
 
 	public String modificar() {
 		try {
@@ -89,19 +93,20 @@ public class ExpedienteBackingBean {
         return "indexSecretaria.xhtml";
     }
 
-	public String leerNotaMedia()  {
+	public void leerNotaMedia()  {
 		try {
 		 notaMedia = gestionE.leerNotaMedia(this.expediente.getNum_Expediente());
+		 expediente.setNota_Media_Provisional(notaMedia);
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return notaMedia.toString();
 	}
 	
 	public String notaMediaToString() {
-		return leerNotaMedia();
+		return expediente.notaMediaToString();
 	}
+	
 	public String borrarNotaMedia() {
 		try {
 			gestionE.borrarNotaMedia(this.expediente.getNum_Expediente());

@@ -208,5 +208,9 @@ public class Expedientes implements Serializable {
 				+ ", Creditos_OB=" + Creditos_OB + ", Creditos_OP=" + Creditos_OP + ", Creditos_CF=" + Creditos_CF
 				+ ", Creditos_PE=" + Creditos_PE + ", Creditos_TF=" + Creditos_TF + "]";
 	}
+	
+	public String notaMediaToString() {
+		return "La nota media es " + Nota_Media_Provisional;
+	}
    
 }

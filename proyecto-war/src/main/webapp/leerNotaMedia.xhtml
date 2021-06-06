@@ -43,6 +43,16 @@
 
                     <td align="left" width="50%">
                      <h:commandButton value="Leer" action="#{expediente.leerNotaMedia()}" styleClass = "submit"></h:commandButton>
+                     
+                    </td>
+                </tr>
+                
+                 <tr>
+                    <td width="50%"></td>
+
+                    <td align="left" width="50%">
+                     <h:outputText value ="#{expediente.notaMediaToString()}" />
+                     
                     </td>
                 </tr>
             </table>

@@ -57,6 +57,15 @@
                        <h:commandButton value="Leer" action="#{expediente.obtenerMatricula()}" styleClass = "submit"></h:commandButton>
                     </td>
                 </tr>
+                
+                 <tr>
+                    <td width="50%"></td>
+
+                    <td align="left" width="50%">
+                     <h:outputText value ="#{expediente.matriculaString()}" />
+                     
+                    </td>
+                </tr>
             </table>
         </h:form>
       
