@@ -1,5 +1,6 @@
 package es.uma.informatica.ejb.proyecto;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.ejb.Stateless;
@@ -24,7 +25,7 @@ public class TitulacionEJB implements GestionTitulacion{
 		if(titulacionEntity==null) {
 			throw new TitulacionNoEncontradaException();
 		}
-		return titulacionEntity;
+		return  titulacionEntity;
 	}
 
 	@Override
@@ -47,4 +48,5 @@ public class TitulacionEJB implements GestionTitulacion{
 		titulacionEntity.setCreditos(t.getCreditos());
 		
 	}
+	
 }
