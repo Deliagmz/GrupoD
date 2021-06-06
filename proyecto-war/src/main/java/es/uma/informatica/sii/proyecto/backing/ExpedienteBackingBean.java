@@ -31,8 +31,8 @@ public class ExpedienteBackingBean {
     private Matricula matricula;
 
 	private Double notaMedia;
-	private Long numExpediente;
-	private String cursoAcademico;
+//	private Long numExpediente;
+//	private String cursoAcademico;
 	
 	
 	public ExpedienteBackingBean(){
@@ -44,31 +44,30 @@ public class ExpedienteBackingBean {
 			
 			return expediente;
 		}
+		
 
-//CONSULTAR ????//
-		public Double getNotaMedia() {
-				return notaMedia;
+		public Matricula getMatricula() {
+			return matricula;
 		}
+
+
+		public void setMatricula(Matricula matricula) {
+			this.matricula = matricula;
+		}
+
+
+		public Double getNotaMedia() {
+			return notaMedia;
+		}
+
+
 		public void setNotaMedia(Double notaMedia) {
 			this.notaMedia = notaMedia;
 		}
-		public Long getNumExpediente() {
-			return numExpediente;
-		}
-		public void setNumExpediente(Long numExpediente) {
-			this.numExpediente = numExpediente;
-		}
-		public String getCursoAcademico() {
-				return cursoAcademico;
-		}
-		public void setCursoAcademico(String cursoAcademico) {
-			this.cursoAcademico = cursoAcademico;
-		}
-		public Matricula getMatricula(){
-		    return matricula;
-		}
-//?????????????????????????????????????????????????????????????????????//
-    public Matricula obtenerMatricula(MatriculaId matriculaId){
+
+
+	//?????????????????????????????????????????????????????????????????????//
+    public String obtenerMatricula(MatriculaId matriculaId){
         try {
         	matricula = gestionM.obtenerMatricula(matriculaId);
 		} catch (SecretariaException e) {
@@ -76,12 +75,12 @@ public class ExpedienteBackingBean {
 			e.printStackTrace();
 		}
 		
-		return matricula;
+		return matricula.toString();
     }
 
 	public String modificar() {
 		try {
-			gestionE.cambiarNotaMedia(getNumExpediente(),getNotaMedia());
+			gestionE.cambiarNotaMedia(this.expediente.getNum_Expediente(),this.notaMedia);
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -92,7 +91,7 @@ public class ExpedienteBackingBean {
 
 	public String leerNotaMedia()  {
 		try {
-		 notaMedia = gestionE.leerNotaMedia(getNumExpediente());
+		 notaMedia = gestionE.leerNotaMedia(this.expediente.getNum_Expediente());
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -105,7 +104,7 @@ public class ExpedienteBackingBean {
 	}
 	public String borrarNotaMedia() {
 		try {
-			gestionE.borrarNotaMedia(getNumExpediente());
+			gestionE.borrarNotaMedia(this.expediente.getNum_Expediente());
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
