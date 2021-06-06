@@ -17,7 +17,7 @@ public class AsignaturaBackingBean {
 	@Inject
 	private GestionAsignaturas gestionA;
 
-	private Asignaturas asignatura;
+	private Asignaturas asignatura = new Asignaturas();
 
 	private Integer referencia;
 	private Integer codigo;
@@ -30,8 +30,11 @@ public class AsignaturaBackingBean {
 	private String unidadTemporal;
 	private String idiomasImparticion;
 	
-	
-    public Asignaturas getAsignatura() {
+	public AsignaturaBackingBean(){
+		
+	}
+
+	public Asignaturas getAsignatura() {
 		return asignatura;
 	}
 
@@ -103,6 +106,14 @@ public class AsignaturaBackingBean {
 		this.duracion = duracion;
 	}
 
+	public String getUnidadTemporal() {
+		return unidadTemporal;
+	}
+
+	public void setUnidadTemporal(String unidadTemporal) {
+		this.unidadTemporal = unidadTemporal;
+	}
+
 	public String getIdiomasImparticion() {
 		return idiomasImparticion;
 	}
@@ -110,55 +121,37 @@ public class AsignaturaBackingBean {
 	public void setIdiomasImparticion(String idiomasImparticion) {
 		this.idiomasImparticion = idiomasImparticion;
 	}
-
-
-	public String modificar() {
+	
+	public String leerAsignatura() {
 		try {
-			Asignaturas a = new Asignaturas();
-			a.setCaracter(caracter);
-			a.setCodigo(codigo);
-			a.setCreditos(creditos);
-			a.setCurso(curso);
-			a.setDuracion(duracion);
-			a.setIdiomas_Imparticion(idiomasImparticion);
-			a.setNombre(nombre);
-			a.setOfertada(ofertada);
-			a.setUnidad_Temporal(unidadTemporal);
-			a.setReferencia(referencia);
-			gestionA.actualizarAsignatura(getReferencia(),a);
+			asignatura = gestionA.obtenerAsignatura(this.asignatura.getCodigo());
+			return asignatura.toString();
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return null;
 		}
 		
-        return "indexSecretaria.xhtml";
-    }
-
-	public String leerAsignatura()  {
-		try {
-		 asignatura = gestionA.obtenerAsignatura(getReferencia());
-		} catch (SecretariaException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return asignatura.toString();
 	}
 	
-	public String notaMediaToString() {
-		return leerAsignatura();
-	}
-	public String borrarAsignaturas() {
+	public String borrarAsignatura() {
 		try {
-			gestionA.eliminarAsignatura(getReferencia());
+			gestionA.eliminarAsignatura(this.asignatura.getReferencia());
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return "indexSecretaria.xhtml";
 	}
-
-
-
-
+	
+	public void actualizarAsignatura() {
+		try {
+			gestionA.actualizarAsignatura(asignatura.getCodigo(),this.asignatura);
+		} catch (SecretariaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		};
+			
+	}
 	
 }

@@ -26,19 +26,19 @@
 	      <h:form id="asignatura">
           <h:panelGrid columns="3">
                         <h:outputText value="Referencia: "  for= "referencia"/>
-                        <h:inputText id ="referencia" value="#{asignatura.referencia}" required="true"/>
+                        <h:inputText id ="referencia" value="#{asignatura.asignatura.referencia}" required="true"/>
                         <h:message for="referencia"/>
 
                         <h:outputText value="Codigo: "  for= "codigo"/>
-                        <h:inputText id ="codigo" value="#{asignatura.codigo}" required="true"/>
+                        <h:inputText id ="codigo" value="#{asignatura.asignatura.codigo}" required="true"/>
                         <h:message for="codigo"/>
                         
                         <h:outputText value="Nombre: "  for= "nombre"/>
-                        <h:inputText id ="nombre" value="#{asignatura.nombre}" required="true"/>
+                        <h:inputText id ="nombre" value="#{asignatura.asignatura.nombre}" required="true"/>
                         <h:message for="nombre"/>
                         
                         <h:outputText value="Creditos: "  for= "creditos"/>
-                        <h:inputText id ="creditos" value="#{asignatura.creditos}" required="true"/>
+                        <h:inputText id ="creditos" value="#{asignatura.asignatura.creditos}" required="true"/>
                         <h:message for="creditos"/>
 
                         <h:outputText value="Ofertada: "  for= "ofertada"/>
@@ -46,26 +46,26 @@
                         <h:message for="ofertada"/>
 
                         <h:outputText value="Curso: "  for= "curso"/>
-                        <h:inputText id ="curso" value="#{asignatura.curso}" required="true"/>
+                        <h:inputText id ="curso" value="#{asignatura.asignatura.curso}" required="true"/>
                         <h:message for="curso"/>
                         
                          <h:outputText value="Caracter: "  for= "caracter"/>
-                        <h:inputText id ="caracter" value="#{asignatura.caracter}" required="true"/>
+                        <h:inputText id ="caracter" value="#{asignatura.asignatura.caracter}" required="true"/>
                         <h:message for="caracter"/>
 
                         <h:outputText value="Duracion: "  for= "duracion"/>
-                        <h:inputText id ="duracion" value="#{asignatura.duracion}" required="true"/>
+                        <h:inputText id ="duracion" value="#{asignatura.asignatura.duracion}" required="true"/>
                         <h:message for="duracion"/>
                         
 						 <h:outputText value="Unidad temporal: "  for= "uTemp"/>
-                        <h:inputText id ="uTemp" value="#{asignatura.unidadTemporal}" required="true"/>
+                        <h:inputText id ="uTemp" value="#{asignatura.asignatura.unidad_Temporal}" required="true"/>
                         <h:message for="uTemp"/>
 
                         <h:outputText value="Idiomas de imparticion : "  for= "idiomas"/>
-                        <h:inputText id ="idiomas" value="#{asignatura.idiomasImparticion}" required="true"/>
+                        <h:inputText id ="idiomas" value="#{asignatura.asignatura.idiomas_Imparticion}" required="true"/>
                         <h:message for="idiomas"/>
 
-                        <h:commandButton value="Actualizar" action="#{asignatura.modificar()}"/>
+                        <h:commandButton value="Actualizar" action="#{asignatura.actualizarAsignatura()}" styleClass = "submit"/>
                         <h:commandButton value="Cancelar" action="indexSecretaria.xhtml"/>
 
                        

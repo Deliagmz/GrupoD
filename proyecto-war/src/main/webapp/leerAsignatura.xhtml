@@ -27,7 +27,7 @@
       <h:form id="asignatura">
         <h:panelGrid columns="3">
                       <h:outputText value="Referencia: "  for= "referencia"/>
-                      <h:inputText id ="referencia" value="#{asignatura.referencia}" required="true"/>
+                      <h:inputText id ="referencia" value="#{asignatura.asignatura.referencia}" required="true"/>
                       <h:message for="referencia"/>
 
                       <h:commandButton value="Leer" action="#{asignatura.leerAsignatura()}"/>

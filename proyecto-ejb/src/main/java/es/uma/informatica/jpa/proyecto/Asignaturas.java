@@ -84,6 +84,7 @@ public class Asignaturas implements Serializable {
 	public void setCreditos(Integer Creditos) {
 		this.Creditos = Creditos;
 	}   
+	
 	public boolean getOfertada() {
 		return this.Ofertada;
 	}
