@@ -49,6 +49,9 @@ public class Login {
     public String entrar() {
         try {
             gestionUsuario.compruebaLogin(usuario);
+            if(usuario.getCuenta().equals("Secretaria")) {
+            	return "indexSecretaria.xhtml";
+            }
             sesion.setUsuario(gestionUsuario.refrescarUsuario(usuario));
             return "Encuesta.xhtml";
 
@@ -56,7 +59,7 @@ public class Login {
             FacesMessage fm = new FacesMessage("La cuenta no existe");
             FacesContext.getCurrentInstance().addMessage("login:user", fm);
         } catch (ContraseniaInvalidaException e) {
-            FacesMessage fm = new FacesMessage("La contraseña no es correcta");
+            FacesMessage fm = new FacesMessage("La contrase�a no es correcta");
             FacesContext.getCurrentInstance().addMessage("login:pass", fm);
         } catch (CuentaInactivaException e) {
             FacesMessage fm = new FacesMessage("La cuenta existe pero no está activa");
@@ -68,6 +71,7 @@ public class Login {
         return null;
     }
 
+   
 }
 
 

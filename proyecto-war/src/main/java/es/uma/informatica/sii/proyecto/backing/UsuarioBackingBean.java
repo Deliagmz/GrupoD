@@ -18,6 +18,7 @@ public class UsuarioBackingBean {
 	GestionUsuario gestionU;
 	
 	private Usuario usuario;
+	private String cuenta;
 	private String dni;
 	private String email;
 	private String telefono;
@@ -133,6 +134,14 @@ public class UsuarioBackingBean {
 
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
+	}
+
+	public String getCuenta() {
+		return cuenta;
+	}
+
+	public void setCuenta(String cuenta) {
+		this.cuenta = cuenta;
 	}
 
 }

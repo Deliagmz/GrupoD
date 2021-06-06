@@ -5,10 +5,10 @@
  */
 package es.uma.informatica.sii.proyecto.backing;
 
-import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.UriBuilder;
@@ -26,7 +26,7 @@ public class Registro {
 	private static final String PARAM_VALIDACION="codigoValidacion";
 	private static final String PARAM_CUENTA = "cuenta";
 
-    @EJB
+    @Inject
     private GestionUsuario usuarioEJB;
     
     private Usuario usuario;
