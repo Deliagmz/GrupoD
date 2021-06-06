@@ -14,15 +14,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.ws.rs.core.UriBuilder;
 
-import es.uma.informatica.ejb.proyecto.excepciones.AlumnoNoEncontradoException;
 import es.uma.informatica.ejb.proyecto.excepciones.ContraseniaInvalidaException;
 import es.uma.informatica.ejb.proyecto.excepciones.CuentaInactivaException;
 import es.uma.informatica.ejb.proyecto.excepciones.CuentaInexistenteException;
 import es.uma.informatica.ejb.proyecto.excepciones.CuentaRepetidaException;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
-import es.uma.informatica.ejb.proyecto.excepciones.TitulacionNoEncontradaException;
 import es.uma.informatica.ejb.proyecto.excepciones.ValidacionIncorrectaException;
-import es.uma.informatica.jpa.proyecto.Alumno;
 import es.uma.informatica.jpa.proyecto.Usuario;
 
 @Stateless
