@@ -1,5 +1,7 @@
 package es.uma.informatica.sii.proyecto.backing;
 
+import java.util.List;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -59,10 +61,10 @@ public class TitulacionBackingBean {
 		this.titulacion = titulacion;
 	}
 	
-	public String leerTitulacion() {
+	public Titulacion leerTitulacion() {
 		try {
-			titulacion = gestionT.obtenerTitulacion(codigo);
-			return titulacion.toString();
+			titulacion = gestionT.obtenerTitulacion(this.getCodigo());
+			return titulacion;
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -90,4 +92,6 @@ public class TitulacionBackingBean {
 		};
 			
 	}
+	
+
 }

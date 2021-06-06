@@ -1,5 +1,6 @@
 package es.uma.informatica.ejb.proyecto;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.ejb.Stateless;
@@ -24,7 +25,7 @@ public class TitulacionEJB implements GestionTitulacion{
 		if(titulacionEntity==null) {
 			throw new TitulacionNoEncontradaException();
 		}
-		return titulacionEntity;
+		return  em.createNamedQuery("Titulacion.general",Titulacion.class).getSingleResult();
 	}
 
 	@Override
@@ -46,5 +47,9 @@ public class TitulacionEJB implements GestionTitulacion{
 		titulacionEntity.setNombre(t.getNombre());
 		titulacionEntity.setCreditos(t.getCreditos());
 		
+	}
+	@Override 
+	public List<Titulacion> listaTitulacion() throws TitulacionNoEncontradaException{
+		return em.createNamedQuery("Titulacion.general",Titulacion.class).getResultList();
 	}
 }
