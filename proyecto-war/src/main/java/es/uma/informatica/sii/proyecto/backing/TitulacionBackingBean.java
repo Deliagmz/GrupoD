@@ -54,7 +54,7 @@ public class TitulacionBackingBean {
 	public void setCreditos(Integer creditos) {
 		this.creditos = creditos;
 	}
-
+ 
 	public void setTitulacion(Titulacion titulacion) {
 		this.titulacion = titulacion;
 	}
@@ -73,7 +73,7 @@ public class TitulacionBackingBean {
 	
 	public String borrarTitulacion() {
 		try {
-			gestionT.eliminarTitulacion(codigo);
+			gestionT.eliminarTitulacion(this.titulacion.getCodigo());
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -83,7 +83,7 @@ public class TitulacionBackingBean {
 	
 	public void actualizarTitulacion() {
 		try {
-			gestionT.actualizarTitulacion(this.getCodigo(), this.getNombre(), this.getCreditos());
+			gestionT.actualizarTitulacion(titulacion.getCodigo(),this.titulacion);
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

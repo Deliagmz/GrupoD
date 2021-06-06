@@ -38,12 +38,13 @@ public class TitulacionEJB implements GestionTitulacion{
 	}
 
 	@Override
-	public void actualizarTitulacion(Integer codigo, String nombre, Integer creditos) throws TitulacionNoEncontradaException {
+	public void actualizarTitulacion(Integer codigo, Titulacion t) throws TitulacionNoEncontradaException {
 		Titulacion titulacionEntity = em.find(Titulacion.class, codigo);
 		if(titulacionEntity==null) {
 			throw new TitulacionNoEncontradaException();
 		}
-		titulacionEntity.setCreditos(creditos);
-		titulacionEntity.setNombre(nombre);
+		titulacionEntity.setNombre(t.getNombre());
+		titulacionEntity.setCreditos(t.getCreditos());
+		
 	}
 }
