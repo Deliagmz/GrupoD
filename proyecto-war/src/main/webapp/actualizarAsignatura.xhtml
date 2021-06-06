@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  lang="es">
+  <h:head>
+	    <title>Modificar asignatura</title>
+	    <link href="resources/estilos.css" rel="stylesheet" />
+  </h:head>
+
+  <h:body>
+    <div id="content">
+      <div id="banner">
+        <h1>
+          Gestor de asignaturas
+        </h1>
+        <h4>
+            Modificar asignatura
+        </h4>   
+      </div>
+	      <h:form id="asignatura">
+          <h:panelGrid columns="3">
+                        <h:outputText value="Referencia: "  for= "referencia"/>
+                        <h:inputText id ="referencia" value="#{asignatura.referencia}" required="true"/>
+                        <h:message for="referencia"/>
+
+                        <h:outputText value="Codigo: "  for= "codigo"/>
+                        <h:inputText id ="codigo" value="#{asignatura.codigo}" required="true"/>
+                        <h:message for="codigo"/>
+                        
+                        <h:outputText value="Nombre: "  for= "nombre"/>
+                        <h:inputText id ="nombre" value="#{asignatura.nombre}" required="true"/>
+                        <h:message for="nombre"/>
+                        
+                        <h:outputText value="Creditos: "  for= "creditos"/>
+                        <h:inputText id ="creditos" value="#{asignatura.creditos}" required="true"/>
+                        <h:message for="creditos"/>
+
+                        <h:outputText value="Ofertada: "  for= "ofertada"/>
+                        <h:inputText id ="ofertada" value="#{asignatura.ofertada}" required="true"/>
+                        <h:message for="ofertada"/>
+
+                        <h:outputText value="Curso: "  for= "curso"/>
+                        <h:inputText id ="curso" value="#{asignatura.curso}" required="true"/>
+                        <h:message for="curso"/>
+                        
+                         <h:outputText value="Caracter: "  for= "caracter"/>
+                        <h:inputText id ="caracter" value="#{asignatura.caracter}" required="true"/>
+                        <h:message for="caracter"/>
+
+                        <h:outputText value="Duracion: "  for= "duracion"/>
+                        <h:inputText id ="duracion" value="#{asignatura.duracion}" required="true"/>
+                        <h:message for="duracion"/>
+                        
+						 <h:outputText value="Unidad temporal: "  for= "uTemp"/>
+                        <h:inputText id ="uTemp" value="#{asignatura.unidadTemporal}" required="true"/>
+                        <h:message for="uTemp"/>
+
+                        <h:outputText value="Idiomas de imparticion : "  for= "idiomas"/>
+                        <h:inputText id ="idiomas" value="#{asignatura.idiomasImparticion}" required="true"/>
+                        <h:message for="idiomas"/>
+
+                        <h:commandButton value="Actualizar" action="#{asignatura.modificar()}"/>
+                        <h:commandButton value="Cancelar" action="indexSecretaria.xhtml"/>
+
+                       
+
+          </h:panelGrid>
+           
+        </h:form>
+			<div class="footer">
+            	<p id="top" class="ftp" style="">
+           	 	<strong><u>Grupo D</u></strong>
+            </p>
+
+            <p class="ftp" style="font-style: oblique">
+            Sistemas de Informaci&oacute;n para Internet
+            </p>
+	    </div>
+		</div>
+      
+  </h:body>
+</html>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 
 <!DOCTYPE html
    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -10,34 +10,31 @@
 	  xmlns:f="http://xmlns.jcp.org/jsf/core"
 	  lang="es">
   <h:head>
-	    <title>Consultar nota media</title>
+	    <title>Borrar asignatura</title>
 	    <link href="resources/estilos.css" rel="stylesheet" />
   </h:head>
   <h:body>
     <div id="content">
       <div id="banner">
         <h1>
-          Gestor de expedientes
+          Gestor de asignaturas
         </h1>
         <h4>
-            Consultar nota media
-        </h4>   
+          Borrar asignatura
+      </h4>    
       </div>
 
-	   <h:form id="expediente">
-       <h:panelGrid columns="3">
-                      <h:outputText value="N&uacute;mero de expediente: "  for= "Num_Expediente"/>
-                      <h:inputText id ="Num_Expediente" value="#{expediente.numExpediente}" required="true"/>
-                      <h:message for="Num_Expediente"/>
+      <h:form id="asignatura">
+        <h:panelGrid columns="3">
+                      <h:outputText value="Referencia: "  for= "referencia"/>
+                      <h:inputText id ="referencia" value="#{asignatura.referencia}" required="true"/>
+                      <h:message for="referencia"/>
 
-                     
-                      <h:commandButton value="Leer" action="#{expediente.leerNotaMedia()}">
-   									   <f:actionListener binding="notaMedia.xhtml" />
-					  </h:commandButton>
+                      <h:commandButton value="Borrar" action="#{asignatura.borrarAsignaturas()}"/>
                       <h:commandButton value="Cancelar" action="indexSecretaria.xhtml"/>
         </h:panelGrid>
       </h:form>
-			
+      
 			<div class="footer">
             	<p id="top" class="ftp" style="">
            	 	<strong><u>Grupo D</u></strong>
@@ -50,6 +47,6 @@
              
 	    </div>
 		</div>
-
+      
   </h:body>
 </html>
