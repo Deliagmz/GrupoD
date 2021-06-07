@@ -54,4 +54,25 @@ public class DefaultSuiteTestProyectoIT {
     driver.findElement(By.cssSelector("h1")).click();
     assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Seleccione un boton para consultar los datos"));
   }
+//  @Test
+//  public void pruebaRegistroUsuario() {
+//    driver.get("http://localhost:8080/proyecto-war/");
+//    driver.manage().window().setSize(new Dimension(1156, 474));
+//    driver.findElement(By.cssSelector("h1")).click();
+//    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Bienvenido al sistema gestor de alumnado"));
+//    driver.findElement(By.linkText("¿No tienes cuenta?")).click();
+//    driver.findElement(By.id("registro:nombre")).click();
+//    driver.findElement(By.id("registro:nombre")).sendKeys("Guillermo");
+//    driver.findElement(By.id("registro:apellidos")).sendKeys("Jimenez");
+//    driver.findElement(By.id("registro:email")).sendKeys("guijimenez@uma.es");
+//    driver.findElement(By.id("registro:direccion")).sendKeys("calle prueba");
+//    driver.findElement(By.id("registro:dni")).sendKeys("12333444x");
+//    driver.findElement(By.id("registro:telefono")).sendKeys("666777888");
+//    driver.findElement(By.id("registro:user")).sendKeys("guilleJJ");
+//    driver.findElement(By.id("registro:pass")).sendKeys("pass");
+//    driver.findElement(By.id("registro:repass")).sendKeys("pass");
+//    driver.findElement(By.name("registro:j_idt24")).click();
+//    driver.findElement(By.cssSelector("p:nth-child(1)")).click();
+//    assertThat(driver.findElement(By.cssSelector("p:nth-child(1)")).getText(), is("El registro se ha realizado con éxito. Hemos enviado un mensaje de validación a su correo electrónico. Compruébelo y pulse el enlace para validar la cuenta de usuario."));
+//  }
 }

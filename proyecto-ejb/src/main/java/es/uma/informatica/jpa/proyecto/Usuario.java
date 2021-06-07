@@ -23,10 +23,10 @@ public class Usuario implements Serializable {
 	@XmlTransient
     @JsonbTransient
 	private String Contrasena;
-	@Column(nullable = false, length = 52)
-	@XmlTransient
-    @JsonbTransient
-	private String RepiteContrasena;
+//	@Column(nullable = false, length = 52)
+//	@XmlTransient
+//    @JsonbTransient
+//	private String RepiteContrasena;
 	@Column(nullable = false, length = 52)
 	private String DNI;
 	@Column(nullable = false, length = 52)
@@ -69,12 +69,12 @@ public class Usuario implements Serializable {
 	public void setContrasena(String contrasena) {
 		Contrasena = contrasena;
 	}
-	public String getRepiteContrasena() {
-		return RepiteContrasena;
-	}
-	public void setRepiteContrasena(String repiteContrasena) {
-		RepiteContrasena = repiteContrasena;
-	}
+//	public String getRepiteContrasena() {
+//		return RepiteContrasena;
+//	}
+//	public void setRepiteContrasena(String repiteContrasena) {
+//		RepiteContrasena = repiteContrasena;
+//	}
 	public String getDNI() {
 		return DNI;
 	}
@@ -109,7 +109,7 @@ public class Usuario implements Serializable {
 		result = prime * result + ((Direccion == null) ? 0 : Direccion.hashCode());
 		result = prime * result + ((Email == null) ? 0 : Email.hashCode());
 		result = prime * result + ((Nombre == null) ? 0 : Nombre.hashCode());
-		result = prime * result + ((RepiteContrasena == null) ? 0 : RepiteContrasena.hashCode());
+//		result = prime * result + ((RepiteContrasena == null) ? 0 : RepiteContrasena.hashCode());
 		result = prime * result + ((telefono == null) ? 0 : telefono.hashCode());
 		return result;
 	}
@@ -152,11 +152,11 @@ public class Usuario implements Serializable {
 				return false;
 		} else if (!Nombre.equals(other.Nombre))
 			return false;
-		if (RepiteContrasena == null) {
-			if (other.RepiteContrasena != null)
-				return false;
-		} else if (!RepiteContrasena.equals(other.RepiteContrasena))
-			return false;
+//		if (RepiteContrasena == null) {
+//			if (other.RepiteContrasena != null)
+//				return false;
+//		} else if (!RepiteContrasena.equals(other.RepiteContrasena))
+//			return false;
 		if (telefono == null) {
 			if (other.telefono != null)
 				return false;
@@ -167,7 +167,7 @@ public class Usuario implements Serializable {
 	@Override
 	public String toString() {
 		return "Usuario [Nombre=" + Nombre + ", Apellido=" + Apellido + ", Contrasena=" + Contrasena
-				+ ", RepiteContrasena=" + RepiteContrasena + ", DNI=" + DNI + ", Email=" + Email + ", telefono="
+				+  ", DNI=" + DNI + ", Email=" + Email + ", telefono="
 				+ telefono + ", Direccion=" + Direccion + "]";
 	}
 	public String getCuenta() {
