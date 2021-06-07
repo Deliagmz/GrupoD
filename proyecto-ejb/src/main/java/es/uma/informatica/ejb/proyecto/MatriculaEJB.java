@@ -29,4 +29,12 @@ public class MatriculaEJB implements GestionMatricula {
 		return matriculaEntity;
 	}
 	
+	@Override
+	public void borrarMatricula(MatriculaId matriculaId) throws MatriculaNoEncontradaException{
+		Matricula matriculaEntity = em.find(Matricula.class, matriculaId);
+		if (matriculaEntity == null) {
+			throw new MatriculaNoEncontradaException();
+		}
+		em.remove(matriculaEntity);
+	}
 }

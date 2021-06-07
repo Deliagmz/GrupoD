@@ -1,6 +1,7 @@
 package es.uma.informatica.ejb.proyecto;
 import javax.ejb.Local;
 
+import es.uma.informatica.ejb.proyecto.excepciones.MatriculaNoEncontradaException;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.jpa.proyecto.Matricula;
 import es.uma.informatica.jpa.proyecto.Matricula.MatriculaId;
@@ -10,5 +11,7 @@ import es.uma.informatica.jpa.proyecto.Matricula.MatriculaId;
 public interface GestionMatricula {
 
 	public Matricula obtenerMatricula(MatriculaId matriculaId) throws SecretariaException;
+
+	public void borrarMatricula(MatriculaId matriculaId) throws SecretariaException;
 	
 }
