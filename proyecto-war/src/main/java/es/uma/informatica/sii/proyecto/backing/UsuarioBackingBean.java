@@ -17,7 +17,9 @@ public class UsuarioBackingBean {
 	@Inject
 	GestionUsuario gestionU;
 	
-	private Usuario usuario;
+	private Usuario usuario = new Usuario();
+	
+	
 	private String cuenta;
 	private String dni;
 	private String email;
@@ -26,6 +28,7 @@ public class UsuarioBackingBean {
 	private String nombre;
 	private String apellido;
 	private String contrasena;
+	private String repass;
 	
 	public UsuarioBackingBean(){
 		
@@ -35,46 +38,7 @@ public class UsuarioBackingBean {
 	public Usuario getUsuario() {
 		return usuario;
 	}
-	
-	public Usuario leerUsuario(String dni)  {
-		
-		try {
-			usuario = gestionU.obtenerUsuario(dni);
-		} catch (SecretariaException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return usuario;
-	}
-	
-	public String actualizarUsuario (String email, String telefono, String direccion, String dni) {
-		
-		try {
-			usuario = gestionU.obtenerUsuario(dni);
-			//gestionU.actualizarUsuario(email, telefono, direccion,dni);
-			usuario.setEmail(email);
-			usuario.setTelefono(telefono);
-			usuario.setDireccion(direccion);
-			
-		} catch (SecretariaException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return "indexSecretaria.xhtml";
-		
-	}
-	
-	public String borrarUsuario (String dni) {
-		try {
-			gestionU.eliminarUsuario(dni);
-		} catch (SecretariaException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return "indexSecretaria.xhtml";
-	}
+
 
 	public String getDni() {
 		return dni;
@@ -144,4 +108,48 @@ public class UsuarioBackingBean {
 		this.cuenta = cuenta;
 	}
 
+	public String toString() {
+		return this.usuario.toString();
+	}
+	public void leerUsuario()  {
+		
+		try {
+			usuario = gestionU.obtenerUsuario(this.usuario.getCuenta());
+		} catch (SecretariaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void actualizarUsuario () {
+		
+		try {
+			gestionU.actualizarUsuario(this.usuario.getCuenta(), this.usuario.getEmail(), this.usuario.getTelefono(), this.usuario.getDireccion());
+				
+		} catch (SecretariaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	public String borrarUsuario () {
+		try {
+			gestionU.eliminarUsuario(this.usuario.getCuenta());
+		} catch (SecretariaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "indexSecretaria.xhtml";
+	}
+
+	public String getRepiteContrasena() {
+		return repass;
+	}
+
+	public void setRepiteContrasena(String repiteContrasena) {
+		this.repass = repiteContrasena;
+	}
 }

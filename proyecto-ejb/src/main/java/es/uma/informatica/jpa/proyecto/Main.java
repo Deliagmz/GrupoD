@@ -19,7 +19,7 @@ public class Main {
 		
 		Alumno alumno = new Alumno();
 		alumno.setNombre("Paco");
-		alumno.setID(213456789L);
+		alumno.setID("213456789");
 		alumno.setApellido1("luna");
 		alumno.setApellido2("sol");
 		alumno.setDNI("789456123X");

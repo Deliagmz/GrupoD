@@ -33,16 +33,16 @@ public class UsuarioEJB implements GestionUsuario {
     
     
 	@Override
-	public Usuario obtenerUsuario(String dni) throws CuentaInexistenteException {
-		Usuario usuarioEntity = em.find(Usuario.class, dni);
+	public Usuario obtenerUsuario(String cuenta) throws CuentaInexistenteException {
+		Usuario usuarioEntity = em.find(Usuario.class, cuenta);
 		if(usuarioEntity==null) {
 			throw new CuentaInexistenteException();
 		}
 		return usuarioEntity;
 	}
 	
-	public void actualizarUsuario(String email, String telefono, String direccion, String dni)throws CuentaInexistenteException{
-		Usuario usuarioExistente = em.find(Usuario.class, dni);
+	public void actualizarUsuario(String cuenta,String email, String telefono, String direccion )throws CuentaInexistenteException{
+		Usuario usuarioExistente = em.find(Usuario.class, cuenta);
 		if(usuarioExistente == null) {
 			throw new CuentaInexistenteException();
 		}
@@ -56,8 +56,8 @@ public class UsuarioEJB implements GestionUsuario {
 		
 	}
 	
-	public void eliminarUsuario(String dni)throws CuentaInexistenteException {
-		Usuario usuarioExistente = em.find(Usuario.class, dni);
+	public void eliminarUsuario(String cuenta)throws CuentaInexistenteException {
+		Usuario usuarioExistente = em.find(Usuario.class, cuenta);
 		if(usuarioExistente == null) {
 			throw new CuentaInexistenteException();
 		}

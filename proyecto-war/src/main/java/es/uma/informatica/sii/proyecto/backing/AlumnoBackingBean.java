@@ -18,7 +18,8 @@ public class AlumnoBackingBean {
 	@Inject
 	GestionAlumnos gestionA;
 	
-	private Alumno alumno;
+	private Alumno alumno = new Alumno();
+	
 	private Long id;
 	private String dni;
 	private String nombre;
@@ -40,56 +41,7 @@ public class AlumnoBackingBean {
 		
 	}
 	
-	public Alumno getAlumno() {
-		return alumno;
-	}
 	
-	public Alumno leerAlumno(Long id)  {
-		
-		try {
-			alumno = gestionA.LecturaAlumno(id);
-		} catch (SecretariaException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return alumno;
-	}
-	
-	public String actualizarAlumno (String email_institucional, String email_personal, Integer telefono, Integer movil, String direccion, Integer codigo_postal, String Localidad, String Provincia, Long id) {
-		
-		try {
-			alumno = gestionA.LecturaAlumno(id);
-			
-			alumno.setEmail_institucional(email_institucional);
-			alumno.setEmail_personal(email_personal);
-			alumno.setTelefono(telefono);
-			alumno.setMovil(movil);
-			alumno.setDireccion(direccion);
-			alumno.setCodigo_postal(codigo_postal);
-			alumno.setLocalidad(Localidad);
-			alumno.setProvincia(Provincia);
-			
-			
-		} catch (SecretariaException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return "indexSecretaria.xhtml";
-		
-	}
-	
-	public String borrarAlumno (Long id) {
-		try {
-			gestionA.EliminarAlumno(id);
-		} catch (SecretariaException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return "indexSecretaria.xhtml";
-	}
-
 	public Long getId() {
 		return id;
 	}
@@ -204,6 +156,48 @@ public class AlumnoBackingBean {
 
 	public void setAlumno(Alumno alumno) {
 		this.alumno = alumno;
+	}
+	
+	public Alumno getAlumno() {
+		return alumno;
+	}
+	
+	public void leerAlumno()  {
+		
+		try {
+			alumno = gestionA.LecturaAlumno(this.alumno.getID());
+		} catch (SecretariaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void actualizarAlumno () {
+		
+		try {
+			gestionA.ActualizarAlumno(this.alumno.getID(), this.alumno);
+			
+		} catch (SecretariaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	public String borrarAlumno () {
+		try {
+			gestionA.EliminarAlumno(this.alumno.getID());
+		} catch (SecretariaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "indexSecretaria.xhtml";
+	}
+	
+	public String toString() {
+		return this.alumno.toString();
 	}
 
 	

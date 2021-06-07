@@ -17,7 +17,7 @@ public class Alumno implements Serializable {
 
 	   
 	@Id @GeneratedValue 
-	private Long ID;
+	private String ID;
 	@Column( unique= true, nullable = false, length = 20)
 	private String DNI;
 	@Column(nullable = false, length = 52)
@@ -115,11 +115,11 @@ public class Alumno implements Serializable {
 
 
 
-	public Long getID() {
+	public String getID() {
 		return this.ID;
 	}
 
-	public void setID(Long ID) {
+	public void setID(String ID) {
 		this.ID = ID;
 	}   
 	public String getDNI() {
@@ -304,8 +304,7 @@ public class Alumno implements Serializable {
 				+ Apellido2 + ", Email_institucional=" + Email_institucional + ", Email_personal=" + Email_personal
 				+ ", Telefono=" + Telefono + ", Movil=" + Movil + ", Direccion=" + Direccion + ", Codigo_postal="
 
-				+ Codigo_postal + ", Localidad=" + Localidad + ", Provincia=" + Provincia + "]"
-		+ Codigo_postal + ", localidad=" + Localidad + ", provincia=" + Provincia + ", expedientes="
+				+ Codigo_postal + ", Localidad=" + Localidad + ", Provincia=" + Provincia + ", expedientes="
 				+ expedientes + "]";
 
 	}

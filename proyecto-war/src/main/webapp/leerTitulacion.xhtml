@@ -35,28 +35,20 @@
 		        </tr>
            
                 <tr>
-                    
-                    <td>
-                    <th align="center" width="50%">
-		              <h:commandButton id="titulacion" value="Leer" action="#{titulacion.leerTitulacion()}"/>
-
-		            </td>
-		            
-		            <td width="50%"></td>
-            </th>
-		              
-		            </td>
-		            
-		            
-                </tr>
-                
-                <tr>
-                <td>
-                <th align="center" width="50%">
-		              <h:outputText value="#{titulacion.getTit()}"/>
-		        </th>
-		        </td>
-                </tr>
+					<td width="50%"></td>
+                    <td align="center" >
+                           <h:commandButton value="Leer" action="#{titulacion.leerTitulacion()}" styleClass = "submit"/>
+                    </td>
+                    <td width="50%"></td>
+               </tr>
+               
+                 <tr align="center">
+                 	<td ></td>
+		             	<td>
+		             		<h:outputText value="#{titulacion.getTit()}"/>
+		             	</td>
+		             <td width="50%"></td>
+		       		</tr>
             </table>
         </h:form>
       

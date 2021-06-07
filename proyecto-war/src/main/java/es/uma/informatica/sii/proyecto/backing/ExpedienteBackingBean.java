@@ -39,8 +39,13 @@ public class ExpedienteBackingBean {
 	
 	public ExpedienteBackingBean(){
 		expediente=new Expedientes();
+<<<<<<< HEAD
 		matricula = new Matricula();
 		matriculaId = new MatriculaId();
+=======
+		matricula= new Matricula();
+		matriculaId= new MatriculaId();
+>>>>>>> origin/master
 	}
 	
 
@@ -71,7 +76,24 @@ public class ExpedienteBackingBean {
 
 
 	//?????????????????????????????????????????????????????????????????????//
+<<<<<<< HEAD
     
+=======
+    public void obtenerMatricula(){
+        try {
+        
+        	matricula = gestionM.obtenerMatricula(this.matriculaId);
+		} catch (SecretariaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+    }
+	public String matriculaString() {
+		return matricula.toString();
+	}
+>>>>>>> origin/master
 
 	public String modificar() {
 		try {

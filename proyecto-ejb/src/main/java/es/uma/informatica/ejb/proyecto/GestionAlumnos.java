@@ -7,11 +7,11 @@ import es.uma.informatica.jpa.proyecto.Usuario;
 public interface GestionAlumnos {
 	
 	
-	public Alumno LecturaAlumno(Long Id) throws SecretariaException;
+	public Alumno LecturaAlumno(String string) throws SecretariaException;
 
-	public void ActualizarAlumno(Long Id, Alumno alumno)throws SecretariaException;
+	public void ActualizarAlumno(String string, Alumno alumno)throws SecretariaException;
 	
-	public void EliminarAlumno(Long id)throws SecretariaException;
+	public void EliminarAlumno(String string)throws SecretariaException;
 	
 	
     
