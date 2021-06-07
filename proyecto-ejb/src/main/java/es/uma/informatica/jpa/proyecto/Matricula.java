@@ -26,11 +26,11 @@ public class Matricula implements Serializable {
 	
 	public static class MatriculaId implements Serializable{
 		private String Curso_academico;
-		private Long expediente;
+		private Long expedientes;
 		
 		public MatriculaId (String Cursoacademico,Long expedientes) {
 			this.Curso_academico = Cursoacademico;
-			this.expediente=expedientes;
+			this.expedientes=expedientes;
 		}
 
 		public String getCurso_academico() {
@@ -42,11 +42,11 @@ public class Matricula implements Serializable {
 		}
 
 		public Long getExpedientes() {
-			return expediente;
+			return expedientes;
 		}
 
 		public void setExpedientes(Long expedientes) {
-			this.expediente = expedientes;
+			this.expedientes = expedientes;
 		}
 
 		@Override
@@ -54,7 +54,7 @@ public class Matricula implements Serializable {
 			final int prime = 31;
 			int result = 1;
 			result = prime * result + ((Curso_academico == null) ? 0 : Curso_academico.hashCode());
-			result = prime * result + ((expediente == null) ? 0 : expediente.hashCode());
+			result = prime * result + ((expedientes == null) ? 0 : expedientes.hashCode());
 			return result;
 		}
 
@@ -72,10 +72,10 @@ public class Matricula implements Serializable {
 					return false;
 			} else if (!Curso_academico.equals(other.Curso_academico))
 				return false;
-			if (expediente == null) {
-				if (other.expediente != null)
+			if (expedientes == null) {
+				if (other.expedientes != null)
 					return false;
-			} else if (!expediente.equals(other.expediente))
+			} else if (!expedientes.equals(other.expedientes))
 				return false;
 			return true;
 		}
@@ -108,6 +108,9 @@ public class Matricula implements Serializable {
 	@Id
 	@ManyToOne
 	private Expedientes expedientes;
+	
+	
+
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -230,5 +233,5 @@ public class Matricula implements Serializable {
 				+ ", Turno_Preferente=" + Turno_Preferente + ", Fecha_de_matricula=" + Fecha_de_matricula
 				+ ", Nuevo_ingreso=" + Nuevo_ingreso +  "]";
 	}
-   
+	
 }

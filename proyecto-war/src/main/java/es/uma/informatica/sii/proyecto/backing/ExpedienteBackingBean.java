@@ -82,7 +82,7 @@ public class ExpedienteBackingBean {
 		
     }
 	public String matriculaString() {
-		return matricula.toString();
+		return this.matricula.toString();
 	}
 
 	public String modificar() {
