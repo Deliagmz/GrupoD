@@ -51,4 +51,13 @@ public class ExpedientesEJB implements GestionExpedientes{
 		em.persist(expedienteEntity);
 	}
 
+	@Override
+	public void borrarExpediente(Long Num_Expediente) throws SecretariaException {
+		Expedientes expedienteEntity = em.find(Expedientes.class, Num_Expediente);
+		if(expedienteEntity==null) {
+			throw new ExpedienteNoEncontradoException();
+		}
+		em.remove(expedienteEntity);
+	}
+
 }
