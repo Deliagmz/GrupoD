@@ -32,7 +32,11 @@ public class Matricula implements Serializable {
 			this.Curso_academico = Cursoacademico;
 			this.expedientes=expedientes;
 		}
-
+		public MatriculaId () {
+			this.Curso_academico = Curso_academico;
+			this.expedientes=expedientes;
+		}
+	
 		public String getCurso_academico() {
 			return Curso_academico;
 		}
