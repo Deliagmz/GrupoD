@@ -304,8 +304,7 @@ public class Alumno implements Serializable {
 				+ Apellido2 + ", Email_institucional=" + Email_institucional + ", Email_personal=" + Email_personal
 				+ ", Telefono=" + Telefono + ", Movil=" + Movil + ", Direccion=" + Direccion + ", Codigo_postal="
 
-				+ Codigo_postal + ", Localidad=" + Localidad + ", Provincia=" + Provincia + "]"
-		+ Codigo_postal + ", localidad=" + Localidad + ", provincia=" + Provincia + ", expedientes="
+				+ Codigo_postal + ", Localidad=" + Localidad + ", Provincia=" + Provincia + ", expedientes="
 				+ expedientes + "]";
 
 	}

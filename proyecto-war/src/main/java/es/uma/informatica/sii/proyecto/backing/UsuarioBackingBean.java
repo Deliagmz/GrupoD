@@ -28,6 +28,7 @@ public class UsuarioBackingBean {
 	private String nombre;
 	private String apellido;
 	private String contrasena;
+	private String repass;
 	
 	public UsuarioBackingBean(){
 		
@@ -142,5 +143,13 @@ public class UsuarioBackingBean {
 			e.printStackTrace();
 		}
 		return "indexSecretaria.xhtml";
+	}
+
+	public String getRepiteContrasena() {
+		return repass;
+	}
+
+	public void setRepiteContrasena(String repiteContrasena) {
+		this.repass = repiteContrasena;
 	}
 }

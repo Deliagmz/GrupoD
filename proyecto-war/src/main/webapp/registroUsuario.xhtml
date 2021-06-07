@@ -25,6 +25,15 @@
                             <f:validateRegex pattern=".+@.+"/>
                         </h:inputText>
                         <h:message for="email"/>
+                        <h:outputText value="Dirección:"/>
+                        <h:inputText id="direccion" value="#{registro.usuario.direccion}" required="true"/>
+                        <h:message for="direccion"/>
+                        <h:outputText value="DNI:"/>
+                        <h:inputText id="dni" value="#{registro.usuario.DNI}" required="true"/>
+                        <h:message for="dni"/>
+                        <h:outputText value="Teléfono:"/>
+                        <h:inputText id="telefono" value="#{registro.usuario.telefono}" required="true"/>
+                        <h:message for="telefono"/>
                         <h:outputText value="Nombre de usuario:"/>
                         <h:inputText id="user" value="#{registro.usuario.cuenta}" required="true"/>
                         <h:message for="user"/>
@@ -34,6 +43,9 @@
                         <h:outputText value="Repita contraseña:"/>
                         <h:inputSecret id="repass" value="#{registro.repass}" required="true"/>
                         <h:message for="repass"/>
+                        
+                        
+                        
                         <h:commandButton value="Crear usuario" action="#{registro.registrarUsuario()}"/>
                         <h:link outcome="login.xhtml">Volver a la página de login</h:link>
                     </h:panelGrid>
