@@ -43,6 +43,7 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 		encuesta.setExpediente(e);
 		
 		
+		
 		em.persist(encuesta);
 	}
 
@@ -54,8 +55,11 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 			throw new EncuestaNoEncontradaException();
 		}
 		
-		encuestaEntity.setFecha_de_envio(f_d_e);
-		encuestaEntity.setExpediente(e);
+		encuestaEntity.setGrupoCuarto(encuesta.getGrupoCuarto());
+		encuestaEntity.setGrupoPrimero(encuesta.getGrupoPrimero());
+		encuestaEntity.setGrupoSegundo(encuesta.getGrupoSegundo());
+		encuestaEntity.setGrupoTercero(encuesta.getGrupoTercero());
+		
 		em.persist(encuestaEntity);
 	}
 

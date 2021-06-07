@@ -70,6 +70,10 @@ public class Encuesta implements Serializable {
 
 	@Id
 	private Timestamp fecha_de_envio;
+	private String grupoPrimero;
+	private String grupoSegundo;
+	private String grupoTercero;
+	private String grupoCuarto;
 	
 	//relacion para hacer entidad debil
 	@Id
@@ -103,17 +107,72 @@ public class Encuesta implements Serializable {
 	public void setExpediente(Expedientes expediente) {
 		this.expediente = expediente;
 	}
-	
-	
-	
+
+
+
+	public String getGrupoPrimero() {
+		return grupoPrimero;
+	}
+
+
+
+	public void setGrupoPrimero(String grupoPrimero) {
+		this.grupoPrimero = grupoPrimero;
+	}
+
+
+
+	public String getGrupoSegundo() {
+		return grupoSegundo;
+	}
+
+
+
+	public void setGrupoSegundo(String grupoSegundo) {
+		this.grupoSegundo = grupoSegundo;
+	}
+
+
+
+	public String getGrupoTercero() {
+		return grupoTercero;
+	}
+
+
+
+	public void setGrupoTercero(String grupoTercero) {
+		this.grupoTercero = grupoTercero;
+	}
+
+
+
+	public String getGrupoCuarto() {
+		return grupoCuarto;
+	}
+
+
+
+	public void setGrupoCuarto(String grupoCuarto) {
+		this.grupoCuarto = grupoCuarto;
+	}
+
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((expediente == null) ? 0 : expediente.hashCode());
 		result = prime * result + ((fecha_de_envio == null) ? 0 : fecha_de_envio.hashCode());
+		result = prime * result + ((gr_asignaturas == null) ? 0 : gr_asignaturas.hashCode());
+		result = prime * result + ((grupoCuarto == null) ? 0 : grupoCuarto.hashCode());
+		result = prime * result + ((grupoPrimero == null) ? 0 : grupoPrimero.hashCode());
+		result = prime * result + ((grupoSegundo == null) ? 0 : grupoSegundo.hashCode());
+		result = prime * result + ((grupoTercero == null) ? 0 : grupoTercero.hashCode());
 		return result;
 	}
+
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -134,14 +193,45 @@ public class Encuesta implements Serializable {
 				return false;
 		} else if (!fecha_de_envio.equals(other.fecha_de_envio))
 			return false;
+		if (gr_asignaturas == null) {
+			if (other.gr_asignaturas != null)
+				return false;
+		} else if (!gr_asignaturas.equals(other.gr_asignaturas))
+			return false;
+		if (grupoCuarto == null) {
+			if (other.grupoCuarto != null)
+				return false;
+		} else if (!grupoCuarto.equals(other.grupoCuarto))
+			return false;
+		if (grupoPrimero == null) {
+			if (other.grupoPrimero != null)
+				return false;
+		} else if (!grupoPrimero.equals(other.grupoPrimero))
+			return false;
+		if (grupoSegundo == null) {
+			if (other.grupoSegundo != null)
+				return false;
+		} else if (!grupoSegundo.equals(other.grupoSegundo))
+			return false;
+		if (grupoTercero == null) {
+			if (other.grupoTercero != null)
+				return false;
+		} else if (!grupoTercero.equals(other.grupoTercero))
+			return false;
 		return true;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "Encuesta [fecha_de_envio=" + fecha_de_envio + ", expediente=" + expediente + "]";
+		return "Encuesta [fecha_de_envio=" + fecha_de_envio + ", grupoPrimero=" + grupoPrimero + ", grupoSegundo="
+				+ grupoSegundo + ", grupoTercero=" + grupoTercero + ", grupoCuarto=" + grupoCuarto + ", expediente="
+				+ expediente + ", gr_asignaturas=" + gr_asignaturas + "]";
 	}
-
+	
+	
+	
 	
    
 }
