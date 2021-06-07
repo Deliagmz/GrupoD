@@ -32,7 +32,11 @@ public class Matricula implements Serializable {
 			this.Curso_academico = Cursoacademico;
 			this.expedientes=expedientes;
 		}
-
+		public MatriculaId () {
+			this.Curso_academico = Curso_academico;
+			this.expedientes=expedientes;
+		}
+	
 		public String getCurso_academico() {
 			return Curso_academico;
 		}
@@ -108,6 +112,9 @@ public class Matricula implements Serializable {
 	@Id
 	@ManyToOne
 	private Expedientes expedientes;
+	
+	
+
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -230,5 +237,5 @@ public class Matricula implements Serializable {
 				+ ", Turno_Preferente=" + Turno_Preferente + ", Fecha_de_matricula=" + Fecha_de_matricula
 				+ ", Nuevo_ingreso=" + Nuevo_ingreso +  "]";
 	}
-   
+	
 }

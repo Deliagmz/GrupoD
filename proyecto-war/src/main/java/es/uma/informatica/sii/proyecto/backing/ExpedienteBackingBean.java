@@ -29,6 +29,9 @@ public class ExpedienteBackingBean {
 
 	private Expedientes expediente;
     private Matricula matricula;
+    private MatriculaId matriculaId;
+    
+    
 
 	private Double notaMedia;
 //	private Long numExpediente;
@@ -37,6 +40,8 @@ public class ExpedienteBackingBean {
 	
 	public ExpedienteBackingBean(){
 		expediente=new Expedientes();
+		matricula= new Matricula();
+		matriculaId= new MatriculaId();
 	}
 
 
@@ -67,10 +72,10 @@ public class ExpedienteBackingBean {
 
 
 	//?????????????????????????????????????????????????????????????????????//
-    public void obtenerMatricula(MatriculaId matriculaId){
+    public void obtenerMatricula(){
         try {
-        	
-        	matricula = gestionM.obtenerMatricula(matriculaId);
+        
+        	matricula = gestionM.obtenerMatricula(this.matriculaId);
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -116,6 +121,27 @@ public class ExpedienteBackingBean {
 		}
 		return "indexSecretaria.xhtml";
 	}
+
+
+	public MatriculaId getMatriculaId() {
+		return matriculaId;
+	}
+
+
+	public void setMatriculaId(MatriculaId matriculaId) {
+		this.matriculaId = matriculaId;
+	}
+
+
+	
+
+
+	public void setExpediente(Expedientes expediente) {
+		this.expediente = expediente;
+	}
+	
+	
+
 
 
 
