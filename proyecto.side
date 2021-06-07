@@ -1,0 +1,280 @@
+{
+  "id": "706598a6-3944-4c87-8a94-e90cb3894928",
+  "version": "2.0",
+  "name": "proyecto",
+  "url": "http://localhost:8080/proyecto-war/",
+  "tests": [{
+    "id": "7987d63b-1d90-4cbf-b2c3-e58bf235fad7",
+    "name": "PruebaLogin",
+    "commands": [{
+      "id": "9ec1c128-4d8a-4f65-b595-641b032394da",
+      "comment": "",
+      "command": "open",
+      "target": "/proyecto-war/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5dab5685-51b6-4c77-922a-857fad3df74d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "05e62694-4799-4527-979b-dd884c77460a",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Iniciar Sesi�n",
+      "targets": [
+        ["linkText=Sesi�n", "linkText"],
+        ["css=p:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Iniciar Sesi�n')]", "xpath:link"],
+        ["xpath=//div[@id='navegador']/p/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'login.xhtml')]", "xpath:href"],
+        ["xpath=//p/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Iniciar Sesi�n')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "efbc872c-5c49-4575-8352-c7fdfb925889",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Iniciar Sesi�n",
+      "targets": [
+        ["linkText=Iniciar Sesi�n", "linkText"],
+        ["css=p:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Iniciar Sesi�n')]", "xpath:link"],
+        ["xpath=//div[@id='navegador']/p/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'login.xhtml')]", "xpath:href"],
+        ["xpath=//p/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Iniciar Sesi�n')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f5581376-85c2-4bc6-969e-850ee90d52ee",
+      "comment": "",
+      "command": "click",
+      "target": "id=j_idt6:user",
+      "targets": [
+        ["id=j_idt6:user", "id"],
+        ["name=j_idt6:user", "name"],
+        ["css=#j_idt6\\3Auser", "css:finder"],
+        ["xpath=//input[@id='j_idt6:user']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "86d6d048-9809-4895-97bb-602153cf34df",
+      "comment": "",
+      "command": "type",
+      "target": "id=j_idt6:user",
+      "targets": [
+        ["id=j_idt6:user", "id"],
+        ["name=j_idt6:user", "name"],
+        ["css=#j_idt6\\3Auser", "css:finder"],
+        ["xpath=//input[@id='j_idt6:user']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Secretaria"
+    }, {
+      "id": "4e344897-4095-47af-b40d-030af09b9de2",
+      "comment": "",
+      "command": "type",
+      "target": "id=j_idt6:pass",
+      "targets": [
+        ["id=j_idt6:pass", "id"],
+        ["name=j_idt6:pass", "name"],
+        ["css=#j_idt6\\3Apass", "css:finder"],
+        ["xpath=//input[@id='j_idt6:pass']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": "secretaria"
+    }, {
+      "id": "62ec7452-5d58-4b18-9788-0600554e1e85",
+      "comment": "",
+      "command": "click",
+      "target": "name=j_idt6:j_idt15",
+      "targets": [
+        ["name=j_idt6:j_idt15", "name"],
+        ["css=tr:nth-child(3) input", "css:finder"],
+        ["xpath=//input[@name='j_idt6:j_idt15']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr[3]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "2c44f5e2-a998-4f5e-80f2-d6a5340a184d",
+    "name": "PruebaLogin2",
+    "commands": [{
+      "id": "226f5576-3839-4dbc-a861-75ccf4005cb2",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/proyecto-war/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9a3d69d2-aebb-4771-ad70-0c07833e2a4a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7e2331bc-ad90-4cc3-b43e-b7f1407d7edb",
+      "comment": "",
+      "command": "click",
+      "target": "id=content",
+      "targets": [
+        ["id=content", "id"],
+        ["css=#content", "css:finder"],
+        ["xpath=//div[@id='content']", "xpath:attributes"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "603939f0-ef23-452e-826e-d888e0f20094",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='welcome']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Bienvenido al sistema gestor de alumnado')]", "xpath:innerText"]
+      ],
+      "value": "Bienvenido al sistema gestor de alumnado"
+    }, {
+      "id": "f46d2c20-2289-42d6-aa31-34df08223397",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Iniciar Sesión",
+      "targets": [
+        ["linkText=Iniciar Sesión", "linkText"],
+        ["css=p:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Iniciar Sesión')]", "xpath:link"],
+        ["xpath=//div[@id='navegador']/p/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'login.xhtml')]", "xpath:href"],
+        ["xpath=//p/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Iniciar Sesión')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "33229f62-4023-44dd-a8fa-ffafa5314088",
+      "comment": "",
+      "command": "click",
+      "target": "id=j_idt6:user",
+      "targets": [
+        ["id=j_idt6:user", "id"],
+        ["name=j_idt6:user", "name"],
+        ["css=#j_idt6\\3Auser", "css:finder"],
+        ["xpath=//input[@id='j_idt6:user']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5273a8a2-f096-4665-b04f-0058c4c187a6",
+      "comment": "",
+      "command": "type",
+      "target": "id=j_idt6:user",
+      "targets": [
+        ["id=j_idt6:user", "id"],
+        ["name=j_idt6:user", "name"],
+        ["css=#j_idt6\\3Auser", "css:finder"],
+        ["xpath=//input[@id='j_idt6:user']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Secretaria"
+    }, {
+      "id": "03959565-a50e-49be-bd6b-ee7950b6f530",
+      "comment": "",
+      "command": "type",
+      "target": "id=j_idt6:pass",
+      "targets": [
+        ["id=j_idt6:pass", "id"],
+        ["name=j_idt6:pass", "name"],
+        ["css=#j_idt6\\3Apass", "css:finder"],
+        ["xpath=//input[@id='j_idt6:pass']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": "secretaria"
+    }, {
+      "id": "5ca33d91-3859-462f-b08e-d8dbf1cdb3a9",
+      "comment": "",
+      "command": "click",
+      "target": "name=j_idt6:j_idt15",
+      "targets": [
+        ["name=j_idt6:j_idt15", "name"],
+        ["css=tr:nth-child(3) input", "css:finder"],
+        ["xpath=//input[@name='j_idt6:j_idt15']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr[3]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "766fff30-44c5-42b6-b774-9030023a4346",
+      "comment": "",
+      "command": "click",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='welcome']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Seleccione un botón para consultar los datos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "30046559-bd8f-4f78-8114-5df84042bc5d",
+      "comment": "",
+      "command": "click",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='welcome']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Seleccione un botón para consultar los datos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d30cfabb-7095-4bb6-a1df-34960fbd37c4",
+      "comment": "",
+      "command": "click",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='welcome']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Seleccione un botón para consultar los datos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b529a321-92e6-4b0b-8ad3-2c1795c2ee51",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='welcome']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Seleccione un botón para consultar los datos')]", "xpath:innerText"]
+      ],
+      "value": "Seleccione un botón para consultar los datos"
+    }]
+  }],
+  "suites": [{
+    "id": "e476cb40-cf41-45c9-91bc-9ed8f40f047a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["7987d63b-1d90-4cbf-b2c3-e58bf235fad7"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}
