@@ -72,10 +72,8 @@ public class ExpedienteBackingBean {
 	//?????????????????????????????????????????????????????????????????????//
     public void obtenerMatricula(){
         try {
-        	//this.getMatricula().setCurso_academico(this.getExpediente().ge);
-//        	this.getMatriculaId().setCurso_academico(this.getMatricula().getCurso_academico());
-//        	this.getMatriculaId().setExpedientes(this.getExpediente().getNum_Expediente());
-        	matricula = gestionM.obtenerMatricula(this.getMatriculaId());
+        
+        	matricula = gestionM.obtenerMatricula(this.matriculaId);
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -84,7 +82,7 @@ public class ExpedienteBackingBean {
 		
     }
 	public String matriculaString() {
-		return this.matricula.toString();
+		return matricula.toString();
 	}
 
 	public String modificar() {
