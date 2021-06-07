@@ -26,11 +26,11 @@ public class Matricula implements Serializable {
 	
 	public static class MatriculaId implements Serializable{
 		private String Curso_academico;
-		private Long expedientes;
+		private Long expediente;
 		
 		public MatriculaId (String Cursoacademico,Long expedientes) {
 			this.Curso_academico = Cursoacademico;
-			this.expedientes=expedientes;
+			this.expediente=expedientes;
 		}
 
 		public String getCurso_academico() {
@@ -42,11 +42,11 @@ public class Matricula implements Serializable {
 		}
 
 		public Long getExpedientes() {
-			return expedientes;
+			return expediente;
 		}
 
 		public void setExpedientes(Long expedientes) {
-			this.expedientes = expedientes;
+			this.expediente = expedientes;
 		}
 
 		@Override
@@ -54,7 +54,7 @@ public class Matricula implements Serializable {
 			final int prime = 31;
 			int result = 1;
 			result = prime * result + ((Curso_academico == null) ? 0 : Curso_academico.hashCode());
-			result = prime * result + ((expedientes == null) ? 0 : expedientes.hashCode());
+			result = prime * result + ((expediente == null) ? 0 : expediente.hashCode());
 			return result;
 		}
 
@@ -72,10 +72,10 @@ public class Matricula implements Serializable {
 					return false;
 			} else if (!Curso_academico.equals(other.Curso_academico))
 				return false;
-			if (expedientes == null) {
-				if (other.expedientes != null)
+			if (expediente == null) {
+				if (other.expediente != null)
 					return false;
-			} else if (!expedientes.equals(other.expedientes))
+			} else if (!expediente.equals(other.expediente))
 				return false;
 			return true;
 		}
