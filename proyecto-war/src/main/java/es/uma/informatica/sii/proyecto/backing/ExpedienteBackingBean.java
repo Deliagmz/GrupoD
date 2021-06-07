@@ -40,6 +40,8 @@ public class ExpedienteBackingBean {
 	
 	public ExpedienteBackingBean(){
 		expediente=new Expedientes();
+		matricula= new Matricula();
+		matriculaId= new MatriculaId();
 	}
 
 
@@ -82,7 +84,7 @@ public class ExpedienteBackingBean {
 		
     }
 	public String matriculaString() {
-		return this.matricula.toString();
+		return matricula.toString();
 	}
 
 	public String modificar() {
