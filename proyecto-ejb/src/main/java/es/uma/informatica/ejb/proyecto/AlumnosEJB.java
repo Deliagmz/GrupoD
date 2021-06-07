@@ -16,7 +16,7 @@ public class AlumnosEJB implements GestionAlumnos{
 	@PersistenceContext(name="Secretaria")
 	private EntityManager em;
 	
-	public Alumno LecturaAlumno(Long Id)throws AlumnoNoEncontradoException{
+	public Alumno LecturaAlumno(String Id)throws AlumnoNoEncontradoException{
 		
 		Alumno alumno = em.find(Alumno.class, Id);
 		if(alumno == null) {
@@ -27,7 +27,7 @@ public class AlumnosEJB implements GestionAlumnos{
 		
 	}
 	
-	public void ActualizarAlumno(Long Id, Alumno alumno)throws AlumnoNoEncontradoException{
+	public void ActualizarAlumno(String Id, Alumno alumno)throws AlumnoNoEncontradoException{
 		Alumno alumnoExistente = em.find(Alumno.class, Id);
 		if(alumnoExistente == null) {
 			throw new AlumnoNoEncontradoException();
@@ -48,7 +48,7 @@ public class AlumnosEJB implements GestionAlumnos{
 		
 	}
 	
-	public void EliminarAlumno(Long id)throws AlumnoNoEncontradoException {
+	public void EliminarAlumno(String id)throws AlumnoNoEncontradoException {
 		Alumno alumnoExistente = em.find(Alumno.class, id);
 		if(alumnoExistente == null) {
 			throw new AlumnoNoEncontradoException();

@@ -37,7 +37,7 @@ public class AlumnoT {
 	@Test
 	public void testLecturaAlumno() {
 		try {
-			Alumno alumno = gestionAlumnos.LecturaAlumno(213456789L);
+			Alumno alumno = gestionAlumnos.LecturaAlumno("213456789");
 			assertEquals("Paco",alumno.getNombre());
 			
 		}catch(SecretariaException e) {
@@ -50,7 +50,7 @@ public class AlumnoT {
 	public void testLecturaAlumnoNoEncontrado() {
 		try {
 			//no se encuentra en la bd
-			Alumno alumno = gestionAlumnos.LecturaAlumno(321456789L);
+			Alumno alumno = gestionAlumnos.LecturaAlumno("321456789L");
 			fail("debera lanzar excepcion alumno no encontrado");
 		}catch(AlumnoNoEncontradoException e) {
 			//OK
@@ -61,7 +61,7 @@ public class AlumnoT {
 	@Requisitos({"RF4"})
 	@Test
 	public void testActualizarAlumno() {
-		final Long ID = 213456789L;
+		final String ID = "213456789L";
 		
 		final String nombreAlumno = "Pepe";
 		final String apellido1 = "Garcia";
@@ -83,7 +83,7 @@ public class AlumnoT {
 		}
 				
 		try {
-			final Long IDActualizado = 213456789L;
+			final String IDActualizado = "213456789L";
 			Alumno alumnoActualizado = gestionAlumnos.LecturaAlumno(IDActualizado);
 			
 			assertTrue(nombreAlumno.compareTo(alumnoActualizado.getNombre())==0);
@@ -99,7 +99,7 @@ public class AlumnoT {
 	
 	@Test
 	public void testActualizarAlumnoNoEncontrado() {
-		final Long ID = 111456789L;
+		final String ID = "111456789L";
 		
 		final String nombreAlumno = "Pepe";
 		final String apellido1 = "Garcia";
@@ -124,7 +124,7 @@ public class AlumnoT {
 	@Requisitos({"RF4"})
 	@Test
 	public void testEliminarAlumno() throws SecretariaException {
-		final Long ID = 213456789L;
+		final String ID = "213456789L";
 			
 			gestionAlumnos.EliminarAlumno(ID);
 			assertThrows(AlumnoNoEncontradoException.class, ()->gestionAlumnos.LecturaAlumno(ID));
@@ -134,7 +134,7 @@ public class AlumnoT {
 	@Test
 	public void testEliminarAlumnoNoEncontrado() {
 		try {
-			final Long ID = 111456789L;
+			final String ID = "111456789L";
 			gestionAlumnos.EliminarAlumno(ID);
 			
 			Alumno alumno2 = gestionAlumnos.LecturaAlumno(ID);
