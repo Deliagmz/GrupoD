@@ -93,6 +93,7 @@ public class Matricula implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date Fecha_de_matricula;
 	private Boolean Nuevo_ingreso;
+	private Long nExp;
 
 ////Relacion muchos a muchos con Asignaturas
 //	@JoinTable(name = "Asignaturas_Matricula",
@@ -232,6 +233,12 @@ public class Matricula implements Serializable {
 		return "Matricula [Curso_academico=" + Curso_academico + ", Estado=" + Estado + ", Num_Archivo=" + Num_Archivo
 				+ ", Turno_Preferente=" + Turno_Preferente + ", Fecha_de_matricula=" + Fecha_de_matricula
 				+ ", Nuevo_ingreso=" + Nuevo_ingreso +  "]";
+	}
+	public Long getnExp() {
+		return nExp;
+	}
+	public void setnExp(Long nExp) {
+		this.nExp = nExp;
 	}
 	
 }

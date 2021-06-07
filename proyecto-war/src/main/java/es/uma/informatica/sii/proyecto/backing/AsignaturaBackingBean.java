@@ -146,7 +146,7 @@ public class AsignaturaBackingBean {
 	
 	public void actualizarAsignatura() {
 		try {
-			gestionA.actualizarAsignatura(asignatura.getCodigo(),this.asignatura);
+			gestionA.actualizarAsignatura(asignatura.getReferencia(),this.asignatura);
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

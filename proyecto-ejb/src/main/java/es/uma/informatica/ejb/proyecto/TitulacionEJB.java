@@ -46,6 +46,7 @@ public class TitulacionEJB implements GestionTitulacion{
 		}
 		titulacionEntity.setNombre(t.getNombre());
 		titulacionEntity.setCreditos(t.getCreditos());
+		em.persist(titulacionEntity);
 		
 	}
 	
