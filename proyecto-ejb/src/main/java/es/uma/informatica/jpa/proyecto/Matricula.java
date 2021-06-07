@@ -32,6 +32,9 @@ public class Matricula implements Serializable {
 			this.Curso_academico = Cursoacademico;
 			this.expedientes=expedientes;
 		}
+		public MatriculaId() {
+			
+		}
 
 		public String getCurso_academico() {
 			return Curso_academico;
@@ -230,9 +233,9 @@ public class Matricula implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Matricula [Curso_academico=" + Curso_academico + ", Estado=" + Estado + ", Num_Archivo=" + Num_Archivo
+		return "Matricula: Curso_academico=" + Curso_academico + ", Estado=" + Estado + ", Num_Archivo=" + Num_Archivo
 				+ ", Turno_Preferente=" + Turno_Preferente + ", Fecha_de_matricula=" + Fecha_de_matricula
-				+ ", Nuevo_ingreso=" + Nuevo_ingreso +  "]";
+				+ ", Nuevo_ingreso=" + Nuevo_ingreso  ;
 	}
 	public Long getnExp() {
 		return nExp;

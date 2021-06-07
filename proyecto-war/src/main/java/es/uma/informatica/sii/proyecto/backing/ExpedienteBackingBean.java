@@ -29,8 +29,7 @@ public class ExpedienteBackingBean {
 
 	private Expedientes expediente;
     private Matricula matricula;
-    private MatriculaId matriculaId;
-    
+    private MatriculaId matriculaId = new MatriculaId();
     
 
 	private Double notaMedia;
@@ -40,10 +39,10 @@ public class ExpedienteBackingBean {
 	
 	public ExpedienteBackingBean(){
 		expediente=new Expedientes();
+		matricula = new Matricula();
+		matriculaId = new MatriculaId();
 	}
 	
-	
-
 
 		public Expedientes getExpediente() {
 			
@@ -120,13 +119,28 @@ public class ExpedienteBackingBean {
 	}
 
 
-	
-
 
 	public void setExpediente(Expedientes expediente) {
 		this.expediente = expediente;
 	}
 	
+	public void obtenerMatricula(){
+        try {
+        	this.matriculaId.setCurso_academico(matricula.getCurso_academico());
+        	this.matriculaId.setExpedientes(matricula.getNum_Archivo().longValue());
+            matricula = gestionM.obtenerMatricula(this.matriculaId);
+        } catch (SecretariaException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+
+    }
+	
+	
+	public String matriculaString() {
+		return matricula.toString();
+	}
 	
 
 
