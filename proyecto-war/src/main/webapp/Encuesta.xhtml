@@ -24,102 +24,88 @@
         </h1>
       </div>
       <h:form id="encuesta">
-        <table width="100%" border="0" align="center" cellspacing="12">
-          <tr>
-            <th align="right" width="50%">
-              ¿Asignaturas de Primero?
-            </th>
-            <td align="left">
-              
-              <input type="radio" id="primeroSi" name="primero" value="Si" />Si
-              
-              <input type="radio" id="primeroNo" name="primero" value="No" />No
-             
-            </td>
-          </tr>
-          <tr>
-            <th align="right" width="50%">
-              Grupo Preferente
-            </th>
-            <td align="left">
-              <input type="radio" name="primeroL" value="A" />A
-              <input type="radio" name="primeroL" value="B" />B
-              <input type="radio" name="primeroL" value="C" />C
-              <input type="radio" name="primeroL" value="D" />D
-              <input type="radio" name="primeroL" value="E" />E
-            </td>
-          </tr>
-          <tr>
-            <th align="right" width="50%">
-              ¿Asignaturas de Segundo?
-            </th>
-            <td align="left">
-              <input type="radio" name="segundo" value="Si" />Si
-              <input type="radio" name="segundo" value="No" />No
-            </td>
-          </tr>
-          <tr>
-            <th align="right" width="50%">
-              Grupo Preferente
-            </th>
-            <td align="left">
-              <input type="radio" name="Segundo" value="A" />A
-              <input type="radio" name="Segundo" value="B" />B
-              <input type="radio" name="Segundo" value="C" />C
-              <input type="radio" name="Segundo" value="D" />D
-              <input type="radio" name="Segundo" value="E" />E
-            </td>
-          </tr>
-          <tr>
-            <th align="right" width="50%">
-              ¿Asignaturas de Tercero?
-            </th>
-            <td align="left">
-              <input type="radio" name="tercero" value="Si" />Si
-              <input type="radio" name="tercero" value="No" />No
-            </td>
-          </tr>
-          <tr>
-            <th align="right" width="50%">
-              Grupo Preferente
-            </th>
-            <td align="left">
-              <input type="radio" name="Tercero" value="A" />A
-              <input type="radio" name="Tercero" value="B" />B
-              <input type="radio" name="Tercero" value="C" />C
-              <input type="radio" name="Tercero" value="D" />D
-              <input type="radio" name="Tercero" value="E" />E
-            </td>
-          </tr>
-          <tr>
-            <th align="right" width="50%">
-              ¿Asignaturas de Cuarto?
-            </th>
-            <td align="left">
-              <input type="radio" name="cuarto" value="Si" />Si
-              <input type="radio" name="cuarto" value="No" />No
-            </td>
-          </tr>
-          <tr>
-            <th align="right" width="50%">
-              Grupo Preferente
-            </th>
-            <td align="left">
-              <input type="radio" name="Cuarto" value="A" />A
-              <input type="radio" name="Cuarto" value="B" />B
-              <input type="radio" name="Cuarto" value="C" />C
-              <input type="radio" name="Cuarto" value="D" />D
-              <input type="radio" name="Cuarto" value="E" />E
-            </td>
-          </tr>
-          
-          <tr>
-            <td width="50%"></td>
-            <td align="left" width="50%">
-              <input type="submit" value="Enviar Encuesta" />
-            </td>
-          </tr>
-        </table>
+        <table align="center">
+                <tr>
+                	<th align="right" width="50%">
+		             	<h:outputText value="Expediente: "/>
+		            </th>
+		            
+                    <td>
+		             <h:inputText id ="expediente" value="#{encuesta.encuestaId.expediente}" required="true"/>
+                      <h:message for="expediente"/>
+		            </td>
+                </tr>
+            
+            	<tr>
+		            <th align="right" width="50%">
+		             <h:outputText value="Fecha: "/>
+		            </th>
+                
+                 	<td>
+		             <h:inputText id ="Fecha" value="#{encuesta.encuestaId.fecha_de_envio}" required="true"/>
+                     <h:message for="Fecha"/>
+
+		            </td>
+		        </tr>
+		        	
+		        <tr>
+		            <th align="right" width="50%">
+		             <h:outputText value="Grupo para Primer Curso (Grupos: 1A,1B,1C,1D,1E) "/>
+		            </th>
+                
+                 	<td>
+		             <h:inputText id ="gp1" value="#{encuesta.encuesta.grupoPrimero}"/>
+                     <h:message for="gp1"/>
+
+		            </td>
+		        </tr>
+		        
+		        <tr>
+		            <th align="right" width="50%">
+		             <h:outputText value="Grupo para Segundo Curso (Grupos: 2A,2B,2C,2D) "/>
+		            </th>
+                
+                 	<td>
+		             <h:inputText id ="gp2" value="#{encuesta.encuesta.grupoSegundo}" />
+                     <h:message for="gp2"/>
+
+		            </td>
+		        </tr>
+		        
+		        <tr>
+		            <th align="right" width="50%">
+		             <h:outputText value="Grupo para Tercer Curso (Grupos: 3A,3B,3C) "/>
+		            </th>
+                
+                 	<td>
+		             <h:inputText id ="gp3" value="#{encuesta.encuesta.grupoTercero}" />
+                     <h:message for="gp3"/>
+
+		            </td>
+		        </tr>
+		        
+		        <tr>
+		            <th align="right" width="50%">
+		             <h:outputText value="Grupo para Cuarto Curso (Grupos: 4A) "/>
+		            </th>
+                
+                 	<td>
+		             <h:inputText id ="gp4" value="#{encuesta.encuesta.grupoCuarto}"/>
+                     <h:message for="gp4"/>
+
+		            </td>
+		        </tr>
+                
+               
+                
+                <tr>
+                    <td width="50%"></td>
+
+                    <td align="left" width="50%">
+                       <h:commandButton value="Enviar" action="#{encuesta.crearEncuesta()}" styleClass = "submit"></h:commandButton>
+                    </td>
+                </tr>
+            </table>
       </h:form>
       <div id="navegador">
         <p>
