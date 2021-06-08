@@ -33,7 +33,7 @@ public class DefaultSuiteTestProyectoIT {
   JavascriptExecutor js;
   @Before
   public void setUp() {
-	BaseDeDatos.inicializar("SecretariaTest");
+	//BaseDeDatos.inicializar("SecretariaTest");
     driver = new ChromeDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
