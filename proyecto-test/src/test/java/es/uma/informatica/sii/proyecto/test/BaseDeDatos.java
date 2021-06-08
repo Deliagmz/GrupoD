@@ -9,6 +9,7 @@ import es.uma.informatica.jpa.proyecto.Alumno;
 import es.uma.informatica.jpa.proyecto.Asignaturas;
 import es.uma.informatica.jpa.proyecto.Titulacion;
 import es.uma.informatica.jpa.proyecto.Usuario;
+
 public class BaseDeDatos {
 
 		public static void incializar(String unidadPersistencia) {
