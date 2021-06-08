@@ -58,7 +58,7 @@ public class BaseDatos {
 		
 		Encuesta encuesta = new Encuesta();
 		
-		Timestamp t = java.sql.Timestamp.valueOf("2021-09-23 10:10:10.0");
+		String t = "2021-09-23 10:10:10.0";
 		encuesta.setFecha_de_envio(t);
 		encuesta.setExpediente(expedientes);
 		

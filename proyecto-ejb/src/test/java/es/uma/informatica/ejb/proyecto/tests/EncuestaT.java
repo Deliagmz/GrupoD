@@ -39,7 +39,7 @@ public class EncuestaT {
 	@Test
 	public void testCrearEncuesta() {
 		
-		Timestamp t = java.sql.Timestamp.valueOf("2021-10-23 10:10:10.0");
+		String t = "2021-10-23 10:10:10.0";
 		Expedientes nExp = new Expedientes();
 		nExp.setNum_Expediente(123456789L);
 		
@@ -62,7 +62,7 @@ public class EncuestaT {
 	@Test
 	public void testLeerEncuesta() {
 		try {
-			Timestamp t = java.sql.Timestamp.valueOf("2021-10-23 10:10:10.0");
+			String t = "2021-10-23 10:10:10.0";
 			Expedientes nExp = new Expedientes();
 			nExp.setNum_Expediente(123456789L);
 			
@@ -82,7 +82,7 @@ public class EncuestaT {
 	@Test
 	public void testLeerEncuestaFail() {
 		try {
-			Timestamp t = java.sql.Timestamp.valueOf("2021-10-23 10:10:10.0");
+			String t = "2021-10-23 10:10:10.0";
 			Expedientes nExp = new Expedientes();
 			nExp.setNum_Expediente(123478874L);
 			
@@ -105,7 +105,7 @@ public class EncuestaT {
 	@Test
 	public void testActualizarEncuesta() {
 		
-		Timestamp t = java.sql.Timestamp.valueOf("2021-09-23 10:10:10.0");
+		String t = "2021-09-23 10:10:10.0";
 		Expedientes exp = new Expedientes();
 		exp.setNum_Expediente(123456789L);
 		
@@ -115,7 +115,7 @@ public class EncuestaT {
 		encuesta1.setExpediente(exp);
 		
 		
-		Timestamp t1 = java.sql.Timestamp.valueOf("2021-09-23 10:10:10.0");
+		String t1 = "2021-09-23 10:10:10.0";
 		Expedientes exp1 = new Expedientes();
 		exp1.setNum_Expediente(123789456L);
 		
@@ -140,7 +140,7 @@ public class EncuestaT {
 	@Test
 	public void testActualizarEncuestaNoEncontrada() {
 		
-		Timestamp t = java.sql.Timestamp.valueOf("2021-09-23 10:10:10.0");
+		String t ="2021-09-23 10:10:10.0";
 		Expedientes exp = new Expedientes();
 		exp.setNum_Expediente(123456999L);
 		
@@ -150,7 +150,7 @@ public class EncuestaT {
 		encuesta1.setExpediente(exp);
 		
 		
-		Timestamp t1 = java.sql.Timestamp.valueOf("2021-09-23 10:10:10.0");
+		String t1 = "2021-09-23 10:10:10.0";
 		Expedientes exp1 = new Expedientes();
 		exp1.setNum_Expediente(123789456L);
 		
@@ -173,7 +173,7 @@ public class EncuestaT {
 	@Test
     public void testBorrarEncuesta() {
 
-		Timestamp t = java.sql.Timestamp.valueOf("2021-09-23 10:10:10.0");
+		String t = "2021-09-23 10:10:10.0";
 		Expedientes exp = new Expedientes();
 		exp.setNum_Expediente(123456999L);
 		
