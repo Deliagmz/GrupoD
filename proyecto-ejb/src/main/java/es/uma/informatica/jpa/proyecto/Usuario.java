@@ -166,9 +166,9 @@ public class Usuario implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Usuario [Nombre=" + Nombre + ", Apellido=" + Apellido + ", Contrasena=" + Contrasena
-				+  ", DNI=" + DNI + ", Email=" + Email + ", telefono="
-				+ telefono + ", Direccion=" + Direccion + "]";
+		return "Usuario ==> Nombre: " + Nombre + ", Apellido: " + Apellido 
+				+  ", DNI: " + DNI + ", Email: " + Email + ", Telefono: " 
+				+ telefono + ", Direccion: " + Direccion ;
 	}
 	public String getCuenta() {
 		return cuenta;
