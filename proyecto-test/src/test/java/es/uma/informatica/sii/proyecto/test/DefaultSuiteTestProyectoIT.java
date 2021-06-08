@@ -176,14 +176,7 @@ public class DefaultSuiteTestProyectoIT {
   }
   @Test
   public void pruebaLeerAsignatura() {
-	driver.get("http://localhost:8080/proyecto-war/");
-	driver.manage().window().setSize(new Dimension(1160, 532));
-	driver.findElement(By.linkText("Iniciar Sesion")).click();
-    driver.findElement(By.id("j_idt6:user")).click();
-    driver.findElement(By.id("j_idt6:user")).sendKeys("Secretaria");
-    driver.findElement(By.id("j_idt6:pass")).click();
-    driver.findElement(By.id("j_idt6:pass")).sendKeys("secretaria");
-    driver.findElement(By.name("j_idt6:j_idt15")).click();
+    driver.get("http://localhost:8080/proyecto-war/indexSecretaria.xhtml");
     driver.manage().window().setSize(new Dimension(1054, 808));
     assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Seleccione un boton para consultar los datos"));
     driver.findElement(By.linkText("Gestor de asignaturas")).click();
@@ -193,5 +186,27 @@ public class DefaultSuiteTestProyectoIT {
     driver.findElement(By.name("j_idt6:j_idt12")).click();
     assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("Asignaturas con Referencia= 11223344, Codigo= 111, Nombre= Estructura de Datos, Creditos= 6, Ofertada= Si, Curso= null, Caracter= null, Duracion= null, Unidad_Temporal= null, Idiomas_Imparticion= null"));
     driver.findElement(By.linkText("Volver")).click();
+  }
+  @Test
+  public void pruebaLeerTitulacion() {
+    driver.get("http://localhost:8080/proyecto-war/");
+    driver.manage().window().setSize(new Dimension(1160, 532));
+    driver.findElement(By.linkText("Iniciar Sesion")).click();
+    driver.findElement(By.id("j_idt6:user")).click();
+    driver.findElement(By.id("j_idt6:user")).sendKeys("Secretaria");
+    driver.findElement(By.id("j_idt6:pass")).sendKeys("secretaria");
+    driver.findElement(By.name("j_idt6:j_idt15")).click();
+    driver.findElement(By.id("content")).click();
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Seleccione un boton para consultar los datos"));
+    driver.findElement(By.linkText("Gestor de titulaciones")).click();
+    driver.findElement(By.cssSelector("h1")).click();
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Gestor de titulaciones"));
+    driver.findElement(By.linkText("Leer informacion de una titulacion")).click();
+    driver.findElement(By.cssSelector("th")).click();
+    assertThat(driver.findElement(By.cssSelector("th")).getText(), is("Titulacion a leer:"));
+    driver.findElement(By.id("j_idt6:codigo")).click();
+    driver.findElement(By.id("j_idt6:codigo")).sendKeys("101");
+    driver.findElement(By.name("j_idt6:j_idt11")).click();
+    assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("Titulacion: Codigo=101, Creditos=6, Nombre=Asignatura1"));
   }
 }
