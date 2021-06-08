@@ -1608,6 +1608,133 @@
       ],
       "value": "Usuario ==> Nombre: null, Apellido: null, DNI: null, Email: null, Telefono: null, Direccion: null"
     }]
+  }, {
+    "id": "8c9842e8-835c-49b1-b577-44fa947edf23",
+    "name": "PruebaLeerAsignatura",
+    "commands": [{
+      "id": "d3119d22-505c-49a7-8778-a171bdd17250",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/proyecto-war/indexSecretaria.xhtml",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "15f0504c-c4d5-4f89-83ef-413df3abc5fb",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1054x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0921dca0-4ee6-44ac-ae50-6aae5dc61260",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='welcome']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Seleccione un boton para consultar los datos')]", "xpath:innerText"]
+      ],
+      "value": "Seleccione un boton para consultar los datos"
+    }, {
+      "id": "3fa9fb61-4a68-49bf-b820-7fe1c1e991d1",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Gestor de asignaturas",
+      "targets": [
+        ["linkText=Gestor de asignaturas", "linkText"],
+        ["css=p:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Gestor de asignaturas')]", "xpath:link"],
+        ["xpath=//div[@id='navegador']/p[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'asignatura.xhtml')]", "xpath:href"],
+        ["xpath=//p[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Gestor de asignaturas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d6199cf1-4992-42e1-a976-cb1789e3a37a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Consultar asignatura",
+      "targets": [
+        ["linkText=Consultar asignatura", "linkText"],
+        ["xpath=//a[contains(text(),'Consultar asignatura')]", "xpath:link"],
+        ["xpath=//div[@id='navegador']/p/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'leerAsignatura.xhtml')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Consultar asignatura')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ca7153b-f402-47d9-9778-df210b9511ac",
+      "comment": "",
+      "command": "click",
+      "target": "id=j_idt6:referencia",
+      "targets": [
+        ["id=j_idt6:referencia", "id"],
+        ["name=j_idt6:referencia", "name"],
+        ["css=#j_idt6\\3Areferencia", "css:finder"],
+        ["xpath=//input[@id='j_idt6:referencia']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a3f745b0-a640-403d-adfa-e4d97e3f21f6",
+      "comment": "",
+      "command": "type",
+      "target": "id=j_idt6:referencia",
+      "targets": [
+        ["id=j_idt6:referencia", "id"],
+        ["name=j_idt6:referencia", "name"],
+        ["css=#j_idt6\\3Areferencia", "css:finder"],
+        ["xpath=//input[@id='j_idt6:referencia']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "11223344"
+    }, {
+      "id": "17a9694b-65e1-4448-836b-e8e8a66b021e",
+      "comment": "",
+      "command": "click",
+      "target": "name=j_idt6:j_idt12",
+      "targets": [
+        ["name=j_idt6:j_idt12", "name"],
+        ["css=.submit", "css:finder"],
+        ["xpath=//input[@name='j_idt6:j_idt12']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3d08789f-0bbb-4e62-973e-7243bc87dda9",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(3) > td:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(3) > td:nth-child(2)", "css:finder"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr[3]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[3]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'Asignaturas con Referencia= 11223344, Codigo= 111, Nombre= Estructura de Datos, Creditos= 6, Ofertada= Si, Curso= null, Caracter= null, Duracion= null, Unidad_Temporal= null, Idiomas_Imparticion= null')]", "xpath:innerText"]
+      ],
+      "value": "Asignaturas con Referencia= 11223344, Codigo= 111, Nombre= Estructura de Datos, Creditos= 6, Ofertada= Si, Curso= null, Caracter= null, Duracion= null, Unidad_Temporal= null, Idiomas_Imparticion= null"
+    }, {
+      "id": "6e2ec0a6-4267-4d60-8d3f-ef30b8b5d1d1",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Volver",
+      "targets": [
+        ["linkText=Volver", "linkText"],
+        ["css=a", "css:finder"],
+        ["xpath=//a[contains(text(),'Volver')]", "xpath:link"],
+        ["xpath=//div[@id='navegador']/p/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'asignatura.xhtml')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Volver')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "e476cb40-cf41-45c9-91bc-9ed8f40f047a",
@@ -1615,7 +1742,7 @@
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["29b59682-9e20-4904-9e7b-ffc007c1f4a8", "5b7a776b-faba-4ab1-bbea-83ac400e4a79", "2a772019-daa9-40f7-89af-438dd9cad4fe", "56984b95-d4dd-4e59-a375-3d5c11737f80", "509a5253-0d90-41f3-87b4-2e1151da0bf5", "54e5a9bb-00d0-4307-b80e-ac7095058bef"]
+    "tests": ["29b59682-9e20-4904-9e7b-ffc007c1f4a8", "5b7a776b-faba-4ab1-bbea-83ac400e4a79", "2a772019-daa9-40f7-89af-438dd9cad4fe", "56984b95-d4dd-4e59-a375-3d5c11737f80", "509a5253-0d90-41f3-87b4-2e1151da0bf5", "54e5a9bb-00d0-4307-b80e-ac7095058bef", "8c9842e8-835c-49b1-b577-44fa947edf23"]
   }],
   "urls": ["http://localhost:8080/", "http://localhost:8080/proyecto-war/"],
   "plugins": []
