@@ -18,9 +18,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
@@ -33,11 +30,13 @@ public class DefaultSuiteTestProyectoIT {
   JavascriptExecutor js;
   @Before
   public void setUp() {
+<<<<<<< HEAD
 	//BaseDeDatos.inicializar("SecretariaTest");
+=======
+>>>>>>> origin/master
     driver = new ChromeDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
-	
   }
   @After
   public void tearDown() {
@@ -178,5 +177,25 @@ public class DefaultSuiteTestProyectoIT {
     driver.findElement(By.name("j_idt6:j_idt8")).sendKeys("guilleJJ");
     driver.findElement(By.name("j_idt6:j_idt10")).click();
     assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("Usuario ==> Nombre: null, Apellido: null, DNI: null, Email: null, Telefono: null, Direccion: null"));
+  }
+  @Test
+  public void pruebaLeerAsignatura() {
+	driver.get("http://localhost:8080/proyecto-war/");
+	driver.manage().window().setSize(new Dimension(1160, 532));
+	driver.findElement(By.linkText("Iniciar Sesion")).click();
+    driver.findElement(By.id("j_idt6:user")).click();
+    driver.findElement(By.id("j_idt6:user")).sendKeys("Secretaria");
+    driver.findElement(By.id("j_idt6:pass")).click();
+    driver.findElement(By.id("j_idt6:pass")).sendKeys("secretaria");
+    driver.findElement(By.name("j_idt6:j_idt15")).click();
+    driver.manage().window().setSize(new Dimension(1054, 808));
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Seleccione un boton para consultar los datos"));
+    driver.findElement(By.linkText("Gestor de asignaturas")).click();
+    driver.findElement(By.linkText("Consultar asignatura")).click();
+    driver.findElement(By.id("j_idt6:referencia")).click();
+    driver.findElement(By.id("j_idt6:referencia")).sendKeys("11223344");
+    driver.findElement(By.name("j_idt6:j_idt12")).click();
+    assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("Asignaturas con Referencia= 11223344, Codigo= 111, Nombre= Estructura de Datos, Creditos= 6, Ofertada= Si, Curso= null, Caracter= null, Duracion= null, Unidad_Temporal= null, Idiomas_Imparticion= null"));
+    driver.findElement(By.linkText("Volver")).click();
   }
 }
