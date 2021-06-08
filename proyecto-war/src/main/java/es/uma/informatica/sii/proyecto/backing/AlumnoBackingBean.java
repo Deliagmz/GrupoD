@@ -18,7 +18,7 @@ public class AlumnoBackingBean {
 	@Inject
 	GestionAlumnos gestionA;
 	
-	private Alumno alumno = new Alumno();
+	private Alumno alumno; 
 	
 	private Long id;
 	private String dni;
@@ -37,7 +37,7 @@ public class AlumnoBackingBean {
 	private String contrasena;
 	
 	public AlumnoBackingBean(){
-		
+		alumno = new Alumno();
 		
 	}
 	

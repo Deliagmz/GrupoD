@@ -42,7 +42,7 @@ public class Alumno implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	//Relacion alumno y expediente
-	@OneToMany (mappedBy="alumno")
+	@OneToMany(fetch=FetchType.EAGER, mappedBy="alumno")
 	private List<Expedientes> expedientes;
 	
 	public Alumno() {
@@ -300,12 +300,11 @@ public class Alumno implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Alumno [ID=" + ID + ", DNI=" + DNI + ", Nombre=" + Nombre + ", Apellido1=" + Apellido1 + ", Apellido2="
+		return "Alumno " + ID + " con DNI=" + DNI + ", Nombre=" + Nombre + ", Apellido1=" + Apellido1 + ", Apellido2="
 				+ Apellido2 + ", Email_institucional=" + Email_institucional + ", Email_personal=" + Email_personal
 				+ ", Telefono=" + Telefono + ", Movil=" + Movil + ", Direccion=" + Direccion + ", Codigo_postal="
 
-				+ Codigo_postal + ", Localidad=" + Localidad + ", Provincia=" + Provincia + ", expedientes="
-				+ expedientes + "]";
+				+ Codigo_postal + ", Localidad=" + Localidad + ", Provincia=" + Provincia ;
 
 	}
 	

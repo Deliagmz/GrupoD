@@ -17,4 +17,6 @@ public interface GestionExpedientes {
 	
 	//Cambia la nota media de un expediente
 	public void cambiarNotaMedia(Long Num_Expediente, Double Nota_media) throws SecretariaException;
+	
+	public void borrarExpediente(Long Num_Expediente) throws SecretariaException;
 }
