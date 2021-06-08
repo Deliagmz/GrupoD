@@ -84,14 +84,14 @@ public class TitulacionBackingBean {
 		return "indexSecretaria.xhtml";
 	}
 	
-	public void actualizarTitulacion() {
+	public String actualizarTitulacion() {
 		try {
 			gestionT.actualizarTitulacion(titulacion.getCodigo(),this.titulacion);
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		};
-			
+		}
+		return "indexSecretaria.xhtml";
 	}
 	
 	public String getTit() {

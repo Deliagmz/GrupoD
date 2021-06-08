@@ -31,12 +31,8 @@ public class ExpedienteBackingBean {
     private Matricula matricula;
     private MatriculaId matriculaId;
     
-    
-
 	private Double notaMedia;
-//	private Long numExpediente;
-//	private String cursoAcademico;
-	
+
 	
 	public ExpedienteBackingBean(){
 		expediente=new Expedientes();
@@ -71,7 +67,7 @@ public class ExpedienteBackingBean {
 		}
 
 
-	//?????????????????????????????????????????????????????????????????????//
+	
     public void obtenerMatricula(){
         try {
         
@@ -80,9 +76,8 @@ public class ExpedienteBackingBean {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
     }
+    
 	public String matriculaString() {
 		return matricula.toString();
 	}
@@ -150,19 +145,9 @@ public class ExpedienteBackingBean {
 		this.matriculaId = matriculaId;
 	}
 
-
-	
-
-
 	public void setExpediente(Expedientes expediente) {
 		this.expediente = expediente;
 	}
 	
-	
 
-
-
-
-
-	
 }
