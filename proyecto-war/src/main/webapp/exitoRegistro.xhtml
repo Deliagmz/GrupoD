@@ -7,7 +7,7 @@
         <title>
             <c:choose>
                 <c:when test="#{registro.registroOK}">
-                    Registro con éxito
+                    Registro con exito
                 </c:when>
                 <c:otherwise>
                     Acceso irregular
@@ -20,13 +20,13 @@
         <c:choose>
             <c:when test="#{registro.registroOK}">
                 <div>
-                    <p>El registro se ha realizado con éxito. Hemos enviado un mensaje de validación a su correo
-                        electrónico. Compruébelo y pulse el enlace para validar la cuenta de usuario.</p>
+                    <p>El registro se ha realizado con exito. Hemos enviado un mensaje de validacion a su correo
+                        electronico. Compruebelo y pulse el enlace para validar la cuenta de usuario.</p>
                     <p><h:link outcome="login.xhtml">Ir a la página de login</h:link></p>
                 </div>
             </c:when>
             <c:otherwise>
-                No tiene autorización para acceder a esta página.
+                No tiene autorizacion para acceder a esta pagina.
             </c:otherwise>
 
         </c:choose>
