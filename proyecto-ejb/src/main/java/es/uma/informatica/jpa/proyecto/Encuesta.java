@@ -3,13 +3,9 @@ package es.uma.informatica.jpa.proyecto;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinTable;
@@ -240,8 +236,7 @@ public class Encuesta implements Serializable {
 	@Override
 	public String toString() {
 		return "Encuesta fecha_de_envio=" + fecha_de_envio + ", grupoPrimero=" + grupoPrimero + ", grupoSegundo="
-				+ grupoSegundo + ", grupoTercero=" + grupoTercero + ", grupoCuarto=" + grupoCuarto + ", expediente="
-				+ expediente + ", gr_asignaturas=" + gr_asignaturas;
+				+ grupoSegundo + ", grupoTercero=" + grupoTercero + ", grupoCuarto=" + grupoCuarto;
 	}
 	
 	
