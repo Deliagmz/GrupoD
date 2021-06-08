@@ -209,4 +209,58 @@ public class DefaultSuiteTestProyectoIT {
     driver.findElement(By.name("j_idt6:j_idt11")).click();
     assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("Titulacion: Codigo=101, Creditos=6, Nombre=Asignatura1"));
   }
+  @Test
+  public void pruebaActualizarAsignatura() {
+    driver.get("http://localhost:8080/proyecto-war/indexSecretaria.xhtml");
+    driver.manage().window().setSize(new Dimension(1054, 808));
+    driver.findElement(By.linkText("Gestor de asignaturas")).click();
+    driver.findElement(By.linkText("Modificar asignatura")).click();
+    driver.findElement(By.id("asignatura:referencia")).click();
+    driver.findElement(By.id("asignatura:referencia")).sendKeys("11223344");
+    driver.findElement(By.id("asignatura:codigo")).click();
+    driver.findElement(By.id("asignatura:codigo")).sendKeys("123");
+    driver.findElement(By.id("asignatura:nombre")).click();
+    driver.findElement(By.id("asignatura:nombre")).sendKeys("Programacion");
+    driver.findElement(By.id("asignatura:creditos")).click();
+    driver.findElement(By.id("asignatura:creditos")).sendKeys("12");
+    driver.findElement(By.id("asignatura:ofertada")).click();
+    driver.findElement(By.id("asignatura:ofertada")).sendKeys("No");
+    driver.findElement(By.id("asignatura:curso")).click();
+    driver.findElement(By.id("asignatura:curso")).sendKeys("2");
+    driver.findElement(By.id("asignatura:caracter")).click();
+    driver.findElement(By.id("asignatura:caracter")).sendKeys("Presencial");
+    driver.findElement(By.id("asignatura:duracion")).click();
+    driver.findElement(By.id("asignatura:duracion")).sendKeys("Mucho");
+    driver.findElement(By.id("asignatura:uTemp")).click();
+    driver.findElement(By.id("asignatura:uTemp")).sendKeys("Primer cuatri");
+    driver.findElement(By.id("asignatura:idiomas")).click();
+    driver.findElement(By.id("asignatura:idiomas")).sendKeys("Ingles");
+    driver.findElement(By.name("asignatura:j_idt27")).click();
+    driver.findElement(By.linkText("Gestor de asignaturas")).click();
+    driver.findElement(By.linkText("Consultar asignatura")).click();
+    driver.findElement(By.id("j_idt6:referencia")).click();
+    driver.findElement(By.id("j_idt6:referencia")).sendKeys("11223344");
+    driver.findElement(By.name("j_idt6:j_idt12")).click();
+    driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).click();
+    assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("Asignaturas con Referencia= 11223344, Codigo= 123, Nombre= Programacion, Creditos= 6, Ofertada= No, Curso= 2, Caracter= Presencial, Duracion= Mucho, Unidad_Temporal= Primer cuatri, Idiomas_Imparticion= Ingles"));
+    driver.findElement(By.linkText("Volver")).click();
+  }
+  @Test
+  public void pruebaBorrarAsignatura() {
+    driver.get("http://localhost:8080/proyecto-war/indexSecretaria.xhtml");
+    driver.manage().window().setSize(new Dimension(1056, 810));
+    driver.findElement(By.linkText("Gestor de asignaturas")).click();
+    driver.findElement(By.linkText("Eliminar asignatura")).click();
+    driver.findElement(By.id("asignatura:referencia")).click();
+    driver.findElement(By.id("asignatura:referencia")).sendKeys("11223344");
+    driver.findElement(By.name("asignatura:j_idt9")).click();
+    driver.findElement(By.linkText("Gestor de asignaturas")).click();
+    driver.findElement(By.linkText("Consultar asignatura")).click();
+    driver.findElement(By.id("j_idt6:referencia")).click();
+    driver.findElement(By.id("j_idt6:referencia")).sendKeys("11223344");
+    driver.findElement(By.name("j_idt6:j_idt12")).click();
+    driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).click();
+    assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("Asignaturas con Referencia= 11223344, Codigo= null, Nombre= null, Creditos= null, Ofertada= null, Curso= null, Caracter= null, Duracion= null, Unidad_Temporal= null, Idiomas_Imparticion= null"));
+    driver.findElement(By.linkText("Volver")).click();
+  }
 }
