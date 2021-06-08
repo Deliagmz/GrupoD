@@ -165,12 +165,12 @@ public class DefaultSuiteTestProyectoIT {
     driver.findElement(By.cssSelector("th")).click();
     assertThat(driver.findElement(By.cssSelector("th")).getText(), is("Usuario a borrar:"));
     driver.findElement(By.name("j_idt6:j_idt8")).click();
-    driver.findElement(By.name("j_idt6:j_idt8")).sendKeys("Pepe");
+    driver.findElement(By.name("j_idt6:j_idt8")).sendKeys("guilleJJ");
     driver.findElement(By.name("j_idt6:j_idt10")).click();
     driver.findElement(By.linkText("Gestor de usuarios")).click();
     driver.findElement(By.linkText("Leer informacion de un usuario")).click();
     driver.findElement(By.name("j_idt6:j_idt8")).click();
-    driver.findElement(By.name("j_idt6:j_idt8")).sendKeys("Pepe");
+    driver.findElement(By.name("j_idt6:j_idt8")).sendKeys("guilleJJ");
     driver.findElement(By.name("j_idt6:j_idt10")).click();
     assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("Usuario ==> Nombre: null, Apellido: null, DNI: null, Email: null, Telefono: null, Direccion: null"));
   }
