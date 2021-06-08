@@ -10,42 +10,74 @@
 	  xmlns:f="http://xmlns.jcp.org/jsf/core"
 	  lang="es">
   <h:head>
-	    <title>Gestor de Encuestas</title>
+	    <title>Consultar Encuestas</title>
 	    <link href="resources/estilos.css" rel="stylesheet" />
   </h:head>
   <h:body>
     <div id="content">
       <div id="banner">
         <h1>
-            Gestor de Encuestas
+          Gestor de encuestas
         </h1>   
+        <h4>
+            Consultar encuesta
+        </h4>   
       </div>
 
-	      <form>
+ 		<h:form>
             <table align="center">
-                <tr>
-                    <th align="right" width="50%">Encuesta a leer: </th>
+            
+            	<tr>
+                	<th align="right" width="50%">
+		             	<h:outputText value="Expediente: "/>
+		            </th>
+		            
                     <td>
-                        <input type="text" name="titulacion" value="" size="16" maxlength="4"/>
-                    </td>
+		             <h:inputText id ="expediente" value="#{encuesta.encuestaId.expediente}" required="true"/>
+                      <h:message for="expediente"/>
+		            </td>
                 </tr>
-           
+            
+            	<tr>
+		            <th align="right" width="50%">
+		             <h:outputText value="Fecha: "/>
+		            </th>
+                
+                 	<td>
+		             <h:inputText id ="Fecha" value="#{encuesta.encuestaId.fecha_de_envio}" required="true"/>
+                     <h:message for="Fecha"/>
+
+		            </td>
+		        </tr>
+                
+               
+                
                 <tr>
                     <td width="50%"></td>
 
                     <td align="left" width="50%">
-                        <input type="submit" name="Leer" value="Leer"/>
+                       <h:commandButton value="Leer" action="#{encuesta.leerEncuesta()}" styleClass = "submit"></h:commandButton>
+                    </td>
+                </tr>
+                
+                 <tr>
+                    <td width="50%"></td>
+
+                    <td align="left" width="50%">
+                     <h:outputText value ="#{encuesta.encuestaString()}" />
+                     
                     </td>
                 </tr>
             </table>
-        </form>
+        </h:form>
       
-      <div id="navegador">
+
+      	 <div id="navegador">
 	        <p>
-	          <a href="encuestas.xhtml">Volver</a>
+	          <a href="expediente.xhtml">Volver</a>
 			   
 	        </p>
-			
+      
 			<div class="footer">
             	<p id="top" class="ftp" style="">
            	 	<strong><u>Grupo D</u></strong>
@@ -57,7 +89,7 @@
 
              
 	    </div>
-      </div>
-    </div>
+		</div>
+	</div>
   </h:body>
 </html>

@@ -1,6 +1,5 @@
 package es.uma.informatica.ejb.proyecto;
 
-import java.sql.Timestamp;
 import java.util.logging.Logger;
 
 import javax.ejb.Stateless;
@@ -22,8 +21,8 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 	private EntityManager em;
 
 	@Override
-	public Encuesta leerEncuesta(Encuesta encuesta) throws EncuestaNoEncontradaException {
-		Encuesta encuestaEntity = em.find(Encuesta.class, encuesta);
+	public Encuesta leerEncuesta(EncuestaId encuestaId) throws EncuestaNoEncontradaException {
+		Encuesta encuestaEntity = em.find(Encuesta.class, encuestaId);
 		
 		if(encuestaEntity == null) {
 			throw new EncuestaNoEncontradaException();
@@ -32,40 +31,83 @@ public class EncuestaEJB implements GestionEncuestaEJB{
 		return encuestaEntity;
 	}
 
-	@Override
-	public void crearEncuesta(Timestamp f_d_e, Expedientes e) throws EncuestaNoValidoException {
-		if(f_d_e == null || e == null) {
+	public void crearEncuesta(Encuesta encuesta,EncuestaId encuestaId) throws EncuestaNoValidoException {	
+		Encuesta encuestaEntity = new Encuesta();
+		Expedientes expedienteEntity = em.find(Expedientes.class, encuestaId.getExpediente());
+		
+		encuestaEntity.setFecha_de_envio(encuestaId.getFecha_de_envio());
+		encuestaEntity.setExpediente(expedienteEntity);
+		
+		if(encuesta.getGrupoPrimero().equals("1A")||encuesta.getGrupoPrimero().equals("1B")||encuesta.getGrupoPrimero().equals("1C")||encuesta.getGrupoPrimero().equals("1D")
+					||encuesta.getGrupoPrimero().equals("1E")||encuesta.getGrupoPrimero().isEmpty()){
+			encuestaEntity.setGrupoPrimero(encuesta.getGrupoPrimero());
+		}else {
 			throw new EncuestaNoValidoException();
-		}	
+		}
 		
-		Encuesta encuesta = new Encuesta();
-		encuesta.setFecha_de_envio(f_d_e);
-		encuesta.setExpediente(e);
+		if(encuesta.getGrupoSegundo().equals("2A")||encuesta.getGrupoSegundo().equals("2B")||encuesta.getGrupoSegundo().equals("2C")
+				||encuesta.getGrupoSegundo().equals("2D")||encuesta.getGrupoSegundo().isEmpty()) {
+			encuestaEntity.setGrupoSegundo(encuesta.getGrupoSegundo());
+		}else {
+			throw new EncuestaNoValidoException();
+		}
 		
+		if(encuesta.getGrupoTercero().equals("3A")||encuesta.getGrupoTercero().equals("3B")||encuesta.getGrupoTercero().equals("3C")
+				||encuesta.getGrupoTercero().isEmpty()) {
+			encuestaEntity.setGrupoTercero(encuesta.getGrupoTercero());
+		}else {
+			throw new EncuestaNoValidoException();
+		}
 		
-		
-		em.persist(encuesta);
+		if(encuesta.getGrupoCuarto().equals("4A")||encuesta.getGrupoCuarto().isEmpty()) {
+			encuestaEntity.setGrupoCuarto(encuesta.getGrupoCuarto());
+		}else {
+			throw new EncuestaNoValidoException();
+		}
+		em.persist(encuestaEntity);
 	}
 
+
 	@Override
-	public void actualizarEncuesta(Encuesta encuesta,Timestamp f_d_e, Expedientes e) throws EncuestaNoEncontradaException {
-		Encuesta encuestaEntity = em.find(Encuesta.class, encuesta);
+	public void actualizarEncuesta(Encuesta encuesta,EncuestaId encuestaId) throws EncuestaNoEncontradaException {
+		Encuesta encuestaEntity = em.find(Encuesta.class, encuestaId);
 		
 		if(encuestaEntity == null) {
 			throw new EncuestaNoEncontradaException();
 		}
+		if(encuesta.getGrupoPrimero().equals("1A")||encuesta.getGrupoPrimero().equals("1B")||encuesta.getGrupoPrimero().equals("1C")||encuesta.getGrupoPrimero().equals("1D")
+					||encuesta.getGrupoPrimero().equals("1E")||encuesta.getGrupoPrimero().isEmpty()){
+			encuestaEntity.setGrupoPrimero(encuesta.getGrupoPrimero());
+		}else {
+			throw new EncuestaNoEncontradaException();
+		}
 		
-		encuestaEntity.setGrupoCuarto(encuesta.getGrupoCuarto());
-		encuestaEntity.setGrupoPrimero(encuesta.getGrupoPrimero());
-		encuestaEntity.setGrupoSegundo(encuesta.getGrupoSegundo());
-		encuestaEntity.setGrupoTercero(encuesta.getGrupoTercero());
+		if(encuesta.getGrupoSegundo().equals("2A")||encuesta.getGrupoSegundo().equals("2B")||encuesta.getGrupoSegundo().equals("2C")
+				||encuesta.getGrupoSegundo().equals("2D")||encuesta.getGrupoSegundo().isEmpty()) {
+			encuestaEntity.setGrupoSegundo(encuesta.getGrupoSegundo());
+		}else {
+			throw new EncuestaNoEncontradaException();
+		}
 		
+		if(encuesta.getGrupoTercero().equals("3A")||encuesta.getGrupoTercero().equals("3B")||encuesta.getGrupoTercero().equals("3C")
+				||encuesta.getGrupoTercero().isEmpty()) {
+			encuestaEntity.setGrupoTercero(encuesta.getGrupoTercero());
+		}else {
+			throw new EncuestaNoEncontradaException();
+		}
+		
+		if(encuesta.getGrupoCuarto().equals("4A")||encuesta.getGrupoCuarto().isEmpty()) {
+			encuestaEntity.setGrupoCuarto(encuesta.getGrupoCuarto());
+		}else {
+			throw new EncuestaNoEncontradaException();
+		}
 		em.persist(encuestaEntity);
 	}
 
+
 	@Override
-	public void borrarEncuesta(Encuesta encuesta) throws EncuestaNoEncontradaException {
-		Encuesta encuestaEntity = em.find(Encuesta.class, encuesta);
+	public void borrarEncuesta(EncuestaId encuestaId) throws EncuestaNoEncontradaException {
+		Encuesta encuestaEntity = em.find(Encuesta.class, encuestaId);
 		
 		if(encuestaEntity == null) {
 			throw new EncuestaNoEncontradaException();

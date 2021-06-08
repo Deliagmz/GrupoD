@@ -1,5 +1,6 @@
 package es.uma.informatica.sii.proyecto.backing;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
@@ -9,8 +10,9 @@ import javax.inject.Named;
 import es.uma.informatica.ejb.proyecto.GestionEncuestaEJB;
 import es.uma.informatica.ejb.proyecto.excepciones.SecretariaException;
 import es.uma.informatica.jpa.proyecto.Encuesta;
+import es.uma.informatica.jpa.proyecto.Encuesta.EncuestaId;
 
-@Named(value="Encuesta")
+@Named(value="encuesta")
 @RequestScoped
 public class EncuestaBackingBean {
 	
@@ -21,35 +23,27 @@ public class EncuestaBackingBean {
 	GestionEncuestaEJB gestionE;
 	
 	private Encuesta encuesta;
-	private List<String> gruposPrimero;
-	private List<String> gruposSegundo;
-	private List<String> gruposTercero;
-	private List<String> gruposCuarto;
+	private EncuestaId encuestaId;
 
 	
 	public EncuestaBackingBean(){
 		encuesta = new Encuesta();
+		encuestaId = new EncuestaId();
 		
-		gruposPrimero.add("1A");
-		gruposPrimero.add("1B");
-		gruposPrimero.add("1C");
-		gruposPrimero.add("1D");
-		gruposPrimero.add("1E");
-		
-		gruposSegundo.add("2A");
-		gruposSegundo.add("2B");
-		gruposSegundo.add("2C");
-		gruposSegundo.add("2D");
-		
-		gruposTercero.add("3A");
-		gruposTercero.add("3B");
-		
-		gruposCuarto.add("4A");
+	}
+	
+	public void crearEncuesta() {
+		try {
+			gestionE.crearEncuesta(this.encuesta, this.encuestaId);
+		}catch(SecretariaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void leerEncuesta() {
 		try {
-			encuesta = gestionE.leerEncuesta(this.encuesta);
+			encuesta = gestionE.leerEncuesta(this.encuestaId);
 		
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
@@ -59,9 +53,9 @@ public class EncuestaBackingBean {
 		
 	}
 	
-	public String borrarTitulacion() {
+	public String borrarEncuesta() {
 		try {
-			gestionE.borrarEncuesta(this.encuesta);
+			gestionE.borrarEncuesta(this.encuestaId);
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -69,9 +63,9 @@ public class EncuestaBackingBean {
 		return "indexSecretaria.xhtml";
 	}
 	
-	public void actualizarTitulacion() {
+	public void actualizarEncuesta() {
 		try {
-			gestionE.actualizarEncuesta(this.encuesta, this.encuesta.getFecha_de_envio(), this.encuesta.getExpediente());
+			gestionE.actualizarEncuesta(this.encuesta,this.encuestaId);
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -79,7 +73,25 @@ public class EncuestaBackingBean {
 			
 	}
 	
-	public String getEnc() {
-		return this.encuesta.toString();
+	public String encuestaString() {
+		return encuesta.toString();
 	}
+
+	public Encuesta getEncuesta() {
+		return encuesta;
+	}
+
+	public void setEncuesta(Encuesta encuesta) {
+		this.encuesta = encuesta;
+	}
+
+	public EncuestaId getEncuestaId() {
+		return encuestaId;
+	}
+
+	public void setEncuestaId(EncuestaId encuestaId) {
+		this.encuestaId = encuestaId;
+	}
+	
+	
 }

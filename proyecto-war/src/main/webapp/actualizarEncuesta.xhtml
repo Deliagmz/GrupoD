@@ -45,6 +45,54 @@
 
 		            </td>
 		        </tr>
+		        	
+		        <tr>
+		            <th align="right" width="50%">
+		             <h:outputText value="Grupo para Primer Curso (Grupos: 1A,1B,1C,1D,1E) "/>
+		            </th>
+                
+                 	<td>
+		             <h:inputText id ="gp1" value="#{encuesta.encuesta.grupoPrimero}"/>
+                     <h:message for="gp1"/>
+
+		            </td>
+		        </tr>
+		        
+		        <tr>
+		            <th align="right" width="50%">
+		             <h:outputText value="Grupo para Segundo Curso (Grupos: 2A,2B,2C,2D) "/>
+		            </th>
+                
+                 	<td>
+		             <h:inputText id ="gp2" value="#{encuesta.encuesta.grupoSegundo}" />
+                     <h:message for="gp2"/>
+
+		            </td>
+		        </tr>
+		        
+		        <tr>
+		            <th align="right" width="50%">
+		             <h:outputText value="Grupo para Tercer Curso (Grupos: 3A,3B,3C) "/>
+		            </th>
+                
+                 	<td>
+		             <h:inputText id ="gp3" value="#{encuesta.encuesta.grupoTercero}" />
+                     <h:message for="gp3"/>
+
+		            </td>
+		        </tr>
+		        
+		        <tr>
+		            <th align="right" width="50%">
+		             <h:outputText value="Grupo para Cuarto Curso (Grupos: 4A) "/>
+		            </th>
+                
+                 	<td>
+		             <h:inputText id ="gp4" value="#{encuesta.encuesta.grupoCuarto}"/>
+                     <h:message for="gp4"/>
+
+		            </td>
+		        </tr>
                 
                
                 
@@ -52,7 +100,7 @@
                     <td width="50%"></td>
 
                     <td align="left" width="50%">
-                       <h:commandButton value="borrar" action="#{encuesta.borrarEncuesta()}" styleClass = "submit"></h:commandButton>
+                       <h:commandButton value="actualizar" action="#{encuesta.actualizarEncuesta()}" styleClass = "submit"></h:commandButton>
                     </td>
                 </tr>
             </table>

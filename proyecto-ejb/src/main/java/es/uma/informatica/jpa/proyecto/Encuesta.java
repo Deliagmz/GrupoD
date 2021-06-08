@@ -1,10 +1,20 @@
 package es.uma.informatica.jpa.proyecto;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 /**
  * Entity implementation class for Entity: Encuesta
@@ -16,16 +26,20 @@ public class Encuesta implements Serializable {
 	
 	public static class EncuestaId implements Serializable{
 		
-		private Timestamp fecha_de_envio;
+		private String fecha_de_envio;
 		private Long expediente;
-//		public EncuestaId(Timestamp t, Long nExp) {
-//			fecha_de_envio = t;
-//			expediente = nExp;
-//		}
-		public Timestamp getFecha_de_envio() {
+		public EncuestaId(String t, Long nExp) {
+			fecha_de_envio = t;
+			expediente = nExp;
+		}
+		public EncuestaId() {
+			this.fecha_de_envio = fecha_de_envio;
+			this.expediente = expediente;
+		}
+		public String getFecha_de_envio() {
 			return fecha_de_envio;
 		}
-		public void setFecha_de_envio(Timestamp fecha_de_envio) {
+		public void setFecha_de_envio(String fecha_de_envio) {
 			this.fecha_de_envio = fecha_de_envio;
 		}
 		public Long getExpediente() {
@@ -69,7 +83,7 @@ public class Encuesta implements Serializable {
 	}
 
 	@Id
-	private Timestamp fecha_de_envio;
+	private String fecha_de_envio;
 	private String grupoPrimero;
 	private String grupoSegundo;
 	private String grupoTercero;
@@ -81,7 +95,7 @@ public class Encuesta implements Serializable {
 	private Expedientes expediente;
 	
 	//relacion con grpXasig
-	@ManyToMany
+	@ManyToMany(fetch=FetchType.EAGER)
 	@JoinTable(name = "jn_enc_grpXasi")
 	private List<Grupos_Por_Asignatura> gr_asignaturas;
    
@@ -92,11 +106,11 @@ public class Encuesta implements Serializable {
 	
 
 
-	public Timestamp getFecha_de_envio() {
+	public String getFecha_de_envio() {
 		return fecha_de_envio;
 	}
 
-	public void setFecha_de_envio(Timestamp fecha_de_envio) {
+	public void setFecha_de_envio(String fecha_de_envio) {
 		this.fecha_de_envio = fecha_de_envio;
 	}
 
@@ -225,9 +239,9 @@ public class Encuesta implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Encuesta [fecha_de_envio=" + fecha_de_envio + ", grupoPrimero=" + grupoPrimero + ", grupoSegundo="
+		return "Encuesta fecha_de_envio=" + fecha_de_envio + ", grupoPrimero=" + grupoPrimero + ", grupoSegundo="
 				+ grupoSegundo + ", grupoTercero=" + grupoTercero + ", grupoCuarto=" + grupoCuarto + ", expediente="
-				+ expediente + ", gr_asignaturas=" + gr_asignaturas + "]";
+				+ expediente + ", gr_asignaturas=" + gr_asignaturas;
 	}
 	
 	
