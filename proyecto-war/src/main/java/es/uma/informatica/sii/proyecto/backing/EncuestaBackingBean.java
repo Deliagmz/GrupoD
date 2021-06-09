@@ -32,13 +32,14 @@ public class EncuestaBackingBean {
 		
 	}
 	
-	public void crearEncuesta() {
+	public String crearEncuesta() {
 		try {
 			gestionE.crearEncuesta(this.encuesta, this.encuestaId);
 		}catch(SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return "indexSecretaria.xhtml";
 	}
 	
 	public void leerEncuesta() {
@@ -50,6 +51,7 @@ public class EncuestaBackingBean {
 			e.printStackTrace();
 			
 		}
+		
 		
 	}
 	
@@ -63,13 +65,14 @@ public class EncuestaBackingBean {
 		return "indexSecretaria.xhtml";
 	}
 	
-	public void actualizarEncuesta() {
+	public String actualizarEncuesta() {
 		try {
 			gestionE.actualizarEncuesta(this.encuesta,this.encuestaId);
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		};
+		}
+		return "indexSecretaria.xhtml";
 			
 	}
 	

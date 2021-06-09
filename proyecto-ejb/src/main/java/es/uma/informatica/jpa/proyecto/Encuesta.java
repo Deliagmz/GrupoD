@@ -241,8 +241,7 @@ public class Encuesta implements Serializable {
 	@Override
 	public String toString() {
 		return "Encuesta fecha_de_envio=" + fecha_de_envio + ", grupoPrimero=" + grupoPrimero + ", grupoSegundo="
-				+ grupoSegundo + ", grupoTercero=" + grupoTercero + ", grupoCuarto=" + grupoCuarto + ", expediente="
-				+ expediente ;
+				+ grupoSegundo + ", grupoTercero=" + grupoTercero + ", grupoCuarto=" + grupoCuarto; 
 	}
 	
 	
