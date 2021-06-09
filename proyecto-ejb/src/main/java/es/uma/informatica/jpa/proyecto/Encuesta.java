@@ -242,7 +242,7 @@ public class Encuesta implements Serializable {
 	public String toString() {
 		return "Encuesta fecha_de_envio=" + fecha_de_envio + ", grupoPrimero=" + grupoPrimero + ", grupoSegundo="
 				+ grupoSegundo + ", grupoTercero=" + grupoTercero + ", grupoCuarto=" + grupoCuarto + ", expediente="
-				+ expediente + ", gr_asignaturas=" + gr_asignaturas;
+				+ expediente ;
 	}
 	
 	
