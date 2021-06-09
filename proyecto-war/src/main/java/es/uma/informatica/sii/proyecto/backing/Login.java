@@ -59,10 +59,10 @@ public class Login {
             FacesMessage fm = new FacesMessage("La cuenta no existe");
             FacesContext.getCurrentInstance().addMessage("login:user", fm);
         } catch (ContraseniaInvalidaException e) {
-            FacesMessage fm = new FacesMessage("La contrase�a no es correcta");
+            FacesMessage fm = new FacesMessage("La contraseña no es correcta");
             FacesContext.getCurrentInstance().addMessage("login:pass", fm);
         } catch (CuentaInactivaException e) {
-            FacesMessage fm = new FacesMessage("La cuenta existe pero no está activa");
+            FacesMessage fm = new FacesMessage("La cuenta existe pero no estÃ¡ activa");
             FacesContext.getCurrentInstance().addMessage("login:user", fm);
         } catch (SecretariaException e) {
             FacesMessage fm = new FacesMessage("Error: " + e);
