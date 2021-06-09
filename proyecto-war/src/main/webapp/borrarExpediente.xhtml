@@ -10,48 +10,43 @@
 	  xmlns:f="http://xmlns.jcp.org/jsf/core"
 	  lang="es">
   <h:head>
-	    <title>Consultar usuario</title>
+	    <title>Login</title>
 	    <link href="resources/estilos.css" rel="stylesheet" />
   </h:head>
   <h:body>
     <div id="content">
       <div id="banner">
         <h1>
-          Gestor de usuarios
+          Gestor de expedientes
         </h1>   
       </div>
 
 	      <h:form>
             <table align="center">
                 <tr>
-                    <th align="right" width="50%">Usuario a leer: </th>
-                    <td>
-                        <h:inputText name="usuario" value="#{usuario.usuario.cuenta}" size="16" maxlength="30"/>
-                    </td>
-                </tr>
-           
-                <tr>
+		            <th align="right" width="50%">
+		             <h:outputText value="Expediente a borrar: "/>
+		            </th>
+               
+           			<td>
+		              <h:inputText id="expediente" required="true" value="#{expediente.expediente.num_Expediente}"/>
+		              <h:message for="expediente"/>
+		            </td>
+		       	</tr>
+		   
+		       <tr>
                     <td width="50%"></td>
 
                     <td align="left" width="50%">
-                        <h:commandButton value="Leer" action="#{usuario.leerUsuario()}"/>
+                        <h:commandButton value="Borrar expediente" action="#{expediente.borrarExpediente()}" styleClass = "submit"></h:commandButton>
                     </td>
                 </tr>
-                
-                <tr align="center">
-                     <td ></td>
-                         <td>
-                             <h:outputText value="#{usuario.toString()}"/>
-                         </td>
-                     <td width="50%"></td>
-                </tr>
-                
             </table>
         </h:form>
       
         <div id="navegador">
 	        <p>
-	          <a href="usuarios.xhtml">Volver</a>
+	          <a href="expediente.xhtml">Volver</a>
 			   
 	        </p>
 			

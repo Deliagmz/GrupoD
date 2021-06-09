@@ -131,6 +131,16 @@ public class ExpedienteBackingBean {
 		return "indexSecretaria.xhtml";
 	}
 
+	
+	public String borrarExpediente() {
+		try{
+			gestionE.borrarExpediente(this.expediente.getNum_Expediente());
+		}catch(SecretariaException e) {
+			e.printStackTrace();
+		}
+		return "indexSecretaria.xhtml";
+	}
+	
 	public MatriculaId getMatriculaId() {
 		return matriculaId;
 	}

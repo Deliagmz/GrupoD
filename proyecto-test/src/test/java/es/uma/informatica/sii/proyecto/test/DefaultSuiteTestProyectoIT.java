@@ -54,4 +54,124 @@ public class DefaultSuiteTestProyectoIT {
     driver.findElement(By.cssSelector("h1")).click();
     assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Seleccione un boton para consultar los datos"));
   }
+  @Test
+  public void pruebaRegistroUsuario() {
+    driver.get("http://localhost:8080/proyecto-war/");
+    driver.manage().window().setSize(new Dimension(1156, 474));
+    driver.findElement(By.cssSelector("h1")).click();
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Bienvenido al sistema gestor de alumnado"));
+    driver.findElement(By.linkText("No tengo cuenta")).click();
+    driver.findElement(By.id("registro:nombre")).click();
+    driver.findElement(By.id("registro:nombre")).sendKeys("Guillermo");
+    driver.findElement(By.id("registro:apellidos")).sendKeys("Jimenez");
+    driver.findElement(By.id("registro:email")).sendKeys("guijimenez@uma.es");
+    driver.findElement(By.id("registro:direccion")).sendKeys("calle prueba");
+    driver.findElement(By.id("registro:dni")).sendKeys("12333444x");
+    driver.findElement(By.id("registro:telefono")).sendKeys("666777888");
+    driver.findElement(By.id("registro:user")).sendKeys("guilleJJ");
+    driver.findElement(By.id("registro:pass")).sendKeys("pass");
+    driver.findElement(By.id("registro:repass")).sendKeys("pass");
+    driver.findElement(By.name("registro:j_idt24")).click();
+    assertThat(driver.findElement(By.cssSelector("p:nth-child(1)")).getText(), is("El registro se ha realizado con exito. Hemos enviado un mensaje de validacion a su correo electronico. Compruebelo y pulse el enlace para validar la cuenta de usuario."));
+  }
+  @Test
+  public void pruebaLoginAlumno() {
+    driver.get("http://localhost:8080/proyecto-war/");
+    driver.manage().window().setSize(new Dimension(1160, 532));
+    driver.findElement(By.linkText("Iniciar Sesion")).click();
+    driver.findElement(By.id("j_idt6:user")).click();
+    driver.findElement(By.id("j_idt6:user")).sendKeys("Pepe");
+    driver.findElement(By.id("j_idt6:pass")).sendKeys("pepaso");
+    driver.findElement(By.cssSelector("h1")).click();
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Inicia Sesion"));
+    driver.findElement(By.name("j_idt6:j_idt15")).click();
+    driver.findElement(By.cssSelector("h1")).click();
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Encuesta"));
+  }
+  @Test
+  public void pruebaLeerUsuario() {
+    driver.get("http://localhost:8080/proyecto-war/");
+    driver.manage().window().setSize(new Dimension(1160, 532));
+    driver.findElement(By.linkText("Iniciar Sesion")).click();
+    driver.findElement(By.id("j_idt6:user")).click();
+    driver.findElement(By.id("j_idt6:user")).sendKeys("Secretaria");
+    driver.findElement(By.id("j_idt6:pass")).sendKeys("secretaria");
+    driver.findElement(By.cssSelector("h1")).click();
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Inicia Sesion"));
+    driver.findElement(By.name("j_idt6:j_idt15")).click();
+    driver.findElement(By.linkText("Gestor de usuarios")).click();
+    driver.findElement(By.cssSelector("h1")).click();
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Gestor de usuarios"));
+    driver.findElement(By.linkText("Leer informacion de un usuario")).click();
+    driver.findElement(By.cssSelector("h1")).click();
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Gestor de usuarios"));
+    driver.findElement(By.name("j_idt6:j_idt8")).click();
+    driver.findElement(By.name("j_idt6:j_idt8")).sendKeys("guilleJJ");
+    driver.findElement(By.name("j_idt6:j_idt10")).click();
+    assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("Usuario ==> Nombre: Guillermo, Apellido: Jimenez, DNI: 12333444x, Email: guijimenez@uma.es, Telefono: 666777888, Direccion: calle prueba"));
+  }
+  @Test
+  public void pruebaActualizarUsuario() {
+    driver.get("http://localhost:8080/proyecto-war/");
+    driver.manage().window().setSize(new Dimension(1160, 532));
+    driver.findElement(By.linkText("Iniciar Sesion")).click();
+    driver.findElement(By.cssSelector("h1")).click();
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Inicia Sesion"));
+    driver.findElement(By.id("j_idt6:user")).click();
+    driver.findElement(By.id("j_idt6:user")).sendKeys("Secretaria");
+    driver.findElement(By.id("j_idt6:pass")).sendKeys("secretaria");
+    driver.findElement(By.name("j_idt6:j_idt15")).click();
+    driver.findElement(By.id("content")).click();
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Seleccione un boton para consultar los datos"));
+    driver.findElement(By.linkText("Gestor de usuarios")).click();
+    driver.findElement(By.cssSelector("h1")).click();
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Gestor de usuarios"));
+    driver.findElement(By.linkText("Actualizar informacion de un usuario")).click();
+    driver.findElement(By.cssSelector("h1")).click();
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Gestor de usuarios"));
+    driver.findElement(By.name("j_idt6:j_idt8")).click();
+    driver.findElement(By.name("j_idt6:j_idt8")).sendKeys("Pepe");
+    driver.findElement(By.name("j_idt6:j_idt10")).click();
+    driver.findElement(By.name("j_idt6:j_idt10")).sendKeys("nuevo@uma.es");
+    driver.findElement(By.name("j_idt6:j_idt12")).click();
+    driver.findElement(By.name("j_idt6:j_idt12")).sendKeys("888999777");
+    driver.findElement(By.name("j_idt6:j_idt14")).click();
+    driver.findElement(By.name("j_idt6:j_idt14")).sendKeys("nueva direccion");
+    driver.findElement(By.name("j_idt6:j_idt16")).click();
+    driver.findElement(By.linkText("Volver")).click();
+    driver.findElement(By.linkText("Leer informacion de un usuario")).click();
+    driver.findElement(By.name("j_idt6:j_idt8")).click();
+    driver.findElement(By.name("j_idt6:j_idt8")).sendKeys("Pepe");
+    driver.findElement(By.name("j_idt6:j_idt10")).click();
+    assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("Usuario ==> Nombre: PepeLu, Apellido: Pepon, DNI: 12345678x, Email: nuevo@uma.es, Telefono: 888999777, Direccion: nueva direccion"));
+  }
+  @Test
+  public void pruebaBorrarUsuario() {
+    driver.get("http://localhost:8080/proyecto-war/");
+    driver.manage().window().setSize(new Dimension(1160, 532));
+    driver.findElement(By.linkText("Iniciar Sesion")).click();
+    driver.findElement(By.id("j_idt6:user")).click();
+    driver.findElement(By.id("j_idt6:user")).sendKeys("Secretaria");
+    driver.findElement(By.id("j_idt6:pass")).click();
+    driver.findElement(By.id("j_idt6:pass")).sendKeys("secretaria");
+    driver.findElement(By.name("j_idt6:j_idt15")).click();
+    driver.findElement(By.id("content")).click();
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Seleccione un boton para consultar los datos"));
+    driver.findElement(By.linkText("Gestor de usuarios")).click();
+    driver.findElement(By.cssSelector("h1")).click();
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Gestor de usuarios"));
+    driver.findElement(By.linkText("Borrar un usuario")).click();
+    driver.findElement(By.cssSelector("h1")).click();
+    driver.findElement(By.cssSelector("th")).click();
+    assertThat(driver.findElement(By.cssSelector("th")).getText(), is("Usuario a borrar:"));
+    driver.findElement(By.name("j_idt6:j_idt8")).click();
+    driver.findElement(By.name("j_idt6:j_idt8")).sendKeys("guilleJJ");
+    driver.findElement(By.name("j_idt6:j_idt10")).click();
+    driver.findElement(By.linkText("Gestor de usuarios")).click();
+    driver.findElement(By.linkText("Leer informacion de un usuario")).click();
+    driver.findElement(By.name("j_idt6:j_idt8")).click();
+    driver.findElement(By.name("j_idt6:j_idt8")).sendKeys("guilleJJ");
+    driver.findElement(By.name("j_idt6:j_idt10")).click();
+    assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("Usuario ==> Nombre: null, Apellido: null, DNI: null, Email: null, Telefono: null, Direccion: null"));
+  }
 }
