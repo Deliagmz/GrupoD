@@ -205,9 +205,9 @@ public class DefaultSuiteTestProyectoIT {
     driver.findElement(By.cssSelector("th")).click();
     assertThat(driver.findElement(By.cssSelector("th")).getText(), is("Titulacion a leer:"));
     driver.findElement(By.id("j_idt6:codigo")).click();
-    driver.findElement(By.id("j_idt6:codigo")).sendKeys("101");
+    driver.findElement(By.id("j_idt6:codigo")).sendKeys("1041");
     driver.findElement(By.name("j_idt6:j_idt11")).click();
-    assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("Titulacion: Codigo=101, Creditos=6, Nombre=Asignatura1"));
+    assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("Titulacion: Codigo=1041, Creditos=240, Nombre=Ingenieria Informatica"));
   }
   @Test
   public void pruebaActualizarAsignatura() {
@@ -246,21 +246,53 @@ public class DefaultSuiteTestProyectoIT {
     driver.findElement(By.linkText("Volver")).click();
   }
   @Test
-  public void pruebaBorrarAsignatura() {
-    driver.get("http://localhost:8080/proyecto-war/indexSecretaria.xhtml");
-    driver.manage().window().setSize(new Dimension(1056, 810));
-    driver.findElement(By.linkText("Gestor de asignaturas")).click();
-    driver.findElement(By.linkText("Eliminar asignatura")).click();
-    driver.findElement(By.id("asignatura:referencia")).click();
-    driver.findElement(By.id("asignatura:referencia")).sendKeys("11223344");
-    driver.findElement(By.name("asignatura:j_idt9")).click();
-    driver.findElement(By.linkText("Gestor de asignaturas")).click();
-    driver.findElement(By.linkText("Consultar asignatura")).click();
-    driver.findElement(By.id("j_idt6:referencia")).click();
-    driver.findElement(By.id("j_idt6:referencia")).sendKeys("11223344");
-    driver.findElement(By.name("j_idt6:j_idt12")).click();
+  public void pruebaActualizarTitulacion() {
+    driver.get("http://localhost:8080/proyecto-war/");
+    driver.manage().window().setSize(new Dimension(1160, 532));
+    driver.findElement(By.linkText("Iniciar Sesion")).click();
+    driver.findElement(By.id("j_idt6:user")).click();
+    driver.findElement(By.id("j_idt6:user")).sendKeys("Secretaria");
+    driver.findElement(By.id("j_idt6:pass")).sendKeys("secretaria");
+    driver.findElement(By.id("j_idt6:pass")).sendKeys(Keys.ENTER);
+    driver.findElement(By.linkText("Gestor de titulaciones")).click();
+    driver.findElement(By.id("content")).click();
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Gestor de titulaciones"));
+    driver.findElement(By.linkText("Actualizar informacion de una titulacion")).click();
+    driver.findElement(By.id("j_idt6:codigo")).click();
+    driver.findElement(By.id("j_idt6:codigo")).sendKeys("1042");
+    driver.findElement(By.id("j_idt6:nombre")).click();
+    driver.findElement(By.id("j_idt6:nombre")).sendKeys("Ingenieria de Computadores");
+    driver.findElement(By.id("j_idt6:creditos")).click();
+    driver.findElement(By.id("j_idt6:creditos")).sendKeys("250");
+    driver.findElement(By.name("j_idt6:j_idt20")).click();
+    driver.findElement(By.linkText("Gestor de titulaciones")).click();
+    driver.findElement(By.linkText("Leer informacion de una titulacion")).click();
+    driver.findElement(By.id("j_idt6:codigo")).click();
+    driver.findElement(By.id("j_idt6:codigo")).sendKeys("1042");
+    driver.findElement(By.name("j_idt6:j_idt11")).click();
     driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).click();
-    assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("Asignaturas con Referencia= 11223344, Codigo= null, Nombre= null, Creditos= null, Ofertada= null, Curso= null, Caracter= null, Duracion= null, Unidad_Temporal= null, Idiomas_Imparticion= null"));
-    driver.findElement(By.linkText("Volver")).click();
+    assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("Titulacion: Codigo=1042, Creditos=250, Nombre=Ingenieria de Computadores"));
+  }
+  @Test
+  public void pruebaBorrarTitulacion() {
+    driver.get("http://localhost:8080/proyecto-war/");
+    driver.manage().window().setSize(new Dimension(1160, 532));
+    driver.findElement(By.linkText("Iniciar Sesion")).click();
+    driver.findElement(By.id("j_idt6:user")).click();
+    driver.findElement(By.id("j_idt6:user")).sendKeys("Secretaria");
+    driver.findElement(By.id("j_idt6:pass")).sendKeys("secretaria");
+    driver.findElement(By.name("j_idt6:j_idt15")).click();
+    driver.findElement(By.linkText("Gestor de titulaciones")).click();
+    driver.findElement(By.linkText("Borrar una titulacion")).click();
+    driver.findElement(By.id("j_idt6:codigo")).click();
+    driver.findElement(By.id("j_idt6:codigo")).sendKeys("1042");
+    driver.findElement(By.name("j_idt6:j_idt12")).click();
+    driver.findElement(By.linkText("Gestor de titulaciones")).click();
+    driver.findElement(By.linkText("Leer informacion de una titulacion")).click();
+    driver.findElement(By.id("j_idt6:codigo")).click();
+    driver.findElement(By.id("j_idt6:codigo")).sendKeys("1042");
+    driver.findElement(By.name("j_idt6:j_idt11")).click();
+    driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).click();
+    assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("Titulacion: Codigo=1042, Creditos=null, Nombre=null"));
   }
 }

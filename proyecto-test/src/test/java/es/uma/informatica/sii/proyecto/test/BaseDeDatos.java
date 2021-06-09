@@ -80,9 +80,18 @@
 //        titulacion.setCodigo(1041);
 //        titulacion.setCreditos(240);
 //        titulacion.setNombre("Ingenieria Informatica");
-//
+//		  
 //        em.getTransaction().begin();
 //        em.persist(titulacion);
+//        em.getTransaction().commit();
+
+//		  Titulacion titulacion2 = new Titulacion();
+//        titulacion.setCodigo(1042);
+//        titulacion.setCreditos(240);
+//        titulacion.setNombre("Ingenieria de la Salud");
+//
+//        em.getTransaction().begin();
+//        em.persist(titulacion2);
 //        em.getTransaction().commit();
 //	}
 //	
