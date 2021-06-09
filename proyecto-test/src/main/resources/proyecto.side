@@ -4145,6 +4145,315 @@
       ],
       "value": ""
     }]
+  }, {
+    "id": "5b171da1-4234-4890-84a2-1a46dca4f319",
+    "name": "PruebaCrearEncuesta",
+    "commands": [{
+      "id": "843eb2ff-bbd6-414c-89a5-9de6e2bbd35e",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/proyecto-war/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "997d6d54-bae4-4fea-859b-54568dc3be07",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1160x811",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f9315336-6334-45e9-a4db-683df7144a5e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Iniciar Sesion",
+      "targets": [
+        ["linkText=Iniciar Sesion", "linkText"],
+        ["css=p:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Iniciar Sesion')]", "xpath:link"],
+        ["xpath=//div[@id='navegador']/p/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'login.xhtml')]", "xpath:href"],
+        ["xpath=//p/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Iniciar Sesion')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f2225be-9101-4f87-86bb-988f1105d692",
+      "comment": "",
+      "command": "click",
+      "target": "id=j_idt6:user",
+      "targets": [
+        ["id=j_idt6:user", "id"],
+        ["name=j_idt6:user", "name"],
+        ["css=#j_idt6\\3Auser", "css:finder"],
+        ["xpath=//input[@id='j_idt6:user']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eb7afb3a-8e69-4343-a027-98d16495f8fd",
+      "comment": "",
+      "command": "type",
+      "target": "id=j_idt6:user",
+      "targets": [
+        ["id=j_idt6:user", "id"],
+        ["name=j_idt6:user", "name"],
+        ["css=#j_idt6\\3Auser", "css:finder"],
+        ["xpath=//input[@id='j_idt6:user']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Pepe"
+    }, {
+      "id": "c42cc168-df94-4270-9823-8aec13c49415",
+      "comment": "",
+      "command": "type",
+      "target": "id=j_idt6:pass",
+      "targets": [
+        ["id=j_idt6:pass", "id"],
+        ["name=j_idt6:pass", "name"],
+        ["css=#j_idt6\\3Apass", "css:finder"],
+        ["xpath=//input[@id='j_idt6:pass']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": "pepaso"
+    }, {
+      "id": "1079fca2-1b95-41b4-8c01-3efc181e2b32",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=j_idt6:pass",
+      "targets": [
+        ["id=j_idt6:pass", "id"],
+        ["name=j_idt6:pass", "name"],
+        ["css=#j_idt6\\3Apass", "css:finder"],
+        ["xpath=//input[@id='j_idt6:pass']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "32c6fbc4-55b3-449d-86be-0b3e3c7c9c7b",
+      "comment": "",
+      "command": "click",
+      "target": "id=encuesta:expediente",
+      "targets": [
+        ["id=encuesta:expediente", "id"],
+        ["name=encuesta:expediente", "name"],
+        ["css=#encuesta\\3A expediente", "css:finder"],
+        ["xpath=//input[@id='encuesta:expediente']", "xpath:attributes"],
+        ["xpath=//form[@id='encuesta']/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "02618881-a624-4fa6-90a8-c81e39359475",
+      "comment": "",
+      "command": "type",
+      "target": "id=encuesta:expediente",
+      "targets": [
+        ["id=encuesta:expediente", "id"],
+        ["name=encuesta:expediente", "name"],
+        ["css=#encuesta\\3A expediente", "css:finder"],
+        ["xpath=//input[@id='encuesta:expediente']", "xpath:attributes"],
+        ["xpath=//form[@id='encuesta']/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "fb874d5d-86e7-4449-af65-653358bb1bdb",
+      "comment": "",
+      "command": "click",
+      "target": "id=encuesta:Fecha",
+      "targets": [
+        ["id=encuesta:Fecha", "id"],
+        ["name=encuesta:Fecha", "name"],
+        ["css=#encuesta\\3A Fecha", "css:finder"],
+        ["xpath=//input[@id='encuesta:Fecha']", "xpath:attributes"],
+        ["xpath=//form[@id='encuesta']/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a15fa70e-fa57-419a-9e17-729057be2b52",
+      "comment": "",
+      "command": "type",
+      "target": "id=encuesta:Fecha",
+      "targets": [
+        ["id=encuesta:Fecha", "id"],
+        ["name=encuesta:Fecha", "name"],
+        ["css=#encuesta\\3A Fecha", "css:finder"],
+        ["xpath=//input[@id='encuesta:Fecha']", "xpath:attributes"],
+        ["xpath=//form[@id='encuesta']/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": "09-06-2021"
+    }, {
+      "id": "28526af8-ae77-4fc0-85d0-fc4d59617faa",
+      "comment": "",
+      "command": "click",
+      "target": "id=encuesta:gp1",
+      "targets": [
+        ["id=encuesta:gp1", "id"],
+        ["name=encuesta:gp1", "name"],
+        ["css=#encuesta\\3Agp1", "css:finder"],
+        ["xpath=//input[@id='encuesta:gp1']", "xpath:attributes"],
+        ["xpath=//form[@id='encuesta']/table/tbody/tr[3]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "63e05478-72e3-410e-aae5-f917e0456a51",
+      "comment": "",
+      "command": "type",
+      "target": "id=encuesta:gp1",
+      "targets": [
+        ["id=encuesta:gp1", "id"],
+        ["name=encuesta:gp1", "name"],
+        ["css=#encuesta\\3Agp1", "css:finder"],
+        ["xpath=//input[@id='encuesta:gp1']", "xpath:attributes"],
+        ["xpath=//form[@id='encuesta']/table/tbody/tr[3]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/input", "xpath:position"]
+      ],
+      "value": "1A"
+    }, {
+      "id": "c10510cd-17aa-437e-b635-d641f97ac7b5",
+      "comment": "",
+      "command": "click",
+      "target": "id=encuesta:gp2",
+      "targets": [
+        ["id=encuesta:gp2", "id"],
+        ["name=encuesta:gp2", "name"],
+        ["css=#encuesta\\3Agp2", "css:finder"],
+        ["xpath=//input[@id='encuesta:gp2']", "xpath:attributes"],
+        ["xpath=//form[@id='encuesta']/table/tbody/tr[4]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "002fae00-466c-4754-9eb0-66321c894735",
+      "comment": "",
+      "command": "type",
+      "target": "id=encuesta:gp2",
+      "targets": [
+        ["id=encuesta:gp2", "id"],
+        ["name=encuesta:gp2", "name"],
+        ["css=#encuesta\\3Agp2", "css:finder"],
+        ["xpath=//input[@id='encuesta:gp2']", "xpath:attributes"],
+        ["xpath=//form[@id='encuesta']/table/tbody/tr[4]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": "2B"
+    }, {
+      "id": "89b2ba59-f1aa-4914-b021-5c6c33a2d59a",
+      "comment": "",
+      "command": "click",
+      "target": "id=encuesta:gp3",
+      "targets": [
+        ["id=encuesta:gp3", "id"],
+        ["name=encuesta:gp3", "name"],
+        ["css=#encuesta\\3Agp3", "css:finder"],
+        ["xpath=//input[@id='encuesta:gp3']", "xpath:attributes"],
+        ["xpath=//form[@id='encuesta']/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7b4d7f15-b374-4ae5-827a-51f201d88db6",
+      "comment": "",
+      "command": "type",
+      "target": "id=encuesta:gp3",
+      "targets": [
+        ["id=encuesta:gp3", "id"],
+        ["name=encuesta:gp3", "name"],
+        ["css=#encuesta\\3Agp3", "css:finder"],
+        ["xpath=//input[@id='encuesta:gp3']", "xpath:attributes"],
+        ["xpath=//form[@id='encuesta']/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": "3A"
+    }, {
+      "id": "81c46d91-ba1b-4f64-80fe-9fe2028ca74f",
+      "comment": "",
+      "command": "click",
+      "target": "id=encuesta:gp4",
+      "targets": [
+        ["id=encuesta:gp4", "id"],
+        ["name=encuesta:gp4", "name"],
+        ["css=#encuesta\\3Agp4", "css:finder"],
+        ["xpath=//input[@id='encuesta:gp4']", "xpath:attributes"],
+        ["xpath=//form[@id='encuesta']/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fdb6ab2b-83a4-4bed-884b-75f4068d5419",
+      "comment": "",
+      "command": "type",
+      "target": "id=encuesta:gp4",
+      "targets": [
+        ["id=encuesta:gp4", "id"],
+        ["name=encuesta:gp4", "name"],
+        ["css=#encuesta\\3Agp4", "css:finder"],
+        ["xpath=//input[@id='encuesta:gp4']", "xpath:attributes"],
+        ["xpath=//form[@id='encuesta']/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": "4A"
+    }, {
+      "id": "505eccaa-9bb5-4c09-8ce4-afc7b045e8ca",
+      "comment": "",
+      "command": "click",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='banner']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Encuesta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4e242cb0-e1a0-40cd-86c8-f9d6da12cb64",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='banner']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Encuesta')]", "xpath:innerText"]
+      ],
+      "value": "Encuesta"
+    }, {
+      "id": "3fbba7ab-5166-4f2f-83b2-dde7aae29712",
+      "comment": "",
+      "command": "click",
+      "target": "name=encuesta:j_idt31",
+      "targets": [
+        ["name=encuesta:j_idt31", "name"],
+        ["css=.submit", "css:finder"],
+        ["xpath=//input[@name='encuesta:j_idt31']", "xpath:attributes"],
+        ["xpath=//form[@id='encuesta']/table/tbody/tr[7]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6397a4ed-26bf-4757-ab1f-59966dad613b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Volver al Inicio",
+      "targets": [
+        ["linkText=Volver al Inicio", "linkText"],
+        ["css=a", "css:finder"],
+        ["xpath=//a[contains(text(),'Volver al Inicio')]", "xpath:link"],
+        ["xpath=//div[@id='navegador']/p/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'index.xhtml')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Volver al Inicio')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "e476cb40-cf41-45c9-91bc-9ed8f40f047a",
