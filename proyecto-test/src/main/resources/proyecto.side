@@ -3342,6 +3342,458 @@
       ],
       "value": ""
     }]
+  }, {
+    "id": "a919c68d-4c80-4f75-9361-3efca42c4ac1",
+    "name": "PruebaActualizarNotaMedia",
+    "commands": [{
+      "id": "77716c90-4414-4f4e-97d6-a449e21fc3ff",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/proyecto-war/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6f624bee-d92e-48c6-9f78-70e33a228c09",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x872",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f0a0e78d-189e-4b1d-af66-56c588db1157",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/proyecto-war/indexSecretaria.xhtml",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34e8eab9-90bd-44c6-a649-5d0b52833571",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Gestor de expedientes",
+      "targets": [
+        ["linkText=Gestor de expedientes", "linkText"],
+        ["css=p:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Gestor de expedientes')]", "xpath:link"],
+        ["xpath=//div[@id='navegador']/p[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'expediente.xhtml')]", "xpath:href"],
+        ["xpath=//p[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Gestor de expedientes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b5a9dbaa-be17-450d-9b39-7818f0ed19a4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Modificar nota media",
+      "targets": [
+        ["linkText=Modificar nota media", "linkText"],
+        ["css=p:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Modificar nota media')]", "xpath:link"],
+        ["xpath=//div[@id='navegador']/p[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'actualizarNotaMedia.xhtml')]", "xpath:href"],
+        ["xpath=//p[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Modificar nota media')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2d072e69-1d9c-4726-9c28-a390a9f11d18",
+      "comment": "",
+      "command": "click",
+      "target": "id=j_idt6:Num_Expediente",
+      "targets": [
+        ["id=j_idt6:Num_Expediente", "id"],
+        ["name=j_idt6:Num_Expediente", "name"],
+        ["css=#j_idt6\\3ANum_Expediente", "css:finder"],
+        ["xpath=//input[@id='j_idt6:Num_Expediente']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ffcb1ad-d3aa-4151-a087-10ef7ac29320",
+      "comment": "",
+      "command": "type",
+      "target": "id=j_idt6:Num_Expediente",
+      "targets": [
+        ["id=j_idt6:Num_Expediente", "id"],
+        ["name=j_idt6:Num_Expediente", "name"],
+        ["css=#j_idt6\\3ANum_Expediente", "css:finder"],
+        ["xpath=//input[@id='j_idt6:Num_Expediente']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "66d6d12d-a17f-40e3-8fce-aa2e6240d086",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) > td",
+      "targets": [
+        ["css=tr:nth-child(2) > td", "css:finder"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr[2]/td", "xpath:idRelative"],
+        ["xpath=//tr[2]/td", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ad09231-04d9-47a2-8008-4a5a2da65b1e",
+      "comment": "",
+      "command": "click",
+      "target": "id=j_idt6:notaMedia",
+      "targets": [
+        ["id=j_idt6:notaMedia", "id"],
+        ["name=j_idt6:notaMedia", "name"],
+        ["css=#j_idt6\\3AnotaMedia", "css:finder"],
+        ["xpath=//input[@id='j_idt6:notaMedia']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "16f3d068-0d8b-4619-9f98-3aa01a94ff87",
+      "comment": "",
+      "command": "type",
+      "target": "id=j_idt6:notaMedia",
+      "targets": [
+        ["id=j_idt6:notaMedia", "id"],
+        ["name=j_idt6:notaMedia", "name"],
+        ["css=#j_idt6\\3AnotaMedia", "css:finder"],
+        ["xpath=//input[@id='j_idt6:notaMedia']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": "5"
+    }, {
+      "id": "9bda52aa-2901-450a-b394-1e03ae29dd76",
+      "comment": "",
+      "command": "click",
+      "target": "name=j_idt6:j_idt16",
+      "targets": [
+        ["name=j_idt6:j_idt16", "name"],
+        ["css=.submit", "css:finder"],
+        ["xpath=//input[@name='j_idt6:j_idt16']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr[3]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fab17d2d-749d-47a3-8363-b4041c7cae06",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Gestor de expedientes",
+      "targets": [
+        ["linkText=Gestor de expedientes", "linkText"],
+        ["css=p:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Gestor de expedientes')]", "xpath:link"],
+        ["xpath=//div[@id='navegador']/p[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'expediente.xhtml')]", "xpath:href"],
+        ["xpath=//p[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Gestor de expedientes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a47eb794-0fa7-462e-81f3-3bcf954e8229",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Consultar nota media",
+      "targets": [
+        ["linkText=Consultar nota media", "linkText"],
+        ["css=p:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Consultar nota media')]", "xpath:link"],
+        ["xpath=//div[@id='navegador']/p[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'leerNotaMedia.xhtml')]", "xpath:href"],
+        ["xpath=//p[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Consultar nota media')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "01158449-f7b4-44e7-bd6c-68b1bdd0b3bf",
+      "comment": "",
+      "command": "click",
+      "target": "id=j_idt6:Num_Expediente",
+      "targets": [
+        ["id=j_idt6:Num_Expediente", "id"],
+        ["name=j_idt6:Num_Expediente", "name"],
+        ["css=#j_idt6\\3ANum_Expediente", "css:finder"],
+        ["xpath=//input[@id='j_idt6:Num_Expediente']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "93b13a82-d52e-4305-b825-14a16213b3a6",
+      "comment": "",
+      "command": "type",
+      "target": "id=j_idt6:Num_Expediente",
+      "targets": [
+        ["id=j_idt6:Num_Expediente", "id"],
+        ["name=j_idt6:Num_Expediente", "name"],
+        ["css=#j_idt6\\3ANum_Expediente", "css:finder"],
+        ["xpath=//input[@id='j_idt6:Num_Expediente']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "576baf14-2ab2-4d3d-803e-c903644c748f",
+      "comment": "",
+      "command": "click",
+      "target": "name=j_idt6:j_idt12",
+      "targets": [
+        ["name=j_idt6:j_idt12", "name"],
+        ["css=.submit", "css:finder"],
+        ["xpath=//input[@name='j_idt6:j_idt12']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc289255-1d48-454d-ab6b-987eaf8b48bd",
+      "comment": "",
+      "command": "click",
+      "target": "id=j_idt6",
+      "targets": [
+        ["id=j_idt6", "id"],
+        ["name=j_idt6", "name"],
+        ["css=#j_idt6", "css:finder"],
+        ["xpath=//form[@id='j_idt6']", "xpath:attributes"],
+        ["xpath=//div[@id='content']/form", "xpath:idRelative"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "029f7ae6-198a-46a8-afb2-6a0ff8738316",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(3) > td:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(3) > td:nth-child(2)", "css:finder"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr[3]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[3]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'La nota media es 5.0')]", "xpath:innerText"]
+      ],
+      "value": "La nota media es 5.0"
+    }, {
+      "id": "d3fdcdf8-e9da-4e99-8e9f-43f2b1db9250",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Volver",
+      "targets": [
+        ["linkText=Volver", "linkText"],
+        ["css=a", "css:finder"],
+        ["xpath=//a[contains(text(),'Volver')]", "xpath:link"],
+        ["xpath=//div[@id='navegador']/p/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'expediente.xhtml')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Volver')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "de50d12d-3e02-4eaa-b92b-fb62960626cc",
+    "name": "PruebaBorrarNotaMedia",
+    "commands": [{
+      "id": "32f08097-ce30-4a3d-bf54-dba3e04f9410",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/proyecto-war/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a954ca45-90bb-438a-ba2e-cc0d58c55b62",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x872",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce11d78b-faf4-471f-a382-c6c3aca8a51e",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/proyecto-war/indexSecretaria.xhtml",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7076a264-a8f7-42f7-bfca-1acb914c0c28",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Gestor de expedientes",
+      "targets": [
+        ["linkText=Gestor de expedientes", "linkText"],
+        ["css=p:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Gestor de expedientes')]", "xpath:link"],
+        ["xpath=//div[@id='navegador']/p[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'expediente.xhtml')]", "xpath:href"],
+        ["xpath=//p[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Gestor de expedientes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f814397f-4733-4a88-9c43-0b2abff21479",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Eliminar nota media",
+      "targets": [
+        ["linkText=Eliminar nota media", "linkText"],
+        ["css=p:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Eliminar nota media')]", "xpath:link"],
+        ["xpath=//div[@id='navegador']/p[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'borrarNotaMedia.xhtml')]", "xpath:href"],
+        ["xpath=//p[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Eliminar nota media')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c461ce21-5dfb-4832-abb2-878e5944187e",
+      "comment": "",
+      "command": "click",
+      "target": "id=j_idt6:Num_Expediente",
+      "targets": [
+        ["id=j_idt6:Num_Expediente", "id"],
+        ["name=j_idt6:Num_Expediente", "name"],
+        ["css=#j_idt6\\3ANum_Expediente", "css:finder"],
+        ["xpath=//input[@id='j_idt6:Num_Expediente']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f2ca49a6-e744-4d15-83a6-c8825b293ff0",
+      "comment": "",
+      "command": "type",
+      "target": "id=j_idt6:Num_Expediente",
+      "targets": [
+        ["id=j_idt6:Num_Expediente", "id"],
+        ["name=j_idt6:Num_Expediente", "name"],
+        ["css=#j_idt6\\3ANum_Expediente", "css:finder"],
+        ["xpath=//input[@id='j_idt6:Num_Expediente']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "591fd688-58d6-434d-9a74-0e613b5aeacd",
+      "comment": "",
+      "command": "click",
+      "target": "name=j_idt6:j_idt12",
+      "targets": [
+        ["name=j_idt6:j_idt12", "name"],
+        ["css=.submit", "css:finder"],
+        ["xpath=//input[@name='j_idt6:j_idt12']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f10feea0-f66e-46ae-bf3f-b6a3d061abd1",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Gestor de expedientes",
+      "targets": [
+        ["linkText=Gestor de expedientes", "linkText"],
+        ["css=p:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Gestor de expedientes')]", "xpath:link"],
+        ["xpath=//div[@id='navegador']/p[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'expediente.xhtml')]", "xpath:href"],
+        ["xpath=//p[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Gestor de expedientes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5bcab3df-e695-45ed-bb32-02e32e74780a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Consultar nota media",
+      "targets": [
+        ["linkText=Consultar nota media", "linkText"],
+        ["css=p:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Consultar nota media')]", "xpath:link"],
+        ["xpath=//div[@id='navegador']/p[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'leerNotaMedia.xhtml')]", "xpath:href"],
+        ["xpath=//p[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Consultar nota media')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "803a74b9-0505-4ec8-ab9a-03e31addc36c",
+      "comment": "",
+      "command": "click",
+      "target": "id=j_idt6:Num_Expediente",
+      "targets": [
+        ["id=j_idt6:Num_Expediente", "id"],
+        ["name=j_idt6:Num_Expediente", "name"],
+        ["css=#j_idt6\\3ANum_Expediente", "css:finder"],
+        ["xpath=//input[@id='j_idt6:Num_Expediente']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3cd420d-1821-48f5-b04a-116906233920",
+      "comment": "",
+      "command": "type",
+      "target": "id=j_idt6:Num_Expediente",
+      "targets": [
+        ["id=j_idt6:Num_Expediente", "id"],
+        ["name=j_idt6:Num_Expediente", "name"],
+        ["css=#j_idt6\\3ANum_Expediente", "css:finder"],
+        ["xpath=//input[@id='j_idt6:Num_Expediente']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "9e459f26-70bf-4f94-a069-49914e2cf310",
+      "comment": "",
+      "command": "click",
+      "target": "name=j_idt6:j_idt12",
+      "targets": [
+        ["name=j_idt6:j_idt12", "name"],
+        ["css=.submit", "css:finder"],
+        ["xpath=//input[@name='j_idt6:j_idt12']", "xpath:attributes"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3c06e84-7b76-4e35-b5b0-4c6a224bc5a0",
+      "comment": "",
+      "command": "click",
+      "target": "css=table",
+      "targets": [
+        ["css=table", "css:finder"],
+        ["xpath=//form[@id='j_idt6']/table", "xpath:idRelative"],
+        ["xpath=//table", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "35acd8eb-8ec2-4b89-895f-c391a1bba722",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(3) > td:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(3) > td:nth-child(2)", "css:finder"],
+        ["xpath=//form[@id='j_idt6']/table/tbody/tr[3]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[3]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'La nota media es 0.0')]", "xpath:innerText"]
+      ],
+      "value": "La nota media es 0.0"
+    }, {
+      "id": "f7094fde-53f9-4980-a0b4-a45f380ed599",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Volver",
+      "targets": [
+        ["linkText=Volver", "linkText"],
+        ["css=a", "css:finder"],
+        ["xpath=//a[contains(text(),'Volver')]", "xpath:link"],
+        ["xpath=//div[@id='navegador']/p/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'expediente.xhtml')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Volver')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "e476cb40-cf41-45c9-91bc-9ed8f40f047a",
