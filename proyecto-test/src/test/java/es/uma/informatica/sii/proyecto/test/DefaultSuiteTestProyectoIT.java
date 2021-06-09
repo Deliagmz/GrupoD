@@ -599,7 +599,7 @@ public class DefaultSuiteTestProyectoIT {
     driver.findElement(By.id("j_idt6:Fecha")).sendKeys("27-07-2000");
     driver.findElement(By.name("j_idt6:j_idt16")).click();
     assertThat(driver.findElement(By.cssSelector("tr:nth-child(4) > td:nth-child(2)")).getText(), is("Encuesta fecha_de_envio=27-07-2000, grupoPrimero=null, grupoSegundo=null, grupoTercero=null, grupoCuarto=4A"));
-    driver.findElement(By.linkText("Volver")).click();
+    
   }
   @Requisitos({"RF11"})
   @Test
