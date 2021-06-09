@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 //package es.uma.informatica.sii.proyecto.test;
 //
@@ -93,7 +92,6 @@
 //		}
 //}
 
-=======
 package es.uma.informatica.sii.proyecto.test;
 
 import javax.persistence.EntityManager;
@@ -192,4 +190,4 @@ public class BaseDeDatos {
 	}
 	
 }
->>>>>>> master
+

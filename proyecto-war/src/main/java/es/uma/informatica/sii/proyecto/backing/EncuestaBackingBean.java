@@ -71,7 +71,7 @@ public class EncuestaBackingBean {
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		};
+		}
 		return "indexSecretaria.xhtml";
 			
 	}
