@@ -245,6 +245,7 @@ public class DefaultSuiteTestProyectoIT {
     assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("Asignaturas con Referencia= 11223344, Codigo= 123, Nombre= Programacion, Creditos= 6, Ofertada= No, Curso= 2, Caracter= Presencial, Duracion= Mucho, Unidad_Temporal= Primer cuatri, Idiomas_Imparticion= Ingles"));
     driver.findElement(By.linkText("Volver")).click();
   }
+  
   @Test
   public void pruebaActualizarTitulacion() {
     driver.get("http://localhost:8080/proyecto-war/");
