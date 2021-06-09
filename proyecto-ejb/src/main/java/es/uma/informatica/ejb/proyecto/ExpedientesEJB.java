@@ -27,6 +27,9 @@ public class ExpedientesEJB implements GestionExpedientes{
 		if(expedienteEntity==null) {
 			throw new ExpedienteNoEncontradoException();
 		}
+		if(expedienteEntity.getNota_Media_Provisional()==null) {
+			expedienteEntity.setNota_Media_Provisional(0.0);
+		}
 		
 		return expedienteEntity.getNota_Media_Provisional();
 	}

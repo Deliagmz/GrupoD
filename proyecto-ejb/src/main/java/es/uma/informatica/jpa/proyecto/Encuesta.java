@@ -1,6 +1,7 @@
 package es.uma.informatica.jpa.proyecto;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -106,8 +107,8 @@ public class Encuesta implements Serializable {
 		return fecha_de_envio;
 	}
 
-	public void setFecha_de_envio(String fecha_de_envio) {
-		this.fecha_de_envio = fecha_de_envio;
+	public void setFecha_de_envio(String t) {
+		this.fecha_de_envio = t;
 	}
 
 	public Expedientes getExpediente() {
@@ -236,7 +237,12 @@ public class Encuesta implements Serializable {
 	@Override
 	public String toString() {
 		return "Encuesta fecha_de_envio=" + fecha_de_envio + ", grupoPrimero=" + grupoPrimero + ", grupoSegundo="
+<<<<<<< HEAD
 				+ grupoSegundo + ", grupoTercero=" + grupoTercero + ", grupoCuarto=" + grupoCuarto;
+=======
+				+ grupoSegundo + ", grupoTercero=" + grupoTercero + ", grupoCuarto=" + grupoCuarto + ", expediente="
+				+ expediente ;
+>>>>>>> master
 	}
 	
 	

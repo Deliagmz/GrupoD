@@ -144,14 +144,14 @@ public class AsignaturaBackingBean {
 		return "indexSecretaria.xhtml";
 	}
 	
-	public void actualizarAsignatura() {
+	public String actualizarAsignatura() {
 		try {
-			gestionA.actualizarAsignatura(asignatura.getCodigo(),this.asignatura);
+			gestionA.actualizarAsignatura(asignatura.getReferencia(),this.asignatura);
 		} catch (SecretariaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		};
-			
+		}
+		return "indexSecretaria.xhtml";
 	}
 	
 	public String toString() {

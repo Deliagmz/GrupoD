@@ -173,7 +173,7 @@ public class AlumnoBackingBean {
 		
 	}
 	
-	public void actualizarAlumno () {
+	public String actualizarAlumno () {
 		
 		try {
 			gestionA.ActualizarAlumno(this.alumno.getID(), this.alumno);
@@ -182,7 +182,7 @@ public class AlumnoBackingBean {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		return "indexSecretaria.xhtml";
 		
 	}
 	
