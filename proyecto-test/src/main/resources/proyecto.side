@@ -3349,7 +3349,7 @@
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["29b59682-9e20-4904-9e7b-ffc007c1f4a8", "5b7a776b-faba-4ab1-bbea-83ac400e4a79", "2a772019-daa9-40f7-89af-438dd9cad4fe", "56984b95-d4dd-4e59-a375-3d5c11737f80", "509a5253-0d90-41f3-87b4-2e1151da0bf5", "54e5a9bb-00d0-4307-b80e-ac7095058bef", "8c9842e8-835c-49b1-b577-44fa947edf23", "d099c72a-a872-49fd-a967-7eaa3ed0aae9", "3704fc35-f502-49c1-8016-f38865d79e8c", "294f3172-95e5-4bb0-8d17-b154f17ae1a3", "d743e546-2340-4e5a-86f5-7a7632daa47f"]
+    "tests": ["29b59682-9e20-4904-9e7b-ffc007c1f4a8", "5b7a776b-faba-4ab1-bbea-83ac400e4a79", "2a772019-daa9-40f7-89af-438dd9cad4fe", "56984b95-d4dd-4e59-a375-3d5c11737f80", "509a5253-0d90-41f3-87b4-2e1151da0bf5", "54e5a9bb-00d0-4307-b80e-ac7095058bef", "8c9842e8-835c-49b1-b577-44fa947edf23", "d099c72a-a872-49fd-a967-7eaa3ed0aae9", "3704fc35-f502-49c1-8016-f38865d79e8c", "294f3172-95e5-4bb0-8d17-b154f17ae1a3", "d743e546-2340-4e5a-86f5-7a7632daa47f", "0d71d043-636e-401d-bd2d-782c6a38f728", "0cd18e42-82d6-465d-a28a-b423d59e5000"]
   }],
   "urls": ["http://localhost:8080/", "http://localhost:8080/proyecto-war/"],
   "plugins": []

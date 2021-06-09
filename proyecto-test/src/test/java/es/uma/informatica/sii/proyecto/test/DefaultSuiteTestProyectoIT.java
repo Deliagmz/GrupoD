@@ -295,4 +295,36 @@ public class DefaultSuiteTestProyectoIT {
     driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).click();
     assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("Titulacion: Codigo=1042, Creditos=null, Nombre=null"));
   }
+  @Test
+  public void pruebaLeerNotaMedia() {
+    driver.get("http://localhost:8080/proyecto-war/");
+    driver.manage().window().setSize(new Dimension(1536, 872));
+    driver.get("http://localhost:8080/proyecto-war/indexSecretaria.xhtml");
+    driver.findElement(By.linkText("Gestor de expedientes")).click();
+    driver.findElement(By.linkText("Consultar nota media")).click();
+    driver.findElement(By.id("j_idt6:Num_Expediente")).click();
+    driver.findElement(By.id("j_idt6:Num_Expediente")).sendKeys("123456789");
+    driver.findElement(By.name("j_idt6:j_idt12")).click();
+    driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).click();
+    assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("La nota media es 7.0"));
+    driver.findElement(By.linkText("Volver")).click();
+  }
+  @Test
+  public void pruebaBorrarAsignatura() {
+    driver.get("http://localhost:8080/proyecto-war/indexSecretaria.xhtml");
+    driver.manage().window().setSize(new Dimension(1056, 810));
+    driver.findElement(By.linkText("Gestor de asignaturas")).click();
+    driver.findElement(By.linkText("Eliminar asignatura")).click();
+    driver.findElement(By.id("asignatura:referencia")).click();
+    driver.findElement(By.id("asignatura:referencia")).sendKeys("11223344");
+    driver.findElement(By.name("asignatura:j_idt9")).click();
+    driver.findElement(By.linkText("Gestor de asignaturas")).click();
+    driver.findElement(By.linkText("Consultar asignatura")).click();
+    driver.findElement(By.id("j_idt6:referencia")).click();
+    driver.findElement(By.id("j_idt6:referencia")).sendKeys("11223344");
+    driver.findElement(By.name("j_idt6:j_idt12")).click();
+    driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).click();
+    assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td:nth-child(2)")).getText(), is("Asignaturas con Referencia= 11223344, Codigo= null, Nombre= null, Creditos= null, Ofertada= null, Curso= null, Caracter= null, Duracion= null, Unidad_Temporal= null, Idiomas_Imparticion= null"));
+    driver.findElement(By.linkText("Volver")).click();
+  }
 }
